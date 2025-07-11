@@ -1,12 +1,14 @@
 
-"use client";
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { Dispatch } from "react";
 import FlipLink from "../FlipLink/FlipLink";
-import { bool, func } from "prop-types";
 
-function Menu({ menuOpen, setMenuOpen }) {
-    const primaryEasing = [0.83, 0, 0.17, 1];
+interface MenuProps {
+    menuOpen: boolean;
+    setMenuOpen: Dispatch<React.SetStateAction<boolean>>;
+}
+function Menu({ menuOpen, setMenuOpen }: MenuProps) {
+    const primaryEasing = [0.83, 0, 0.17, 1] as const;
 
     console.log("menuOpen", menuOpen);
     return (
@@ -17,7 +19,6 @@ function Menu({ menuOpen, setMenuOpen }) {
                     setMenuOpen(!menuOpen)
                 }}
                 className="md:text-darkText text-white cursor-pointer fixed top-0 right-0 z-[10000]"
-                strokeWidth={0.8}
             >
                 <svg
                     className="w-12"
@@ -101,10 +102,10 @@ function Menu({ menuOpen, setMenuOpen }) {
                             }}
                             animate={{
                                 scaleY: 1,
+                                borderBottomLeftRadius: "50%", // moved here
+                                borderBottomRightRadius: "50%", // moved here
                                 transition: {
                                     duration: 0.7,
-                                    borderBottomLeftRadius: "50%",
-                                    borderBottomRightRadius: "50%",
                                     delay: 0.5,
                                     ease: primaryEasing,
                                 },
@@ -115,6 +116,7 @@ function Menu({ menuOpen, setMenuOpen }) {
                                 borderBottomRightRadius: "0%",
                                 transition: { delay: 0.9 },
                             }}
+
                             className={`${menuOpen ? "visible" : "invisible"
                                 } origin-top-right bg-black grid grid-cols-1 md:grid-cols-2 w-full h-full`}
                         >
@@ -122,10 +124,12 @@ function Menu({ menuOpen, setMenuOpen }) {
                                 <div className="flex items-center h-full">
                                     {/* Menu Links */}
                                     <nav className="h-full font-spectral place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 gap-7 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
-                                        <FlipLink href={'/#home'}>Home</FlipLink>
-                                        <FlipLink href={'/#service'}>Service</FlipLink>
-                                        <FlipLink href={'/#project'}>Projects</FlipLink>
-                                        <FlipLink href={'/#contact'}>Contact</FlipLink>
+                                        <FlipLink href={'/'}>Home</FlipLink>
+                                        <FlipLink href={'/about'}>About</FlipLink>
+                                        <FlipLink href={'/services'}>Service</FlipLink>
+                                        <FlipLink href={'/projects'}>Projects</FlipLink>
+                                        <FlipLink href={'/case-studies'}>Case Studies</FlipLink>
+                                        <FlipLink href={'/contact'}>Contact</FlipLink>
                                     </nav>
                                 </div>
                                 <div className="font-spectral space-x-4 max-md:font-bold text-lg md:tracking-wider">
@@ -144,7 +148,7 @@ function Menu({ menuOpen, setMenuOpen }) {
                                 <div>
                                     <h2 className="text-darkText md:text-black font-spectral text-3xl font-thin mb-2">Got an idea?</h2>
                                     <p className="text-darkText md:text-black font-spectral max-md:font-bold text-4xl md:text-5xl mb-4">
-                                        Let&apos;s craft <br /> brilliant together!
+                                        Let's craft <br /> brilliant together!
                                     </p>
                                     <button
                                         className="border border-accent font-spectral md:border-white px-4 py-2 text-lg rounded-full transition w-max"
@@ -161,8 +165,4 @@ function Menu({ menuOpen, setMenuOpen }) {
     );
 }
 
-Menu.propTypes = {
-    menuOpen: bool,
-    setMenuOpen: func,
-};
 export default Menu;
