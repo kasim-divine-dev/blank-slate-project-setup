@@ -10,14 +10,14 @@ function Menu({ menuOpen, setMenuOpen }) {
 
     return (
         <>
-            <div className="flex items-center justify-end w-f bg-transparent fixed top-0 right-0 z-[10000]">
+            <div className="flex items-center justify-end w-full bg-transparent fixed top-0 right-0 z-[10000] p-4">
                 <button
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="md:text-darkText text-white cursor-pointer"
+                    className="text-darkText cursor-pointer bg-lightBg/80 backdrop-blur-sm rounded-full p-3 hover:bg-lightBg transition-colors"
                     strokeWidth={0.8}
                 >
                     <svg
-                        className="w-12"
+                        className="w-8 h-8"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 10 10"
                         stroke="currentColor"
@@ -116,25 +116,19 @@ function Menu({ menuOpen, setMenuOpen }) {
                         >
                             <div className="md:p-8 p-3 md:bg-black bg-darkText md:text-darkText text-black flex flex-col">
                                 <div className="flex items-center h-full">
-                                    {/* Updated Menu Links */}
                                     <nav className="h-full font-spectral place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 gap-7 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
                                         <FlipLink href={'/'}>Home</FlipLink>
                                         <FlipLink href={'/about'}>About</FlipLink>
                                         <FlipLink href={'/services'}>Services</FlipLink>
-                                        <FlipLink href={'/#project'}>Projects</FlipLink>
+                                        <FlipLink href={'/projects'}>Projects</FlipLink>
+                                        <FlipLink href={'/case-studies'}>Case Studies</FlipLink>
                                         <FlipLink href={'/contact'}>Contact</FlipLink>
                                     </nav>
                                 </div>
                                 <div className="font-spectral space-x-4 max-md:font-bold text-lg md:tracking-wider">
-                                    <span>
-                                        LinkedIn
-                                    </span>
-                                    <span >
-                                        Instagram
-                                    </span>
-                                    <span>
-                                        Facebook
-                                    </span>
+                                    <span>LinkedIn</span>
+                                    <span>Instagram</span>
+                                    <span>Facebook</span>
                                 </div>
                             </div>
                             <div className="bg-black md:bg-lightBg text-darkText md:text-black flex flex-col justify-around h-full md:justify-center md:p-8 p-3 relative">
@@ -144,7 +138,7 @@ function Menu({ menuOpen, setMenuOpen }) {
                                         Let&apos;s craft <br /> brilliant together!
                                     </p>
                                     <button
-                                        className="border border-accent font-spectral md:border-white px-4 py-2 text-lg rounded-full transition w-max"
+                                        className="border border-accent font-spectral md:border-lightText px-4 py-2 text-lg rounded-full transition w-max hover:bg-lightText hover:text-lightBg"
                                     >
                                         Get In touch
                                     </button>
