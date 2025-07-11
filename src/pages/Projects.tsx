@@ -44,14 +44,7 @@ const Projects: React.FC = () => {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+    visible: { y: 0, opacity: 1 }
   };
 
   return (
@@ -75,7 +68,11 @@ const Projects: React.FC = () => {
           variants={containerVariants}
         >
           <div className="max-w-7xl mx-auto">
-            <motion.div className="text-center mb-16" variants={itemVariants}>
+            <motion.div 
+              className="text-center mb-16" 
+              variants={itemVariants}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
                 Our <span className="text-lightText80">Projects</span>
               </h1>
