@@ -1,7 +1,9 @@
+
 import { motion } from 'framer-motion'
+
 const letterVariants = {
     initial: { opacity: 0, y: 0, x: 0 },
-    animate: i => ({
+    animate: (i: number) => ({
         opacity: 1,
         y: i % 2 === 0 ? -50 : 50,
         x: i % 2 === 0 ? -50 : 50,
@@ -22,7 +24,7 @@ const wordVariants = {
     },
 };
 
-const splitText = (text, type = 'word') => text.split("").map((letter, index) => (
+const splitText = (text: string, type: string = 'word') => text.split("").map((letter, index) => (
     <motion.span
         key={index}
         custom={index}
@@ -33,6 +35,5 @@ const splitText = (text, type = 'word') => text.split("").map((letter, index) =>
         {letter}
     </motion.span>
 ));
-
 
 export { splitText, wordVariants, letterVariants };

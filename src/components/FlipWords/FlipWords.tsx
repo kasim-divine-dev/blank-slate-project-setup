@@ -1,9 +1,16 @@
+
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-export const FlipWords = ({
+interface FlipWordsProps {
+    words: string[];
+    duration?: number;
+    className?: string;
+}
+
+export const FlipWords: React.FC<FlipWordsProps> = ({
     words,
     duration = 2000,
     className
@@ -25,7 +32,7 @@ export const FlipWords = ({
     }, [isAnimating, duration, startAnimation]);
 
     return (
-        (<AnimatePresence
+        <AnimatePresence
             onExitComplete={() => {
                 setIsAnimating(false);
             }}>
@@ -82,6 +89,6 @@ export const FlipWords = ({
                     </motion.span>
                 ))}
             </motion.div>
-        </AnimatePresence>)
+        </AnimatePresence>
     );
 };

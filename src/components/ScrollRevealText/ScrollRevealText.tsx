@@ -1,14 +1,22 @@
+
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ScrollRevealText = ({ children, className }) => {
-    const textRef = useRef(null);
+interface ScrollRevealTextProps {
+    children: string;
+    className?: string;
+}
+
+const ScrollRevealText: React.FC<ScrollRevealTextProps> = ({ children, className }) => {
+    const textRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const el = textRef.current;
+        if (!el) return;
+
         const characters = el.querySelectorAll(".char");
 
         gsap.fromTo(
@@ -19,26 +27,24 @@ const ScrollRevealText = ({ children, className }) => {
                 stagger: 0.05,
                 scrollTrigger: {
                     trigger: el,
-                    start: "top 80%", // Start animation when top of the element hits 80% of viewport
-                    end: "bottom 20%", // End animation when bottom of the element hits 20% of viewport
-                    scrub: true, // Smooth scrolling effect
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    scrub: true,
                     toggleActions: "play reverse play reverse",
                 },
             }
         );
 
         return () => {
-            // Clean up GSAP instance
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
 
-    // Split text into words and characters, preserving spacing
-    const splitText = (text) =>
+    const splitText = (text: string) =>
         text.split(" ").map((word, index) => (
             <h6
                 key={index}
-                style={{ display: "inline-block", whiteSpace: "pre" }} // Preserve spacing
+                style={{ display: "inline-block", whiteSpace: "pre" }}
             >
                 {word.split("").map((char, i) => (
                     <span key={i} className="char inline-block text-lg md:text-xl">

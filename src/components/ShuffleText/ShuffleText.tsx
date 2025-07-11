@@ -1,19 +1,27 @@
+
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import { bool, string } from 'prop-types'
 
-const ShuffleText = ({
+interface ShuffleTextProps {
+    text: string;
+    as?: keyof JSX.IntrinsicElements;
+    className?: string;
+    triggerOnScroll?: boolean;
+    [key: string]: any;
+}
+
+const ShuffleText: React.FC<ShuffleTextProps> = ({
     text,
     as: Component = "div",
     className = "",
     triggerOnScroll = false,
     ...props
 }) => {
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLElement>(null);
     const [isDesktop, setIsDesktop] = useState(false);
-    const splitInstance = useRef(null);
+    const splitInstance = useRef<SplitType | null>(null);
 
     useEffect(() => {
         const checkSize = () => {
@@ -33,9 +41,13 @@ const ShuffleText = ({
                 splitInstance.current.revert();
                 splitInstance.current = null;
             }
-            gsap.set(containerRef.current, { opacity: 1 });
+            if (containerRef.current) {
+                gsap.set(containerRef.current, { opacity: 1 });
+            }
             return;
         }
+
+        if (!containerRef.current) return;
 
         splitInstance.current = new SplitType(containerRef.current, {
             types: "lines,words,chars",
@@ -48,7 +60,7 @@ const ShuffleText = ({
         gsap.set(chars, { opacity: 0 });
 
         const animateChars = () => {
-            chars.forEach((char) => {
+            chars?.forEach((char) => {
                 const originalLetter = char.textContent;
                 let shuffleCount = 0;
                 const maxShuffles = 5;
@@ -95,22 +107,15 @@ const ShuffleText = ({
         };
     }, [text, triggerOnScroll, isDesktop]);
 
-    return (
-        <Component
-            ref={containerRef}
-            className={`shuffle-text ${className}`.trim()}
-            {...props}
-        >
-            {text}
-        </Component>
+    return React.createElement(
+        Component,
+        {
+            ref: containerRef,
+            className: `shuffle-text ${className}`.trim(),
+            ...props
+        },
+        text
     );
-};
-
-ShuffleText.propTypes = {
-    text: string,
-    as: string,
-    className: string,
-    triggerOnScroll: bool
 };
 
 export default ShuffleText;
