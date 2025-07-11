@@ -11,7 +11,7 @@ interface StaggeredTextProps {
 
 const StaggeredText: React.FC<StaggeredTextProps> = ({ className, words, delay }) => {
     const ref = useRef<HTMLHeadingElement>(null);
-    const isInView = useInView(ref, { triggerOnce: false });
+    const isInView = useInView(ref, { once: false });
     const letters = words.split("");
 
     const pullupVariant = {
