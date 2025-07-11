@@ -1,7 +1,6 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React from 'react';
 import { MdArrowOutward } from 'react-icons/md';
 import Case1 from '../../assets/img/p1.png';
 import Case2 from '../../assets/img/p2.png';
