@@ -1,3 +1,4 @@
+
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -5,16 +6,16 @@ import "./Marquee.css";
 
 const ANIMATION_DURATION = 30;
 
-const Marquee = () => {
-  const wrapperRef = useRef(null);
-  const animationRef = useRef(null);
+const Marquee: React.FC = () => {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<gsap.core.Tween | null>(null);
   const directionRef = useRef(-1);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const content = wrapper.children[0];
+    const content = wrapper.children[0] as HTMLElement;
 
     for (let i = 0; i < 3; i++) {
       const clone = content.cloneNode(true);
@@ -29,7 +30,7 @@ const Marquee = () => {
         animationRef.current.kill();
       }
 
-      let currentX = gsap.getProperty(wrapper, "x");
+      let currentX = gsap.getProperty(wrapper, "x") as number;
 
       if (currentX <= -totalWidth) {
         currentX = currentX % singleWidth;
@@ -54,7 +55,7 @@ const Marquee = () => {
         ease: "none",
         repeat: -1,
         onRepeat: () => {
-          let resetX = gsap.getProperty(wrapper, "x");
+          let resetX = gsap.getProperty(wrapper, "x") as number;
 
           if (directionRef.current === -1 && resetX <= -totalWidth) {
             resetX = resetX % singleWidth;

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
@@ -43,22 +44,21 @@ const TrailSegment = styled.div`
   z-index: 9998;
 `;
 
-const CustomCursor = () => {
+const CustomCursor: React.FC = () => {
     const [isMoving, setIsMoving] = useState(false);
     const [isMouseDown, setIsMouseDown] = useState(false);
     const [isHoveringLink, setIsHoveringLink] = useState(false);
-    const trailRefs = useRef([]);
-    const cursorRef = useRef(null);
-    const trailLength = 10; // Number of trail segments
+    const trailRefs = useRef<React.RefObject<HTMLDivElement>[]>([]);
+    const cursorRef = useRef<HTMLDivElement>(null);
+    const trailLength = 10;
     const mousePosition = useRef({ x: -100, y: -100 });
-    const movementTimeout = useRef(null);
-    const animationFrameId = useRef(null);
+    const movementTimeout = useRef<NodeJS.Timeout | null>(null);
+    const animationFrameId = useRef<number | null>(null);
 
-    // Initialize trail segments
     useEffect(() => {
         const segments = Array(trailLength)
-            .fill()
-            .map(() => React.createRef());
+            .fill(null)
+            .map(() => React.createRef<HTMLDivElement>());
         trailRefs.current = segments;
 
         return () => {
@@ -66,18 +66,19 @@ const CustomCursor = () => {
         };
     }, [trailLength]);
 
-    // Handle mouse movement
     useEffect(() => {
-        const throttledMouseMove = throttle((e) => {
+        const throttledMouseMove = throttle((e: MouseEvent) => {
             const { clientX: x, clientY: y } = e;
             mousePosition.current = { x, y };
 
-            gsap.to(cursorRef.current, {
-                x,
-                y,
-                duration: 0.6, // speed of cursor movement
-                ease: 'power2.out',
-            });
+            if (cursorRef.current) {
+                gsap.to(cursorRef.current, {
+                    x,
+                    y,
+                    duration: 0.6,
+                    ease: 'power2.out',
+                });
+            }
 
             setIsMoving(true);
             if (movementTimeout.current) {
@@ -96,30 +97,33 @@ const CustomCursor = () => {
         };
     }, [setIsMoving]);
 
-    // Handle mouse down and up
     useEffect(() => {
         const handleMouseDown = () => {
             setIsMouseDown(true);
-            gsap.to(cursorRef.current, {
-                width: 50,
-                height: 50,
-                borderColor: 'var(--cursor-mouse-down-border)',
-                boxShadow: '0 0 25px var(--cursor-mouse-down-shadow)',
-                duration: 0.2,
-                ease: 'power2.out',
-            });
+            if (cursorRef.current) {
+                gsap.to(cursorRef.current, {
+                    width: 50,
+                    height: 50,
+                    borderColor: 'var(--cursor-mouse-down-border)',
+                    boxShadow: '0 0 25px var(--cursor-mouse-down-shadow)',
+                    duration: 0.2,
+                    ease: 'power2.out',
+                });
+            }
         };
 
         const handleMouseUp = () => {
             setIsMouseDown(false);
-            gsap.to(cursorRef.current, {
-                width: 25,
-                height: 25,
-                borderColor: 'var(--cursor-border)',
-                boxShadow: 'none',
-                duration: 0.2,
-                ease: 'power2.out',
-            });
+            if (cursorRef.current) {
+                gsap.to(cursorRef.current, {
+                    width: 25,
+                    height: 25,
+                    borderColor: 'var(--cursor-border)',
+                    boxShadow: 'none',
+                    duration: 0.2,
+                    ease: 'power2.out',
+                });
+            }
         };
 
         window.addEventListener('mousedown', handleMouseDown);
@@ -131,33 +135,35 @@ const CustomCursor = () => {
         };
     }, []);
 
-    // Handle hover over links
     useEffect(() => {
         const handleMouseEnterLink = () => {
             setIsHoveringLink(true);
-            gsap.to(cursorRef.current, {
-                width: 50,
-                height: 50,
-                borderColor: 'var(--cursor-link-hover-border)',
-                boxShadow: '0 0 25px var(--cursor-link-hover-shadow)',
-                duration: 0.2,
-                ease: 'power2.out',
-            });
+            if (cursorRef.current) {
+                gsap.to(cursorRef.current, {
+                    width: 50,
+                    height: 50,
+                    borderColor: 'var(--cursor-link-hover-border)',
+                    boxShadow: '0 0 25px var(--cursor-link-hover-shadow)',
+                    duration: 0.2,
+                    ease: 'power2.out',
+                });
+            }
         };
 
         const handleMouseLeaveLink = () => {
             setIsHoveringLink(false);
-            gsap.to(cursorRef.current, {
-                width: 25,
-                height: 25,
-                borderColor: 'var(--cursor-border)',
-                boxShadow: 'none',
-                duration: 0.2,
-                ease: 'power2.out',
-            });
+            if (cursorRef.current) {
+                gsap.to(cursorRef.current, {
+                    width: 25,
+                    height: 25,
+                    borderColor: 'var(--cursor-border)',
+                    boxShadow: 'none',
+                    duration: 0.2,
+                    ease: 'power2.out',
+                });
+            }
         };
 
-        // add event listeners to links
         const addLinkListeners = () => {
             const links = document.querySelectorAll(
                 'a, button, input, textarea, img, p',
@@ -168,7 +174,6 @@ const CustomCursor = () => {
             });
         };
 
-        // add listeners initially and re-add on DOM mutations
         addLinkListeners();
 
         const observer = new MutationObserver(() => {
@@ -192,53 +197,49 @@ const CustomCursor = () => {
         };
     }, []);
 
-    // Update trail segments
     useEffect(() => {
         const updateTrail = () => {
             trailRefs.current.forEach((ref, index) => {
                 const segment = ref.current;
-                const delay = (index + 1) * 0.05;
+                if (segment) {
+                    const delay = (index + 1) * 0.05;
 
-                gsap.to(segment, {
-                    x: mousePosition.current.x,
-                    y: mousePosition.current.y,
-                    duration: 0.4,
-                    delay,
-                    opacity:
-                        isMoving || isMouseDown || isHoveringLink
-                            ? 1 - index / trailLength
-                            : 0,
-                    ease: 'power2.out',
-                    scale: 1 + index / trailLength,
-                    boxShadow:
-                        isMoving || isMouseDown || isHoveringLink
-                            ? `0 0 10px rgba(var(--cursor-trail), ${0.2 + index / trailLength})`
-                            : 'none',
-                });
+                    gsap.to(segment, {
+                        x: mousePosition.current.x,
+                        y: mousePosition.current.y,
+                        duration: 0.6,
+                        ease: 'power2.out',
+                        delay: delay,
+                    });
+                }
             });
-        };
 
-        const animateTrail = () => {
-            updateTrail();
-            if (isMoving || isMouseDown || isHoveringLink) {
-                animationFrameId.current = requestAnimationFrame(animateTrail);
-            } else if (animationFrameId.current) {
-                cancelAnimationFrame(animationFrameId.current);
+            if (animationFrameId.current) {
+                requestAnimationFrame(updateTrail);
             }
         };
 
-        animateTrail();
-        return () => cancelAnimationFrame(animationFrameId.current);
-    }, [isMoving, isMouseDown, isHoveringLink]);
+        animationFrameId.current = requestAnimationFrame(updateTrail);
+
+        return () => {
+            if (animationFrameId.current) {
+                cancelAnimationFrame(animationFrameId.current);
+            }
+        };
+    }, []);
+
+    if (isMobile) {
+        return null;
+    }
 
     return (
         <>
-            {trailRefs.current.map((ref, index) => (
-                <TrailSegment key={index} ref={ref} />
-            ))}
             <StyledCursor ref={cursorRef}>
                 <div className="cursor-dot" />
             </StyledCursor>
+            {trailRefs.current.map((ref, index) => (
+                <TrailSegment key={index} ref={ref} />
+            ))}
         </>
     );
 };

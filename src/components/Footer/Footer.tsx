@@ -1,7 +1,8 @@
+
 import React from 'react';
 import MagneticButton from '../MagneticButton/MagneticButton';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <footer id='contact' className="bg-darkBg text-darkText">
             <div className="bg-darkText20 relative  h-96 flex justify-center items-center flex-col mx-auto px-4 py-12 text-center">
@@ -31,10 +32,10 @@ const Footer = () => {
                 <div className="max-w-screen-xl mx-auto px-4 md:text-center">
                     <h1 className="text-3xl md:text-4xl font-bold">Mkronix</h1>
                     <nav className="max-md:mt-4 text-xl md:text-2xl flex md:justify-center items-baseline max-md:flex-wrap gap-4 md:space-y-4 ">
-                        <a to="/#home" className="">Home</a>
-                        <a to="/#service" className="">Services</a>
-                        <a to="/#project" className="">Project</a>
-                        <a to="/#contact" className="">Contact Us</a>
+                        <a href="/#home" className="">Home</a>
+                        <a href="/#service" className="">Services</a>
+                        <a href="/#project" className="">Project</a>
+                        <a href="/#contact" className="">Contact Us</a>
                     </nav>
                 </div>
             </div>

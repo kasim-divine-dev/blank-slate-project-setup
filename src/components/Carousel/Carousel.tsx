@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { carouselItems } from '../../data/carouselItems'
 import { useGSAP } from '@gsap/react';
@@ -7,12 +8,12 @@ import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Carousel = () => {
+const Carousel: React.FC = () => {
     useGSAP(
         () => {
             if (typeof window === "undefined") return;
 
-            const projects = gsap.utils.toArray(".project");
+            const projects = gsap.utils.toArray(".project") as HTMLElement[];
 
             ScrollTrigger.create({
                 trigger: ".carousel",
@@ -68,14 +69,14 @@ const Carousel = () => {
     );
 
     return (
-        <>            <section className="intro h-screen flex justify-center items-center px-4">
-            <DrawCircleText
-                normalText={"Crafting innovative digital experiences for "}
-                normalText2={"that inspire, engage, and drive impact."}
-                circleText={"businesses"}
-            />
-
-        </section>
+        <>
+            <section className="intro h-screen flex justify-center items-center px-4">
+                <DrawCircleText
+                    normalText={"Crafting innovative digital experiences for "}
+                    normalText2={"that inspire, engage, and drive impact."}
+                    circleText={"businesses"}
+                />
+            </section>
             <section className="carousel relative w-screen h-screen overflow-hidden z-[1]" >
                 {carouselItems.map((item) => (
                     <div

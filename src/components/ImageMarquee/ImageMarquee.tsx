@@ -1,9 +1,8 @@
+
 import React, { useRef, useEffect } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-// Import required CSS
 import '@splidejs/splide/dist/css/splide.min.css';
 
-// Using the expanded image sources you provided
 const images = [
     "/images/carousel/algora.png",
     "/images/carousel/wisdommeds.png",
@@ -21,8 +20,18 @@ const images = [
     "/images/carousel/kkJewells.png",
 ];
 
-const ImageMarquee = () => {
-    const splideRef = useRef(null);
+interface SplideInstance {
+    Components?: {
+        Move?: {
+            getPosition: () => number;
+            translate: (position: number) => void;
+        };
+    };
+    destroy?: () => void;
+}
+
+const ImageMarquee: React.FC = () => {
+    const splideRef = useRef<{ splide: SplideInstance } | null>(null);
 
     useEffect(() => {
         if (splideRef.current && splideRef.current.splide) {
@@ -36,7 +45,6 @@ const ImageMarquee = () => {
                 }
             }, 10);
 
-            // Clean up interval on unmount
             return () => {
                 clearInterval(autoScrollInterval);
                 if (splideInstance && typeof splideInstance.destroy === 'function') {
@@ -58,7 +66,7 @@ const ImageMarquee = () => {
                     arrows: false,
                     pagination: false,
                     gap: '1rem',
-                    autoplay: false, // Disable built-in autoplay as we're using custom solution
+                    autoplay: false,
                     pauseOnHover: false,
                     pauseOnFocus: false,
                     breakpoints: {

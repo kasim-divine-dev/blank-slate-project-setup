@@ -1,7 +1,15 @@
+
 import React from "react";
 import halfArrow from "../../assets/icon/half-arrow.svg";
 
-const WorkFlowCard = ({ number, title, description, onClick }) => {
+interface WorkFlowCardProps {
+    number?: string | number;
+    title: string;
+    description?: string;
+    onClick?: () => void;
+}
+
+const WorkFlowCard: React.FC<WorkFlowCardProps> = ({ number, title, description, onClick }) => {
     return (
         <div className={`w-[350px] max-md:w-full h-full
             p-12 md:p-6 rounded-md relative border border-neutral-800 

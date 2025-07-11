@@ -1,16 +1,17 @@
+
 import React, { useEffect, useState } from "react";
 import ReactLenis from "lenis/react";
-import CardStack from "./components/CardStack/CardStack";
-import Carousel from "./components/Carousel/Carousel";
-import CaseStudies from "./components/CaseStudies/CaseStudies";
-import CustomCursor from "./components/Cursor/CustomCursor";
-import Footer from './components/Footer/Footer';
-import GetInTouch from "./components/GetInTouch/GetInTouch";
-import HeroSection from './components/HeroSection/HeroSection';
-import HorizontalTextScroller from "./components/HorizontalTextScroller/HorizontalTextScroller";
-import Menu from "./components/Menu/Menu";
-import PreLoading from "./components/PreLoading/PreLoading";
-import ServiceCard from "./components/ServiceCard/ServiceCard";
+import CardStack from "../components/CardStack/CardStack";
+import Carousel from "../components/Carousel/Carousel";
+import CaseStudies from "../components/CaseStudies/CaseStudies";
+import CustomCursor from "../components/Cursor/CustomCursor";
+import Footer from '../components/Footer/Footer';
+import GetInTouch from "../components/GetInTouch/GetInTouch";
+import HeroSection from '../components/HeroSection/HeroSection';
+import HorizontalTextScroller from "../components/HorizontalTextScroller/HorizontalTextScroller";
+import Menu from "../components/Menu/Menu";
+import PreLoading from "../components/PreLoading/PreLoading";
+import ServiceCard from "../components/ServiceCard/ServiceCard";
 
 const Index = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,9 +27,6 @@ const Index = () => {
       });
     }, 1000);
   }, []);
-
-
-
 
   return (
     <ReactLenis root>
@@ -55,4 +53,3 @@ const Index = () => {
 };
 
 export default Index;
-

@@ -1,8 +1,13 @@
+
 "use client";
 import React from "react";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import { number } from 'prop-types'
-function PreLoading({ count }) {
+
+interface PreLoadingProps {
+    count: number;
+}
+
+function PreLoading({ count }: PreLoadingProps): React.ReactElement {
     const name = "Mkronix";
 
     const starVariant = {
@@ -86,7 +91,6 @@ function PreLoading({ count }) {
                                         y: 0,
                                         opacity: 0,
                                         transition: {
-                                            // delay: 0.1,
                                             ease: [0.65, 0, 0.35, 1]
                                         },
                                     }}
@@ -103,7 +107,4 @@ function PreLoading({ count }) {
     );
 }
 
-PreLoading.propTypes = {
-    count: number
-};
 export default PreLoading;

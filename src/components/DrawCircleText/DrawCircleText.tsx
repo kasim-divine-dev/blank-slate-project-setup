@@ -1,7 +1,14 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 
-export const DrawCircleText = ({ normalText, circleText, normalText2 }) => {
+interface DrawCircleTextProps {
+    normalText: string;
+    circleText: string;
+    normalText2: string;
+}
+
+export const DrawCircleText: React.FC<DrawCircleTextProps> = ({ normalText, circleText, normalText2 }) => {
     return (
         <div className="">
             <h1 className="text-darkText text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug">

@@ -1,8 +1,15 @@
+
 import { motion } from "framer-motion";
 
-const FlipLink = ({ children, href }) => {
+interface FlipLinkProps {
+    children: string;
+    href: string;
+}
+
+const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
     const DURATION = 0.25;
     const STAGGER = 0.025;
+    
     return (
         <motion.a
             initial="initial"
@@ -63,4 +70,4 @@ const FlipLink = ({ children, href }) => {
     );
 };
 
-export default FlipLink;  
+export default FlipLink;

@@ -1,15 +1,22 @@
+
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "../../lib/utils";
 
-const StaggeredText = ({ className, words, delay }) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { triggerOnce: false });
+interface StaggeredTextProps {
+    className?: string;
+    words: string;
+    delay?: number;
+}
+
+const StaggeredText: React.FC<StaggeredTextProps> = ({ className, words, delay }) => {
+    const ref = useRef<HTMLHeadingElement>(null);
+    const isInView = useInView(ref, { once: false });
     const letters = words.split("");
 
     const pullupVariant = {
         initial: { y: 100, opacity: 0 },
-        animate: (i) => ({
+        animate: (i: number) => ({
             y: 0,
             opacity: 1,
             transition: {

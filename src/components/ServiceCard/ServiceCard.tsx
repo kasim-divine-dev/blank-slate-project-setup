@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import './ServiceCard.css';
 import Card1 from '../../assets/img/img1.jpg';
@@ -9,8 +10,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
 
-const ServiceCard = () => {
-    const sectionRef = useRef(null);
+const ServiceCard: React.FC = () => {
+    const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -24,12 +25,12 @@ const ServiceCard = () => {
 
         gsap.ticker.lagSmoothing(0);
 
-        const cards = gsap.utils.toArray(".service-card");
+        const cards = gsap.utils.toArray(".service-card") as HTMLElement[];
 
         ScrollTrigger.create({
-            trigger: cards[0],
+            trigger: cards[0] as HTMLElement,
             start: "top 35%",
-            endTrigger: cards[cards.length - 1],
+            endTrigger: cards[cards.length - 1] as HTMLElement,
             end: "top 30%",
             pin: ".intro",
             pinSpacing: false,
@@ -37,11 +38,12 @@ const ServiceCard = () => {
 
         cards.forEach((card, index) => {
             const isLastCard = index === cards.length - 1;
-            const cardInner = card.querySelector(".service-card-inner");
+            const cardElement = card as HTMLElement;
+            const cardInner = cardElement.querySelector(".service-card-inner") as HTMLElement;
 
             if (!isLastCard) {
                 ScrollTrigger.create({
-                    trigger: card,
+                    trigger: card as HTMLElement,
                     start: "top 35%",
                     endTrigger: ".end-service-section",
                     end: "top 65%",
@@ -49,17 +51,19 @@ const ServiceCard = () => {
                     pinSpacing: false,
                 });
 
-                gsap.to(cardInner, {
-                    y: `-${(cards.length - index) * 20}vh`,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 35%",
-                        endTrigger: ".end-service-section",
-                        end: "top 65%",
-                        scrub: true,
-                    },
-                });
+                if (cardInner) {
+                    gsap.to(cardInner as HTMLElement, {
+                        y: `-${(cards.length - index) * 20}vh`,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: card as HTMLElement,
+                            start: "top 35%",
+                            endTrigger: ".end-service-section",
+                            end: "top 65%",
+                            scrub: true,
+                        },
+                    });
+                }
             }
         });
 
@@ -69,7 +73,7 @@ const ServiceCard = () => {
             if (lenis) {
                 lenis.destroy();
             }
-            gsap.ticker.remove();
+            gsap.ticker.remove(() => {});
         };
     }, []);
 
@@ -146,7 +150,6 @@ const ServiceCard = () => {
             <section className="end-service-section">
             </section>
         </>
-
     );
 };
 

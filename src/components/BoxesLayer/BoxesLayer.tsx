@@ -1,6 +1,12 @@
+
 import React from 'react';
 
-const BoxesLayer = ({ gridColor = '#9b9389', gridSize = '25px 24px' }) => {
+interface BoxesLayerProps {
+    gridColor?: string;
+    gridSize?: string;
+}
+
+const BoxesLayer: React.FC<BoxesLayerProps> = ({ gridColor = '#9b9389', gridSize = '25px 24px' }) => {
     return (
         <div
             className={`absolute bottom-0 left-0 right-0 top-0 z-0 pointer-events-none`}
@@ -16,5 +22,3 @@ const BoxesLayer = ({ gridColor = '#9b9389', gridSize = '25px 24px' }) => {
 };
 
 export default BoxesLayer;
-
-

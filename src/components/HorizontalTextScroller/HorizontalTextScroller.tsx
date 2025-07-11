@@ -1,17 +1,24 @@
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Img1 from '../../assets/img/card-3.jpeg';
 
-export default function HorizontalTextScroller() {
-    const sectionRef = useRef(null);
-    const wrapperRef = useRef(null);
+interface Card {
+    id: string;
+    endTranslateX: number;
+    rotate: number;
+}
+
+export default function HorizontalTextScroller(): React.ReactElement {
+    const sectionRef = useRef<HTMLElement>(null);
+    const wrapperRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const cards = [
+        const cards: Card[] = [
             { id: "#horizontal-card-1", endTranslateX: -2000, rotate: 45 },
             { id: "#horizontal-card-2", endTranslateX: -1000, rotate: -30 },
             { id: "#horizontal-card-3", endTranslateX: -2000, rotate: 45 },
@@ -61,9 +68,9 @@ export default function HorizontalTextScroller() {
             ref={sectionRef}
         >
             <section className="horizontal-wrapper-404 absolute top-0 w-[400vw] h-screen will-change-transform" ref={wrapperRef}>
-                <h1 className="text-[28vw] font-bold mb-8 w-full text-darkText font-boska-bold text-center m-0"
-
-                >Transforming Ideas into Reality</h1>
+                <h1 className="text-[28vw] font-bold mb-8 w-full text-darkText font-boska-bold text-center m-0">
+                    Transforming Ideas into Reality
+                </h1>
 
                 <div className="absolute md:w-[300px] w-44 md:h-[300px] h-44 bg-gray-500 rounded-[20px] overflow-hidden top-1/2 left-[20%]" id="horizontal-card-1">
                     <img src={Img1} alt="Horizontal scroller text card 1" className="w-full h-full object-cover" />
