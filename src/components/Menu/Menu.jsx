@@ -1,3 +1,4 @@
+
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
@@ -63,8 +64,7 @@ function Menu({ menuOpen, setMenuOpen }) {
                     </svg>
                 </button>
             </div>
-            <AnimatePresence
-            >
+            <AnimatePresence>
                 {menuOpen && (
                     <motion.section
                         initial={{
@@ -116,12 +116,13 @@ function Menu({ menuOpen, setMenuOpen }) {
                         >
                             <div className="md:p-8 p-3 md:bg-black bg-darkText md:text-darkText text-black flex flex-col">
                                 <div className="flex items-center h-full">
-                                    {/* Menu Links */}
+                                    {/* Updated Menu Links */}
                                     <nav className="h-full font-spectral place-content-center max-md:tracking-widest text-2xl grid grid-cols-1 gap-7 sm:text-4xl md:text-5xl lg:text-6xl md:font-semibold ">
-                                        <FlipLink href={'/#home'}>Home</FlipLink>
-                                        <FlipLink href={'/#service'}>Service</FlipLink>
+                                        <FlipLink href={'/'}>Home</FlipLink>
+                                        <FlipLink href={'/about'}>About</FlipLink>
+                                        <FlipLink href={'/services'}>Services</FlipLink>
                                         <FlipLink href={'/#project'}>Projects</FlipLink>
-                                        <FlipLink href={'/#contact'}>Contact</FlipLink>
+                                        <FlipLink href={'/contact'}>Contact</FlipLink>
                                     </nav>
                                 </div>
                                 <div className="font-spectral space-x-4 max-md:font-bold text-lg md:tracking-wider">
