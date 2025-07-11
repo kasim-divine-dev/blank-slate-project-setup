@@ -25,12 +25,12 @@ const ServiceCard: React.FC = () => {
 
         gsap.ticker.lagSmoothing(0);
 
-        const cards = gsap.utils.toArray(".service-card");
+        const cards = gsap.utils.toArray(".service-card") as HTMLElement[];
 
         ScrollTrigger.create({
-            trigger: cards[0],
+            trigger: cards[0] as HTMLElement,
             start: "top 35%",
-            endTrigger: cards[cards.length - 1],
+            endTrigger: cards[cards.length - 1] as HTMLElement,
             end: "top 30%",
             pin: ".intro",
             pinSpacing: false,
@@ -39,11 +39,11 @@ const ServiceCard: React.FC = () => {
         cards.forEach((card, index) => {
             const isLastCard = index === cards.length - 1;
             const cardElement = card as HTMLElement;
-            const cardInner = cardElement.querySelector(".service-card-inner");
+            const cardInner = cardElement.querySelector(".service-card-inner") as HTMLElement;
 
             if (!isLastCard) {
                 ScrollTrigger.create({
-                    trigger: card,
+                    trigger: card as HTMLElement,
                     start: "top 35%",
                     endTrigger: ".end-service-section",
                     end: "top 65%",
@@ -52,11 +52,11 @@ const ServiceCard: React.FC = () => {
                 });
 
                 if (cardInner) {
-                    gsap.to(cardInner, {
+                    gsap.to(cardInner as HTMLElement, {
                         y: `-${(cards.length - index) * 20}vh`,
                         ease: "none",
                         scrollTrigger: {
-                            trigger: card,
+                            trigger: card as HTMLElement,
                             start: "top 35%",
                             endTrigger: ".end-service-section",
                             end: "top 65%",

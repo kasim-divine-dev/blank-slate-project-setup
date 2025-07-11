@@ -13,7 +13,7 @@ const Carousel: React.FC = () => {
         () => {
             if (typeof window === "undefined") return;
 
-            const projects = gsap.utils.toArray(".project");
+            const projects = gsap.utils.toArray(".project") as HTMLElement[];
 
             ScrollTrigger.create({
                 trigger: ".carousel",

@@ -1,120 +1,53 @@
+import React, { useEffect, useRef } from "react";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import SplitType from "split-type";
+const SYMBOLS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
 
 interface ShuffleTextProps {
     text: string;
-    as?: keyof JSX.IntrinsicElements;
     className?: string;
-    triggerOnScroll?: boolean;
-    [key: string]: any;
+    delay?: number;
+    speed?: number;
 }
 
 const ShuffleText: React.FC<ShuffleTextProps> = ({
     text,
-    as: Component = "div",
     className = "",
-    triggerOnScroll = false,
-    ...props
+    delay = 0,
+    speed = 0.03,
 }) => {
-    const containerRef = useRef<HTMLElement>(null);
-    const [isDesktop, setIsDesktop] = useState(false);
-    const splitInstance = useRef<SplitType | null>(null);
+    const output = useRef<HTMLHeadingElement>(null);
+    const iteration = useRef(0);
 
     useEffect(() => {
-        const checkSize = () => {
-            setIsDesktop(window.innerWidth > 900);
-        };
+        iteration.current = 0;
+        const interval = setInterval(() => {
+            if (output.current) {
+                output.current.innerText = text
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < iteration.current) {
+                            return text[index];
+                        }
 
-        checkSize();
+                        return SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
+                    })
+                    .join("");
 
-        window.addEventListener("resize", checkSize);
-
-        return () => window.removeEventListener("resize", checkSize);
-    }, []);
-
-    useEffect(() => {
-        if (!isDesktop) {
-            if (splitInstance.current) {
-                splitInstance.current.revert();
-                splitInstance.current = null;
+                if (iteration.current < text.length) {
+                    iteration.current += speed ? text.length * speed : 1;
+                } else {
+                    clearInterval(interval);
+                }
             }
-            if (containerRef.current) {
-                gsap.set(containerRef.current, { opacity: 1 });
-            }
-            return;
-        }
+        }, delay ? delay : 30);
 
-        if (!containerRef.current) return;
+        return () => clearInterval(interval);
+    }, [text, delay, speed]);
 
-        splitInstance.current = new SplitType(containerRef.current, {
-            types: "lines,words,chars",
-            tagName: "span",
-        });
+    return (
+        <h1 ref={output} className={className} data-value={text}>
 
-        const chars = splitInstance.current.chars;
-        const signs = ["+", "-"];
-
-        gsap.set(chars, { opacity: 0 });
-
-        const animateChars = () => {
-            chars?.forEach((char) => {
-                const originalLetter = char.textContent;
-                let shuffleCount = 0;
-                const maxShuffles = 5;
-
-                gsap.to(char, {
-                    opacity: 1,
-                    duration: 0.1,
-                    delay: gsap.utils.random(0, 0.75),
-                    onStart: () => {
-                        const shuffle = () => {
-                            if (shuffleCount < maxShuffles) {
-                                char.textContent =
-                                    signs[Math.floor(Math.random() * signs.length)];
-                                shuffleCount++;
-                                requestAnimationFrame(() => setTimeout(shuffle, 75));
-                            } else {
-                                char.textContent = originalLetter;
-                            }
-                        };
-                        shuffle();
-                    },
-                });
-            });
-        };
-
-        if (triggerOnScroll) {
-            ScrollTrigger.create({
-                trigger: containerRef.current,
-                start: "top bottom-=100",
-                onEnter: () => {
-                    animateChars();
-                },
-                once: true,
-            });
-        } else {
-            animateChars();
-        }
-
-        return () => {
-            if (splitInstance.current) {
-                splitInstance.current.revert();
-            }
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    }, [text, triggerOnScroll, isDesktop]);
-
-    return React.createElement(
-        Component,
-        {
-            ref: containerRef,
-            className: `shuffle-text ${className}`.trim(),
-            ...props
-        },
-        text
+        </h1>
     );
 };
 
