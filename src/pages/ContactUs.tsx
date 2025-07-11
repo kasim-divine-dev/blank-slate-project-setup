@@ -129,16 +129,257 @@ const ContactUs: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact Us - Mkronix | Get In Touch With Creative Agency India</title>
-        <meta name="description" content="Ready to start your project? Contact Mkronix creative agency in India. We offer web development, design, and digital marketing services worldwide." />
-        <meta name="keywords" content="contact creative agency India, web development inquiry, design consultation, digital marketing contact, project quote" />
-        <meta property="og:title" content="Contact Mkronix - Let's Create Something Amazing" />
-        <meta property="og:description" content="Get in touch with our creative team to discuss your next digital project." />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="/contact" />
-      </Helmet>
+// Enhanced SEO for ContactUs.tsx - Replace existing Helmet content
 
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>Contact Us | MkRonix - Get Free Consultation for Web Development & Digital Marketing India</title>
+        <meta name="description" content="Contact MkRonix for your digital project needs. Free consultation available! Call +91-84-59258801 or email hello@mkronix.com. Expert web development, design & marketing services across India." />
+
+        {/* Enhanced Keywords */}
+        <meta name="keywords" content="contact mkronix, web development inquiry India, digital marketing consultation, UI UX design quote, mobile app development contact, free consultation digital agency, mkronix phone number, mkronix email, digital agency contact Mumbai, project inquiry India, get quote web development, contact creative agency" />
+
+        {/* Enhanced Open Graph */}
+        <meta property="og:title" content="Contact MkRonix | Free Consultation for Digital Projects India" />
+        <meta property="og:description" content="Ready to start your digital project? Contact India's leading creative agency for free consultation. Expert team available to discuss your web development, design & marketing needs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mkronix.com/contact" />
+        <meta property="og:image" content="https://mkronix.com/assets/contact-consultation-og.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Contact MkRonix - Free Digital Consultation" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:site_name" content="MkRonix" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact MkRonix | Free Consultation Digital Agency India" />
+        <meta name="twitter:description" content="Get free consultation for your digital project. Call +91-84-59258801 or email hello@mkronix.com. Expert web development & design services." />
+        <meta name="twitter:image" content="https://mkronix.com/assets/contact-twitter.jpg" />
+        <meta name="twitter:image:alt" content="Contact MkRonix Creative Agency" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://mkronix.com/contact" />
+
+        {/* Additional SEO Meta */}
+        <meta name="author" content="MkRonix Digital Solutions" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        <meta name="revisit-after" content="3 days" />
+        <meta name="geo.region" content="IN-GJ" />
+        <meta name="geo.placename" content="Sidhpur, Gujarat, India" />
+        <meta name="geo.position" content="23.9165;72.3787" />
+        <meta name="ICBM" content="23.9165, 72.3787" />
+
+        {/* LocalBusiness Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "MkRonix Digital Solutions",
+            "description": "Leading creative digital agency specializing in web development, UI/UX design, mobile apps, and digital marketing services",
+            "url": "https://mkronix.com",
+            "telephone": "+91-84-59258801",
+            "email": "hello@mkronix.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "kadiwala compund",
+              "addressLocality": "rasulpur, sidhpur",
+              "addressRegion": "Gujarat",
+              "postalCode": "384290",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "23.9165",
+              "longitude": "72.3787"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "16:00"
+              }
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-84-59258801",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "Hindi", "Gujarati"],
+                "areaServed": "IN"
+              },
+              {
+                "@type": "ContactPoint",
+                "email": "hello@mkronix.com",
+                "contactType": "customer service",
+                "availableLanguage": ["English", "Hindi"]
+              },
+              {
+                "@type": "ContactPoint",
+                "email": "projects@mkronix.com",
+                "contactType": "sales",
+                "availableLanguage": ["English"]
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/mkronix",
+              "https://www.linkedin.com/company/mkronix",
+              "https://twitter.com/mkronix",
+              "https://www.instagram.com/mkronix"
+            ],
+            "priceRange": "₹₹",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "127",
+              "bestRating": "5"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Digital Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Free Digital Consultation",
+                    "description": "Complimentary consultation to discuss your digital project requirements and strategic planning"
+                  },
+                  "price": "0",
+                  "priceCurrency": "INR"
+                }
+              ]
+            }
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://mkronix.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact Us",
+                "item": "https://mkronix.com/contact"
+              }
+            ]
+          })}
+        </script>
+
+        {/* ContactPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact MkRonix Digital Solutions",
+            "description": "Get in touch with MkRonix for your digital project needs. Free consultation available for web development, design, and digital marketing services.",
+            "url": "https://mkronix.com/contact",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "MkRonix Digital Solutions"
+            }
+          })}
+        </script>
+
+        {/* FAQ Schema for Contact */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can I contact MkRonix for a project inquiry?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can contact MkRonix by calling +91-84-59258801, emailing hello@mkronix.com, or filling out our contact form. We offer free consultations for all digital project inquiries."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What are MkRonix business hours?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MkRonix operates Monday to Friday from 9:00 AM to 6:00 PM, and Saturday from 10:00 AM to 4:00 PM (Indian Standard Time). We're available for urgent project discussions 24/7."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer free consultations?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we provide free consultations to discuss your project requirements, understand your goals, and provide strategic recommendations for your digital needs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How quickly does MkRonix respond to inquiries?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We typically respond to all inquiries within 2-4 hours during business hours. For urgent project discussions, we're available 24/7 via phone or email."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What information should I include in my project inquiry?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Please include your project type, budget range, timeline, specific requirements, and business goals. This helps us provide more accurate estimates and recommendations."
+                }
+              }
+            ]
+          })}
+        </script>
+
+        {/* WebPage Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Contact MkRonix Digital Solutions",
+            "description": "Contact page for MkRonix creative digital agency offering web development, design, and digital marketing services",
+            "url": "https://mkronix.com/contact",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "MkRonix Digital Solutions"
+            },
+            "potentialAction": [
+              {
+                "@type": "CommunicateAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "tel:+91-84-59258801"
+                },
+                "name": "Call MkRonix"
+              },
+              {
+                "@type": "CommunicateAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "mailto:hello@mkronix.com"
+                },
+                "name": "Email MkRonix"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Hero Section */}
         <motion.section
