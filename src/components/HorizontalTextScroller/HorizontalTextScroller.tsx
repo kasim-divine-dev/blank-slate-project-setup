@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Img1 from '../../assets/img/card-3.jpeg';
+import Img1 from '@/assets/img/card-3.jpeg';
 
 interface Card {
     id: string;
