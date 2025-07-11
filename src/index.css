@@ -2,9 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "SpectralBridgeRegular";
+  src: url("/fonts/SpectralBridgeRegular-ZVmGm.otf");
+}
+
+@font-face {
+  font-family: "Boska-Black";
+  src: url("/fonts/Boska-Black.otf");
+}
+
+@font-face {
+  font-family: "Boska-Bold";
+  src: url("/fonts/Boska-Bold.otf");
+}
+
+@font-face {
+  font-family: "Boska-Regularpta";
+  src: url("/fonts/Boska-Regularpta.otf");
+}
+
+:root {
+  --cursor-border: rgba(255, 255, 255, 0.8);
+  --cursor-dot: rgba(255, 255, 255, 1);
+  --cursor-background: rgba(255, 255, 255, 0.2);
+  --cursor-mouse-down-border: rgba(255, 255, 255, 1);
+  --cursor-mouse-down-shadow: rgba(255, 255, 255, 0.4);
+  --cursor-link-hover-border: rgba(255, 255, 255, 1);
+  --cursor-link-hover-shadow: rgba(255, 255, 255, 0.4);
+  --cursor-trail: 255, 255, 255;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5 ease;
+}
+
+body {
+  background: #000000;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
 
 @layer base {
   :root {
