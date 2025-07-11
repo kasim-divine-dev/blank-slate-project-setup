@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code, Palette, Search, Smartphone, Globe, Zap } from 'lucide-react';
+import { ArrowUpRight, Play } from 'lucide-react';
 
 const Services: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -32,49 +32,47 @@ const Services: React.FC = () => {
 
   const services = [
     {
-      icon: Code,
-      title: "Web Development",
-      description: "Custom websites and web applications built with cutting-edge technologies for optimal performance and user experience.",
-      features: ["React & Next.js", "E-commerce Solutions", "Custom CMS", "Performance Optimization"]
+      number: "01",
+      title: "Graphic Design",
+      description: "Creating visually compelling designs that communicate your brand message effectively across all mediums.",
+      image: "/images/carousel/architect.png"
     },
     {
-      icon: Palette,
+      number: "02", 
       title: "UI/UX Design",
-      description: "Beautiful, intuitive designs that captivate users and drive engagement through thoughtful user experience.",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"]
+      description: "Designing intuitive user experiences that engage and delight users while achieving business objectives.",
+      image: "/images/carousel/architect.png"
     },
     {
-      icon: Search,
-      title: "Digital Marketing",
-      description: "Strategic digital marketing campaigns that boost your online presence and drive measurable results.",
-      features: ["SEO Optimization", "Social Media Marketing", "Content Strategy", "Analytics & Reporting"]
+      number: "03",
+      title: "Branding",
+      description: "Building strong brand identities that resonate with your target audience and stand out in the market.",
+      image: "/images/carousel/architect.png"
     },
     {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications that deliver exceptional performance across all devices.",
-      features: ["iOS & Android", "React Native", "App Store Optimization", "Push Notifications"]
-    },
-    {
-      icon: Globe,
-      title: "Brand Identity",
-      description: "Comprehensive brand identity solutions that establish your unique presence in the digital landscape.",
-      features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"]
-    },
-    {
-      icon: Zap,
-      title: "Performance Optimization",
-      description: "Speed up your digital platforms with advanced optimization techniques for maximum efficiency.",
-      features: ["Core Web Vitals", "Load Time Optimization", "Mobile Optimization", "SEO Enhancement"]
+      number: "04",
+      title: "Motion Graphic",
+      description: "Creating dynamic visual content that brings your brand to life through animation and motion design.",
+      image: "/images/carousel/architect.png"
     }
   ];
 
-  const process = [
-    { step: "01", title: "Discovery", desc: "Understanding your vision, goals, and target audience" },
-    { step: "02", title: "Strategy", desc: "Crafting a comprehensive plan tailored to your needs" },
-    { step: "03", title: "Design", desc: "Creating stunning visuals and user experiences" },
-    { step: "04", title: "Development", desc: "Building robust, scalable solutions" },
-    { step: "05", title: "Launch", desc: "Deploying your project with ongoing support" }
+  const workProcess = [
+    {
+      number: "01",
+      title: "Research and Analyze",
+      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit mauris auctor mauris nec rhoncus sed vehicula mauris vitae volutpat tellus mauris nec felis non lacus.",
+    },
+    {
+      number: "02", 
+      title: "Design Process",
+      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit mauris auctor mauris nec rhoncus sed vehicula mauris vitae volutpat tellus mauris nec felis non lacus.",
+    },
+    {
+      number: "03",
+      title: "Deliver & Payment",
+      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit mauris auctor mauris nec rhoncus sed vehicula mauris vitae volutpat tellus mauris nec felis non lacus.",
+    }
   ];
 
   return (
@@ -89,128 +87,150 @@ const Services: React.FC = () => {
         <link rel="canonical" href="/services" />
       </Helmet>
 
-      <main className="bg-darkBg text-darkText font-boska overflow-x-hidden">
+      <main className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-4 py-20">
+        <section className="pt-32 pb-16 px-4">
           <div ref={heroRef} className="max-w-6xl mx-auto text-center">
-            <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-boska-black mb-8"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Our <span className="text-lightText">Services</span>
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl text-darkText80 max-w-4xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Comprehensive digital solutions crafted to elevate your brand and drive meaningful growth in the digital landscape.
-            </motion.p>
+            <p className="text-sm text-[#F5E7D3]/60 mb-4 uppercase tracking-wider">Our Services</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Services We Offer
+            </h1>
+            <p className="text-lg text-[#F5E7D3]/80 max-w-2xl mx-auto">
+              Learn more about the services and the team behind it
+            </p>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  className="bg-darkText20 p-8 rounded-3xl hover:bg-darkText60 transition-all duration-500 group"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <service.icon className="w-16 h-16 mb-6 text-lightText group-hover:scale-110 transition-transform duration-300" />
-                  <h3 className="text-2xl font-boska-bold mb-4">{service.title}</h3>
-                  <p className="text-darkText80 mb-6 leading-relaxed">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="text-darkText60 flex items-center">
-                        <span className="w-2 h-2 bg-lightText rounded-full mr-3"></span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
+        {/* Hero Video Section */}
+        <section className="px-4 mb-20">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-blue-500/20 to-purple-500/20 aspect-video">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button className="w-16 h-16 bg-black rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                  <Play className="w-6 h-6 text-white ml-1" />
+                </button>
+              </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-2 justify-center mt-6">
+              <span className="px-4 py-2 bg-[#1D1C1C] rounded-full text-sm">Design</span>
+              <span className="px-4 py-2 bg-[#1D1C1C] rounded-full text-sm">Development</span>
+              <span className="px-4 py-2 bg-[#1D1C1C] rounded-full text-sm">Digital Marketing</span>
+              <span className="px-4 py-2 bg-[#1D1C1C] rounded-full text-sm">SEO</span>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-20 bg-darkText20">
-          <div className="max-w-6xl mx-auto px-4">
-            <motion.h2 
-              className="text-4xl md:text-6xl font-boska-bold text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Our Process
-            </motion.h2>
-            <div className="grid md:grid-cols-5 gap-6">
-              {process.map((item, index) => (
-                <motion.div
-                  key={item.step}
-                  className="text-center relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-lightText flex items-center justify-center text-darkBg font-boska-bold text-2xl">
-                    {item.step}
+        {/* Services List */}
+        <section className="px-4 mb-20">
+          <div className="max-w-6xl mx-auto">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.number}
+                className="group border-b border-[#484440] py-8 flex items-center justify-between hover:bg-[#1D1C1C]/50 px-6 -mx-6 rounded-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-8">
+                  <span className="text-4xl font-bold text-[#484440] group-hover:text-[#F5E7D3] transition-colors">
+                    {service.number}
+                  </span>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:text-white transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-[#F5E7D3]/70 max-w-2xl">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-boska-bold mb-3">{item.title}</h3>
-                  <p className="text-darkText80 text-sm">{item.desc}</p>
-                  {index < process.length - 1 && (
-                    <div className="hidden md:block absolute top-10 left-full w-full h-0.5 bg-darkText60 transform -translate-y-1/2"></div>
-                  )}
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-lg overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <ArrowUpRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Work Process Section */}
+        <section className="px-4 py-20 bg-[#1D1C1C]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-sm text-[#F5E7D3]/60 mb-4 uppercase tracking-wider">Our Values</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                How we work at Untitled
+              </h2>
+              <p className="text-[#F5E7D3]/80">
+                Our shared values keep us connected and guide us as one team.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {workProcess.map((process, index) => (
+                <motion.div
+                  key={process.number}
+                  className="bg-black p-8 rounded-2xl"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-12 h-12 bg-[#484440] rounded-lg flex items-center justify-center mb-6">
+                    <span className="text-white font-bold">{process.number}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{process.title}</h3>
+                  <p className="text-[#F5E7D3]/70 text-sm leading-relaxed">
+                    {process.description}
+                  </p>
+                  <ArrowUpRight className="w-5 h-5 mt-6 opacity-50" />
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto text-center px-4">
-            <motion.h2 
-              className="text-4xl md:text-6xl font-boska-bold mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Ready to Transform Your Digital Presence?
-            </motion.h2>
-            <motion.p 
-              className="text-xl text-darkText80 mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Let's discuss your project and create something extraordinary together.
-            </motion.p>
-            <motion.button
-              className="bg-lightText text-darkBg px-12 py-4 rounded-full text-lg font-boska-bold hover:bg-lightText80 transition-all duration-300 transform hover:scale-105"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get Started Today
-            </motion.button>
+        {/* Newsletter Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                  Join 2,000+ subscribers
+                </h2>
+                <p className="text-[#F5E7D3]/80">
+                  Stay in the loop with everything you need to know.
+                </p>
+              </div>
+              
+              <div className="flex gap-4 w-full md:w-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 md:w-80 px-4 py-3 bg-white text-black rounded-full placeholder:text-gray-500 focus:outline-none"
+                />
+                <button className="bg-white text-black px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+                  Subscribe
+                </button>
+              </div>
+            </div>
+            
+            <p className="text-xs text-[#F5E7D3]/60 mt-4">
+              We care about your data in our{' '}
+              <a href="#" className="underline hover:no-underline">
+                privacy policy
+              </a>
+            </p>
           </div>
         </section>
       </main>
