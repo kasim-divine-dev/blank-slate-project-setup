@@ -1,0 +1,99 @@
+
+{
+  "pages": {
+    "blog": {
+      "title": "Blog | MkRonix - Web Development, Design & Digital Marketing Insights India",
+      "description": "Stay updated with latest trends in web development, UI/UX design, and digital marketing. Expert insights, tutorials, and industry news from MkRonix creative digital agency India.",
+      "keywords": "web development blog India, UI UX design insights, digital marketing trends, React development tutorials, web design best practices, mobile app development guide, SEO tips India, creative agency blog, technology trends 2025",
+      "url": "https://mkronix.com/blog",
+      "image": "https://mkronix.com/assets/blog-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Blog",
+          "url": "https://mkronix.com/blog"
+        }
+      ]
+    },
+    "blogPost": {
+      "title": "{title} | MkRonix Blog - Expert Insights on Web Development & Design",
+      "description": "{excerpt}",
+      "keywords": "{tags}, web development, UI UX design, digital marketing, MkRonix blog",
+      "url": "https://mkronix.com/blog/{slug}",
+      "image": "https://mkronix.com/assets/blog/{slug}-og.jpg",
+      "type": "article",
+      "articleData": {
+        "section": "Technology",
+        "author": "{author}"
+      }
+    }
+  },
+  "blogPosts": [
+    {
+      "id": "react-performance-optimization",
+      "title": "10 React Performance Optimization Techniques Every Developer Should Know",
+      "slug": "react-performance-optimization-techniques",
+      "excerpt": "Discover proven React performance optimization techniques that can significantly improve your app's speed and user experience. Learn from real-world examples and best practices.",
+      "content": "React applications can become slow and unresponsive if not optimized properly...",
+      "author": "Rohit Sharma",
+      "publishedAt": "2025-01-10",
+      "updatedAt": "2025-01-10",
+      "readTime": "8 min read",
+      "category": "Web Development",
+      "tags": ["React", "Performance", "JavaScript", "Web Development", "Optimization"],
+      "image": "https://mkronix.com/assets/blog/react-performance.jpg",
+      "featured": true
+    },
+    {
+      "id": "ui-ux-trends-2025",
+      "title": "UI/UX Design Trends 2025: What's Shaping the Future of Digital Design",
+      "slug": "ui-ux-design-trends-2025",
+      "excerpt": "Explore the latest UI/UX design trends for 2025 that are revolutionizing user experiences across web and mobile applications.",
+      "content": "The world of UI/UX design is constantly evolving...",
+      "author": "Priya Patel",
+      "publishedAt": "2025-01-08",
+      "updatedAt": "2025-01-08",
+      "readTime": "6 min read",
+      "category": "Design",
+      "tags": ["UI Design", "UX Design", "Design Trends", "User Experience", "2025"],
+      "image": "https://mkronix.com/assets/blog/ui-ux-trends.jpg",
+      "featured": true
+    },
+    {
+      "id": "seo-guide-2025",
+      "title": "Complete SEO Guide for 2025: Strategies That Actually Work",
+      "slug": "complete-seo-guide-2025",
+      "excerpt": "Master SEO in 2025 with our comprehensive guide covering technical SEO, content optimization, and the latest algorithm updates.",
+      "content": "Search Engine Optimization continues to be crucial...",
+      "author": "Vikash Kumar",
+      "publishedAt": "2025-01-05",
+      "updatedAt": "2025-01-05",
+      "readTime": "12 min read",
+      "category": "Digital Marketing",
+      "tags": ["SEO", "Digital Marketing", "Search Engine", "Content Marketing", "2025"],
+      "image": "https://mkronix.com/assets/blog/seo-guide.jpg",
+      "featured": false
+    }
+  ],
+  "categories": [
+    {
+      "name": "Web Development",
+      "slug": "web-development",
+      "description": "Latest insights and tutorials on web development technologies and best practices."
+    },
+    {
+      "name": "Design",
+      "slug": "design",
+      "description": "UI/UX design trends, tips, and creative inspiration for modern digital experiences."
+    },
+    {
+      "name": "Digital Marketing",
+      "slug": "digital-marketing",
+      "description": "SEO, social media, and digital marketing strategies to grow your online presence."
+    }
+  ]
+}

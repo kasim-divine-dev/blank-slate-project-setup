@@ -1,0 +1,97 @@
+
+{
+  "pages": {
+    "caseStudies": {
+      "title": "Case Studies | MkRonix - 20+ Successful Digital Projects & Client Success Stories India",
+      "description": "Explore MkRonix's detailed case studies showcasing 20+ successful digital transformations. Real results, proven strategies, and client testimonials from web development, UI/UX design, and digital marketing projects across India.",
+      "keywords": "mkronix case studies, digital transformation case studies India, web development success stories, UI UX design portfolio case studies, mobile app development results, digital marketing ROI case studies, client success stories India, before after web design, project results showcase, creative agency case studies Mumbai",
+      "url": "https://mkronix.com/case-studies",
+      "image": "https://mkronix.com/assets/case-studies-showcase-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Case Studies",
+          "url": "https://mkronix.com/case-studies"
+        }
+      ]
+    },
+    "caseStudyDetail": {
+      "title": "{projectName} Case Study | MkRonix - Detailed Project Analysis & Results",
+      "description": "Detailed case study of {projectName} project by MkRonix. Discover the challenges, solutions, design process, development approach, and measurable results achieved for this {projectType} project.",
+      "keywords": "{projectName} case study, {projectType} project analysis, web development case study details, UI UX design process, project methodology, client results, before after comparison, project timeline, development challenges solutions",
+      "url": "https://mkronix.com/case-studies/{slug}",
+      "image": "https://mkronix.com/assets/case-studies/{slug}-og.jpg",
+      "type": "article",
+      "articleData": {
+        "section": "Case Studies",
+        "author": "MkRonix Team"
+      }
+    }
+  },
+  "caseStudies": [
+    {
+      "id": "ecommerce-redesign",
+      "title": "E-commerce Platform Redesign",
+      "slug": "ecommerce-redesign",
+      "projectType": "Web Development & UI/UX Design",
+      "client": "Fashion Retail Company",
+      "industry": "E-commerce",
+      "duration": "3 months",
+      "teamSize": "5 members",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+      "challenge": "Outdated design leading to high bounce rates and low conversions",
+      "solution": "Complete redesign with modern UI/UX and performance optimization",
+      "results": {
+        "conversionRate": "+150%",
+        "pageSpeed": "+85%",
+        "userEngagement": "+200%",
+        "revenue": "+180%"
+      },
+      "image": "https://mkronix.com/assets/case-studies/ecommerce-redesign.jpg",
+      "gallery": [
+        "https://mkronix.com/assets/case-studies/ecommerce-1.jpg",
+        "https://mkronix.com/assets/case-studies/ecommerce-2.jpg",
+        "https://mkronix.com/assets/case-studies/ecommerce-3.jpg"
+      ],
+      "testimonial": {
+        "quote": "MkRonix transformed our online presence completely. The new design not only looks amazing but has significantly increased our sales.",
+        "author": "Sarah Johnson",
+        "position": "CEO, Fashion Retail Company"
+      }
+    },
+    {
+      "id": "mobile-app-development",
+      "title": "Healthcare Mobile App",
+      "slug": "healthcare-mobile-app",
+      "projectType": "Mobile App Development",
+      "client": "HealthTech Startup",
+      "industry": "Healthcare",
+      "duration": "4 months",
+      "teamSize": "6 members",
+      "technologies": ["React Native", "Firebase", "Node.js", "Express"],
+      "challenge": "Creating a secure, user-friendly healthcare app with telemedicine features",
+      "solution": "Cross-platform mobile app with video consultations and secure data handling",
+      "results": {
+        "downloads": "50K+",
+        "userRating": "4.8/5",
+        "consultations": "10K+",
+        "doctorSatisfaction": "95%"
+      },
+      "image": "https://mkronix.com/assets/case-studies/healthcare-app.jpg",
+      "gallery": [
+        "https://mkronix.com/assets/case-studies/healthcare-1.jpg",
+        "https://mkronix.com/assets/case-studies/healthcare-2.jpg",
+        "https://mkronix.com/assets/case-studies/healthcare-3.jpg"
+      ],
+      "testimonial": {
+        "quote": "The app has revolutionized how we connect with patients. MkRonix understood our vision perfectly.",
+        "author": "Dr. Amit Patel",
+        "position": "Founder, HealthTech Startup"
+      }
+    }
+  ]
+}

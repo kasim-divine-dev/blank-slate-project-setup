@@ -1,0 +1,389 @@
+
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Calendar, Clock, Tag, User, ArrowRight, Search, Filter } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
+import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
+import { DynamicSEO } from '../components/SEO/DynamicSEO';
+import { enhancedSeoService, BlogPost } from '../services/enhancedSeoService';
+
+const Blog: React.FC = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [searchTerm, setSearchTerm] = useState<string>('');
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
+  const blogPosts = enhancedSeoService.getBlogPosts();
+  const featuredPosts = enhancedSeoService.getFeaturedBlogPosts();
+  const categories = enhancedSeoService.getBlogCategories();
+
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesCategory = selectedCategory === 'all' || post.category.toLowerCase() === selectedCategory;
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero floating animation
+    if (heroRef.current) {
+      gsap.to(heroRef.current, {
+        y: -20,
+        duration: 3,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1
+      });
+    }
+
+    // Blog cards animation
+    gsap.utils.toArray('.blog-card').forEach((card: any, index) => {
+      gsap.fromTo(card, {
+        y: 100,
+        opacity: 0,
+        scale: 0.8
+      }, {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        delay: index * 0.1,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%"
+        }
+      });
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [filteredPosts]);
+
+  return (
+    <>
+      <DynamicSEO pageName="blog" />
+      
+      <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
+        {/* Hidden SEO Content */}
+        <div className="sr-only">
+          <h1>MkRonix Blog - Expert Insights on Web Development, UI/UX Design, and Digital Marketing</h1>
+          <p>Stay updated with the latest trends in web development, UI/UX design, and digital marketing. Expert insights, tutorials, and industry news from India's leading creative digital agency.</p>
+          <span>Latest posts about React development, UI design trends, SEO strategies, mobile app development, and digital transformation insights.</span>
+        </div>
+
+        {/* Hero Section */}
+        <motion.section
+          className="relative min-h-screen flex items-center justify-center px-4"
+          style={{ y: textY }}
+        >
+          <BoxesLayer gridColor="#484440" />
+          <motion.div
+            className="absolute inset-0 pointer-events-none z-0"
+            style={{
+              y: backgroundY,
+              background: `radial-gradient(circle at 30% 70%, rgba(72, 68, 64, 0.4), transparent 50%),
+                         radial-gradient(circle at 70% 30%, rgba(72, 68, 64, 0.3), transparent 50%)`
+            }}
+          />
+
+          <div ref={heroRef} className="relative z-10 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="mb-8"
+            >
+              <DrawCircleText
+                normalText="Insights that inspire "
+                normalText2="and expertise that transforms."
+                circleText="innovation"
+              />
+            </motion.div>
+
+            <motion.p
+              className="text-xl md:text-2xl text-[#F5E7D3]/80 max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              Discover the latest trends in web development, design, and digital marketing. Expert insights from India's leading creative digital agency.
+            </motion.p>
+          </div>
+        </motion.section>
+
+        {/* Search and Filter Section */}
+        <section className="py-16 px-4 bg-[#1D1C1C]/30">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
+              {/* Search */}
+              <motion.div
+                className="relative w-full md:w-96"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#F5E7D3]/60" />
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-black/50 border border-[#484440]/50 rounded-2xl text-[#F5E7D3] focus:border-[#F5E7D3] focus:outline-none transition-all duration-300 backdrop-blur-sm"
+                />
+              </motion.div>
+
+              {/* Category Filter */}
+              <motion.div
+                className="flex flex-wrap gap-3"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <button
+                  onClick={() => setSelectedCategory('all')}
+                  className={`px-6 py-3 rounded-full transition-all duration-300 ${
+                    selectedCategory === 'all'
+                      ? 'bg-[#F5E7D3] text-black'
+                      : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
+                  }`}
+                >
+                  All Posts
+                </button>
+                {categories.map((category) => (
+                  <button
+                    key={category.slug}
+                    onClick={() => setSelectedCategory(category.slug)}
+                    className={`px-6 py-3 rounded-full transition-all duration-300 ${
+                      selectedCategory === category.slug
+                        ? 'bg-[#F5E7D3] text-black'
+                        : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
+                    }`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Posts */}
+        {featuredPosts.length > 0 && (
+          <section className="py-32 px-4">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                className="text-center mb-20"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl md:text-6xl font-black mb-6">
+                  Featured <span className="text-[#484440]">Articles</span>
+                </h2>
+              </motion.div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {featuredPosts.slice(0, 2).map((post, index) => (
+                  <motion.article
+                    key={post.id}
+                    className="blog-card group cursor-pointer"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -10 }}
+                  >
+                    <Link to={`/blog/${post.slug}`} className="block">
+                      <div className="relative overflow-hidden rounded-3xl mb-6">
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-[#F5E7D3]/20 backdrop-blur-sm text-[#F5E7D3] px-4 py-2 rounded-full text-sm font-medium">
+                            Featured
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-4 text-[#F5E7D3]/60 text-sm">
+                          <span className="flex items-center gap-2">
+                            <Calendar className="w-4 h-4" />
+                            {new Date(post.publishedAt).toLocaleDateString()}
+                          </span>
+                          <span className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" />
+                            {post.readTime}
+                          </span>
+                          <span className="bg-[#484440]/30 px-3 py-1 rounded-full">
+                            {post.category}
+                          </span>
+                        </div>
+                        
+                        <h3 className="text-2xl font-bold group-hover:text-white transition-colors duration-300">
+                          {post.title}
+                        </h3>
+                        
+                        <p className="text-[#F5E7D3]/80 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2 text-[#F5E7D3]/60">
+                            <User className="w-4 h-4" />
+                            {post.author}
+                          </div>
+                          
+                          <div className="flex items-center gap-2 text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300">
+                            Read More
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.article>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* All Posts */}
+        <section className="py-32 px-4 bg-[#1D1C1C]/30">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-6xl font-black mb-6">
+                Latest <span className="text-[#484440]">Insights</span>
+              </h2>
+              <p className="text-xl text-[#F5E7D3]/80">
+                {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} found
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.map((post, index) => (
+                <motion.article
+                  key={post.id}
+                  className="blog-card group cursor-pointer"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: (index % 6) * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                >
+                  <Link to={`/blog/${post.slug}`} className="block">
+                    <div className="relative overflow-hidden rounded-3xl mb-6">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      {post.featured && (
+                        <div className="absolute top-4 left-4">
+                          <span className="bg-[#F5E7D3]/20 backdrop-blur-sm text-[#F5E7D3] px-3 py-1 rounded-full text-xs font-medium">
+                            Featured
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-4 text-[#F5E7D3]/60 text-sm">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {new Date(post.publishedAt).toLocaleDateString()}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {post.readTime}
+                        </span>
+                      </div>
+                      
+                      <div className="bg-[#484440]/30 px-3 py-1 rounded-full text-xs inline-block">
+                        {post.category}
+                      </div>
+                      
+                      <h3 className="text-lg font-bold group-hover:text-white transition-colors duration-300 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-[#F5E7D3]/80 text-sm leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-[#F5E7D3]/60 text-sm">
+                          <User className="w-3 h-3" />
+                          {post.author}
+                        </div>
+                        
+                        <div className="flex items-center gap-1 text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300 text-sm">
+                          Read
+                          <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
+                        </div>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        {post.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[#F5E7D3]/60 text-xs flex items-center gap-1"
+                          >
+                            <Tag className="w-2 h-2" />
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+
+            {filteredPosts.length === 0 && (
+              <motion.div
+                className="text-center py-20"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <p className="text-xl text-[#F5E7D3]/60">
+                  No articles found matching your criteria.
+                </p>
+              </motion.div>
+            )}
+          </div>
+        </section>
+      </div>
+    </>
+  );
+};
+
+export default Blog;

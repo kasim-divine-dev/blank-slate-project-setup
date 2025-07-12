@@ -1,0 +1,77 @@
+
+{
+  "pages": {
+    "services": {
+      "title": "Our Services | MkRonix - Web Development, UI/UX Design & Digital Marketing India",
+      "description": "Comprehensive digital services by MkRonix India. Expert web development, stunning UI/UX design, mobile app development, digital marketing, and SEO services. Transform your business with our creative solutions.",
+      "keywords": "digital services India, web development services Mumbai, UI UX design agency, mobile app development India, digital marketing services, SEO services India, website redesign, e-commerce development, branding services, creative agency services Mumbai",
+      "url": "https://mkronix.com/services",
+      "image": "https://mkronix.com/assets/services-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Services",
+          "url": "https://mkronix.com/services"
+        }
+      ]
+    }
+  },
+  "services": [
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "description": "Custom web applications built with modern technologies",
+      "features": [
+        "Responsive Design",
+        "Performance Optimization",
+        "SEO Friendly",
+        "Security First"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "MongoDB"],
+      "startingPrice": "₹50,000"
+    },
+    {
+      "id": "ui-ux-design",
+      "title": "UI/UX Design",
+      "description": "User-centered design that converts visitors into customers",
+      "features": [
+        "User Research",
+        "Wireframing",
+        "Prototyping",
+        "Usability Testing"
+      ],
+      "technologies": ["Figma", "Adobe XD", "Sketch", "Principle"],
+      "startingPrice": "₹30,000"
+    },
+    {
+      "id": "mobile-app-development",
+      "title": "Mobile App Development",
+      "description": "Native and cross-platform mobile applications",
+      "features": [
+        "iOS & Android",
+        "Cross-platform",
+        "App Store Optimization",
+        "Maintenance & Support"
+      ],
+      "technologies": ["React Native", "Flutter", "Swift", "Kotlin"],
+      "startingPrice": "₹80,000"
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing",
+      "description": "Growth-driven marketing strategies that deliver results",
+      "features": [
+        "SEO Optimization",
+        "Social Media Marketing",
+        "Content Marketing",
+        "PPC Advertising"
+      ],
+      "technologies": ["Google Ads", "Facebook Ads", "Analytics", "SEMrush"],
+      "startingPrice": "₹25,000/month"
+    }
+  ]
+}
