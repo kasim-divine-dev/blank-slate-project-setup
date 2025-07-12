@@ -1,4 +1,3 @@
-
 import seoData from '../data/seoData.json';
 import teamData from '../data/teamData.json';
 
@@ -19,16 +18,15 @@ export interface SEOPageData {
   };
 }
 
-export interface SchemaData {
-  organization?: any;
-  website?: any;
-  localBusiness?: any;
-  creativeWork?: any;
-  aboutPage?: any;
-  team?: any;
-  itemList?: any;
-  faq?: any;
-  breadcrumb?: any;
+export interface SchemaConfig {
+  organization?: boolean;
+  website?: boolean;
+  localBusiness?: boolean;
+  creativeWork?: boolean;
+  aboutPage?: boolean;
+  team?: boolean;
+  itemList?: boolean;
+  faq?: Array<{ question: string; answer: string }>;
 }
 
 class SEOService {
@@ -45,7 +43,7 @@ class SEOService {
 
   generateSchemas(pageName: string): any[] {
     const schemas: any[] = [];
-    const schemaConfig = this.seoData.schemas[pageName as keyof typeof this.seoData.schemas];
+    const schemaConfig = this.seoData.schemas[pageName as keyof typeof this.seoData.schemas] as SchemaConfig;
     
     if (!schemaConfig) return [];
 
