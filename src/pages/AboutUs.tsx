@@ -81,32 +81,18 @@ const AboutUs: React.FC = () => {
 
   const teamMembers = [
     {
-      name: "Arjun Sharma",
+      name: "Kasim Kadiwala",
       role: "Creative Director",
       image: "/api/placeholder/300/300",
       skills: ["Strategy", "Leadership", "Vision"],
       color: "from-purple-500 to-pink-500"
     },
     {
-      name: "Priya Patel",
-      role: "Lead Designer",
-      image: "/api/placeholder/300/300",
-      skills: ["UI/UX", "Branding", "Motion"],
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      name: "Rajesh Kumar",
+      name: "Moinudding Chudiwal",
       role: "Development Head",
       image: "/api/placeholder/300/300",
       skills: ["Frontend", "Backend", "DevOps"],
       color: "from-green-500 to-emerald-500"
-    },
-    {
-      name: "Sneha Gupta",
-      role: "Strategy Manager",
-      image: "/api/placeholder/300/300",
-      skills: ["Analytics", "Growth", "Marketing"],
-      color: "from-orange-500 to-red-500"
     }
   ];
 
@@ -210,7 +196,7 @@ const AboutUs: React.FC = () => {
             "employee": [
               {
                 "@type": "Person",
-                "name": "Arjun Sharma",
+                "name": "Kasim Kadiwala",
                 "jobTitle": "Creative Director",
                 "worksFor": {
                   "@type": "Organization",
@@ -219,8 +205,8 @@ const AboutUs: React.FC = () => {
               },
               {
                 "@type": "Person",
-                "name": "Priya Patel",
-                "jobTitle": "Lead Designer",
+                "name": "Moinuddin Chudiwal",
+                "jobTitle": "Developer Head",
                 "worksFor": {
                   "@type": "Organization",
                   "name": "MkRonix Digital Solutions"
@@ -283,7 +269,7 @@ const AboutUs: React.FC = () => {
               {
                 "@type": "Person",
                 "position": 1,
-                "name": "Arjun Sharma",
+                "name": "Kasim Kadiwala",
                 "jobTitle": "Creative Director",
                 "description": "Strategic leader with expertise in creative direction and business development",
                 "knowsAbout": ["Strategy", "Leadership", "Vision"],
@@ -295,10 +281,10 @@ const AboutUs: React.FC = () => {
               {
                 "@type": "Person",
                 "position": 2,
-                "name": "Priya Patel",
-                "jobTitle": "Lead Designer",
-                "description": "Award-winning designer specializing in UI/UX and brand identity",
-                "knowsAbout": ["UI/UX", "Branding", "Motion Design"],
+                "name": "Moinuddin Chudiwal",
+                "jobTitle": "Developer Head",
+                "description": "Developer with a passion for building innovative solutions and a deep understanding of web development",
+                "knowsAbout": ["React", "Node.js", "UI/UX Design", "Brand Identity"],
                 "worksFor": {
                   "@type": "Organization",
                   "name": "MkRonix Digital Solutions"
