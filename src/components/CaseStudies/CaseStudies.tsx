@@ -13,8 +13,8 @@ const CaseStudies = () => {
         () => {
             const images = gsap.utils.toArray(".case-studies-img");
 
-            images.forEach((img, i) => {
-                const imgElement = img.querySelector("img");
+            images.forEach((img: Element, i) => {
+                const imgElement = (img as Element).querySelector("img");
 
                 ScrollTrigger.create({
                     trigger: img,
@@ -33,7 +33,7 @@ const CaseStudies = () => {
                     trigger: img,
                     start: "top top",
                     end: () =>
-                        `+=${document.querySelector(".case-studies-item").offsetHeight *
+                        `+=${(document.querySelector(".case-studies-item") as HTMLElement).offsetHeight *
                         (images.length - i - 1)
                         }`,
                     pin: true,

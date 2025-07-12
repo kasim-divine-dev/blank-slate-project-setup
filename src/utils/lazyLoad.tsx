@@ -1,13 +1,12 @@
 
 import React, { Suspense, lazy, ComponentType } from "react";
 
-// Component lazy loading with loading fallback
 export const LazyLoad = <P extends Record<string, any> = {}>(
   Component: () => Promise<{ default: ComponentType<P> }>,
   fallback?: React.ReactNode
 ) => {
   const LazyComponent = lazy(Component);
-  
+
   return (props: P) => (
     <Suspense fallback={fallback || <div className="min-h-[200px] flex items-center justify-center">Loading...</div>}>
       <LazyComponent {...(props as any)} />
@@ -23,12 +22,12 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
 }
 
-export const LazyImage: React.FC<LazyImageProps> = ({ 
-  src, 
-  alt, 
-  fallback = "/api/placeholder/400/300", 
+export const LazyImage: React.FC<LazyImageProps> = ({
+  src,
+  alt,
+  fallback = "/api/placeholder/400/300",
   className = "",
-  ...props 
+  ...props
 }) => {
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [hasError, setHasError] = React.useState(false);

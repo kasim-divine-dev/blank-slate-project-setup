@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from 'react-helmet-async';
 import { LazyLoad } from "../utils/lazyLoad";
 
@@ -8,7 +7,6 @@ const ServiceCard = LazyLoad(() => import('../components/ServiceCard/ServiceCard
 const Carousel = LazyLoad(() => import('../components/Carousel/Carousel'));
 const CaseStudies = LazyLoad(() => import('../components/CaseStudies/CaseStudies'));
 const HorizontalTextScroller = LazyLoad(() => import('../components/HorizontalTextScroller/HorizontalTextScroller'));
-const CardStack = LazyLoad(() => import('../components/CardStack/CardStack'));
 const GetInTouch = LazyLoad(() => import('../components/GetInTouch/GetInTouch'));
 
 const Index = () => {
@@ -201,7 +199,6 @@ const Index = () => {
         <Carousel />
         <CaseStudies />
         <HorizontalTextScroller />
-        <CardStack />
         <GetInTouch />
 
         {/* Add structured content for SEO */}
