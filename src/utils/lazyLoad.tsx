@@ -2,7 +2,7 @@
 import React, { Suspense, lazy, ComponentType } from "react";
 
 // Component lazy loading with loading fallback
-export const LazyLoad = <P extends object>(
+export const LazyLoad = <P extends Record<string, any> = {}>(
   Component: () => Promise<{ default: ComponentType<P> }>,
   fallback?: React.ReactNode
 ) => {
@@ -10,7 +10,7 @@ export const LazyLoad = <P extends object>(
   
   return (props: P) => (
     <Suspense fallback={fallback || <div className="min-h-[200px] flex items-center justify-center">Loading...</div>}>
-      <LazyComponent {...props} />
+      <LazyComponent {...(props as any)} />
     </Suspense>
   );
 };
