@@ -82,12 +82,16 @@ const BlogPost: React.FC = () => {
     <>
       <DynamicSEO 
         pageName="blogPost" 
-        dynamicData={{
+        customData={{
           title: blogPost.title,
-          excerpt: blogPost.excerpt,
-          tags: blogPost.tags.join(', '),
-          author: blogPost.author,
-          slug: blogPost.slug
+          description: blogPost.excerpt,
+          keywords: blogPost.tags.join(', '),
+          articleData: {
+            author: blogPost.author,
+            publishedTime: blogPost.publishedAt,
+            modifiedTime: blogPost.updatedAt,
+            section: blogPost.category
+          }
         }} 
       />
       
