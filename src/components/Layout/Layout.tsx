@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <CustomCursor />
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main className="font-boska relative overflow-x-hidden">
+      <main className="font-boska relative overflow-x-hidden bg-black min-h-screen">
         {children}
       </main>
       <Footer />

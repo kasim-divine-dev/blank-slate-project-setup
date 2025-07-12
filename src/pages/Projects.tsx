@@ -1,51 +1,19 @@
-
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-import { ArrowUpRight, Calendar, User } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
-
-gsap.registerPlugin(ScrollTrigger);
+import ProjectCard from '../components/ProjectCard/ProjectCard';
+import Pagination from '../components/Pagination/Pagination';
 
 const Projects: React.FC = () => {
-  useGSAP(() => {
-    gsap.fromTo(
-      '.project-card',
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.projects-grid',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-  });
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 8;
+  const totalPages = Math.ceil(projectsData.length / projectsPerPage);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
-  };
+  const currentProjects = projectsData.slice(
+    (currentPage - 1) * projectsPerPage,
+    currentPage * projectsPerPage
+  );
 
   return (
     <>
@@ -259,16 +227,12 @@ const Projects: React.FC = () => {
         {/* Hero Section */}
         <motion.section
           className="pt-32 pb-16 px-4"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              className="mb-16"
-              variants={itemVariants}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
+            <div className="mb-16">
               <p className="text-sm text-[#F5E7D3]/60 mb-4 uppercase tracking-wider">Our Work</p>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
                 Our Projects
@@ -276,74 +240,25 @@ const Projects: React.FC = () => {
               <p className="text-lg text-[#F5E7D3]/80 max-w-2xl mx-auto">
                 Learn more about the projects and the team behind it
               </p>
-            </motion.div>
+            </div>
           </div>
         </motion.section>
 
         {/* Projects Grid */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="projects-grid grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {projectsData.slice(0, 4).map((project, index) => (
-                <motion.article
-                  key={project.id}
-                  className={`project-card group relative overflow-hidden rounded-2xl ${index === 0 || index === 3 ? 'md:aspect-[4/3]' : 'md:aspect-[4/3]'
-                    }`}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative h-full">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">
-                        {project.title}
-                      </h3>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4 text-sm text-white/80">
-                          <span>{project.category}</span>
-                          <span>•</span>
-                          <span>{project.year}</span>
-                        </div>
-                        <ArrowUpRight className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.article>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+              {currentProjects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
               ))}
             </div>
 
             {/* Pagination */}
-            <div className="flex items-center justify-center gap-4">
-              <button className="flex items-center gap-2 text-[#F5E7D3]/60 hover:text-[#F5E7D3] transition-colors">
-                <ArrowUpRight className="w-4 h-4 rotate-180" />
-                Previous
-              </button>
-
-              <div className="flex items-center gap-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((page, index) => (
-                  <button
-                    key={page}
-                    className={`w-8 h-8 rounded-full text-sm transition-colors ${index === 0
-                      ? 'bg-white text-black'
-                      : 'text-[#F5E7D3]/60 hover:text-[#F5E7D3]'
-                      }`}
-                  >
-                    {page}
-                  </button>
-                ))}
-              </div>
-
-              <button className="flex items-center gap-2 text-[#F5E7D3]/60 hover:text-[#F5E7D3] transition-colors">
-                Next
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
-            </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </div>
         </section>
 

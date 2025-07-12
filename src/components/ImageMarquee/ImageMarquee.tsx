@@ -2,6 +2,7 @@
 import React, { useRef, useEffect } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { LazyImage } from '../../utils/lazyLoad';
 
 const images = [
     "/images/carousel/algora.png",
@@ -85,7 +86,7 @@ const ImageMarquee: React.FC = () => {
                 {images.map((image, index) => (
                     <SplideSlide key={`marquee-image-${index + 1}`} className="flex items-center justify-center">
                         <div className="h-32 md:h-40 w-auto overflow-hidden rounded-lg transition-all duration-500">
-                            <img
+                            <LazyImage
                                 src={image}
                                 alt={`Marquee ${index % images.length + 1}`}
                                 className="h-full w-auto object-cover hover:scale-110 transition-transform duration-500"

@@ -1,29 +1,17 @@
-import React, { useEffect, useState } from "react";
-import ReactLenis from "lenis/react";
+import React from "react";
 import { Helmet } from 'react-helmet-async';
-import CardStack from "../components/CardStack/CardStack";
-import Carousel from "../components/Carousel/Carousel";
-import CaseStudies from "../components/CaseStudies/CaseStudies";
-import GetInTouch from "../components/GetInTouch/GetInTouch";
-import HeroSection from '../components/HeroSection/HeroSection';
-import HorizontalTextScroller from "../components/HorizontalTextScroller/HorizontalTextScroller";
-import PreLoading from "../components/PreLoading/PreLoading";
-import ServiceCard from "../components/ServiceCard/ServiceCard";
+import { LazyLoad } from "../utils/lazyLoad";
+
+// Lazy load components for better performance
+const HeroSection = LazyLoad(() => import('../components/HeroSection/HeroSection'));
+const ServiceCard = LazyLoad(() => import('../components/ServiceCard/ServiceCard'));
+const Carousel = LazyLoad(() => import('../components/Carousel/Carousel'));
+const CaseStudies = LazyLoad(() => import('../components/CaseStudies/CaseStudies'));
+const HorizontalTextScroller = LazyLoad(() => import('../components/HorizontalTextScroller/HorizontalTextScroller'));
+const CardStack = LazyLoad(() => import('../components/CardStack/CardStack'));
+const GetInTouch = LazyLoad(() => import('../components/GetInTouch/GetInTouch'));
 
 const Index = () => {
-  const [count, setCount] = useState(3);
-
-  useEffect(() => {
-    let timer = setInterval(() => {
-      setCount((prev) => {
-        if (prev === 0) {
-          clearInterval(timer);
-          return 0;
-        } else return prev - 1;
-      });
-    }, 1000);
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -204,49 +192,43 @@ const Index = () => {
         </script>
       </Helmet>
 
-      <ReactLenis root>
-        {count > 0 ? (
-          <PreLoading count={count} />
-        ) : (
-          <div className="font-boska relative overflow-x-hidden">
-            {/* Add H1 for SEO */}
-            <h1 className="sr-only">MkRonix - Leading Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
+      <div className="font-boska relative overflow-x-hidden bg-black text-[#F5E7D3]">
+        {/* Add H1 for SEO */}
+        <h1 className="sr-only">MkRonix - Leading Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
 
-            <HeroSection />
-            <ServiceCard />
-            <Carousel />
-            <CaseStudies />
-            <HorizontalTextScroller />
-            <CardStack />
-            <GetInTouch />
+        <HeroSection />
+        <ServiceCard />
+        <Carousel />
+        <CaseStudies />
+        <HorizontalTextScroller />
+        <CardStack />
+        <GetInTouch />
 
-            {/* Add structured content for SEO */}
-            <section className="py-16 px-4 bg-black" style={{ display: 'none' }}>
-              <div className="max-w-4xl mx-auto">
-                <h2>About MkRonix Creative Digital Agency India</h2>
-                <p>MkRonix is a leading creative digital agency based in India, specializing in web development, UI/UX design, mobile app development, and digital marketing services. With over 300 successful projects and 5+ years of experience, we help businesses transform their digital presence and achieve measurable growth.</p>
+        {/* Add structured content for SEO */}
+        <section className="py-16 px-4 bg-black" style={{ display: 'none' }}>
+          <div className="max-w-4xl mx-auto">
+            <h2>About MkRonix Creative Digital Agency India</h2>
+            <p>MkRonix is a leading creative digital agency based in India, specializing in web development, UI/UX design, mobile app development, and digital marketing services. With over 300 successful projects and 5+ years of experience, we help businesses transform their digital presence and achieve measurable growth.</p>
 
-                <h3>Our Core Services:</h3>
-                <ul>
-                  <li><strong>Web Development India:</strong> Custom websites, e-commerce platforms, and web applications</li>
-                  <li><strong>UI/UX Design:</strong> User-centered design solutions for web and mobile</li>
-                  <li><strong>Mobile App Development:</strong> Native and cross-platform mobile applications</li>
-                  <li><strong>Digital Marketing:</strong> SEO, PPC, social media marketing, and content strategy</li>
-                </ul>
+            <h3>Our Core Services:</h3>
+            <ul>
+              <li><strong>Web Development India:</strong> Custom websites, e-commerce platforms, and web applications</li>
+              <li><strong>UI/UX Design:</strong> User-centered design solutions for web and mobile</li>
+              <li><strong>Mobile App Development:</strong> Native and cross-platform mobile applications</li>
+              <li><strong>Digital Marketing:</strong> SEO, PPC, social media marketing, and content strategy</li>
+            </ul>
 
-                <h3>Why Choose MkRonix?</h3>
-                <ul>
-                  <li>5+ years of proven experience</li>
-                  <li>300+ successful projects delivered</li>
-                  <li>95% client satisfaction rate</li>
-                  <li>Expert team of 50+ professionals</li>
-                  <li>Serving clients across India and internationally</li>
-                </ul>
-              </div>
-            </section>
+            <h3>Why Choose MkRonix?</h3>
+            <ul>
+              <li>5+ years of proven experience</li>
+              <li>300+ successful projects delivered</li>
+              <li>95% client satisfaction rate</li>
+              <li>Expert team of 50+ professionals</li>
+              <li>Serving clients across India and internationally</li>
+            </ul>
           </div>
-        )}
-      </ReactLenis>
+        </section>
+      </div>
     </>
   );
 };
