@@ -1,20 +1,16 @@
 
-import React, { Suspense, lazy, ComponentType } from "react";
+import React, { Suspense, lazy } from "react";
 
-export const LazyLoad = <P extends Record<string, any> = {}>(
-  Component: () => Promise<{ default: ComponentType<P> }>,
-  fallback?: React.ReactNode
-) => {
-  const LazyComponent = lazy(Component);
 
-  return (props: P) => (
-    <Suspense fallback={fallback || <div className="min-h-[200px] flex items-center justify-center">Loading...</div>}>
-      <LazyComponent {...(props as any)} />
+export const LazyLoad = (importFunc: () => Promise<{ default: React.ComponentType<any> }>) => {
+  const LazyComponent = lazy(importFunc);
+
+  return (props: any) => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent {...props} />
     </Suspense>
   );
 };
-
-// Image lazy loading component
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;

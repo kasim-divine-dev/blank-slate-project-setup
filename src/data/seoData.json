@@ -55,6 +55,84 @@
           "url": "https://mkronix.com/about"
         }
       ]
+    },
+    "contact": {
+      "title": "Contact MkRonix | Get Free Quote - Best Digital Agency Mumbai India | Web Development Services",
+      "description": "Contact MkRonix for free consultation and quote. Leading digital agency in Mumbai offering web development, UI/UX design, mobile apps & digital marketing. Call +91-84-59258801 or email us today.",
+      "keywords": "contact mkronix, free consultation digital agency, web development quote Mumbai, UI UX design quote India, mobile app development cost, digital marketing consultation, contact creative agency Mumbai, get quote website design, free digital marketing consultation India, contact best agency Mumbai",
+      "url": "https://mkronix.com/contact",
+      "image": "https://mkronix.com/assets/contact-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Contact Us",
+          "url": "https://mkronix.com/contact"
+        }
+      ],
+      "customMeta": {
+        "geo.region": "IN-MH",
+        "geo.placename": "Mumbai, Maharashtra, India",
+        "geo.position": "19.0760;72.8777",
+        "ICBM": "19.0760, 72.8777"
+      }
+    },
+    "services": {
+      "title": "Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India",
+      "description": "Comprehensive digital services by MkRonix - Expert web development, stunning UI/UX design, mobile app development, SEO, digital marketing, and brand identity services across India. 99% client satisfaction.",
+      "keywords": "digital services India, web development services Mumbai, UI UX design services, mobile app development company, digital marketing agency India, SEO services Mumbai, brand identity design, e-commerce development India, responsive web design services, custom software development Mumbai",
+      "url": "https://mkronix.com/services",
+      "image": "https://mkronix.com/assets/services-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Services",
+          "url": "https://mkronix.com/services"
+        }
+      ]
+    },
+    "case-studies": {
+      "title": "Case Studies | MkRonix Success Stories - Real Client Results & Digital Transformation Examples India",
+      "description": "Explore MkRonix case studies showcasing real client success stories, digital transformation results, and measurable business impact. See how we've helped 300+ clients achieve their digital goals across India.",
+      "keywords": "mkronix case studies, client success stories India, digital transformation examples, web development case studies, UI UX design success stories, mobile app case studies, digital marketing results, client testimonials Mumbai, business growth case studies, ROI digital marketing case studies India",
+      "url": "https://mkronix.com/case-studies",
+      "image": "https://mkronix.com/assets/case-studies-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Case Studies",
+          "url": "https://mkronix.com/case-studies"
+        }
+      ]
+    },
+    "blogs": {
+      "title": "Digital Marketing Blog | MkRonix - Web Development, UI/UX Design & Tech Insights India",
+      "description": "Stay updated with latest digital marketing trends, web development tips, UI/UX design insights, and technology updates from MkRonix experts. Free resources for businesses in India and globally.",
+      "keywords": "digital marketing blog India, web development blog, UI UX design blog, technology insights Mumbai, digital transformation blog, SEO tips India, mobile app development blog, creative agency blog, digital marketing trends 2025, web design tips India",
+      "url": "https://mkronix.com/blogs",
+      "image": "https://mkronix.com/assets/blog-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Blog",
+          "url": "https://mkronix.com/blogs"
+        }
+      ]
     }
   },
   "organization": {
@@ -65,10 +143,10 @@
     "foundingDate": "2020-01-01",
     "numberOfEmployees": "50-100",
     "address": {
-      "streetAddress": "kadiwala compund",
-      "addressLocality": "rasulpur, sidhpur",
-      "addressRegion": "Gujarat",
-      "postalCode": "384290",
+      "streetAddress": "Jogeshwari",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400102",
       "addressCountry": "IN"
     },
     "contactPoint": {
@@ -76,7 +154,9 @@
       "contactType": "customer service",
       "availableLanguage": [
         "English",
-        "Hindi"
+        "Hindi",
+        "Marathi",
+        "Gujarati"
       ],
       "areaServed": "IN"
     },
@@ -140,6 +220,86 @@
         {
           "question": "What makes MkRonix different from other agencies?",
           "answer": "MkRonix combines creativity with technology, offering comprehensive digital solutions with a proven track record of 99% client satisfaction and measurable business results."
+        }
+      ]
+    },
+    "contact": {
+      "contactPage": true,
+      "localBusiness": true,
+      "organization": true,
+      "faq": [
+        {
+          "question": "How can I contact MkRonix for a project quote?",
+          "answer": "You can contact MkRonix by calling +91-84-59258801, emailing us, or filling out our online contact form. We offer free consultations and provide detailed project quotes within 24 hours."
+        },
+        {
+          "question": "What information should I provide when requesting a quote?",
+          "answer": "Please provide details about your project requirements, timeline, budget range, and any specific features needed. The more information you share, the more accurate quote we can provide."
+        },
+        {
+          "question": "Does MkRonix offer free consultation?",
+          "answer": "Yes, MkRonix offers free initial consultations to understand your project requirements and provide expert advice on the best digital solutions for your business."
+        }
+      ]
+    },
+    "services": {
+      "service": true,
+      "itemList": true,
+      "organization": true,
+      "faq": [
+        {
+          "question": "What web development services does MkRonix provide?",
+          "answer": "MkRonix provides custom web development, responsive website design, e-commerce development, CMS development, web application development, and website maintenance services using latest technologies."
+        },
+        {
+          "question": "Do you provide mobile app development services?",
+          "answer": "Yes, we develop native iOS and Android apps, cross-platform mobile applications, progressive web apps (PWAs), and provide complete mobile app design and development services."
+        },
+        {
+          "question": "What digital marketing services do you offer?",
+          "answer": "Our digital marketing services include SEO, Google Ads, social media marketing, content marketing, email marketing, conversion rate optimization, and comprehensive digital marketing strategy development."
+        },
+        {
+          "question": "How long does it take to complete a project?",
+          "answer": "Project timelines vary based on complexity. Simple websites take 2-4 weeks, complex web applications 8-16 weeks, and mobile apps 12-20 weeks. We provide detailed timelines during consultation."
+        }
+      ]
+    },
+    "case-studies": {
+      "article": true,
+      "creativeWork": true,
+      "itemList": true,
+      "faq": [
+        {
+          "question": "Can I see examples of MkRonix's previous work?",
+          "answer": "Yes, our case studies showcase detailed examples of successful projects including before/after results, client testimonials, and measurable business impact across various industries."
+        },
+        {
+          "question": "What results have MkRonix clients achieved?",
+          "answer": "Our clients have achieved significant results including 150% increase in website traffic, 200% boost in online conversions, 300% growth in social media engagement, and substantial ROI improvements."
+        },
+        {
+          "question": "Do you work with businesses in my industry?",
+          "answer": "MkRonix has successfully worked with clients across 50+ industries including healthcare, education, e-commerce, real estate, finance, manufacturing, and technology startups."
+        }
+      ]
+    },
+    "blogs": {
+      "blog": true,
+      "article": true,
+      "itemList": true,
+      "faq": [
+        {
+          "question": "How often does MkRonix publish new blog content?",
+          "answer": "We publish new blog posts weekly, covering latest trends in web development, UI/UX design, digital marketing, and technology insights to help businesses stay ahead."
+        },
+        {
+          "question": "Can I subscribe to MkRonix blog updates?",
+          "answer": "Yes, you can subscribe to our newsletter to receive weekly blog updates, industry insights, and exclusive tips directly in your inbox."
+        },
+        {
+          "question": "Do you accept guest blog posts?",
+          "answer": "We occasionally accept high-quality guest posts from industry experts. Please contact us with your topic proposal and writing samples for consideration."
         }
       ]
     }

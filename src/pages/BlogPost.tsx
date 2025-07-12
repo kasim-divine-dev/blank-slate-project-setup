@@ -2,11 +2,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Calendar, Clock, Tag, User, Share2, Twitter, Facebook, Linkedin, Copy } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Copy, Facebook, Linkedin, Share2, Tag, Twitter, User } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useParams, Navigate } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
-import { enhancedSeoService, BlogPost as BlogPostType } from '../services/enhancedSeoService';
+import { enhancedSeoService } from '../services/enhancedSeoService';
 
 const BlogPost: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,10 +15,10 @@ const BlogPost: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const blogPost = slug ? enhancedSeoService.getBlogPost(slug) : null;
-  const relatedPosts = enhancedSeoService.getBlogPosts().filter(post => 
-    post.id !== blogPost?.id && 
-    (post.category === blogPost?.category || 
-     post.tags.some(tag => blogPost?.tags.includes(tag)))
+  const relatedPosts = enhancedSeoService.getBlogPosts().filter(post =>
+    post.id !== blogPost?.id &&
+    (post.category === blogPost?.category ||
+      post.tags.some(tag => blogPost?.tags.includes(tag)))
   ).slice(0, 3);
 
   const { scrollYProgress } = useScroll({
@@ -53,7 +53,7 @@ const BlogPost: React.FC = () => {
   const handleShare = (platform: string) => {
     const url = window.location.href;
     const title = blogPost?.title || '';
-    
+
     switch (platform) {
       case 'twitter':
         window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
@@ -80,8 +80,8 @@ const BlogPost: React.FC = () => {
 
   return (
     <>
-      <DynamicSEO 
-        pageName="blogPost" 
+      <DynamicSEO
+        pageName="blogPost"
         customData={{
           title: blogPost.title,
           description: blogPost.excerpt,
@@ -92,9 +92,9 @@ const BlogPost: React.FC = () => {
             modifiedTime: blogPost.updatedAt,
             section: blogPost.category
           }
-        }} 
+        }}
       />
-      
+
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Progress Bar */}
         <div className="fixed top-0 left-0 w-full h-1 bg-[#484440]/30 z-50">
@@ -344,20 +344,20 @@ const BlogPost: React.FC = () => {
                           className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       </div>
-                      
+
                       <div className="space-y-4">
                         <div className="bg-[#484440]/30 px-3 py-1 rounded-full text-xs inline-block">
                           {post.category}
                         </div>
-                        
+
                         <h3 className="text-xl font-bold group-hover:text-white transition-colors duration-300 line-clamp-2">
                           {post.title}
                         </h3>
-                        
+
                         <p className="text-[#F5E7D3]/80 text-sm leading-relaxed line-clamp-3">
                           {post.excerpt}
                         </p>
-                        
+
                         <div className="flex items-center gap-4 text-[#F5E7D3]/60 text-xs">
                           <span>{post.author}</span>
                           <span>{post.readTime}</span>

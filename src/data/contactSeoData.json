@@ -1,9 +1,8 @@
-
 {
   "pages": {
     "contact": {
       "title": "Contact Us | MkRonix - Get Free Consultation for Web Development & Digital Marketing India",
-      "description": "Contact MkRonix for your digital project needs. Free consultation available! Call +91-84-59258801 or email hello@mkronix.com. Expert web development, design & marketing services across India.",
+      "description": "Contact MkRonix for your digital project needs. Free consultation available! Call +91-84-59258801 or email mkronix.official@gmail.com. Expert web development, design & marketing services across India.",
       "keywords": "contact mkronix, web development inquiry India, digital marketing consultation, UI UX design quote, mobile app development contact, free consultation digital agency, mkronix phone number, mkronix email, digital agency contact Mumbai, project inquiry India, get quote web development, contact creative agency",
       "url": "https://mkronix.com/contact",
       "image": "https://mkronix.com/assets/contact-consultation-og.jpg",
@@ -22,16 +21,16 @@
   },
   "contactInfo": {
     "phone": "+91-84-59258801",
-    "email": "hello@mkronix.com",
+    "email": "mkronix.official@gmail.com",
     "address": {
-      "street": "kadiwala compund",
-      "city": "rasulpur, sidhpur",
-      "state": "Gujarat",
-      "postalCode": "384290",
+      "street": "Jogeshwari",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "postalCode": "400102",
       "country": "India"
     },
     "businessHours": {
-      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "weekdays": "Monday - Friday: 10:00 AM - 10:00 PM",
       "saturday": "Saturday: 10:00 AM - 4:00 PM",
       "sunday": "Sunday: Closed"
     },

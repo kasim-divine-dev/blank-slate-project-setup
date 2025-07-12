@@ -6,7 +6,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: ["hello@mkronix.com"],
+    details: ["mkronix.official@gmail.com"],
     description: "Drop us a line anytime",
     gradient: "from-purple-500/20 to-pink-500/20"
   },
@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["Kadiwala Compound, Rasulpur", "Sidhpur, Gujarat 384290", "India"],
+    details: ["Mumbai", "India"],
     description: "Our creative studio location",
     gradient: "from-green-500/20 to-emerald-500/20"
   },

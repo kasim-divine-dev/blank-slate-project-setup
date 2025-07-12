@@ -51,6 +51,7 @@ body {
   margin: 0;
   padding: 0;
   cursor: none;
+  font-family: "Boska-Black", 'SpectralBridgeRegular', sans-serif;
 }
 
 ::-webkit-scrollbar {

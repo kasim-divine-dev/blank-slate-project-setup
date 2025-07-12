@@ -1,63 +1,145 @@
-
 export const projectsData = [
   {
     id: 1,
-    title: "Modern Architecture Studio",
-    description: "Contemporary architectural design with innovative solutions for residential and commercial spaces.",
-    image: "/images/carousel/architect.png",
-    category: "Architecture",
+    title: "ALGORA - AI Art Platform",
+    description: "Interactive digital experience showcasing the fusion of art and algorithms with dynamic visual storytelling.",
+    image: "/images/carousel/algora.png",
+    category: "Digital Experience",
     year: "2024",
-    client: "Urban Developers",
-    url: "/projects/architecture-studio"
+    client: "ALGORA Tech",
+    url: "/projects/algora-platform",
+    technologies: ["React", "Three.js", "WebGL", "AI Integration"]
   },
   {
     id: 2,
-    title: "Digital Innovation Hub",
-    description: "A cutting-edge workspace designed for tech startups and creative professionals.",
+    title: "Visionary Architects Portfolio",
+    description: "Modern architectural portfolio website featuring dynamic layouts and immersive project showcases.",
     image: "/images/carousel/architect.png",
-    category: "Interior Design",
+    category: "Architecture Portfolio",
     year: "2024",
-    client: "Tech Innovations Ltd",
-    url: "/projects/innovation-hub"
+    client: "Visionary Architects",
+    url: "/projects/architect-portfolio",
+    technologies: ["Next.js", "Framer Motion", "Responsive Design"]
+  },
+  {
+    id: 13,
+    title: "WisdomMed Healthcare Platform",
+    description: "Healthcare technology platform focusing on innovative solutions and service excellence.",
+    image: "/images/carousel/wisdommeds.png",
+    category: "Healthcare Tech",
+    year: "2024",
+    client: "WisdomMed Solutions",
+    url: "/projects/wisdommed-platform",
+    technologies: ["React", "Healthcare APIs", "Compliance Standards"]
   },
   {
     id: 3,
-    title: "Sustainable Living Complex",
-    description: "Eco-friendly residential complex with smart home integration and green spaces.",
-    image: "/images/carousel/architect.png",
-    category: "Architecture",
-    year: "2023",
-    client: "Green Living Corp",
-    url: "/projects/sustainable-living"
-  },
-  {
-    id: 4,
-    title: "Cultural Arts Center",
-    description: "Multi-purpose cultural facility promoting arts and community engagement.",
-    image: "/images/carousel/architect.png",
-    category: "Public Architecture",
-    year: "2023",
-    client: "City Council",
-    url: "/projects/arts-center"
-  },
-  {
-    id: 5,
-    title: "Corporate Headquarters",
-    description: "Modern office space with flexible work environments and wellness facilities.",
-    image: "/images/carousel/architect.png",
-    category: "Commercial",
+    title: "QuickClock Dashboard",
+    description: "Employee time tracking and analytics dashboard with real-time notifications and comprehensive reporting.",
+    image: "/images/carousel/attendance.png",
+    category: "SaaS Dashboard",
     year: "2024",
-    client: "Future Corp",
-    url: "/projects/corporate-hq"
+    client: "QuickClock Solutions",
+    url: "/projects/quickclock-dashboard",
+    technologies: ["React", "Chart.js", "Real-time Analytics", "Material UI"]
   },
   {
     id: 6,
-    title: "Boutique Hotel Design",
-    description: "Luxury boutique hotel with unique architectural elements and premium amenities.",
-    image: "/images/carousel/architect.png",
-    category: "Hospitality",
-    year: "2023",
-    client: "Luxury Hotels Group",
-    url: "/projects/boutique-hotel"
-  }
+    title: "SEALCO Corporate Identity",
+    description: "Elegant corporate website design emphasizing trust, experience, and professional excellence.",
+    image: "/images/carousel/Ca-site.png",
+    category: "Corporate Branding",
+    year: "2024",
+    client: "SEALCO Corporation",
+    url: "/projects/sealco-identity",
+    technologies: ["Custom Design", "Brand Strategy", "Responsive Layout"]
+  },
+  {
+    id: 4,
+    title: "Binsina Pharma Export",
+    description: "Professional pharmaceutical export company website with global reach and compliance focus.",
+    image: "/images/carousel/binsina.png",
+    category: "Corporate Website",
+    year: "2024",
+    client: "Binsina Pharma Export Pvt Ltd",
+    url: "/projects/binsina-pharma",
+    technologies: ["WordPress", "Custom Theme", "SEO Optimization"]
+  },
+  {
+    id: 5,
+    title: "Maxwheels Auto Platform",
+    description: "Car marketplace platform with advanced search functionality and interactive vehicle showcases.",
+    image: "/images/carousel/cars-web.png",
+    category: "E-commerce Platform",
+    year: "2024",
+    client: "Maxwheels Auto",
+    url: "/projects/maxwheels-platform",
+    technologies: ["React", "Node.js", "Database Integration", "Search Filters"]
+  },
+  {
+    id: 7,
+    title: "BEFIT Fitness Platform",
+    description: "Dynamic fitness website with motivational design, trainer profiles, and workout programs.",
+    image: "/images/carousel/gym-rats.png",
+    category: "Fitness & Wellness",
+    year: "2024",
+    client: "BEFIT Fitness",
+    url: "/projects/befit-platform",
+    technologies: ["React", "Video Integration", "Booking System"]
+  },
+  {
+    id: 8,
+    title: "Travel Planner Application",
+    description: "Comprehensive travel planning platform with itinerary comparison and booking management.",
+    image: "/images/carousel/itinerary-2.png",
+    category: "Travel Tech",
+    year: "2024",
+    client: "Travel Solutions Inc",
+    url: "/projects/travel-planner",
+    technologies: ["React", "API Integration", "Payment Gateway", "Booking System"]
+  },
+  {
+    id: 9,
+    title: "KICKSTER Sneaker Store",
+    description: "Modern e-commerce platform for sneakers with immersive product displays and smooth user experience.",
+    image: "/images/carousel/kikcster.png",
+    category: "E-commerce Fashion",
+    year: "2024",
+    client: "KICKSTER Brand",
+    url: "/projects/kickster-store",
+    technologies: ["Shopify", "Custom Theme", "Product Configurator"]
+  },
+  {
+    id: 10,
+    title: "KkJewels Luxury Collection",
+    description: "Sophisticated jewelry website showcasing premium collections with elegant visual presentation.",
+    image: "/images/carousel/kkJewells.png",
+    category: "Luxury E-commerce",
+    year: "2024",
+    client: "KkJewels",
+    url: "/projects/kkjewels-collection",
+    technologies: ["Custom CMS", "High-res Gallery", "Luxury UX"]
+  },
+  {
+    id: 11,
+    title: "Analytics Dashboard System",
+    description: "Comprehensive business intelligence dashboard with real-time data visualization and reporting tools.",
+    image: "/images/carousel/lotto-app.png",
+    category: "Data Visualization",
+    year: "2024",
+    client: "Data Insights Corp",
+    url: "/projects/analytics-dashboard",
+    technologies: ["React", "D3.js", "Real-time Data", "Chart Libraries"]
+  },
+  {
+    id: 12,
+    title: "Luxury Watches Collection",
+    description: "Premium timepiece showcase website with sophisticated design and detailed product presentations.",
+    image: "/images/carousel/luxury-watches.png",
+    category: "Luxury Retail",
+    year: "2024",
+    client: "Luxury Watches Ltd",
+    url: "/projects/luxury-watches",
+    technologies: ["Custom Design", "Product Showcase", "Premium UX"]
+  },
 ];
