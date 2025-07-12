@@ -5,10 +5,11 @@ import { MdArrowOutward } from 'react-icons/md';
 import Case1 from '../../assets/img/p1.png';
 import Case2 from '../../assets/img/p2.png';
 import Case3 from '../../assets/img/p3.png';
+import { DynamicSEO } from '../SEO/DynamicSEO';
 import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
 import './CaseStudies.css';
-const CaseStudies = () => {
 
+const CaseStudies = () => {
     useGSAP(
         () => {
             const images = gsap.utils.toArray(".case-studies-img");
@@ -47,8 +48,21 @@ const CaseStudies = () => {
             };
         },
     );
+
     return (
         <>
+            <DynamicSEO pageName="caseStudies" />
+            
+            {/* Hidden SEO Content */}
+            <div className="sr-only">
+                <h1>MkRonix Case Studies - 20+ Successful Digital Projects & Client Success Stories</h1>
+                <p>Explore detailed case studies showcasing our successful digital transformations across web development, UI/UX design, mobile apps, and digital marketing projects in India.</p>
+                <span>Featured Projects: Elevé Fashion Platform, Patria Time Management, Creators Social Network</span>
+                <span>Technologies: React, Node.js, UI/UX Design, Mobile Development, Digital Marketing</span>
+                <span>Industries: Fashion, Productivity, Social Media, E-commerce</span>
+                <span>Results: 150% conversion increase, 85% performance boost, 4.8/5 user ratings</span>
+            </div>
+
             <section className="h-screen flex justify-center items-center px-4">
                 <DrawCircleText
                     normalText={"Exploring groundbreaking that redefine "}
@@ -56,6 +70,7 @@ const CaseStudies = () => {
                     circleText={"Projects"}
                 />
             </section>
+            
             <section className="case-studies-items relative w-full h-full flex -mt-2">
                 <div className="case-studies-items-content relative z-[2] flex-[1]">
                     <div className="px-4 case-studies-item case-studies-item-1 w-full h-max md:h-[100svh]">
@@ -71,7 +86,7 @@ const CaseStudies = () => {
                                 Elevate your style with real-time trend insights and sustainable fashion choices—all in one seamless experience.
                             </p>
                             <div className="case-studies-item-inner-link md:hidden my-[2em] flex items-center gap-[0.5em]">
-                                <a href="/archive" className='text-darkText80'>Discover Elevé</a>
+                                <a href="/case-studies/eleve-fashion-platform" className='text-darkText80'>Discover Elevé</a>
                                 <div className="link-icon relative top-[0.125rem]">
                                     <MdArrowOutward size={24} />
                                 </div>
@@ -92,7 +107,7 @@ const CaseStudies = () => {
                                 Designed for efficiency, Patria helps users stay on top of deadlines, meetings, and daily routines seamlessly.
                             </p>
                             <div className="case-studies-item-inner-link md:hidden my-[2em] flex items-center gap-[0.5em]">
-                                <a href="/archive" className='text-darkText80'>Explore Patria</a>
+                                <a href="/case-studies/patria-time-management" className='text-darkText80'>Explore Patria</a>
                                 <div className="link-icon relative top-[0.125rem]">
                                     <MdArrowOutward size={24} />
                                 </div>
@@ -113,23 +128,23 @@ const CaseStudies = () => {
                                 Creators empowers individuals to build, share, and grow their brand like never before.
                             </p>
                             <div className="case-studies-item-inner-link md:hidden my-[2em] flex items-center gap-[0.5em]">
-                                <a href="/archive" className='text-darkText80'>Join the Movement</a>
+                                <a href="/case-studies/creators-social-platform" className='text-darkText80'>Join the Movement</a>
                                 <div className="link-icon relative top-[0.125rem]">
                                     <MdArrowOutward size={24} />
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
+                
                 <div className="case-studies-items-images max-md:hidden relative flex-[1]">
                     <div className="case-studies-img relative will-change-transform rounded-[1em] overflow-hidden z-[1] case-studies-img-1 w-full h-[100svh]">
                         <img src={Case1} alt={`lifestyle project`} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[2]' />
                         <div className="hero-img-overlay"></div>
                         <div className="case-studies-img-link max-md:hidden absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                            <a className='w-full h-full flex items-center justify-center' href="/archive">
+                            <a className='w-full h-full flex items-center justify-center' href="/case-studies/eleve-fashion-platform">
                                 <span className='flex items-center text-darkText80'>
-                                    (&nbsp; View Article <MdArrowOutward />
+                                    (&nbsp; View Case Study <MdArrowOutward />
                                     &nbsp;)
                                 </span>
                             </a>
@@ -139,9 +154,9 @@ const CaseStudies = () => {
                         <img src={Case2} alt={`time management project`} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[2]' />
                         <div className="hero-img-overlay"></div>
                         <div className="case-studies-img-link max-md:hidden absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                            <a className='w-full h-full flex items-center justify-center' href="/archive">
+                            <a className='w-full h-full flex items-center justify-center' href="/case-studies/patria-time-management">
                                 <span className='flex items-center text-darkText80'>
-                                    (&nbsp; View Article <MdArrowOutward />
+                                    (&nbsp; View Case Study <MdArrowOutward />
                                     &nbsp;)
                                 </span>
                             </a>
@@ -151,16 +166,16 @@ const CaseStudies = () => {
                         <img src={Case3} alt={`creators project`} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[2]' />
                         <div className="hero-img-overlay"></div>
                         <div className="case-studies-img-link max-md:hidden absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                            <a className='w-full h-full flex items-center justify-center' href="/archive">
+                            <a className='w-full h-full flex items-center justify-center' href="/case-studies/creators-social-platform">
                                 <span className='flex items-center text-darkText80'>
-                                    (&nbsp; View Article <MdArrowOutward />
+                                    (&nbsp; View Case Study <MdArrowOutward />
                                     &nbsp;)
                                 </span>
                             </a>
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
         </>
     )
 }

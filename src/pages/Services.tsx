@@ -3,9 +3,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Award, Code, Palette, Play, Smartphone, Target, TrendingUp, Users, Zap } from 'lucide-react';
 import React, { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
 import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
+import { DynamicSEO } from '../components/SEO/DynamicSEO';
 
 const Services: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -85,7 +85,8 @@ const Services: React.FC = () => {
       icon: Code,
       technologies: ["React", "Next.js", "Node.js", "TypeScript"],
       gradient: "from-purple-500/20 to-pink-500/20",
-      projects: "120+"
+      projects: "120+",
+      startingPrice: "₹50,000"
     },
     {
       number: "02",
@@ -95,7 +96,8 @@ const Services: React.FC = () => {
       icon: Palette,
       technologies: ["Figma", "Adobe XD", "Sketch", "Framer"],
       gradient: "from-blue-500/20 to-cyan-500/20",
-      projects: "85+"
+      projects: "85+",
+      startingPrice: "₹30,000"
     },
     {
       number: "03",
@@ -105,7 +107,8 @@ const Services: React.FC = () => {
       icon: Smartphone,
       technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
       gradient: "from-green-500/20 to-emerald-500/20",
-      projects: "65+"
+      projects: "65+",
+      startingPrice: "₹80,000"
     },
     {
       number: "04",
@@ -115,7 +118,8 @@ const Services: React.FC = () => {
       icon: TrendingUp,
       technologies: ["SEO", "PPC", "Social Media", "Analytics"],
       gradient: "from-orange-500/20 to-red-500/20",
-      projects: "200+"
+      projects: "200+",
+      startingPrice: "₹25,000/month"
     }
   ];
 
@@ -152,233 +156,19 @@ const Services: React.FC = () => {
 
   return (
     <>
-// Enhanced SEO for Services.tsx - Replace existing Helmet content
-
-      <Helmet>
-        {/* Primary Meta Tags */}
-        <title>Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India</title>
-        <meta name="description" content="Comprehensive digital services by MkRonix India: Custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 20+ successful projects. Free consultation available." />
-
-        {/* Enhanced Keywords */}
-        <meta name="keywords" content="digital services India, web development services Mumbai, UI UX design agency, mobile app development company, digital marketing services, custom website development, responsive web design, ecommerce development, SEO services India, PPC management, social media marketing, brand identity design, graphic design services, digital transformation, technology consulting, software development India" />
-
-        {/* Enhanced Open Graph */}
-        <meta property="og:title" content="Digital Services | MkRonix - Complete Web Development & Design Solutions India" />
-        <meta property="og:description" content="Transform your business with MkRonix's comprehensive digital services. Expert web development, UI/UX design, mobile apps, and digital marketing. 20+ successful projects across India." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mkronix.com/services" />
-        <meta property="og:image" content="https://mkronix.com/assets/services-portfolio-og.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="MkRonix Digital Services - Web Development, Design & Marketing" />
-        <meta property="og:locale" content="en_IN" />
-        <meta property="og:site_name" content="MkRonix" />
-
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Digital Services | MkRonix - Web Development & Design India" />
-        <meta name="twitter:description" content="Comprehensive digital solutions: Web development, UI/UX design, mobile apps & digital marketing. 20+ successful projects." />
-        <meta name="twitter:image" content="https://mkronix.com/assets/services-twitter.jpg" />
-        <meta name="twitter:image:alt" content="MkRonix Digital Services Portfolio" />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://mkronix.com/services" />
-
-        {/* Additional SEO Meta */}
-        <meta name="author" content="MkRonix Digital Solutions" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="revisit-after" content="3 days" />
-
-        {/* Service Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Digital Services by MkRonix",
-            "description": "Comprehensive digital solutions including web development, UI/UX design, mobile app development, and digital marketing services.",
-            "provider": {
-              "@type": "Organization",
-              "name": "MkRonix Digital Solutions",
-              "url": "https://mkronix.com"
-            },
-            "serviceType": "Digital Marketing and Web Development",
-            "areaServed": {
-              "@type": "Country",
-              "name": "India"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Digital Services Portfolio",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Web Development",
-                    "description": "Custom websites and web applications built with cutting-edge technologies like React, Next.js, and Node.js",
-                    "category": "Web Development",
-                    "provider": {
-                      "@type": "Organization",
-                      "name": "MkRonix Digital Solutions"
-                    }
-                  },
-                  "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "priceCurrency": "INR",
-                    "price": "50000",
-                    "description": "Starting from ₹50,000"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "UI/UX Design",
-                    "description": "User-centered design solutions that create meaningful experiences from wireframes to interactive prototypes",
-                    "category": "Design",
-                    "provider": {
-                      "@type": "Organization",
-                      "name": "MkRonix Digital Solutions"
-                    }
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Mobile App Development",
-                    "description": "Native and cross-platform mobile applications using React Native, Flutter, Swift, and Kotlin",
-                    "category": "Mobile Development",
-                    "provider": {
-                      "@type": "Organization",
-                      "name": "MkRonix Digital Solutions"
-                    }
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Digital Marketing",
-                    "description": "Strategic digital marketing campaigns including SEO, PPC, social media marketing, and analytics",
-                    "category": "Digital Marketing",
-                    "provider": {
-                      "@type": "Organization",
-                      "name": "MkRonix Digital Solutions"
-                    }
-                  }
-                }
-              ]
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "127",
-              "bestRating": "5"
-            }
-          })}
-        </script>
-
-        {/* Breadcrumb Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://mkronix.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Services",
-                "item": "https://mkronix.com/services"
-              }
-            ]
-          })}
-        </script>
-
-        {/* FAQ Schema for Services */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What web development services does MkRonix offer?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "MkRonix offers comprehensive web development services including custom websites, e-commerce platforms, web applications, responsive design, and CMS development using technologies like React, Next.js, Node.js, and TypeScript."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How much do MkRonix digital services cost?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Our services start from ₹50,000 for basic websites, with custom pricing based on project complexity and requirements. We offer free consultations to provide accurate quotes for your specific needs."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does MkRonix provide ongoing support after project completion?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we provide comprehensive ongoing support including maintenance, updates, security monitoring, and optimization services to ensure your digital solutions continue performing at their best."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What makes MkRonix different from other digital agencies?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "MkRonix combines creativity with cutting-edge technology, offers transparent pricing, maintains 99% client satisfaction rate, and provides end-to-end digital solutions with a proven track record of 20+ successful projects."
-                }
-              }
-            ]
-          })}
-        </script>
-
-        {/* HowTo Schema for Our Process */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "MkRonix Digital Project Process",
-            "description": "Our proven 4-step methodology for delivering exceptional digital solutions",
-            "step": [
-              {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Discovery & Strategy",
-                "text": "Understanding your business, goals, and target audience through comprehensive research and analysis to develop a strategic roadmap for success."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Design & Prototype",
-                "text": "Creating innovative designs and interactive prototypes, ensuring every detail aligns with your brand and user expectations."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Development & Testing",
-                "text": "Building robust solutions using cutting-edge technologies while maintaining highest quality standards through rigorous testing processes."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Launch & Optimize",
-                "text": "Ensuring smooth launch with ongoing support and continuous optimization based on real-world data and user feedback."
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
+      <DynamicSEO pageName="services" />
+      
+      {/* Hidden SEO Content */}
+      <div className="sr-only">
+        <h1>Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India</h1>
+        <p>Comprehensive digital services by MkRonix India including custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 20+ successful projects completed.</p>
+        <span>Services: Web Development (React, Next.js, Node.js), UI/UX Design (Figma, Adobe XD), Mobile Development (React Native, Flutter), Digital Marketing (SEO, PPC, Social Media)</span>
+        <span>Pricing: Web Development from ₹50,000, UI/UX Design from ₹30,000, Mobile Apps from ₹80,000, Digital Marketing from ₹25,000/month</span>
+        <span>Industries: E-commerce, Healthcare, Education, Finance, Startups, Enterprise</span>
+        <span>Technologies: React, Next.js, Node.js, TypeScript, Figma, React Native, Flutter, Google Analytics, Facebook Ads</span>
+        <span>Process: Discovery & Strategy, Design & Prototype, Development & Testing, Launch & Optimize</span>
+        <span>Location: Gujarat, India | Serving: Mumbai, Delhi, Bangalore, Ahmedabad, Pan India</span>
+      </div>
 
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
@@ -559,6 +349,9 @@ const Services: React.FC = () => {
                           <div className="text-sm text-[#F5E7D3]/60">
                             {service.projects} projects
                           </div>
+                          <div className="text-sm font-bold text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300">
+                            Starting {service.startingPrice}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -671,7 +464,7 @@ const Services: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
-                Why Choose <span className="text-[#484440]">Mkronix?</span>
+                Why Choose <span className="text-[#484440]">MkRonix?</span>
               </h2>
               <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto">
                 We're not just service providers – we're your strategic partners in digital success

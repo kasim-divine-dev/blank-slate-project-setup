@@ -3,9 +3,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Clock, Mail, MapPin, Phone, Send, Sparkles } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
 import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
+import { DynamicSEO } from '../components/SEO/DynamicSEO';
 
 const ContactUs: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -34,7 +34,6 @@ const ContactUs: React.FC = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Floating animation for hero
     if (heroRef.current) {
       gsap.to(heroRef.current, {
         y: -15,
@@ -45,7 +44,6 @@ const ContactUs: React.FC = () => {
       });
     }
 
-    // Form field animations
     const formFields = document.querySelectorAll('.form-field');
     formFields.forEach((field, index) => {
       gsap.fromTo(field, {
@@ -100,7 +98,7 @@ const ContactUs: React.FC = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["mkronix.official@gmail.com"],
+      details: ["hello@mkronix.com"],
       description: "Drop us a line anytime",
       gradient: "from-purple-500/20 to-pink-500/20"
     },
@@ -114,14 +112,14 @@ const ContactUs: React.FC = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["Mumbai, Maharashtra", "Ahmedabad, Gujarat", "Palanpur, Gujarat"],
-      description: "Our creative studios in India",
+      details: ["Kadiwala Compound, Rasulpur", "Sidhpur, Gujarat 384290", "India"],
+      description: "Our creative studio location",
       gradient: "from-green-500/20 to-emerald-500/20"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Fri: 10:00 AM - 10:00 PM"],
+      details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
       description: "We're here when you need us",
       gradient: "from-orange-500/20 to-red-500/20"
     }
@@ -129,259 +127,21 @@ const ContactUs: React.FC = () => {
 
   return (
     <>
-      <Helmet>
-        {/* Primary Meta Tags */}
-        <title>Contact Us | MkRonix - Get Free Consultation for Web Development & Digital Marketing India</title>
-        <meta name="description" content="Contact MkRonix for your digital project needs. Free consultation available! Call +91-84-59258801 or email hello@mkronix.com. Expert web development, design & marketing services across India." />
+      <DynamicSEO pageName="contact" />
+      
+      {/* Hidden SEO Content */}
+      <div className="sr-only">
+        <h1>Contact MkRonix - Free Consultation for Web Development & Digital Marketing India</h1>
+        <p>Get in touch with India's leading creative digital agency. Free consultation available for web development, UI/UX design, mobile apps, and digital marketing services.</p>
+        <span>Phone: +91-84-59258801 | Email: hello@mkronix.com</span>
+        <span>Address: Kadiwala Compound, Rasulpur, Sidhpur, Gujarat 384290, India</span>
+        <span>Services: Web Development, UI/UX Design, Mobile App Development, Digital Marketing, SEO</span>
+        <span>Business Hours: Monday-Friday 9AM-6PM, Saturday 10AM-4PM IST</span>
+        <span>Coverage: Mumbai, Delhi, Bangalore, Ahmedabad, Surat, Rajkot, Gujarat, India</span>
+      </div>
 
-        {/* Enhanced Keywords */}
-        <meta name="keywords" content="contact mkronix, web development inquiry India, digital marketing consultation, UI UX design quote, mobile app development contact, free consultation digital agency, mkronix phone number, mkronix email, digital agency contact Mumbai, project inquiry India, get quote web development, contact creative agency" />
-
-        {/* Enhanced Open Graph */}
-        <meta property="og:title" content="Contact MkRonix | Free Consultation for Digital Projects India" />
-        <meta property="og:description" content="Ready to start your digital project? Contact India's leading creative agency for free consultation. Expert team available to discuss your web development, design & marketing needs." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mkronix.com/contact" />
-        <meta property="og:image" content="https://mkronix.com/assets/contact-consultation-og.jpg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Contact MkRonix - Free Digital Consultation" />
-        <meta property="og:locale" content="en_IN" />
-        <meta property="og:site_name" content="MkRonix" />
-
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact MkRonix | Free Consultation Digital Agency India" />
-        <meta name="twitter:description" content="Get free consultation for your digital project. Call +91-84-59258801 or email hello@mkronix.com. Expert web development & design services." />
-        <meta name="twitter:image" content="https://mkronix.com/assets/contact-twitter.jpg" />
-        <meta name="twitter:image:alt" content="Contact MkRonix Creative Agency" />
-
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://mkronix.com/contact" />
-
-        {/* Additional SEO Meta */}
-        <meta name="author" content="MkRonix Digital Solutions" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="revisit-after" content="3 days" />
-        <meta name="geo.region" content="IN-GJ" />
-        <meta name="geo.placename" content="Sidhpur, Gujarat, India" />
-        <meta name="geo.position" content="23.9165;72.3787" />
-        <meta name="ICBM" content="23.9165, 72.3787" />
-
-        {/* LocalBusiness Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "MkRonix Digital Solutions",
-            "description": "Leading creative digital agency specializing in web development, UI/UX design, mobile apps, and digital marketing services",
-            "url": "https://mkronix.com",
-            "telephone": "+91-84-59258801",
-            "email": "hello@mkronix.com",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "kadiwala compund",
-              "addressLocality": "rasulpur, sidhpur",
-              "addressRegion": "Gujarat",
-              "postalCode": "384290",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "23.9165",
-              "longitude": "72.3787"
-            },
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
-                "opens": "10:00",
-                "closes": "16:00"
-              }
-            ],
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+91-84-59258801",
-                "contactType": "customer service",
-                "availableLanguage": ["English", "Hindi", "Gujarati"],
-                "areaServed": "IN"
-              },
-              {
-                "@type": "ContactPoint",
-                "email": "hello@mkronix.com",
-                "contactType": "customer service",
-                "availableLanguage": ["English", "Hindi"]
-              },
-              {
-                "@type": "ContactPoint",
-                "email": "projects@mkronix.com",
-                "contactType": "sales",
-                "availableLanguage": ["English"]
-              }
-            ],
-            "sameAs": [
-              "https://www.facebook.com/mkronix",
-              "https://www.linkedin.com/company/mkronix",
-              "https://twitter.com/mkronix",
-              "https://www.instagram.com/mkronix"
-            ],
-            "priceRange": "₹₹",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "127",
-              "bestRating": "5"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Digital Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Free Digital Consultation",
-                    "description": "Complimentary consultation to discuss your digital project requirements and strategic planning"
-                  },
-                  "price": "0",
-                  "priceCurrency": "INR"
-                }
-              ]
-            }
-          })}
-        </script>
-
-        {/* Breadcrumb Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://mkronix.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Contact Us",
-                "item": "https://mkronix.com/contact"
-              }
-            ]
-          })}
-        </script>
-
-        {/* ContactPage Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact MkRonix Digital Solutions",
-            "description": "Get in touch with MkRonix for your digital project needs. Free consultation available for web development, design, and digital marketing services.",
-            "url": "https://mkronix.com/contact",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "MkRonix Digital Solutions"
-            }
-          })}
-        </script>
-
-        {/* FAQ Schema for Contact */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How can I contact MkRonix for a project inquiry?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "You can contact MkRonix by calling +91-84-59258801, emailing hello@mkronix.com, or filling out our contact form. We offer free consultations for all digital project inquiries."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What are MkRonix business hours?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "MkRonix operates Monday to Friday from 9:00 AM to 6:00 PM, and Saturday from 10:00 AM to 4:00 PM (Indian Standard Time). We're available for urgent project discussions 24/7."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you offer free consultations?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, we provide free consultations to discuss your project requirements, understand your goals, and provide strategic recommendations for your digital needs."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How quickly does MkRonix respond to inquiries?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We typically respond to all inquiries within 2-4 hours during business hours. For urgent project discussions, we're available 24/7 via phone or email."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What information should I include in my project inquiry?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Please include your project type, budget range, timeline, specific requirements, and business goals. This helps us provide more accurate estimates and recommendations."
-                }
-              }
-            ]
-          })}
-        </script>
-
-        {/* WebPage Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Contact MkRonix Digital Solutions",
-            "description": "Contact page for MkRonix creative digital agency offering web development, design, and digital marketing services",
-            "url": "https://mkronix.com/contact",
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "MkRonix Digital Solutions"
-            },
-            "potentialAction": [
-              {
-                "@type": "CommunicateAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "tel:+91-84-59258801"
-                },
-                "name": "Call MkRonix"
-              },
-              {
-                "@type": "CommunicateAction",
-                "target": {
-                  "@type": "EntryPoint",
-                  "urlTemplate": "mailto:hello@mkronix.com"
-                },
-                "name": "Email MkRonix"
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Hero Section */}
-        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
-
         <motion.section
           className="relative min-h-screen flex items-center justify-center px-4"
           style={{ y: textY }}
@@ -421,7 +181,6 @@ const ContactUs: React.FC = () => {
           </div>
         </motion.section>
 
-        {/* Contact Info Grid */}
         <section className="py-32 px-4 bg-[#1D1C1C]/30">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -483,7 +242,6 @@ const ContactUs: React.FC = () => {
           </div>
         </section>
 
-        {/* Contact Form */}
         <section className="py-32 px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -493,7 +251,6 @@ const ContactUs: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              {/* Animated background elements */}
               <div className="absolute inset-0 overflow-hidden">
                 {Array.from({ length: 20 }).map((_, i) => (
                   <motion.div
@@ -679,7 +436,6 @@ const ContactUs: React.FC = () => {
           </div>
         </section>
 
-        {/* Map/Location Section */}
         <section className="py-32 px-4 bg-[#1D1C1C]/30">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -692,61 +448,46 @@ const ContactUs: React.FC = () => {
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Find <span className="text-[#484440]">Us</span>
               </h2>
-              <p className="text-xl text-[#F5E7D3]/80">Visit our creative hubs across India</p>
+              <p className="text-xl text-[#F5E7D3]/80">Visit our creative studio in Gujarat, India</p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              {[
-                {
-                  city: "Mumbai Studio",
-                  address: "123 Creative Street, Bandra West\nMumbai, Maharashtra 400050\nIndia",
-                  description: "Our flagship creative hub",
-                  gradient: "from-purple-500/20 to-pink-500/20"
-                },
-                {
-                  city: "Bangalore Office",
-                  address: "456 Tech Park, Koramangala\nBangalore, Karnataka 560034\nIndia",
-                  description: "Our technology center",
-                  gradient: "from-blue-500/20 to-cyan-500/20"
-                }
-              ].map((location, index) => (
+            <div className="max-w-2xl mx-auto">
+              <motion.div
+                className="relative bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-[#484440]/30 p-8 rounded-3xl group hover:border-[#F5E7D3]/50 transition-all duration-500"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+              >
                 <motion.div
-                  key={location.city}
-                  className={`relative bg-gradient-to-br ${location.gradient} backdrop-blur-sm border border-[#484440]/30 p-8 rounded-3xl group hover:border-[#F5E7D3]/50 transition-all duration-500`}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#F5E7D3]/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100"
-                    transition={{ duration: 0.3 }}
-                  />
+                  className="absolute inset-0 bg-gradient-to-br from-[#F5E7D3]/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.3 }}
+                />
 
-                  <div className="relative z-10 text-center">
-                    <motion.div
-                      className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#1D1C1C] flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                    >
-                      <MapPin className="w-8 h-8 text-[#F5E7D3]" />
-                    </motion.div>
-                    <h3 className="text-2xl font-bold mb-4 text-[#F5E7D3] group-hover:text-white transition-colors duration-300">
-                      {location.city}
-                    </h3>
-                    <p className="text-[#F5E7D3]/80 mb-4 whitespace-pre-line group-hover:text-[#F5E7D3] transition-colors duration-300">
-                      {location.address}
-                    </p>
-                    <p className="text-[#F5E7D3]/60 group-hover:text-[#F5E7D3]/80 transition-colors duration-300">
-                      {location.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                <div className="relative z-10 text-center">
+                  <motion.div
+                    className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-[#1D1C1C] flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                  >
+                    <MapPin className="w-8 h-8 text-[#F5E7D3]" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-4 text-[#F5E7D3] group-hover:text-white transition-colors duration-300">
+                    MkRonix Studio
+                  </h3>
+                  <p className="text-[#F5E7D3]/80 mb-4 group-hover:text-[#F5E7D3] transition-colors duration-300">
+                    Kadiwala Compound, Rasulpur<br />
+                    Sidhpur, Gujarat 384290<br />
+                    India
+                  </p>
+                  <p className="text-[#F5E7D3]/60 group-hover:text-[#F5E7D3]/80 transition-colors duration-300">
+                    Our creative headquarters
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-32 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
