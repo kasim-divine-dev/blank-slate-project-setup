@@ -1,39 +1,16 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Award, Code, Palette, Play, Smartphone, Target, TrendingUp, Users, Zap } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
-import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
-import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
+import { ArrowUpRight, Award, Target, Code, Palette, Zap, Users } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { ServicesHero } from '../components/Services/ServicesHero';
+import { ServicesList } from '../components/Services/ServicesList';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 
 const Services: React.FC = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero floating animation
-    if (heroRef.current) {
-      gsap.to(heroRef.current, {
-        y: -20,
-        duration: 4,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1
-      });
-    }
-
-    // Service card stagger animation
     gsap.utils.toArray('.service-card').forEach((card: any, index) => {
       gsap.fromTo(card, {
         y: 100,
@@ -53,75 +30,10 @@ const Services: React.FC = () => {
       });
     });
 
-    // Process cards animation
-    gsap.utils.toArray('.process-card').forEach((card: any, index) => {
-      gsap.fromTo(card, {
-        x: index % 2 === 0 ? -100 : 100,
-        opacity: 0
-      }, {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: index * 0.2,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%"
-        }
-      });
-    });
-
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-
-  const services = [
-    {
-      number: "01",
-      title: "Web Development",
-      description: "Custom websites and web applications built with cutting-edge technologies. From responsive designs to complex e-commerce platforms.",
-      image: "/images/carousel/architect.png",
-      icon: Code,
-      technologies: ["React", "Next.js", "Node.js", "TypeScript"],
-      gradient: "from-purple-500/20 to-pink-500/20",
-      projects: "120+",
-      startingPrice: "₹50,000"
-    },
-    {
-      number: "02",
-      title: "UI/UX Design",
-      description: "User-centered design solutions that create meaningful experiences. From wireframes to interactive prototypes.",
-      image: "/images/carousel/architect.png",
-      icon: Palette,
-      technologies: ["Figma", "Adobe XD", "Sketch", "Framer"],
-      gradient: "from-blue-500/20 to-cyan-500/20",
-      projects: "85+",
-      startingPrice: "₹30,000"
-    },
-    {
-      number: "03",
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications that deliver exceptional user experiences on all devices.",
-      image: "/images/carousel/architect.png",
-      icon: Smartphone,
-      technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
-      gradient: "from-green-500/20 to-emerald-500/20",
-      projects: "65+",
-      startingPrice: "₹80,000"
-    },
-    {
-      number: "04",
-      title: "Digital Marketing",
-      description: "Strategic digital marketing campaigns that drive growth and build brand awareness across all platforms.",
-      image: "/images/carousel/architect.png",
-      icon: TrendingUp,
-      technologies: ["SEO", "PPC", "Social Media", "Analytics"],
-      gradient: "from-orange-500/20 to-red-500/20",
-      projects: "200+",
-      startingPrice: "₹25,000/month"
-    }
-  ];
 
   const workProcess = [
     {
@@ -161,7 +73,7 @@ const Services: React.FC = () => {
       {/* Hidden SEO Content */}
       <div className="sr-only">
         <h1>Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India</h1>
-        <p>Comprehensive digital services by MkRonix India including custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 20+ successful projects completed.</p>
+        <p>Comprehensive digital services by MkRonix India including custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 300+ successful projects completed.</p>
         <span>Services: Web Development (React, Next.js, Node.js), UI/UX Design (Figma, Adobe XD), Mobile Development (React Native, Flutter), Digital Marketing (SEO, PPC, Social Media)</span>
         <span>Pricing: Web Development from ₹50,000, UI/UX Design from ₹30,000, Mobile Apps from ₹80,000, Digital Marketing from ₹25,000/month</span>
         <span>Industries: E-commerce, Healthcare, Education, Finance, Startups, Enterprise</span>
@@ -170,216 +82,9 @@ const Services: React.FC = () => {
         <span>Location: Gujarat, India | Serving: Mumbai, Delhi, Bangalore, Ahmedabad, Pan India</span>
       </div>
 
-      <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
-        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
-
-        {/* Hero Section */}
-        <motion.section
-          className="relative min-h-screen flex items-center justify-center px-4"
-          style={{ y: textY }}
-        >
-          <BoxesLayer gridColor="#484440" />
-          <motion.div
-            className="absolute inset-0 pointer-events-none z-0"
-            style={{
-              y: backgroundY,
-              background: `radial-gradient(circle at 25% 75%, rgba(72, 68, 64, 0.4), transparent 50%),
-                         radial-gradient(circle at 75% 25%, rgba(72, 68, 64, 0.3), transparent 50%)`
-            }}
-          />
-
-          <div ref={heroRef} className="relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="mb-8"
-            >
-              <DrawCircleText
-                normalText="We craft digital "
-                normalText2="that drive results and inspire growth."
-                circleText="solutions"
-              />
-            </motion.div>
-
-            <motion.p
-              className="text-xl md:text-2xl text-[#F5E7D3]/80 max-w-4xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              From concept to execution, we deliver comprehensive digital services that transform your vision into powerful, user-centric solutions.
-            </motion.p>
-          </div>
-        </motion.section>
-
-        {/* Hero Video Section */}
-        <section className="px-4 py-20">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-pink-500/20 aspect-video group"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10" />
-              <motion.div
-                className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.button
-                  className="w-20 h-20 bg-[#F5E7D3] text-black rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <Play className="w-8 h-8 ml-1" />
-                </motion.button>
-              </div>
-
-              {/* Floating elements */}
-              {Array.from({ length: 10 }).map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-2 h-2 bg-[#F5E7D3]/30 rounded-full"
-                  style={{
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                  }}
-                  animate={{
-                    y: [0, -20, 0],
-                    opacity: [0.3, 1, 0.3],
-                  }}
-                  transition={{
-                    duration: Math.random() * 3 + 2,
-                    repeat: Infinity,
-                    delay: Math.random() * 2
-                  }}
-                />
-              ))}
-            </motion.div>
-
-            <motion.div
-              className="flex flex-wrap gap-3 justify-center mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              {["Design", "Development", "Digital Marketing", "SEO", "Branding", "Strategy"].map((tag, index) => (
-                <motion.span
-                  key={tag}
-                  className="px-6 py-3 bg-[#1D1C1C]/50 backdrop-blur-sm border border-[#484440]/30 rounded-full text-sm font-medium hover:border-[#F5E7D3]/50 transition-all duration-300"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {tag}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Services List */}
-        <section className="px-4 py-20">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-6xl font-black mb-6">
-                Our <span className="text-[#484440]">Services</span>
-              </h2>
-              <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto">
-                Comprehensive digital solutions tailored to your business needs
-              </p>
-            </motion.div>
-
-            <div className="space-y-8">
-              {services.map((service, index) => (
-                <motion.div
-                  key={service.number}
-                  className={`service-card group relative bg-gradient-to-br ${service.gradient} backdrop-blur-sm border border-[#484440]/30 rounded-3xl overflow-hidden hover:border-[#F5E7D3]/50 transition-all duration-500`}
-                  whileHover={{ scale: 1.02, y: -5 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#F5E7D3]/5 to-transparent opacity-0 group-hover:opacity-100"
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  <div className="relative z-10 p-8 flex items-center justify-between">
-                    <div className="flex items-center gap-8 flex-1">
-                      <motion.div
-                        className="flex items-center gap-6"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <span className="text-5xl font-black text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300">
-                          {service.number}
-                        </span>
-                        <div className="w-16 h-16 bg-[#1D1C1C] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <service.icon className="w-8 h-8 text-[#F5E7D3]" />
-                        </div>
-                      </motion.div>
-
-                      <div className="flex-1">
-                        <h3 className="text-3xl md:text-4xl font-bold mb-3 group-hover:text-white transition-colors duration-300">
-                          {service.title}
-                        </h3>
-                        <p className="text-[#F5E7D3]/70 mb-4 max-w-2xl group-hover:text-[#F5E7D3]/90 transition-colors duration-300">
-                          {service.description}
-                        </p>
-
-                        <div className="flex items-center gap-6">
-                          <div className="flex flex-wrap gap-2">
-                            {service.technologies.map((tech, techIndex) => (
-                              <span
-                                key={tech}
-                                className="px-3 py-1 bg-[#1D1C1C]/50 text-[#F5E7D3]/80 rounded-full text-sm border border-[#484440]/30"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                          <div className="text-sm text-[#F5E7D3]/60">
-                            {service.projects} projects
-                          </div>
-                          <div className="text-sm font-bold text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300">
-                            Starting {service.startingPrice}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <motion.div
-                        className="w-20 h-20 rounded-2xl overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                      >
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
-                      <motion.div
-                        whileHover={{ scale: 1.2, rotate: 45 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ArrowUpRight className="w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[#F5E7D3]" />
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <div className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
+        <ServicesHero />
+        <ServicesList />
 
         {/* Work Process Section */}
         <section className="px-4 py-32 bg-[#1D1C1C]/30">
