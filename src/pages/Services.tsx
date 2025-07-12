@@ -157,14 +157,14 @@ const Services: React.FC = () => {
       <Helmet>
         {/* Primary Meta Tags */}
         <title>Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India</title>
-        <meta name="description" content="Comprehensive digital services by MkRonix India: Custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 300+ successful projects. Free consultation available." />
+        <meta name="description" content="Comprehensive digital services by MkRonix India: Custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 20+ successful projects. Free consultation available." />
 
         {/* Enhanced Keywords */}
         <meta name="keywords" content="digital services India, web development services Mumbai, UI UX design agency, mobile app development company, digital marketing services, custom website development, responsive web design, ecommerce development, SEO services India, PPC management, social media marketing, brand identity design, graphic design services, digital transformation, technology consulting, software development India" />
 
         {/* Enhanced Open Graph */}
         <meta property="og:title" content="Digital Services | MkRonix - Complete Web Development & Design Solutions India" />
-        <meta property="og:description" content="Transform your business with MkRonix's comprehensive digital services. Expert web development, UI/UX design, mobile apps, and digital marketing. 300+ successful projects across India." />
+        <meta property="og:description" content="Transform your business with MkRonix's comprehensive digital services. Expert web development, UI/UX design, mobile apps, and digital marketing. 20+ successful projects across India." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mkronix.com/services" />
         <meta property="og:image" content="https://mkronix.com/assets/services-portfolio-og.jpg" />
@@ -177,7 +177,7 @@ const Services: React.FC = () => {
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Digital Services | MkRonix - Web Development & Design India" />
-        <meta name="twitter:description" content="Comprehensive digital solutions: Web development, UI/UX design, mobile apps & digital marketing. 300+ successful projects." />
+        <meta name="twitter:description" content="Comprehensive digital solutions: Web development, UI/UX design, mobile apps & digital marketing. 20+ successful projects." />
         <meta name="twitter:image" content="https://mkronix.com/assets/services-twitter.jpg" />
         <meta name="twitter:image:alt" content="MkRonix Digital Services Portfolio" />
 
@@ -336,7 +336,7 @@ const Services: React.FC = () => {
                 "name": "What makes MkRonix different from other digital agencies?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "MkRonix combines creativity with cutting-edge technology, offers transparent pricing, maintains 95% client satisfaction rate, and provides end-to-end digital solutions with a proven track record of 300+ successful projects."
+                  "text": "MkRonix combines creativity with cutting-edge technology, offers transparent pricing, maintains 99% client satisfaction rate, and provides end-to-end digital solutions with a proven track record of 20+ successful projects."
                 }
               }
             ]
@@ -381,6 +381,8 @@ const Services: React.FC = () => {
       </Helmet>
 
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
+        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
+
         {/* Hero Section */}
         <motion.section
           className="relative min-h-screen flex items-center justify-center px-4"
@@ -688,7 +690,7 @@ const Services: React.FC = () => {
                   icon: Award,
                   title: "Proven Results",
                   description: "We've helped hundreds of businesses achieve their digital goals with measurable success.",
-                  stat: "300+ Projects"
+                  stat: "20+ Projects"
                 },
                 {
                   icon: Zap,

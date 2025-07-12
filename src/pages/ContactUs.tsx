@@ -100,28 +100,28 @@ const ContactUs: React.FC = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@mkronix.com", "projects@mkronix.com"],
+      details: ["mkronix.official@gmail.com"],
       description: "Drop us a line anytime",
       gradient: "from-purple-500/20 to-pink-500/20"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+91 98765 43210", "+91 87654 32109"],
+      details: ["+91 84592 58801", "+91 72848 55130"],
       description: "Available 24/7 for urgent projects",
       gradient: "from-blue-500/20 to-cyan-500/20"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["Mumbai, Maharashtra", "Bangalore, Karnataka"],
+      details: ["Mumbai, Maharashtra", "Ahmedabad, Gujarat", "Palanpur, Gujarat"],
       description: "Our creative studios in India",
       gradient: "from-green-500/20 to-emerald-500/20"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Fri: 9:00 AM - 7:00 PM", "Sat: 10:00 AM - 4:00 PM"],
+      details: ["Mon - Fri: 10:00 AM - 10:00 PM"],
       description: "We're here when you need us",
       gradient: "from-orange-500/20 to-red-500/20"
     }
@@ -129,8 +129,6 @@ const ContactUs: React.FC = () => {
 
   return (
     <>
-// Enhanced SEO for ContactUs.tsx - Replace existing Helmet content
-
       <Helmet>
         {/* Primary Meta Tags */}
         <title>Contact Us | MkRonix - Get Free Consultation for Web Development & Digital Marketing India</title>
@@ -382,6 +380,8 @@ const ContactUs: React.FC = () => {
       </Helmet>
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Hero Section */}
+        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
+
         <motion.section
           className="relative min-h-screen flex items-center justify-center px-4"
           style={{ y: textY }}

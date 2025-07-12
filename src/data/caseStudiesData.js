@@ -12,7 +12,7 @@ export const caseStudiesData = [
     technologies: ["AI/ML", "React Native", "Python", "TensorFlow"],
     results: [
       "300% increase in user engagement",
-      "95% user satisfaction rate",
+      "99% user satisfaction rate",
       "50% reduction in fashion waste"
     ],
     url: "/case-studies/eleve"

@@ -76,26 +76,24 @@ const CaseStudies: React.FC = () => {
   }, []);
 
   const stats = [
-    { value: 300, label: "Successful Projects", suffix: "+" },
-    { value: 150, label: "Happy Clients", suffix: "+" },
-    { value: 95, label: "Success Rate", suffix: "%" },
-    { value: 24, label: "Countries Served", suffix: "" }
+    { value: 20, label: "Successful Projects", suffix: "+" },
+    { value: 15, label: "Happy Clients", suffix: "+" },
+    { value: 99, label: "Success Rate", suffix: "%" },
+    { value: 1, label: "Countries Served", suffix: "" }
   ];
 
   return (
     <>
-// Enhanced SEO for CaseStudies.tsx - Replace existing Helmet content
-
       <Helmet>
         {/* Primary Meta Tags */}
-        <title>Case Studies | MkRonix - Proven Results & Success Stories from 300+ Digital Projects India</title>
+        <title>Case Studies | MkRonix - Proven Results & Success Stories from 20+ Digital Projects India</title>
         <meta name="description" content="Explore MkRonix's detailed case studies showcasing measurable results from our web development, UI/UX design, and digital marketing projects. Real data, proven ROI, client success stories from India." />
 
         {/* Enhanced Keywords */}
         <meta name="keywords" content="mkronix case studies, digital marketing success stories, web development results, UI UX design case studies, project outcomes India, client success stories, ROI digital projects, before after results, project analysis, digital transformation case studies, website redesign results, app development success" />
 
         {/* Enhanced Open Graph */}
-        <meta property="og:title" content="Case Studies | MkRonix - Real Results from 300+ Successful Digital Projects" />
+        <meta property="og:title" content="Case Studies | MkRonix - Real Results from 20+ Successful Digital Projects" />
         <meta property="og:description" content="Discover how we've helped clients achieve 300% growth, 150% conversion increases, and measurable business success through strategic digital solutions." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://mkronix.com/case-studies" />
@@ -157,8 +155,8 @@ const CaseStudies: React.FC = () => {
               {
                 "@type": "Article",
                 "position": 2,
-                "headline": "Mobile Banking App UI/UX Redesign - 95% User Satisfaction",
-                "description": "Complete UI/UX redesign of mobile banking application achieving 95% user satisfaction and 40% increase in app usage",
+                "headline": "Mobile Banking App UI/UX Redesign - 99% User Satisfaction",
+                "description": "Complete UI/UX redesign of mobile banking application achieving 99% user satisfaction and 40% increase in app usage",
                 "author": {
                   "@type": "Organization",
                   "name": "MkRonix Digital Solutions"
@@ -220,13 +218,13 @@ const CaseStudies: React.FC = () => {
               {
                 "@type": "PropertyValue",
                 "name": "Successful Projects",
-                "value": "300+",
+                "value": "20+",
                 "description": "Total number of successful projects completed"
               },
               {
                 "@type": "PropertyValue",
                 "name": "Client Success Rate",
-                "value": "95%",
+                "value": "99%",
                 "description": "Percentage of projects achieving or exceeding client goals"
               },
               {
@@ -238,7 +236,7 @@ const CaseStudies: React.FC = () => {
               {
                 "@type": "PropertyValue",
                 "name": "Countries Served",
-                "value": "24",
+                "value": "1",
                 "description": "Number of countries where we've delivered successful projects"
               }
             ]
@@ -256,7 +254,7 @@ const CaseStudies: React.FC = () => {
                 "name": "What kind of results has MkRonix achieved for clients?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "MkRonix has achieved remarkable results including 300% revenue growth for e-commerce clients, 150% increase in conversions, 95% user satisfaction rates, and consistent ROI improvements across 300+ successful projects."
+                  "text": "MkRonix has achieved remarkable results including 300% revenue growth for e-commerce clients, 150% increase in conversions, 99% user satisfaction rates, and consistent ROI improvements across 20+ successful projects."
                 }
               },
               {

@@ -1,15 +1,17 @@
-
 {
   "pages": {
     "home": {
       "title": "MkRonix | Leading Creative Digital Agency India - Web Development, UI/UX Design & Digital Marketing",
-      "description": "MkRonix is India's premier creative digital agency specializing in web development, UI/UX design, mobile apps & digital marketing. 300+ successful projects. Free consultation available.",
+      "description": "MkRonix is India's premier creative digital agency specializing in web development, UI/UX design, mobile apps & digital marketing. 20+ successful projects. Free consultation available.",
       "keywords": "creative digital agency India, web development company Mumbai, UI UX design agency, mobile app development India, digital marketing services, website design company India, creative agency Mumbai, best digital agency India",
       "url": "https://mkronix.com",
       "image": "https://mkronix.com/assets/og-homepage.jpg",
       "type": "website",
       "breadcrumb": [
-        { "name": "Home", "url": "https://mkronix.com" }
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        }
       ],
       "customMeta": {
         "geo.region": "IN-MH",
@@ -19,27 +21,39 @@
       }
     },
     "projects": {
-      "title": "Our Portfolio | MkRonix - 300+ Successful Web Development & Design Projects India",
-      "description": "Explore MkRonix's portfolio of 300+ successful projects. Stunning websites, mobile apps, UI/UX designs, and digital marketing campaigns across various industries in India and globally.",
+      "title": "Our Portfolio | MkRonix - 20+ Successful Web Development & Design Projects India",
+      "description": "Explore MkRonix's portfolio of 20+ successful projects. Stunning websites, mobile apps, UI/UX designs, and digital marketing campaigns across various industries in India and globally.",
       "keywords": "mkronix portfolio, web development projects India, UI UX design portfolio, mobile app projects, digital marketing case studies, website design examples, creative agency work, project showcase India, successful digital projects, client work portfolio, design agency projects Mumbai, web development showcase",
       "url": "https://mkronix.com/projects",
       "image": "https://mkronix.com/assets/portfolio-showcase-og.jpg",
       "type": "website",
       "breadcrumb": [
-        { "name": "Home", "url": "https://mkronix.com" },
-        { "name": "Portfolio", "url": "https://mkronix.com/projects" }
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Portfolio",
+          "url": "https://mkronix.com/projects"
+        }
       ]
     },
     "about": {
       "title": "About MkRonix | Leading Creative Digital Agency Team India - Our Story & Mission",
-      "description": "Meet the MkRonix team - India's premier creative digital agency with 5+ years experience, 300+ successful projects, and 50+ expert professionals. Discover our story, values, and passion for digital innovation.",
+      "description": "Meet the MkRonix team - India's premier creative digital agency with 5+ years experience, 20+ successful projects, and 50+ expert professionals. Discover our story, values, and passion for digital innovation.",
       "keywords": "about mkronix, creative agency team India, digital agency Mumbai, web development team, UI UX designers India, mobile app developers, digital marketing experts, creative professionals Mumbai, agency story, mkronix mission vision, best digital agency team India, creative studio about us",
       "url": "https://mkronix.com/about",
       "image": "https://mkronix.com/assets/about-team-og.jpg",
       "type": "website",
       "breadcrumb": [
-        { "name": "Home", "url": "https://mkronix.com" },
-        { "name": "About Us", "url": "https://mkronix.com/about" }
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "About Us",
+          "url": "https://mkronix.com/about"
+        }
       ]
     }
   },
@@ -60,7 +74,10 @@
     "contactPoint": {
       "telephone": "+91-84-59258801",
       "contactType": "customer service",
-      "availableLanguage": ["English", "Hindi"],
+      "availableLanguage": [
+        "English",
+        "Hindi"
+      ],
       "areaServed": "IN"
     },
     "sameAs": [
@@ -93,7 +110,7 @@
         },
         {
           "question": "Why choose MkRonix as your digital agency?",
-          "answer": "MkRonix has 5+ years of experience, 300+ successful projects, and a 95% client satisfaction rate. We combine creativity with technology to deliver results-driven digital solutions."
+          "answer": "MkRonix has 5+ years of experience, 20+ successful projects, and a 99% client satisfaction rate. We combine creativity with technology to deliver results-driven digital solutions."
         }
       ]
     },
@@ -118,11 +135,11 @@
       "faq": [
         {
           "question": "How long has MkRonix been in business?",
-          "answer": "MkRonix has been delivering exceptional digital solutions for over 5 years, with 300+ successful projects and a growing team of 50+ professionals."
+          "answer": "MkRonix has been delivering exceptional digital solutions for over 5 years, with 20+ successful projects and a growing team of 50+ professionals."
         },
         {
           "question": "What makes MkRonix different from other agencies?",
-          "answer": "MkRonix combines creativity with technology, offering comprehensive digital solutions with a proven track record of 95% client satisfaction and measurable business results."
+          "answer": "MkRonix combines creativity with technology, offering comprehensive digital solutions with a proven track record of 99% client satisfaction and measurable business results."
         }
       ]
     }

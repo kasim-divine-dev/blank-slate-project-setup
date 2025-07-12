@@ -116,6 +116,8 @@ const AboutUs: React.FC = () => {
 
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Hero Section */}
+        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
+
         <motion.section
           className="relative min-h-screen flex items-center justify-center px-4"
           style={{ y: textY }}
@@ -182,10 +184,10 @@ const AboutUs: React.FC = () => {
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: 150, label: "Projects Completed", suffix: "+" },
-                { value: 50, label: "Happy Clients", suffix: "+" },
-                { value: 5, label: "Years Experience", suffix: "" },
-                { value: 24, label: "Countries Served", suffix: "" }
+                { value: 20, label: "Projects Completed", suffix: "+" },
+                { value: 15, label: "Happy Clients", suffix: "+" },
+                { value: 3, label: "Years Experience", suffix: "" },
+                { value: 1, label: "Countries Served", suffix: "" }
               ].map((stat, index) => (
                 <motion.div
                   key={index}

@@ -44,7 +44,7 @@ class SEOService {
   generateSchemas(pageName: string): any[] {
     const schemas: any[] = [];
     const schemaConfig = this.seoData.schemas[pageName as keyof typeof this.seoData.schemas] as SchemaConfig;
-    
+
     if (!schemaConfig) return [];
 
     // Organization Schema
@@ -207,7 +207,7 @@ class SEOService {
       "@context": "https://schema.org",
       "@type": "CreativeWork",
       "name": "MkRonix Portfolio",
-      "description": "A collection of 300+ successful digital projects including web development, UI/UX design, mobile applications, and digital marketing campaigns",
+      "description": "A collection of 20+ successful digital projects including web development, UI/UX design, mobile applications, and digital marketing campaigns",
       "creator": {
         "@type": "Organization",
         "name": org.name,

@@ -21,6 +21,8 @@ const Projects: React.FC = () => {
       <DynamicSEO pageName="projects" />
 
       <div className="min-h-screen bg-black text-[#F5E7D3]">
+        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
+
         {/* Hero Section */}
         <motion.section
           className="pt-32 pb-16 px-4"

@@ -17,7 +17,7 @@ const Index = () => {
 
       <div className="font-boska relative overflow-x-hidden bg-black text-[#F5E7D3]">
         {/* Add H1 for SEO */}
-        <h1 className="sr-only">MkRonix - Leading Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
+        <h1 className="sr-only">MkRonix - Creative Digital Agency in India for Web Development, UI/UX Design, and Digital Marketing</h1>
 
         <HeroSection />
         <ServiceCard />
@@ -43,8 +43,8 @@ const Index = () => {
             <h3>Why Choose MkRonix?</h3>
             <ul>
               <li>5+ years of proven experience</li>
-              <li>300+ successful projects delivered</li>
-              <li>95% client satisfaction rate</li>
+              <li>20+ successful projects delivered</li>
+              <li>99% client satisfaction rate</li>
               <li>Expert team of 50+ professionals</li>
               <li>Serving clients across India and internationally</li>
             </ul>
