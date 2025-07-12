@@ -42,7 +42,7 @@ const Index = () => {
 
             <h3>Why Choose MkRonix?</h3>
             <ul>
-              <li>5+ years of proven experience</li>
+              <li>3+ years of proven experience</li>
               <li>20+ successful projects delivered</li>
               <li>99% client satisfaction rate</li>
               <li>Expert team of 50+ professionals</li>
