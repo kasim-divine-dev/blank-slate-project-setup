@@ -1,0 +1,130 @@
+
+{
+  "pages": {
+    "home": {
+      "title": "MkRonix | Leading Creative Digital Agency India - Web Development, UI/UX Design & Digital Marketing",
+      "description": "MkRonix is India's premier creative digital agency specializing in web development, UI/UX design, mobile apps & digital marketing. 300+ successful projects. Free consultation available.",
+      "keywords": "creative digital agency India, web development company Mumbai, UI UX design agency, mobile app development India, digital marketing services, website design company India, creative agency Mumbai, best digital agency India",
+      "url": "https://mkronix.com",
+      "image": "https://mkronix.com/assets/og-homepage.jpg",
+      "type": "website",
+      "breadcrumb": [
+        { "name": "Home", "url": "https://mkronix.com" }
+      ],
+      "customMeta": {
+        "geo.region": "IN-MH",
+        "geo.placename": "Mumbai, Maharashtra, India",
+        "geo.position": "19.0760;72.8777",
+        "ICBM": "19.0760, 72.8777"
+      }
+    },
+    "projects": {
+      "title": "Our Portfolio | MkRonix - 300+ Successful Web Development & Design Projects India",
+      "description": "Explore MkRonix's portfolio of 300+ successful projects. Stunning websites, mobile apps, UI/UX designs, and digital marketing campaigns across various industries in India and globally.",
+      "keywords": "mkronix portfolio, web development projects India, UI UX design portfolio, mobile app projects, digital marketing case studies, website design examples, creative agency work, project showcase India, successful digital projects, client work portfolio, design agency projects Mumbai, web development showcase",
+      "url": "https://mkronix.com/projects",
+      "image": "https://mkronix.com/assets/portfolio-showcase-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        { "name": "Home", "url": "https://mkronix.com" },
+        { "name": "Portfolio", "url": "https://mkronix.com/projects" }
+      ]
+    },
+    "about": {
+      "title": "About MkRonix | Leading Creative Digital Agency Team India - Our Story & Mission",
+      "description": "Meet the MkRonix team - India's premier creative digital agency with 5+ years experience, 300+ successful projects, and 50+ expert professionals. Discover our story, values, and passion for digital innovation.",
+      "keywords": "about mkronix, creative agency team India, digital agency Mumbai, web development team, UI UX designers India, mobile app developers, digital marketing experts, creative professionals Mumbai, agency story, mkronix mission vision, best digital agency team India, creative studio about us",
+      "url": "https://mkronix.com/about",
+      "image": "https://mkronix.com/assets/about-team-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        { "name": "Home", "url": "https://mkronix.com" },
+        { "name": "About Us", "url": "https://mkronix.com/about" }
+      ]
+    }
+  },
+  "organization": {
+    "name": "MkRonix Digital Solutions",
+    "url": "https://mkronix.com",
+    "logo": "https://mkronix.com/assets/logo.png",
+    "description": "Leading creative digital agency in India specializing in web development, UI/UX design, mobile app development, and digital marketing services.",
+    "foundingDate": "2020-01-01",
+    "numberOfEmployees": "50-100",
+    "address": {
+      "streetAddress": "kadiwala compund",
+      "addressLocality": "rasulpur, sidhpur",
+      "addressRegion": "Gujarat",
+      "postalCode": "384290",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "telephone": "+91-84-59258801",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"],
+      "areaServed": "IN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/mkronix",
+      "https://www.linkedin.com/company/mkronix",
+      "https://twitter.com/mkronix",
+      "https://www.instagram.com/mkronix"
+    ],
+    "aggregateRating": {
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "priceRange": "₹₹"
+  },
+  "schemas": {
+    "home": {
+      "organization": true,
+      "website": true,
+      "localBusiness": true,
+      "faq": [
+        {
+          "question": "What services does MkRonix offer?",
+          "answer": "MkRonix offers comprehensive digital services including web development, UI/UX design, mobile app development, digital marketing, SEO, and brand identity design. We serve clients across India and internationally."
+        },
+        {
+          "question": "How much does web development cost in India?",
+          "answer": "Web development costs in India vary based on complexity. Basic websites start from ₹50,000, while complex e-commerce or custom applications range from ₹2-10 lakhs. Contact MkRonix for a detailed quote."
+        },
+        {
+          "question": "Why choose MkRonix as your digital agency?",
+          "answer": "MkRonix has 5+ years of experience, 300+ successful projects, and a 95% client satisfaction rate. We combine creativity with technology to deliver results-driven digital solutions."
+        }
+      ]
+    },
+    "projects": {
+      "creativeWork": true,
+      "itemList": true,
+      "faq": [
+        {
+          "question": "How many projects has MkRonix completed?",
+          "answer": "MkRonix has successfully completed over 300 projects across various industries including web development, UI/UX design, mobile applications, and digital marketing campaigns."
+        },
+        {
+          "question": "What types of projects does MkRonix specialize in?",
+          "answer": "We specialize in custom web development, responsive website design, mobile app development, e-commerce platforms, UI/UX design, digital marketing campaigns, and brand identity projects."
+        }
+      ]
+    },
+    "about": {
+      "organization": true,
+      "aboutPage": true,
+      "team": true,
+      "faq": [
+        {
+          "question": "How long has MkRonix been in business?",
+          "answer": "MkRonix has been delivering exceptional digital solutions for over 5 years, with 300+ successful projects and a growing team of 50+ professionals."
+        },
+        {
+          "question": "What makes MkRonix different from other agencies?",
+          "answer": "MkRonix combines creativity with technology, offering comprehensive digital solutions with a proven track record of 95% client satisfaction and measurable business results."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+
+{
+  "teamMembers": [
+    {
+      "name": "Kasim Kadiwala",
+      "role": "Creative Director",
+      "jobTitle": "Creative Director",
+      "description": "Strategic leader with expertise in creative direction and business development",
+      "image": "/api/placeholder/300/300",
+      "skills": ["Strategy", "Leadership", "Vision"],
+      "color": "from-purple-500 to-pink-500",
+      "knowsAbout": ["Strategy", "Leadership", "Vision"]
+    },
+    {
+      "name": "Moinuddin Chudiwal",
+      "role": "Development Head",
+      "jobTitle": "Developer Head",
+      "description": "Developer with a passion for building innovative solutions and a deep understanding of web development",
+      "image": "/api/placeholder/300/300",
+      "skills": ["Frontend", "Backend", "DevOps"],
+      "color": "from-green-500 to-emerald-500",
+      "knowsAbout": ["React", "Node.js", "UI/UX Design", "Brand Identity"]
+    }
+  ]
+}
