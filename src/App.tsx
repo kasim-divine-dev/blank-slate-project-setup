@@ -1,63 +1,46 @@
-
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { LoadingProvider } from "./contexts/LoadingContext";
-import { LenisProvider } from "./providers/LenisProvider";
-import Layout from "./components/Layout/Layout";
-import GlobalLoader from "./components/GlobalLoader/GlobalLoader";
+import { LenisProvider } from '@studio-freight/react-lenis'
+import './App.css';
+import Layout from './components/Layout/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Projects from './pages/Projects';
+import CaseStudies from './pages/CaseStudies';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+import CustomCursor from './components/CustomCursor/CustomCursor';
+import GlobalLoader from './components/GlobalLoader/GlobalLoader';
+import { LoadingProvider } from './components/LoadingContext/LoadingContext';
+import BlogPost from './pages/BlogPost';
+import CaseStudyDetail from './pages/CaseStudyDetail';
 
-// Lazy load pages for better performance
-import { LazyLoad } from "./utils/lazyLoad";
-
-const Index = LazyLoad(() => import("./pages/Index"));
-const AboutUs = LazyLoad(() => import("./pages/AboutUs"));
-const Services = LazyLoad(() => import("./pages/Services"));
-const ContactUs = LazyLoad(() => import("./pages/ContactUs"));
-const Projects = LazyLoad(() => import("./pages/Projects"));
-const CaseStudies = LazyLoad(() => import("./pages/CaseStudies"));
-const NotFound = LazyLoad(() => import("./pages/NotFound"));
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      gcTime: 10 * 60 * 1000, // 10 minutes
-    },
-  },
-});
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
-      <TooltipProvider>
-        <BrowserRouter>
-          <LoadingProvider>
-            <LenisProvider>
-              <GlobalLoader />
-              <Layout>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/about" element={<AboutUs />} />
-                  <Route path="/services" element={<Services />} />
-                  <Route path="/contact" element={<ContactUs />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/case-studies" element={<CaseStudies />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Layout>
-            </LenisProvider>
-          </LoadingProvider>
-        </BrowserRouter>
-        <Toaster />
-        <Sonner />
-      </TooltipProvider>
-    </HelmetProvider>
-  </QueryClientProvider>
-);
+function App() {
+  return (
+    <LenisProvider>
+      <HelmetProvider>
+        <LoadingProvider>
+          <Layout>
+            <CustomCursor />
+            <GlobalLoader />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+            </Routes>
+          </Layout>
+        </LoadingProvider>
+      </HelmetProvider>
+    </LenisProvider>
+  );
+}
 
 export default App;
