@@ -29,7 +29,7 @@ const Index = () => {
         <section className="py-16 px-4 bg-black" style={{ display: 'none' }}>
           <div className="max-w-4xl mx-auto">
             <h2>About MkRonix Creative Digital Agency India</h2>
-            <p>MkRonix is a leading creative digital agency based in India, specializing in web development, UI/UX design, mobile app development, and digital marketing services. With over 300 successful projects and 5+ years of experience, we help businesses transform their digital presence and achieve measurable growth.</p>
+            <p>MkRonix is a leading creative digital agency based in India, specializing in web development, UI/UX design, mobile app development, and digital marketing services. With over 20+ successful projects and 3+ years of experience, we help businesses transform their digital presence and achieve measurable growth.</p>
 
             <h3>Our Core Services:</h3>
             <ul>
@@ -44,7 +44,7 @@ const Index = () => {
               <li>3+ years of proven experience</li>
               <li>20+ successful projects delivered</li>
               <li>99% client satisfaction rate</li>
-              <li>Expert team of 50+ professionals</li>
+              <li>Expert team of 10+ professionals</li>
               <li>Serving clients across India and internationally</li>
             </ul>
           </div>

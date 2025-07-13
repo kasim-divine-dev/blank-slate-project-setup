@@ -161,7 +161,7 @@ class EnhancedSEOService {
 
   generateSchemas(pageName: string, dynamicData?: any): any[] {
     const schemas: any[] = [];
-    
+
     // Get schema config from main seo data
     const schemaConfig = this.seoData.schemas[pageName as keyof typeof this.seoData.schemas];
 
@@ -385,7 +385,7 @@ class EnhancedSEOService {
       "@type": "ItemList",
       "name": "MkRonix Project Portfolio",
       "description": "Featured projects showcasing our expertise in web development, design, and digital marketing",
-      "numberOfItems": 300,
+      "numberOfItems": 20,
       "itemListElement": [
         {
           "@type": "CreativeWork",

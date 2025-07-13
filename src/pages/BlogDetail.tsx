@@ -14,18 +14,13 @@ const BlogDetail: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-<<<<<<< Updated upstream
-  const { setLoading: setGlobalLoading } = useLoading();
-
-  // Only initialize scroll if containerRef is available
-=======
   const [isClient, setIsClient] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const { setLoading: setGlobalLoading } = useLoading();
 
-  // Only initialize scroll animations on client side
->>>>>>> Stashed changes
+  // Only initialize scroll animations on client side AND when component is mounted
   const { scrollYProgress } = useScroll({
-    target: containerRef,
+    target: isMounted && isClient ? containerRef : undefined,
     offset: ["start start", "end start"],
   });
 
@@ -41,8 +36,13 @@ const BlogDetail: React.FC = () => {
     setIsClient(true);
   }, []);
 
+  // Set mounted state after component mounts
   useEffect(() => {
-    const loadBlog = () => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const loadBlog = async () => {
       try {
         setGlobalLoading(true);
         setIsLoading(true);
@@ -59,22 +59,12 @@ const BlogDetail: React.FC = () => {
 
         setBlog(blogPost);
         setRelatedBlogs(getRelatedBlogs(slug, 3));
-<<<<<<< Updated upstream
-        
-        // Add small delay for smooth transition
-        setTimeout(() => {
-          setIsLoading(false);
-          setGlobalLoading(false);
-        }, 300);
-        
-=======
 
         // Simulate loading for smooth transition
         await new Promise(resolve => setTimeout(resolve, 500));
 
         setIsLoading(false);
         setGlobalLoading(false);
->>>>>>> Stashed changes
       } catch (err) {
         setError(err.message || 'Failed to load blog post');
         setIsLoading(false);
@@ -86,12 +76,8 @@ const BlogDetail: React.FC = () => {
   }, [slug, setGlobalLoading]);
 
   useEffect(() => {
-<<<<<<< Updated upstream
-    if (!isLoading && !error && blog && containerRef.current) {
-=======
     // Only run GSAP animations on client side and when content is loaded
-    if (!isLoading && !error && blog && isClient && containerRef.current) {
->>>>>>> Stashed changes
+    if (!isLoading && !error && blog && isClient && isMounted && containerRef.current) {
       gsap.registerPlugin(ScrollTrigger);
 
       // Small delay to ensure DOM is fully rendered
@@ -120,10 +106,10 @@ const BlogDetail: React.FC = () => {
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       };
     }
-  }, [isLoading, error, blog, isClient]);
+  }, [isLoading, error, blog, isClient, isMounted]);
 
   // Loading state
-  if (isLoading || !isClient) {
+  if (isLoading || !isClient || !isMounted) {
     return (
       <div className="min-h-screen bg-black text-darkText flex items-center justify-center">
         <div className="text-center">
@@ -206,12 +192,12 @@ const BlogDetail: React.FC = () => {
         {/* Hero Section */}
         <motion.section
           className="relative min-h-screen flex items-center justify-center px-4 pt-20"
-          style={{ y: isClient ? textY : 0 }}
+          style={{ y: isClient && isMounted ? textY : 0 }}
         >
           <motion.div
             className="absolute inset-0 pointer-events-none z-0"
             style={{
-              y: isClient ? backgroundY : 0,
+              y: isClient && isMounted ? backgroundY : 0,
               background: `radial-gradient(circle at 30% 70%, rgba(245, 231, 211, 0.1), transparent 50%),
                          radial-gradient(circle at 70% 30%, rgba(245, 231, 211, 0.05), transparent 50%)`
             }}

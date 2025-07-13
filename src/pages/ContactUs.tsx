@@ -189,13 +189,6 @@ const ContactUs: React.FC = () => {
     }
   ];
 
-  const stats = [
-    { number: "20+", label: "Projects Delivered" },
-    { number: "15+", label: "Happy Clients" },
-    { number: "24/7", label: "Support Available" },
-    { number: "99%", label: "Client Satisfaction" }
-  ];
-
   return (
     <>
       <DynamicSEO pageName="contact" />

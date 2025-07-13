@@ -40,7 +40,7 @@
     },
     "about": {
       "title": "About MkRonix | Leading Creative Digital Agency Team India - Our Story & Mission",
-      "description": "Meet the MkRonix team - India's premier creative digital agency with 5+ years experience, 20+ successful projects, and 50+ expert professionals. Discover our story, values, and passion for digital innovation.",
+      "description": "Meet the MkRonix team - India's premier creative digital agency with 3+ years experience, 20+ successful projects, and 50+ expert professionals. Discover our story, values, and passion for digital innovation.",
       "keywords": "about mkronix, creative agency team India, digital agency Mumbai, web development team, UI UX designers India, mobile app developers, digital marketing experts, creative professionals Mumbai, agency story, mkronix mission vision, best digital agency team India, creative studio about us",
       "url": "https://mkronix.com/about",
       "image": "https://mkronix.com/assets/about-team-og.jpg",
@@ -100,7 +100,7 @@
     },
     "case-studies": {
       "title": "Case Studies | MkRonix Success Stories - Real Client Results & Digital Transformation Examples India",
-      "description": "Explore MkRonix case studies showcasing real client success stories, digital transformation results, and measurable business impact. See how we've helped 300+ clients achieve their digital goals across India.",
+      "description": "Explore MkRonix case studies showcasing real client success stories, digital transformation results, and measurable business impact. See how we've helped 15+ clients achieve their digital goals across India.",
       "keywords": "mkronix case studies, client success stories India, digital transformation examples, web development case studies, UI UX design success stories, mobile app case studies, digital marketing results, client testimonials Mumbai, business growth case studies, ROI digital marketing case studies India",
       "url": "https://mkronix.com/case-studies",
       "image": "https://mkronix.com/assets/case-studies-og.jpg",
@@ -131,6 +131,28 @@
         {
           "name": "Blog",
           "url": "https://mkronix.com/blogs"
+        }
+      ]
+    },
+    "blogDetail": {
+      "title": "{BLOG_TITLE} | MkRonix Blog - Digital Marketing & Web Development Insights India",
+      "description": "{BLOG_DESCRIPTION} Read expert insights from MkRonix, India's leading digital agency specializing in web development, UI/UX design, and digital marketing.",
+      "keywords": "{BLOG_KEYWORDS}, mkronix blog, digital marketing insights India, web development tips, UI UX design blog, technology trends, creative agency blog Mumbai, digital transformation insights",
+      "url": "https://mkronix.com/blog/{BLOG_SLUG}",
+      "image": "{BLOG_IMAGE}",
+      "type": "article",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Blog",
+          "url": "https://mkronix.com/blogs"
+        },
+        {
+          "name": "{BLOG_TITLE}",
+          "url": "https://mkronix.com/blog/{BLOG_SLUG}"
         }
       ]
     }
@@ -190,7 +212,7 @@
         },
         {
           "question": "Why choose MkRonix as your digital agency?",
-          "answer": "MkRonix has 5+ years of experience, 20+ successful projects, and a 99% client satisfaction rate. We combine creativity with technology to deliver results-driven digital solutions."
+          "answer": "MkRonix has 3+ years of experience, 20+ successful projects, and a 99% client satisfaction rate. We combine creativity with technology to deliver results-driven digital solutions."
         }
       ]
     },
@@ -200,7 +222,7 @@
       "faq": [
         {
           "question": "How many projects has MkRonix completed?",
-          "answer": "MkRonix has successfully completed over 300 projects across various industries including web development, UI/UX design, mobile applications, and digital marketing campaigns."
+          "answer": "MkRonix has successfully completed over 20+ projects across various industries including web development, UI/UX design, mobile applications, and digital marketing campaigns."
         },
         {
           "question": "What types of projects does MkRonix specialize in?",
@@ -276,7 +298,7 @@
         },
         {
           "question": "What results have MkRonix clients achieved?",
-          "answer": "Our clients have achieved significant results including 150% increase in website traffic, 200% boost in online conversions, 300% growth in social media engagement, and substantial ROI improvements."
+          "answer": "Our clients have achieved significant results including 150% increase in website traffic, 200% boost in online conversions, 150% growth in social media engagement, and substantial ROI improvements."
         },
         {
           "question": "Do you work with businesses in my industry?",

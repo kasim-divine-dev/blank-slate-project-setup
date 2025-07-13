@@ -1,4 +1,3 @@
-
 {
   "caseStudies": [
     {
@@ -26,7 +25,7 @@
       ],
       "technologies": [
         "React",
-        "Node.js", 
+        "Node.js",
         "AI/ML",
         "TensorFlow",
         "Three.js",
@@ -53,7 +52,7 @@
           "description": "Extensive research into AI art generation models, user behavior analysis, and competitive landscape evaluation."
         },
         {
-          "phase": "Platform Architecture", 
+          "phase": "Platform Architecture",
           "duration": "4 weeks",
           "description": "Designed scalable cloud architecture supporting real-time AI processing and collaborative features."
         },
@@ -108,11 +107,17 @@
         "Creative Technology Excellence",
         "Digital Art Platform Recognition"
       ],
-      "tags": ["AI/ML", "Digital Art", "Creative Technology", "3D Visualization", "Real-time"]
+      "tags": [
+        "AI/ML",
+        "Digital Art",
+        "Creative Technology",
+        "3D Visualization",
+        "Real-time"
+      ]
     },
     {
       "id": "architect-portfolio",
-      "slug": "architect-portfolio", 
+      "slug": "architect-portfolio",
       "title": "Visionary Architects: Modern Portfolio Platform",
       "subtitle": "Architectural Excellence Showcase",
       "shortDescription": "Modern architectural portfolio website featuring dynamic layouts and immersive project showcases with 3D visualization capabilities.",
@@ -158,7 +163,7 @@
       "process": [
         {
           "phase": "Design Research",
-          "duration": "2 weeks", 
+          "duration": "2 weeks",
           "description": "Analyzed architectural portfolio trends, user preferences, and brand requirements."
         },
         {
@@ -217,7 +222,13 @@
         "Architecture Web Excellence",
         "Innovation in Digital Presentation"
       ],
-      "tags": ["Architecture", "Portfolio", "3D Visualization", "Responsive Design", "Performance"]
+      "tags": [
+        "Architecture",
+        "Portfolio",
+        "3D Visualization",
+        "Responsive Design",
+        "Performance"
+      ]
     },
     {
       "id": "quickclock-dashboard",
@@ -326,7 +337,13 @@
         "Enterprise Software Excellence",
         "Innovation in Workforce Management"
       ],
-      "tags": ["SaaS", "HR Technology", "Analytics", "Enterprise", "Real-time"]
+      "tags": [
+        "SaaS",
+        "HR Technology",
+        "Analytics",
+        "Enterprise",
+        "Real-time"
+      ]
     },
     {
       "id": "binsina-pharma",
@@ -398,7 +415,7 @@
       "results": {
         "webTraffic": "+200%",
         "inquiries": "+150%",
-        "globalReach": "45 countries",
+        "globalReach": "5 countries",
         "trustScore": "+85%"
       },
       "metrics": [
@@ -414,7 +431,7 @@
         },
         {
           "label": "Countries Reached",
-          "value": "45+",
+          "value": "5+",
           "growth": "Global"
         },
         {
@@ -435,7 +452,13 @@
         "Corporate Design Excellence",
         "Industry Web Standards"
       ],
-      "tags": ["Pharmaceutical", "Corporate", "Global", "Compliance", "Professional"]
+      "tags": [
+        "Pharmaceutical",
+        "Corporate",
+        "Global",
+        "Compliance",
+        "Professional"
+      ]
     },
     {
       "id": "maxwheels-platform",
@@ -505,8 +528,8 @@
         }
       ],
       "results": {
-        "vehicleSales": "+300%",
-        "userEngagement": "+250%",
+        "vehicleSales": "+150%",
+        "userEngagement": "+200%",
         "dealerSatisfaction": "92%",
         "conversionRate": "+180%"
       },
@@ -518,7 +541,7 @@
         },
         {
           "label": "Monthly Sales",
-          "value": "300%",
+          "value": "100%",
           "growth": "Increase"
         },
         {
@@ -544,7 +567,13 @@
         "E-commerce Innovation Award",
         "Digital Marketplace Excellence"
       ],
-      "tags": ["E-commerce", "Automotive", "Marketplace", "Virtual Tours", "Financing"]
+      "tags": [
+        "E-commerce",
+        "Automotive",
+        "Marketplace",
+        "Virtual Tours",
+        "Financing"
+      ]
     }
   ]
 }

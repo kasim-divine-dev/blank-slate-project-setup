@@ -73,7 +73,7 @@ const Services: React.FC = () => {
       {/* Hidden SEO Content */}
       <div className="sr-only">
         <h1>Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India</h1>
-        <p>Comprehensive digital services by MkRonix India including custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 300+ successful projects completed.</p>
+        <p>Comprehensive digital services by MkRonix India including custom web development, stunning UI/UX design, mobile app development, and results-driven digital marketing. 20+ successful projects completed.</p>
         <span>Services: Web Development (React, Next.js, Node.js), UI/UX Design (Figma, Adobe XD), Mobile Development (React Native, Flutter), Digital Marketing (SEO, PPC, Social Media)</span>
         <span>Pricing: Web Development from ₹50,000, UI/UX Design from ₹30,000, Mobile Apps from ₹80,000, Digital Marketing from ₹25,000/month</span>
         <span>Industries: E-commerce, Healthcare, Education, Finance, Startups, Enterprise</span>
@@ -182,7 +182,7 @@ const Services: React.FC = () => {
                   icon: Users,
                   title: "Expert Team",
                   description: "Our skilled professionals bring years of experience and cutting-edge expertise to every project.",
-                  stat: "5+ Experts"
+                  stat: "10+ Experts"
                 },
                 {
                   icon: Award,

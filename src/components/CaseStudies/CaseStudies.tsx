@@ -51,7 +51,7 @@ const CaseStudies = () => {
     return (
         <>
             <DynamicSEO pageName="caseStudies" />
-            
+
             {/* Hidden SEO Content */}
             <div className="sr-only">
                 <h1>MkRonix Case Studies - 20+ Successful Digital Projects & Client Success Stories</h1>
@@ -59,7 +59,7 @@ const CaseStudies = () => {
                 <span>Featured Projects: {caseStudiesData.slice(0, 3).map(study => study.title).join(', ')}</span>
                 <span>Technologies: React, Node.js, UI/UX Design, Mobile Development, AI/ML, FinTech</span>
                 <span>Industries: Fashion, Productivity, Social Media, Healthcare, FinTech</span>
-                <span>Results: 300% engagement increase, 85% performance boost, 4.9/5 user ratings</span>
+                <span>Results: 150% engagement increase, 85% performance boost, 4.9/5 user ratings</span>
             </div>
 
             <section className="h-screen flex justify-center items-center px-4">
@@ -69,7 +69,7 @@ const CaseStudies = () => {
                     circleText={"Projects"}
                 />
             </section>
-            
+
             <section className="case-studies-items relative w-full h-full flex -mt-2">
                 <div className="case-studies-items-content relative z-[2] flex-[1]">
                     {caseStudiesData.slice(0, 3).map((study, index) => (
@@ -99,14 +99,14 @@ const CaseStudies = () => {
                         </div>
                     ))}
                 </div>
-                
+
                 <div className="case-studies-items-images max-md:hidden relative flex-[1]">
                     {caseStudiesData.slice(0, 3).map((study, index) => (
                         <div key={study.id} className={`case-studies-img relative will-change-transform rounded-[1em] overflow-hidden z-[1] case-studies-img-${index + 1} w-full h-[100svh]`}>
-                            <img 
-                                src={study.image} 
-                                alt={`${study.category} project`} 
-                                className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[2]' 
+                            <img
+                                src={study.image}
+                                alt={`${study.category} project`}
+                                className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[2]'
                             />
                             <div className="hero-img-overlay"></div>
                             <div className="case-studies-img-link max-md:hidden absolute top-0 left-0 w-full h-full flex justify-center items-center">

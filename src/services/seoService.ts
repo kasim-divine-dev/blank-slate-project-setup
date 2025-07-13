@@ -262,7 +262,7 @@ class SEOService {
       "@type": "ItemList",
       "name": "MkRonix Project Portfolio",
       "description": "Featured projects showcasing our expertise in web development, design, and digital marketing",
-      "numberOfItems": 300,
+      "numberOfItems": 20,
       "itemListElement": [
         {
           "@type": "CreativeWork",
