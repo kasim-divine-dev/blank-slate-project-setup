@@ -1,15 +1,12 @@
 
-import { LazyLoad } from "../utils/lazyLoad";
+import BlogSection from "@/components/BlogSection/BlogSection";
+import Carousel from "@/components/Carousel/Carousel";
+import GetInTouch from "@/components/GetInTouch/GetInTouch";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import HorizontalTextScroller from "@/components/HorizontalTextScroller/HorizontalTextScroller";
+import ServiceCard from "@/components/ServiceCard/ServiceCard";
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
-
-// Lazy load components for better performance
-const HeroSection = LazyLoad(() => import('../components/HeroSection/HeroSection'));
-const ServiceCard = LazyLoad(() => import('../components/ServiceCard/ServiceCard'));
-const Carousel = LazyLoad(() => import('../components/Carousel/Carousel'));
-const CaseStudies = LazyLoad(() => import('../components/CaseStudies/CaseStudies'));
-const BlogSection = LazyLoad(() => import('../components/BlogSection/BlogSection'));
-const HorizontalTextScroller = LazyLoad(() => import('../components/HorizontalTextScroller/HorizontalTextScroller'));
-const GetInTouch = LazyLoad(() => import('../components/GetInTouch/GetInTouch'));
+import CaseStudies from "./CaseStudies";
 
 const Index = () => {
   return (

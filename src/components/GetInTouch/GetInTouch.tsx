@@ -1,7 +1,7 @@
 
-import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useLayoutEffect, useRef } from 'react';
 import Card1 from '../../assets/img/contact-dark.png';
 import Card2 from '../../assets/img/contact-light.png';
 
@@ -12,7 +12,7 @@ const GetInTouch: React.FC = () => {
     const card3Ref = useRef<HTMLDivElement>(null);
     const headingRef = useRef<HTMLHeadingElement>(null);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         if (card1Ref.current && card2Ref.current && card3Ref.current) {
