@@ -15,7 +15,7 @@ const BlogDetail: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { setIsLoading: setGlobalLoading } = useLoading();
+  const { setLoading: setGlobalLoading } = useLoading();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -262,7 +262,7 @@ const BlogDetail: React.FC = () => {
                 alt={blog.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.target.src = '/images/projects/p1.png';
+                  (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -403,7 +403,7 @@ const BlogDetail: React.FC = () => {
                         alt={relatedBlog.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
-                          e.target.src = '/images/projects/p1.png';
+                          (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                         }}
                       />
                     </div>
