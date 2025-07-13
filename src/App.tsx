@@ -1,19 +1,20 @@
+
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { LenisProvider } from '@studio-freight/react-lenis'
+import { LenisProvider } from './providers/LenisProvider';
 import './App.css';
 import Layout from './components/Layout/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
+import Home from './pages/Index';
+import About from './pages/AboutUs';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import CaseStudies from './pages/CaseStudies';
 import Blog from './pages/Blog';
-import Contact from './pages/Contact';
-import CustomCursor from './components/CustomCursor/CustomCursor';
+import Contact from './pages/ContactUs';
+import CustomCursor from './components/Cursor/CustomCursor';
 import GlobalLoader from './components/GlobalLoader/GlobalLoader';
-import { LoadingProvider } from './components/LoadingContext/LoadingContext';
+import { LoadingProvider } from './contexts/LoadingContext';
 import BlogPost from './pages/BlogPost';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 
