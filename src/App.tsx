@@ -15,7 +15,7 @@ import Contact from './pages/ContactUs';
 import CustomCursor from './components/Cursor/CustomCursor';
 import GlobalLoader from './components/GlobalLoader/GlobalLoader';
 import { LoadingProvider } from './contexts/LoadingContext';
-import BlogPost from './pages/BlogPost';
+import BlogDetail from './pages/BlogDetail';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 
 function App() {
@@ -33,10 +33,10 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/case-studies" element={<CaseStudies />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogDetail />} />
+                <Route path="/contact" element={<Contact />} />
               </Routes>
             </Layout>
           </LoadingProvider>

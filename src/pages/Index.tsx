@@ -7,6 +7,7 @@ const HeroSection = LazyLoad(() => import('../components/HeroSection/HeroSection
 const ServiceCard = LazyLoad(() => import('../components/ServiceCard/ServiceCard'));
 const Carousel = LazyLoad(() => import('../components/Carousel/Carousel'));
 const CaseStudies = LazyLoad(() => import('../components/CaseStudies/CaseStudies'));
+const BlogSection = LazyLoad(() => import('../components/BlogSection/BlogSection'));
 const HorizontalTextScroller = LazyLoad(() => import('../components/HorizontalTextScroller/HorizontalTextScroller'));
 const GetInTouch = LazyLoad(() => import('../components/GetInTouch/GetInTouch'));
 
@@ -23,6 +24,7 @@ const Index = () => {
         <ServiceCard />
         <Carousel />
         <CaseStudies />
+        <BlogSection />
         <HorizontalTextScroller />
         <GetInTouch />
 

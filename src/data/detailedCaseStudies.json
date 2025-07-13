@@ -2,549 +2,549 @@
 {
   "caseStudies": [
     {
-      "id": "eleve-fashion-platform",
-      "slug": "eleve-fashion-platform",
-      "title": "Elevé: Redefining Fashion in the Digital Age",
-      "subtitle": "The Future of Lifestyle Fashion",
-      "shortDescription": "AI-driven personalization meets cutting-edge fashion in this comprehensive lifestyle platform.",
-      "description": "Elevé is the ultimate fusion of AI-driven personalization and cutting-edge fashion. This lifestyle project curates tailored outfit recommendations based on your mood, schedule, and personal aesthetics. Elevate your style with real-time trend insights and sustainable fashion choices—all in one seamless experience.",
-      "category": "Lifestyle",
-      "industry": "Fashion & E-commerce",
-      "client": "Elevé Fashion",
+      "id": "algora-ai-platform",
+      "slug": "algora-ai-platform",
+      "title": "ALGORA: AI Art Platform Revolution",
+      "subtitle": "Interactive Digital Experience Platform",
+      "shortDescription": "Interactive digital experience showcasing the fusion of art and algorithms with dynamic visual storytelling and AI-powered creative tools.",
+      "description": "ALGORA represents the pinnacle of AI-driven creative platforms, where artificial intelligence meets artistic expression. This comprehensive platform combines machine learning algorithms with intuitive design tools to create an immersive experience for digital artists and art enthusiasts worldwide.",
+      "category": "Digital Experience",
+      "industry": "AI & Creative Technology",
+      "client": "ALGORA Tech Solutions",
       "year": "2024",
       "duration": "4 months",
-      "teamSize": "8 members",
-      "projectType": "Full-stack Web Application",
+      "teamSize": "8 specialists",
+      "projectType": "AI-Powered Creative Platform",
       "status": "Completed",
       "featured": true,
-      "mainImage": "/images/projects/p1.png",
+      "mainImage": "/images/carousel/algora.png",
       "gallery": [
+        "/images/carousel/algora.png",
         "/images/projects/p1.png",
-        "/images/carousel/luxury-watches.png",
-        "/images/carousel/kkJewells.png",
-        "/images/projects/p4.png"
+        "/images/projects/p2.png",
+        "/images/projects/p3.png"
       ],
       "technologies": [
         "React",
         "Node.js", 
         "AI/ML",
         "TensorFlow",
+        "Three.js",
+        "WebGL",
         "MongoDB",
-        "Stripe API",
-        "AWS S3",
-        "Socket.io"
-      ],
-      "features": [
-        "AI-powered outfit recommendations",
-        "Mood-based styling algorithm",
-        "Sustainable fashion marketplace",
-        "Real-time trend analysis",
-        "Virtual try-on experience",
-        "Social sharing platform",
-        "Personal style profile",
-        "Shopping cart integration"
-      ],
-      "challenge": "Create an AI-driven fashion platform that personalizes outfit recommendations based on user mood, schedule, and style preferences while maintaining a focus on sustainability and user engagement.",
-      "solution": "Developed a comprehensive platform combining machine learning algorithms for personalization, sustainable fashion marketplace integration, and social features to create an engaging user experience that promotes both style and environmental consciousness.",
-      "process": [
-        {
-          "phase": "Research & Discovery",
-          "duration": "2 weeks",
-          "description": "Conducted market research, user interviews, and competitive analysis to understand fashion industry trends and user pain points."
-        },
-        {
-          "phase": "Design & Prototyping", 
-          "duration": "3 weeks",
-          "description": "Created wireframes, user flows, and high-fidelity prototypes focusing on AI recommendation interface and sustainable shopping experience."
-        },
-        {
-          "phase": "Development",
-          "duration": "10 weeks",
-          "description": "Built the full-stack application with AI integration, payment processing, and real-time features."
-        },
-        {
-          "phase": "Testing & Launch",
-          "duration": "3 weeks",
-          "description": "Comprehensive testing, AI model training, and phased launch with user feedback integration."
-        }
-      ],
-      "results": {
-        "userEngagement": "+300%",
-        "conversionRate": "+180%", 
-        "userRetention": "+250%",
-        "sustainablePurchases": "40%"
-      },
-      "metrics": [
-        {
-          "label": "Monthly Active Users",
-          "value": "50K+",
-          "growth": "+300%"
-        },
-        {
-          "label": "AI Recommendation Accuracy",
-          "value": "94%",
-          "growth": "New Feature"
-        },
-        {
-          "label": "Sustainable Product Sales",
-          "value": "40%",
-          "growth": "New Initiative"
-        },
-        {
-          "label": "User Session Duration",
-          "value": "12min",
-          "growth": "+250%"
-        }
-      ],
-      "testimonial": {
-        "quote": "MkRonix transformed our vision into reality. The AI-powered platform has revolutionized how our customers discover and purchase fashion, leading to unprecedented engagement and sales growth.",
-        "author": "Sarah Chen",
-        "position": "CEO, Elevé Fashion",
-        "avatar": "/api/placeholder/60/60",
-        "rating": 5
-      },
-      "awards": [
-        "Best Fashion Tech Innovation 2024",
-        "AI Excellence Award",
-        "Sustainable Fashion Recognition"
-      ],
-      "tags": ["AI/ML", "Fashion", "E-commerce", "Sustainability", "Mobile-First"]
-    },
-    {
-      "id": "patria-time-management",
-      "slug": "patria-time-management", 
-      "title": "Patria: Master Your Time Like Never Before",
-      "subtitle": "The Ultimate Time Management Software",
-      "shortDescription": "Revolutionary time management platform with AI-powered scheduling and productivity analytics.",
-      "description": "Patria transforms how individuals and teams manage time with AI-powered scheduling, automated task prioritization, and intuitive productivity analytics. Designed for efficiency, Patria helps users stay on top of deadlines, meetings, and daily routines seamlessly.",
-      "category": "Productivity",
-      "industry": "Enterprise Software",
-      "client": "Patria Solutions",
-      "year": "2024",
-      "duration": "5 months",
-      "teamSize": "10 members",
-      "projectType": "SaaS Platform",
-      "status": "Completed",
-      "featured": true,
-      "mainImage": "/images/projects/p2.png",
-      "gallery": [
-        "/images/projects/p2.png",
-        "/images/carousel/attendance.png",
-        "/images/carousel/itinerary-generator.png",
-        "/images/projects/p5.png"
-      ],
-      "technologies": [
-        "React",
-        "Node.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Redis",
-        "WebRTC",
-        "Docker",
         "AWS"
       ],
       "features": [
-        "AI-powered scheduling",
-        "Automated task prioritization",
-        "Team collaboration tools",
-        "Productivity analytics dashboard",
-        "Calendar integration",
-        "Time tracking",
-        "Goal setting and monitoring",
-        "Real-time notifications"
+        "AI-powered art generation",
+        "Real-time collaborative editing",
+        "Advanced algorithm visualization",
+        "Interactive 3D art galleries",
+        "Machine learning model training",
+        "Cloud-based rendering",
+        "Social sharing platform",
+        "NFT marketplace integration"
       ],
-      "challenge": "Develop a comprehensive time management solution that uses AI to optimize scheduling while providing teams with collaboration tools and detailed productivity insights.",
-      "solution": "Built a scalable SaaS platform with intelligent scheduling algorithms, real-time collaboration features, and comprehensive analytics to help individuals and teams maximize productivity.",
+      "challenge": "Create an AI-driven platform that democratizes digital art creation while maintaining professional-grade quality and performance for both amateur and professional artists.",
+      "solution": "Developed a comprehensive AI platform with intuitive interfaces, powerful machine learning backends, and seamless integration of creative tools that empower users to create stunning digital art regardless of their technical expertise.",
       "process": [
         {
-          "phase": "Market Analysis",
-          "duration": "2 weeks", 
-          "description": "Analyzed existing productivity tools, identified market gaps, and defined unique value propositions."
+          "phase": "AI Research & Development",
+          "duration": "6 weeks",
+          "description": "Extensive research into AI art generation models, user behavior analysis, and competitive landscape evaluation."
         },
         {
-          "phase": "System Architecture",
-          "duration": "3 weeks",
-          "description": "Designed scalable architecture supporting real-time collaboration and AI processing requirements."
-        },
-        {
-          "phase": "MVP Development",
-          "duration": "12 weeks",
-          "description": "Developed core features including AI scheduling, team collaboration, and basic analytics."
-        },
-        {
-          "phase": "Enterprise Features",
+          "phase": "Platform Architecture", 
           "duration": "4 weeks",
-          "description": "Added advanced analytics, integrations, and enterprise-grade security features."
+          "description": "Designed scalable cloud architecture supporting real-time AI processing and collaborative features."
+        },
+        {
+          "phase": "Development & Integration",
+          "duration": "10 weeks",
+          "description": "Built the full platform with AI integration, 3D visualization, and user collaboration systems."
+        },
+        {
+          "phase": "Testing & Optimization",
+          "duration": "4 weeks",
+          "description": "Comprehensive AI model testing, performance optimization, and user experience refinement."
         }
       ],
       "results": {
-        "productivityIncrease": "+40%",
-        "missedDeadlines": "-85%",
-        "taskCompletion": "+200%",
-        "userSatisfaction": "96%"
+        "userEngagement": "+450%",
+        "artCreated": "100K+",
+        "activeUsers": "+350%",
+        "platformUptime": "99.9%"
       },
       "metrics": [
         {
-          "label": "Enterprise Clients",
-          "value": "150+",
-          "growth": "New Product"
+          "label": "Art Pieces Generated",
+          "value": "100K+",
+          "growth": "New Platform"
         },
         {
-          "label": "Time Saved Per User",
-          "value": "8hrs/week",
-          "growth": "New Metric"
+          "label": "AI Model Accuracy",
+          "value": "96%",
+          "growth": "Industry Leading"
         },
         {
-          "label": "AI Scheduling Accuracy",
-          "value": "92%",
-          "growth": "New Feature"
+          "label": "User Satisfaction",
+          "value": "4.9/5",
+          "growth": "Excellent"
         },
         {
-          "label": "Team Productivity Boost",
-          "value": "40%",
-          "growth": "Key Outcome"
+          "label": "Platform Performance",
+          "value": "99.9%",
+          "growth": "Uptime"
         }
       ],
       "testimonial": {
-        "quote": "Patria has transformed our team's productivity. The AI scheduling is incredibly accurate, and the analytics help us identify and eliminate inefficiencies we never knew existed.",
-        "author": "Michael Rodriguez",
-        "position": "Operations Director, TechCorp",
+        "quote": "MkRonix transformed our vision into reality. The AI platform has revolutionized how artists create and share their work, leading to unprecedented engagement and community growth.",
+        "author": "Alex Rivera",
+        "position": "CEO, ALGORA Tech Solutions",
         "avatar": "/api/placeholder/60/60",
         "rating": 5
       },
       "awards": [
-        "Best Productivity App 2024",
-        "Enterprise Software Excellence",
-        "Innovation in AI Application"
+        "Best AI Innovation 2024",
+        "Creative Technology Excellence",
+        "Digital Art Platform Recognition"
       ],
-      "tags": ["SaaS", "Productivity", "AI", "Enterprise", "Analytics"]
+      "tags": ["AI/ML", "Digital Art", "Creative Technology", "3D Visualization", "Real-time"]
     },
     {
-      "id": "creators-social-platform",
-      "slug": "creators-social-platform",
-      "title": "Creators: The Social Network for Innovators", 
-      "subtitle": "Powering the Next Generation of Content",
-      "shortDescription": "Exclusive social platform for artists, influencers, and digital content creators with AI-driven tools.",
-      "description": "Creators is a social platform built exclusively for artists, influencers, and digital content creators. Featuring AI-driven content suggestions, monetization tools, and an engaged creator-first community, Creators empowers individuals to build, share, and grow their brand like never before.",
-      "category": "Social Media",
-      "industry": "Content Creation & Media",
-      "client": "Creators Network Inc.",
-      "year": "2023",
-      "duration": "6 months",
-      "teamSize": "12 members",
-      "projectType": "Social Media Platform",
+      "id": "architect-portfolio",
+      "slug": "architect-portfolio", 
+      "title": "Visionary Architects: Modern Portfolio Platform",
+      "subtitle": "Architectural Excellence Showcase",
+      "shortDescription": "Modern architectural portfolio website featuring dynamic layouts and immersive project showcases with 3D visualization capabilities.",
+      "description": "A sophisticated portfolio platform designed for Visionary Architects, featuring cutting-edge design principles, immersive project presentations, and interactive 3D visualizations that bring architectural concepts to life.",
+      "category": "Architecture Portfolio",
+      "industry": "Architecture & Design",
+      "client": "Visionary Architects Studio",
+      "year": "2024",
+      "duration": "3 months",
+      "teamSize": "6 designers",
+      "projectType": "Professional Portfolio Website",
       "status": "Completed",
       "featured": true,
-      "mainImage": "/images/projects/p3.png",
+      "mainImage": "/images/carousel/architect.png",
       "gallery": [
-        "/images/projects/p3.png",
-        "/images/carousel/kikcster.png",
-        "/images/carousel/gym-rats.png",
+        "/images/carousel/architect.png",
+        "/images/projects/p4.png",
+        "/images/projects/p5.png",
         "/images/projects/p6.png"
       ],
       "technologies": [
         "Next.js",
-        "GraphQL",
-        "Apollo Server",
-        "MongoDB",
-        "AWS",
-        "Stripe API",
-        "WebSocket",
-        "Redis"
+        "Framer Motion",
+        "Three.js",
+        "GSAP",
+        "Responsive Design",
+        "TypeScript",
+        "Tailwind CSS",
+        "Vercel"
       ],
       "features": [
-        "AI content suggestions",
-        "Multi-format content sharing",
-        "Monetization tools",
-        "Creator analytics",
-        "Live streaming",
-        "Community building",
-        "Brand collaboration hub",
-        "NFT marketplace integration"
+        "3D project visualizations",
+        "Interactive floor plans",
+        "Dynamic portfolio galleries",
+        "Immersive project storytelling",
+        "Mobile-optimized design",
+        "SEO optimization",
+        "Contact integration",
+        "Performance optimization"
       ],
-      "challenge": "Build a comprehensive social platform that caters specifically to content creators' needs while providing robust monetization options and community engagement features.",
-      "solution": "Developed a feature-rich social platform with AI-powered content optimization, integrated payment systems, and tools designed specifically for creator success and community building.",
+      "challenge": "Create a visually stunning portfolio that effectively showcases architectural projects while maintaining fast loading times and excellent user experience across all devices.",
+      "solution": "Developed a modern, responsive portfolio with advanced 3D visualizations, smooth animations, and optimized performance that perfectly represents the architectural firm's innovative approach.",
       "process": [
         {
-          "phase": "Creator Research",
+          "phase": "Design Research",
+          "duration": "2 weeks", 
+          "description": "Analyzed architectural portfolio trends, user preferences, and brand requirements."
+        },
+        {
+          "phase": "Visual Design",
           "duration": "3 weeks",
-          "description": "Extensive research with content creators to understand pain points and desired features in existing platforms."
+          "description": "Created stunning visual designs with focus on project presentation and user experience."
         },
         {
-          "phase": "Platform Architecture",
-          "duration": "4 weeks", 
-          "description": "Designed scalable architecture to handle high-volume content sharing and real-time interactions."
+          "phase": "Development",
+          "duration": "6 weeks",
+          "description": "Built responsive website with 3D visualizations and interactive features."
         },
         {
-          "phase": "Core Development",
-          "duration": "16 weeks",
-          "description": "Built essential features including content management, social interactions, and monetization systems."
-        },
-        {
-          "phase": "Beta Launch & Optimization",
-          "duration": "5 weeks",
-          "description": "Launched beta version with select creators, gathered feedback, and optimized performance."
+          "phase": "Launch & Optimization",
+          "duration": "1 week",
+          "description": "Performance optimization, SEO implementation, and final launch preparations."
         }
       ],
       "results": {
-        "activeCreators": "500K+",
-        "creatorEarnings": "$2M+",
-        "contentShared": "10M+",
-        "engagementRate": "+350%"
+        "clientInquiries": "+280%",
+        "portfolioViews": "+400%",
+        "userEngagement": "+320%",
+        "loadingSpeed": "90% faster"
       },
       "metrics": [
         {
-          "label": "Active Creators",
-          "value": "500K+",
-          "growth": "New Platform"
+          "label": "Portfolio Views",
+          "value": "50K+",
+          "growth": "+400%"
         },
         {
-          "label": "Monthly Content Uploads",
-          "value": "2M+",
-          "growth": "Growing Fast"
+          "label": "Client Inquiries",
+          "value": "280%",
+          "growth": "Increase"
         },
         {
-          "label": "Creator Revenue Generated",
-          "value": "$2M+",
-          "growth": "New Revenue Stream"
+          "label": "Page Load Speed",
+          "value": "1.2s",
+          "growth": "90% Faster"
         },
         {
-          "label": "Platform Engagement Rate",
-          "value": "68%",
-          "growth": "Industry Leading"
+          "label": "Mobile Performance",
+          "value": "98/100",
+          "growth": "Google Score"
         }
       ],
       "testimonial": {
-        "quote": "Creators platform has been a game-changer for my content business. The monetization tools and community features have helped me grow my audience and revenue exponentially.",
-        "author": "Emma Thompson",
-        "position": "Content Creator & Influencer",
+        "quote": "Our new portfolio website has completely transformed how we present our work. The 3D visualizations and smooth animations perfectly capture our architectural vision.",
+        "author": "Maria Gonzalez",
+        "position": "Principal Architect, Visionary Architects",
         "avatar": "/api/placeholder/60/60",
         "rating": 5
       },
       "awards": [
-        "Best Social Platform for Creators 2023",
-        "Innovation in Creator Economy",
-        "Community Choice Award"
+        "Best Portfolio Design 2024",
+        "Architecture Web Excellence",
+        "Innovation in Digital Presentation"
       ],
-      "tags": ["Social Media", "Creator Economy", "Community", "Monetization", "AI"]
+      "tags": ["Architecture", "Portfolio", "3D Visualization", "Responsive Design", "Performance"]
     },
     {
-      "id": "healthcare-mobile-app",
-      "slug": "healthcare-mobile-app",
-      "title": "HealthConnect: Revolutionizing Patient Care",
-      "subtitle": "Seamless Healthcare at Your Fingertips",
-      "shortDescription": "Comprehensive healthcare mobile app with telemedicine, appointment scheduling, and health tracking.",
-      "description": "HealthConnect transforms healthcare delivery through a comprehensive mobile application featuring telemedicine consultations, smart appointment scheduling, health record management, and AI-powered health insights for both patients and healthcare providers.",
-      "category": "Healthcare",
-      "industry": "Healthcare Technology",
-      "client": "MedTech Solutions",
+      "id": "quickclock-dashboard",
+      "slug": "quickclock-dashboard",
+      "title": "QuickClock: Advanced Analytics Dashboard",
+      "subtitle": "Employee Time Tracking & Analytics",
+      "shortDescription": "Employee time tracking and analytics dashboard with real-time notifications and comprehensive reporting for modern workplaces.",
+      "description": "QuickClock revolutionizes workforce management with an intelligent dashboard that combines time tracking, analytics, and reporting in one comprehensive platform designed for modern businesses.",
+      "category": "SaaS Dashboard",
+      "industry": "HR Technology",
+      "client": "QuickClock Solutions Inc.",
       "year": "2024",
-      "duration": "7 months",
-      "teamSize": "14 members",
-      "projectType": "Mobile Health Application",
+      "duration": "5 months",
+      "teamSize": "10 developers",
+      "projectType": "Enterprise SaaS Platform",
       "status": "Completed",
       "featured": true,
-      "mainImage": "/images/carousel/wisdommeds.png",
+      "mainImage": "/images/carousel/attendance.png",
       "gallery": [
-        "/images/carousel/wisdommeds.png",
+        "/images/carousel/attendance.png",
+        "/images/projects/p2.png",
         "/images/projects/p7.png",
-        "/images/carousel/binsina.png",
-        "/images/projects/p4.png"
-      ],
-      "technologies": [
-        "React Native",
-        "Node.js",
-        "MongoDB",
-        "WebRTC",
-        "Firebase",
-        "Socket.io",
-        "Stripe",
-        "AWS HealthLake"
-      ],
-      "features": [
-        "Video telemedicine consultations",
-        "Appointment scheduling system",
-        "Electronic health records",
-        "Prescription management",
-        "Health tracking and monitoring",
-        "Secure messaging",
-        "Insurance integration",
-        "AI health insights"
-      ],
-      "challenge": "Create a HIPAA-compliant mobile healthcare platform that seamlessly connects patients with healthcare providers while ensuring data security and providing comprehensive health management tools.",
-      "solution": "Developed a secure, scalable mobile application with end-to-end encryption, real-time communication capabilities, and integrated health management systems that comply with healthcare regulations.",
-      "process": [
-        {
-          "phase": "Compliance Research",
-          "duration": "3 weeks",
-          "description": "Extensive research on HIPAA compliance, healthcare regulations, and security requirements."
-        },
-        {
-          "phase": "Security Architecture",
-          "duration": "4 weeks",
-          "description": "Designed secure architecture with end-to-end encryption and compliance frameworks."
-        },
-        {
-          "phase": "Core Development",
-          "duration": "20 weeks",
-          "description": "Developed telemedicine features, health records system, and patient management tools."
-        },
-        {
-          "phase": "Testing & Certification",
-          "duration": "5 weeks",
-          "description": "Comprehensive security testing, compliance validation, and medical device certification process."
-        }
-      ],
-      "results": {
-        "patientSatisfaction": "98%",
-        "consultationTime": "-45%",
-        "appointmentNoShows": "-60%",
-        "providerEfficiency": "+35%"
-      },
-      "metrics": [
-        {
-          "label": "Registered Patients",
-          "value": "75K+",
-          "growth": "New Platform"
-        },
-        {
-          "label": "Completed Consultations",
-          "value": "25K+",
-          "growth": "Monthly"
-        },
-        {
-          "label": "Healthcare Providers",
-          "value": "500+",
-          "growth": "Active Network"
-        },
-        {
-          "label": "Patient Satisfaction Score",
-          "value": "4.9/5",
-          "growth": "Excellent"
-        }
-      ],
-      "testimonial": {
-        "quote": "HealthConnect has transformed how we deliver patient care. The platform's ease of use and comprehensive features have significantly improved our practice efficiency and patient satisfaction.",
-        "author": "Dr. James Wilson",
-        "position": "Chief Medical Officer, Regional Health Network",
-        "avatar": "/api/placeholder/60/60",
-        "rating": 5
-      },
-      "awards": [
-        "Healthcare Innovation Award 2024",
-        "Best Mobile Health App",
-        "Digital Health Excellence"
-      ],
-      "tags": ["Healthcare", "Mobile App", "Telemedicine", "HIPAA Compliant", "AI"]
-    },
-    {
-      "id": "fintech-trading-platform",
-      "slug": "fintech-trading-platform",
-      "title": "TradeForge: Next-Gen Investment Platform",
-      "subtitle": "Intelligent Trading for Modern Investors",
-      "shortDescription": "Advanced fintech platform with AI-powered trading insights and comprehensive portfolio management.",
-      "description": "TradeForge is a sophisticated financial technology platform that combines AI-powered market analysis, real-time trading capabilities, and comprehensive portfolio management tools to empower both novice and experienced investors in making informed financial decisions.",
-      "category": "FinTech",
-      "industry": "Financial Services",
-      "client": "TradeForge Financial",
-      "year": "2024",
-      "duration": "8 months",
-      "teamSize": "16 members",
-      "projectType": "Financial Trading Platform",
-      "status": "Completed",
-      "featured": true,
-      "mainImage": "/images/carousel/lotto-app.png",
-      "gallery": [
-        "/images/carousel/lotto-app.png",
-        "/images/carousel/lotto-1.png",
-        "/images/projects/p5.png",
-        "/images/projects/p2.png"
+        "/images/carousel/lotto-app.png"
       ],
       "technologies": [
         "React",
         "Node.js",
-        "TypeScript",
+        "Chart.js",
+        "Material UI",
         "PostgreSQL",
         "Redis",
         "WebSocket",
-        "Docker",
-        "Kubernetes"
+        "Docker"
       ],
       "features": [
-        "Real-time market data",
-        "AI-powered trading signals",
-        "Portfolio analytics dashboard",
-        "Risk management tools",
-        "Social trading features",
-        "Educational resources",
-        "Multi-asset support",
-        "Advanced charting tools"
+        "Real-time time tracking",
+        "Advanced analytics dashboard",
+        "Automated reporting system",
+        "Team performance insights",
+        "Mobile app integration",
+        "Custom notification system",
+        "Multi-timezone support",
+        "API integrations"
       ],
-      "challenge": "Develop a secure, high-performance trading platform that provides both sophisticated tools for experienced traders and intuitive interfaces for beginners, while ensuring regulatory compliance.",
-      "solution": "Built a scalable platform with real-time data processing, AI-driven insights, and multi-tiered user experiences that cater to different investor skill levels while maintaining institutional-grade security.",
+      "challenge": "Develop a comprehensive time tracking solution that provides detailed analytics while maintaining simplicity for end users and powerful insights for managers.",
+      "solution": "Created an intuitive SaaS platform with real-time tracking capabilities, advanced analytics, and automated reporting that helps businesses optimize their workforce management.",
       "process": [
         {
-          "phase": "Financial Compliance Research",
+          "phase": "Market Research",
+          "duration": "3 weeks",
+          "description": "Analyzed existing solutions, identified market gaps, and defined unique value propositions."
+        },
+        {
+          "phase": "System Design",
           "duration": "4 weeks",
-          "description": "Comprehensive study of financial regulations, trading requirements, and security standards."
+          "description": "Designed scalable architecture supporting real-time data processing and analytics."
         },
         {
-          "phase": "Trading System Architecture",
-          "duration": "5 weeks",
-          "description": "Designed high-frequency trading architecture with real-time data processing capabilities."
+          "phase": "Development",
+          "duration": "14 weeks",
+          "description": "Built comprehensive platform with tracking, analytics, and reporting features."
         },
         {
-          "phase": "Platform Development",
-          "duration": "22 weeks",
-          "description": "Built trading engine, portfolio management system, and user interfaces with AI integration."
-        },
-        {
-          "phase": "Security & Compliance Testing",
-          "duration": "4 weeks",
-          "description": "Extensive security audits, penetration testing, and regulatory compliance verification."
+          "phase": "Testing & Launch",
+          "duration": "3 weeks",
+          "description": "Extensive testing, performance optimization, and gradual rollout to customers."
         }
       ],
       "results": {
-        "tradingVolume": "$50M+",
-        "userAcquisition": "+400%",
-        "platformUptime": "99.9%",
-        "customerSatisfaction": "94%"
+        "timeAccuracy": "+95%",
+        "productivity": "+40%",
+        "reportingTime": "-80%",
+        "userAdoption": "98%"
       },
       "metrics": [
         {
-          "label": "Active Traders",
-          "value": "25K+",
+          "label": "Enterprise Clients",
+          "value": "200+",
           "growth": "New Platform"
         },
         {
-          "label": "Daily Trading Volume",
-          "value": "$2M+",
-          "growth": "Growing Daily"
+          "label": "Time Accuracy",
+          "value": "95%",
+          "growth": "Improvement"
         },
         {
-          "label": "Platform Uptime",
-          "value": "99.9%",
-          "growth": "Reliable"
+          "label": "Productivity Boost",
+          "value": "40%",
+          "growth": "Average"
         },
         {
-          "label": "AI Prediction Accuracy",
-          "value": "87%",
-          "growth": "Industry Leading"
+          "label": "User Satisfaction",
+          "value": "4.8/5",
+          "growth": "Rating"
         }
       ],
       "testimonial": {
-        "quote": "TradeForge has completely changed my investment strategy. The AI insights and intuitive interface make complex trading decisions accessible and profitable.",
-        "author": "Robert Chen",
-        "position": "Investment Portfolio Manager",
+        "quote": "QuickClock has transformed our workforce management. The analytics and reporting features provide insights we never had before, leading to significant productivity improvements.",
+        "author": "David Thompson",
+        "position": "HR Director, TechCorp Industries",
         "avatar": "/api/placeholder/60/60",
         "rating": 5
       },
       "awards": [
-        "Best FinTech Innovation 2024",
-        "Trading Platform Excellence",
-        "AI in Finance Recognition"
+        "Best HR Tech Solution 2024",
+        "Enterprise Software Excellence",
+        "Innovation in Workforce Management"
       ],
-      "tags": ["FinTech", "Trading", "AI", "Real-time", "Portfolio Management"]
+      "tags": ["SaaS", "HR Technology", "Analytics", "Enterprise", "Real-time"]
+    },
+    {
+      "id": "binsina-pharma",
+      "slug": "binsina-pharma",
+      "title": "Binsina Pharma: Global Export Platform",
+      "subtitle": "Professional Pharmaceutical Website",
+      "shortDescription": "Professional pharmaceutical export company website with global reach and compliance focus, featuring modern design and comprehensive product catalog.",
+      "description": "Binsina Pharma Export represents excellence in pharmaceutical distribution with a professional website that showcases their global reach, product quality, and commitment to healthcare worldwide.",
+      "category": "Corporate Website",
+      "industry": "Pharmaceutical",
+      "client": "Binsina Pharma Export Pvt Ltd",
+      "year": "2024",
+      "duration": "2 months",
+      "teamSize": "5 specialists",
+      "projectType": "Corporate Website",
+      "status": "Completed",
+      "featured": false,
+      "mainImage": "/images/carousel/binsina.png",
+      "gallery": [
+        "/images/carousel/binsina.png",
+        "/images/carousel/wisdommeds.png",
+        "/images/projects/p3.png",
+        "/images/projects/p1.png"
+      ],
+      "technologies": [
+        "WordPress",
+        "Custom Theme",
+        "PHP",
+        "MySQL",
+        "SEO Optimization",
+        "Responsive Design",
+        "SSL Security",
+        "CDN"
+      ],
+      "features": [
+        "Product catalog system",
+        "Global compliance information",
+        "Multi-language support",
+        "Contact management",
+        "SEO optimization",
+        "Mobile responsiveness",
+        "Security protocols",
+        "Performance optimization"
+      ],
+      "challenge": "Create a professional website that establishes trust and credibility in the pharmaceutical industry while effectively showcasing products and global reach.",
+      "solution": "Developed a clean, professional website with comprehensive product information, compliance details, and global presence that builds trust with international clients.",
+      "process": [
+        {
+          "phase": "Brand Analysis",
+          "duration": "1 week",
+          "description": "Analyzed pharmaceutical industry standards, compliance requirements, and brand positioning."
+        },
+        {
+          "phase": "Design Development",
+          "duration": "2 weeks",
+          "description": "Created professional design reflecting trust, quality, and pharmaceutical excellence."
+        },
+        {
+          "phase": "Development",
+          "duration": "4 weeks",
+          "description": "Built responsive website with product catalog and compliance features."
+        },
+        {
+          "phase": "Launch & SEO",
+          "duration": "1 week",
+          "description": "Final optimization, SEO implementation, and successful launch."
+        }
+      ],
+      "results": {
+        "webTraffic": "+200%",
+        "inquiries": "+150%",
+        "globalReach": "45 countries",
+        "trustScore": "+85%"
+      },
+      "metrics": [
+        {
+          "label": "Global Inquiries",
+          "value": "150%",
+          "growth": "Increase"
+        },
+        {
+          "label": "Web Traffic",
+          "value": "200%",
+          "growth": "Growth"
+        },
+        {
+          "label": "Countries Reached",
+          "value": "45+",
+          "growth": "Global"
+        },
+        {
+          "label": "Trust Score",
+          "value": "4.7/5",
+          "growth": "Excellent"
+        }
+      ],
+      "testimonial": {
+        "quote": "Our new website has significantly enhanced our global presence. The professional design and clear product information have increased our international inquiries substantially.",
+        "author": "Dr. Rajesh Patel",
+        "position": "Managing Director, Binsina Pharma Export",
+        "avatar": "/api/placeholder/60/60",
+        "rating": 5
+      },
+      "awards": [
+        "Best Pharmaceutical Website 2024",
+        "Corporate Design Excellence",
+        "Industry Web Standards"
+      ],
+      "tags": ["Pharmaceutical", "Corporate", "Global", "Compliance", "Professional"]
+    },
+    {
+      "id": "maxwheels-platform",
+      "slug": "maxwheels-platform",
+      "title": "Maxwheels: Car Marketplace Revolution",
+      "subtitle": "Advanced Automotive E-commerce Platform",
+      "shortDescription": "Car marketplace platform with advanced search functionality and interactive vehicle showcases, featuring virtual tours and financing options.",
+      "description": "Maxwheels transforms the car buying experience with an innovative marketplace that combines advanced search capabilities, virtual vehicle tours, and integrated financing solutions.",
+      "category": "E-commerce Platform",
+      "industry": "Automotive",
+      "client": "Maxwheels Auto Solutions",
+      "year": "2024",
+      "duration": "6 months",
+      "teamSize": "12 developers",
+      "projectType": "E-commerce Marketplace",
+      "status": "Completed",
+      "featured": true,
+      "mainImage": "/images/carousel/cars-web.png",
+      "gallery": [
+        "/images/carousel/cars-web.png",
+        "/images/projects/p5.png",
+        "/images/projects/p6.png",
+        "/images/projects/p4.png"
+      ],
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe API",
+        "Search Filters",
+        "AWS S3",
+        "Socket.io",
+        "Redis"
+      ],
+      "features": [
+        "Advanced vehicle search",
+        "Virtual car tours",
+        "Financing calculator",
+        "Dealer management system",
+        "Mobile app integration",
+        "Real-time chat support",
+        "Vehicle comparison tool",
+        "Insurance integration"
+      ],
+      "challenge": "Create a comprehensive car marketplace that simplifies the vehicle buying process while providing detailed information and financing options for customers.",
+      "solution": "Developed a user-friendly platform with advanced search capabilities, virtual tours, and integrated services that streamline the car buying journey from search to purchase.",
+      "process": [
+        {
+          "phase": "Market Analysis",
+          "duration": "4 weeks",
+          "description": "Analyzed automotive marketplace trends, user behavior, and competitor strategies."
+        },
+        {
+          "phase": "Platform Design",
+          "duration": "6 weeks",
+          "description": "Designed comprehensive marketplace architecture with focus on user experience."
+        },
+        {
+          "phase": "Development",
+          "duration": "16 weeks",
+          "description": "Built full marketplace with search, virtual tours, and financing integration."
+        },
+        {
+          "phase": "Testing & Launch",
+          "duration": "4 weeks",
+          "description": "Comprehensive testing, optimization, and successful marketplace launch."
+        }
+      ],
+      "results": {
+        "vehicleSales": "+300%",
+        "userEngagement": "+250%",
+        "dealerSatisfaction": "92%",
+        "conversionRate": "+180%"
+      },
+      "metrics": [
+        {
+          "label": "Vehicle Listings",
+          "value": "10K+",
+          "growth": "Active"
+        },
+        {
+          "label": "Monthly Sales",
+          "value": "300%",
+          "growth": "Increase"
+        },
+        {
+          "label": "User Satisfaction",
+          "value": "4.6/5",
+          "growth": "Rating"
+        },
+        {
+          "label": "Platform Uptime",
+          "value": "99.8%",
+          "growth": "Reliable"
+        }
+      ],
+      "testimonial": {
+        "quote": "Maxwheels has revolutionized our car sales process. The platform's features and user experience have significantly increased our sales and customer satisfaction.",
+        "author": "Robert Johnson",
+        "position": "CEO, Maxwheels Auto Solutions",
+        "avatar": "/api/placeholder/60/60",
+        "rating": 5
+      },
+      "awards": [
+        "Best Automotive Platform 2024",
+        "E-commerce Innovation Award",
+        "Digital Marketplace Excellence"
+      ],
+      "tags": ["E-commerce", "Automotive", "Marketplace", "Virtual Tours", "Financing"]
     }
   ]
 }

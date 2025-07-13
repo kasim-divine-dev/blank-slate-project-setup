@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
@@ -8,113 +9,210 @@
 
 <!-- Main Pages -->
 <url>
-  <loc>https://mkronix.com/</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
+<loc>https://mkronix.com/</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
 </url>
 
 <url>
-  <loc>https://mkronix.com/about</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
+<loc>https://mkronix.com/about</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
 </url>
 
 <url>
-  <loc>https://mkronix.com/services</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
+<loc>https://mkronix.com/services</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.9</priority>
 </url>
 
 <url>
-  <loc>https://mkronix.com/projects</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
+<loc>https://mkronix.com/projects</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
-  <loc>https://mkronix.com/case-studies</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.9</priority>
+<loc>https://mkronix.com/case-studies</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
-  <loc>https://mkronix.com/blog</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.7</priority>
+<loc>https://mkronix.com/blog</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
-  <loc>https://mkronix.com/contact</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
+<loc>https://mkronix.com/contact</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 <!-- Case Study Detail Pages -->
 <url>
-  <loc>https://mkronix.com/case-studies/eleve-fashion-platform</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <image:image>
-    <image:loc>https://mkronix.com/images/projects/p1.png</image:loc>
-    <image:title>Elevé Fashion Platform Case Study</image:title>
-    <image:caption>AI-driven fashion platform with personalized recommendations</image:caption>
-  </image:image>
+<loc>https://mkronix.com/case-studies/algora-ai-platform</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<image:image>
+<image:loc>https://mkronix.com/images/carousel/algora.png</image:loc>
+<image:title>ALGORA AI Art Platform</image:title>
+<image:caption>Interactive digital experience showcasing AI-powered art creation</image:caption>
+</image:image>
 </url>
 
 <url>
-  <loc>https://mkronix.com/case-studies/patria-time-management</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <image:image>
-    <image:loc>https://mkronix.com/images/projects/p2.png</image:loc>
-    <image:title>Patria Time Management Case Study</image:title>
-    <image:caption>AI-powered productivity and time management platform</image:caption>
-  </image:image>
+<loc>https://mkronix.com/case-studies/architect-portfolio</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<image:image>
+<image:loc>https://mkronix.com/images/carousel/architect.png</image:loc>
+<image:title>Visionary Architects Portfolio</image:title>
+<image:caption>Modern architectural portfolio with dynamic layouts</image:caption>
+</image:image>
 </url>
 
 <url>
-  <loc>https://mkronix.com/case-studies/creators-social-platform</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <image:image>
-    <image:loc>https://mkronix.com/images/projects/p3.png</image:loc>
-    <image:title>Creators Social Platform Case Study</image:title>
-    <image:caption>Social network for content creators with monetization tools</image:caption>
-  </image:image>
+<loc>https://mkronix.com/case-studies/quickclock-dashboard</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<image:image>
+<image:loc>https://mkronix.com/images/carousel/attendance.png</image:loc>
+<image:title>QuickClock Dashboard</image:title>
+<image:caption>Advanced employee time tracking and analytics dashboard</image:caption>
+</image:image>
 </url>
 
 <url>
-  <loc>https://mkronix.com/case-studies/healthcare-mobile-app</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <image:image>
-    <image:loc>https://mkronix.com/images/carousel/wisdommeds.png</image:loc>
-    <image:title>HealthConnect Mobile App Case Study</image:title>
-    <image:caption>HIPAA-compliant healthcare mobile application with telemedicine</image:caption>
-  </image:image>
+<loc>https://mkronix.com/case-studies/binsina-pharma</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<image:image>
+<image:loc>https://mkronix.com/images/carousel/binsina.png</image:loc>
+<image:title>Binsina Pharma Export</image:title>
+<image:caption>Professional pharmaceutical export company website</image:caption>
+</image:image>
 </url>
 
 <url>
-  <loc>https://mkronix.com/case-studies/fintech-trading-platform</loc>
-  <lastmod>2025-01-13T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-  <image:image>
-    <image:loc>https://mkronix.com/images/carousel/lotto-app.png</image:loc>
-    <image:title>TradeForge FinTech Platform Case Study</image:title>
-    <image:caption>AI-powered trading platform with real-time market analysis</image:caption>
-  </image:image>
+<loc>https://mkronix.com/case-studies/maxwheels-platform</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<image:image>
+<image:loc>https://mkronix.com/images/carousel/cars-web.png</image:loc>
+<image:title>Maxwheels Auto Platform</image:title>
+<image:caption>Car marketplace platform with advanced search functionality</image:caption>
+</image:image>
+</url>
+
+<!-- Blog Detail Pages -->
+<url>
+<loc>https://mkronix.com/blog/future-of-web-development-2024</loc>
+<lastmod>2024-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<news:news>
+<news:publication>
+<news:name>MkRonix Blog</news:name>
+<news:language>en</news:language>
+</news:publication>
+<news:publication_date>2024-01-15T00:00:00+00:00</news:publication_date>
+<news:title>The Future of Web Development: Trends Shaping 2024 and Beyond</news:title>
+<news:keywords>web development, AI, future tech, React, Next.js</news:keywords>
+</news:news>
+</url>
+
+<url>
+<loc>https://mkronix.com/blog/ui-ux-design-principles-2024</loc>
+<lastmod>2024-01-10T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<news:news>
+<news:publication>
+<news:name>MkRonix Blog</news:name>
+<news:language>en</news:language>
+</news:publication>
+<news:publication_date>2024-01-10T00:00:00+00:00</news:publication_date>
+<news:title>Modern UI/UX Design Principles: Creating Exceptional User Experiences</news:title>
+<news:keywords>UI UX design, user experience, accessibility, conversion</news:keywords>
+</news:news>
+</url>
+
+<url>
+<loc>https://mkronix.com/blog/digital-marketing-strategies-2024</loc>
+<lastmod>2024-01-05T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+<news:news>
+<news:publication>
+<news:name>MkRonix Blog</news:name>
+<news:language>en</news:language>
+</news:publication>
+<news:publication_date>2024-01-05T00:00:00+00:00</news:publication_date>
+<news:title>Digital Marketing Strategies That Drive Real Business Growth</news:title>
+<news:keywords>digital marketing, SEO, growth, analytics, strategy</news:keywords>
+</news:news>
+</url>
+
+<url>
+<loc>https://mkronix.com/blog/mobile-app-development-best-practices</loc>
+<lastmod>2023-12-28T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+<news:news>
+<news:publication>
+<news:name>MkRonix Blog</news:name>
+<news:language>en</news:language>
+</news:publication>
+<news:publication_date>2023-12-28T00:00:00+00:00</news:publication_date>
+<news:title>Mobile App Development: Best Practices for Success in 2024</news:title>
+<news:keywords>mobile development, React Native, Flutter, iOS, Android</news:keywords>
+</news:news>
+</url>
+
+<url>
+<loc>https://mkronix.com/blog/ecommerce-optimization-guide</loc>
+<lastmod>2023-12-20T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+<news:news>
+<news:publication>
+<news:name>MkRonix Blog</news:name>
+<news:language>en</news:language>
+</news:publication>
+<news:publication_date>2023-12-20T00:00:00+00:00</news:publication_date>
+<news:title>E-commerce Optimization: Converting Visitors into Customers</news:title>
+<news:keywords>ecommerce, conversion optimization, UX, sales, analytics</news:keywords>
+</news:news>
+</url>
+
+<url>
+<loc>https://mkronix.com/blog/ai-integration-web-applications</loc>
+<lastmod>2023-12-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+<news:news>
+<news:publication>
+<news:name>MkRonix Blog</news:name>
+<news:language>en</news:language>
+</news:publication>
+<news:publication_date>2023-12-15T00:00:00+00:00</news:publication_date>
+<news:title>AI Integration in Web Applications: A Practical Guide</news:title>
+<news:keywords>AI, machine learning, web development, ChatGPT, automation</news:keywords>
+</news:news>
 </url>
 
 </urlset>

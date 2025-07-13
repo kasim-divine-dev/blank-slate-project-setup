@@ -2,18 +2,22 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, ArrowUpRight, Calendar, Clock, ExternalLink, Star, Users, Award, Target, TrendingUp, CheckCircle, Zap } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { ArrowLeft, ArrowUpRight, Calendar, Clock, ExternalLink, Star, Users, Award, Target, TrendingUp, CheckCircle, Zap, AlertCircle, Home } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
-import { getCaseStudyBySlug } from '../data/caseStudiesData';
+import { getCaseStudyBySlug, getRelatedCaseStudies } from '../data/caseStudiesData';
+import { useLoading } from '../contexts/LoadingContext';
 
 const CaseStudyDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const { setIsLoading: setGlobalLoading } = useLoading();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,59 +27,132 @@ const CaseStudyDetail: React.FC = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
-  // Get case study data
-  const caseStudy = getCaseStudyBySlug(slug || '');
+  // Get case study data with error handling
+  const [caseStudy, setCaseStudy] = useState(null);
+  const [relatedStudies, setRelatedStudies] = useState([]);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const loadCaseStudy = async () => {
+      try {
+        setGlobalLoading(true);
+        setIsLoading(true);
+        setError(null);
 
-    // Hero floating animation
-    if (heroRef.current) {
-      gsap.to(heroRef.current, {
-        y: -20,
-        duration: 4,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1
-      });
-    }
-
-    // Content sections animation
-    gsap.utils.toArray('.content-section').forEach((section: any, index) => {
-      gsap.fromTo(section, {
-        y: 50,
-        opacity: 0
-      }, {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%"
+        if (!slug) {
+          throw new Error('Case study not found');
         }
-      });
-    });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        const study = getCaseStudyBySlug(slug);
+        if (!study) {
+          throw new Error('Case study not found');
+        }
+
+        setCaseStudy(study);
+        setRelatedStudies(getRelatedCaseStudies(slug, 3));
+        
+        // Simulate loading for smooth transition
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        setIsLoading(false);
+        setGlobalLoading(false);
+      } catch (err) {
+        setError(err.message || 'Failed to load case study');
+        setIsLoading(false);
+        setGlobalLoading(false);
+      }
     };
-  }, []);
 
-  if (!caseStudy) {
+    loadCaseStudy();
+  }, [slug, setGlobalLoading]);
+
+  useEffect(() => {
+    if (!isLoading && !error && caseStudy) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero floating animation
+      if (heroRef.current) {
+        gsap.to(heroRef.current, {
+          y: -20,
+          duration: 4,
+          ease: "power2.inOut",
+          yoyo: true,
+          repeat: -1
+        });
+      }
+
+      // Content sections animation
+      gsap.utils.toArray('.content-section').forEach((section: any, index) => {
+        gsap.fromTo(section, {
+          y: 50,
+          opacity: 0
+        }, {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%"
+          }
+        });
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      };
+    }
+  }, [isLoading, error, caseStudy]);
+
+  // Loading state
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-black text-darkText flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Case Study Not Found</h1>
-          <button
-            onClick={() => navigate('/case-studies')}
-            className="bg-lightBg text-brown-text px-6 py-3 rounded-full font-bold hover:bg-white transition-colors duration-300"
-          >
-            Back to Case Studies
-          </button>
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-lightBg mx-auto mb-4"></div>
+          <p className="text-xl">Loading case study...</p>
         </div>
       </div>
+    );
+  }
+
+  // Error state with better UX
+  if (error || !caseStudy) {
+    return (
+      <>
+        <DynamicSEO 
+          pageName="caseStudyDetail" 
+          customData={{
+            title: "Case Study Not Found | MkRonix",
+            description: "The requested case study could not be found. Explore our other successful projects and case studies.",
+          }}
+        />
+        <div className="min-h-screen bg-black text-darkText flex items-center justify-center px-4">
+          <div className="text-center max-w-md mx-auto">
+            <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-6" />
+            <h1 className="text-4xl font-bold mb-4">Case Study Not Found</h1>
+            <p className="text-darkText80 mb-8">
+              The case study you're looking for doesn't exist or may have been moved.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={() => navigate('/case-studies')}
+                className="bg-lightBg text-brown-text px-6 py-3 rounded-full font-bold hover:bg-white transition-colors duration-300 flex items-center gap-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Case Studies
+              </button>
+              <Link
+                to="/"
+                className="border border-darkText20 text-darkText px-6 py-3 rounded-full font-bold hover:border-lightBg hover:text-lightBg transition-colors duration-300 flex items-center gap-2 justify-center"
+              >
+                <Home className="w-4 h-4" />
+                Go Home
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 
@@ -195,6 +272,9 @@ const CaseStudyDetail: React.FC = () => {
                 src={caseStudy.mainImage}
                 alt={caseStudy.title}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src = '/images/projects/p1.png'; // Fallback image
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               
@@ -362,6 +442,9 @@ const CaseStudyDetail: React.FC = () => {
                     src={image}
                     alt={`${caseStudy.title} - Image ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.src = '/images/projects/p1.png'; // Fallback image
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
                 </motion.div>
@@ -401,6 +484,62 @@ const CaseStudyDetail: React.FC = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Related Case Studies */}
+        {relatedStudies.length > 0 && (
+          <section className="px-4 py-20 bg-black">
+            <div className="max-w-6xl mx-auto">
+              <motion.h2
+                className="text-4xl md:text-5xl font-black text-center mb-16 text-darkText"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Related <span className="text-lightBg">Projects</span>
+              </motion.h2>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {relatedStudies.map((study, index) => (
+                  <motion.div
+                    key={study.id}
+                    className="content-section bg-darkText20 border border-darkText20 rounded-2xl overflow-hidden hover:border-lightBg/50 transition-all duration-300 group cursor-pointer"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    onClick={() => navigate(`/case-studies/${study.slug}`)}
+                  >
+                    <div className="aspect-video overflow-hidden">
+                      <img
+                        src={study.mainImage}
+                        alt={study.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          e.target.src = '/images/projects/p1.png';
+                        }}
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-darkText mb-2 group-hover:text-white transition-colors duration-300">
+                        {study.title}
+                      </h3>
+                      <p className="text-darkText80 text-sm mb-4">
+                        {study.shortDescription}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-lightBg text-sm font-medium">
+                          {study.category}
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 text-darkText60 group-hover:text-lightBg transition-colors duration-300" />
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA Section */}
         <section className="px-4 py-32 bg-darkBg/50">

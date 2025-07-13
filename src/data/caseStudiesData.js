@@ -12,8 +12,8 @@ export const caseStudiesData = detailedCaseStudies.caseStudies.map(study => ({
   year: study.year,
   client: study.client,
   technologies: study.technologies,
-  results: Object.entries(study.results).map(([key, value]) => 
-    `${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}: ${value}`
+  results: study.metrics.map(metric => 
+    `${metric.label}: ${metric.value}${metric.growth ? ` (${metric.growth})` : ''}`
   ),
   url: `/case-studies/${study.slug}`
 }));
@@ -21,9 +21,11 @@ export const caseStudiesData = detailedCaseStudies.caseStudies.map(study => ({
 // Export the detailed case studies for the detail pages
 export const detailedCaseStudiesData = detailedCaseStudies.caseStudies;
 
-// Helper function to get a case study by slug
+// Helper function to get a case study by slug with error handling
 export const getCaseStudyBySlug = (slug) => {
-  return detailedCaseStudiesData.find(study => study.slug === slug);
+  if (!slug) return null;
+  const study = detailedCaseStudiesData.find(study => study.slug === slug);
+  return study || null;
 };
 
 // Helper function to get featured case studies
@@ -33,6 +35,13 @@ export const getFeaturedCaseStudies = () => {
 
 // Helper function to get case studies by category
 export const getCaseStudiesByCategory = (category) => {
-  if (category === 'All') return detailedCaseStudiesData;
+  if (!category || category === 'All') return detailedCaseStudiesData;
   return detailedCaseStudiesData.filter(study => study.category === category);
+};
+
+// Helper function to get related case studies
+export const getRelatedCaseStudies = (currentSlug, limit = 3) => {
+  return detailedCaseStudiesData
+    .filter(study => study.slug !== currentSlug)
+    .slice(0, limit);
 };
