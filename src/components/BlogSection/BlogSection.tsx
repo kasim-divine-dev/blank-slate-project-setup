@@ -84,7 +84,7 @@ const BlogSection = () => {
                     alt={featuredBlogs[0].title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     onError={(e) => {
-                      e.target.src = '/images/projects/p1.png';
+                      (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -192,7 +192,7 @@ const BlogSection = () => {
                       alt={blog.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       onError={(e) => {
-                        e.target.src = '/images/projects/p1.png';
+                        (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />

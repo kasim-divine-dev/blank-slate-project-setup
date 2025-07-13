@@ -23,7 +23,7 @@ import React, { useRef, useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CaseStudies: React.FC = () => {
+const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -244,271 +244,279 @@ const CaseStudies: React.FC = () => {
           </div>
         </motion.section>
 
-        {/* Filter Section */}
-        <section className="py-12 px-4 bg-darkBg border-y border-darkText20">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              {/* Category Filters */}
-              <div className="flex flex-col items-start gap-3">
-                <div className="flex items-center gap-2 text-darkText60">
-                  <Eye className="w-4 h-4" />
-                  <span className="text-sm uppercase tracking-wider">Filter by Industry:</span>
+        {!isFromHome && (
+          <>
+            {/* Filter Section */}
+            <section className="py-12 px-4 bg-darkBg border-y border-darkText20">
+              <div className="max-w-7xl mx-auto">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                  {/* Category Filters */}
+                  <div className="flex flex-col items-start gap-3">
+                    <div className="flex items-center gap-2 text-darkText60">
+                      <Eye className="w-4 h-4" />
+                      <span className="text-sm uppercase tracking-wider">Filter by Industry:</span>
+                    </div>
+                    <div className='flex flex-wrap items-center gap-3'>
+                      {categories.map((category) => (
+                        <button
+                          key={category}
+                          onClick={() => setSelectedCategory(category)}
+                          className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category
+                            ? 'bg-lightBg text-brown-text shadow-lg'
+                            : 'bg-darkText20 text-darkText60 hover:bg-darkText20 hover:text-darkText'
+                            }`}
+                        >
+                          {category}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Results Count */}
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="text-sm text-darkText60">
+                      Showing {filteredStudies.length} case {filteredStudies.length === 1 ? 'study' : 'studies'}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Award className="w-4 h-4 text-lightBg" />
+                      <span className="text-sm text-lightBg font-medium">Award-Winning Results</span>
+                    </div>
+                  </div>
                 </div>
-                <div className='flex flex-wrap items-center gap-3'>
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setSelectedCategory(category)}
-                      className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === category
-                        ? 'bg-lightBg text-brown-text shadow-lg'
-                        : 'bg-darkText20 text-darkText60 hover:bg-darkText20 hover:text-darkText'
-                        }`}
+              </div>
+            </section>
+
+            {/* Case Studies Grid */}
+            <section className="py-20 px-4 bg-black">
+              <div className="max-w-7xl mx-auto">
+                <motion.div
+                  className="case-studies-grid space-y-32"
+                  initial="hidden"
+                  animate="visible"
+                  variants={containerVariants}
+                >
+                  {filteredStudies.map((study, index) => (
+                    <motion.article
+                      key={study.id}
+                      className={`case-study-card ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                        } flex flex-col lg:flex gap-12 items-center relative group`}
+                      variants={itemVariants}
+                      whileHover={{ y: -8 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
-                      {category}
-                    </button>
+                      {/* Background decoration */}
+                      <div className="absolute -inset-8 bg-gradient-to-br from-darkText20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      {/* Image Section */}
+                      <div className="lg:w-1/2 relative">
+                        <motion.div
+                          className="relative overflow-hidden rounded-3xl"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <img
+                            src={study.image}
+                            alt={study.title}
+                            className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
+                          />
+
+                          {/* Overlay */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                          {/* Category Badge */}
+                          <div className="absolute top-6 left-6">
+                            <span className="inline-block px-3 py-1 bg-lightBg text-brown-text text-xs font-medium rounded-full">
+                              {study.category}
+                            </span>
+                          </div>
+
+                          {/* Hover Overlay */}
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                            <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                              <ExternalLink className="w-12 h-12 text-lightBg mx-auto mb-4" />
+                              <p className="text-lightBg font-medium">View Full Case Study</p>
+                            </div>
+                          </div>
+
+                          {/* Quick Info */}
+                          <div className="absolute bottom-6 left-6 right-6">
+                            <div className="flex justify-between items-center text-white">
+                              <div>
+                                <div className="text-2xl font-bold">{study.year}</div>
+                                <div className="text-sm opacity-80">{study.client}</div>
+                              </div>
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <ArrowUpRight className="w-8 h-8" />
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      </div>
+
+                      {/* Content Section */}
+                      <div className="lg:w-1/2 space-y-8 relative z-10">
+                        <div>
+                          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-darkText group-hover:text-white transition-colors duration-300">
+                            {study.title}
+                          </h2>
+                          <p className="text-lg text-lightBg font-medium mb-4">
+                            {study.subtitle}
+                          </p>
+                          <p className="text-darkText80 leading-relaxed text-lg group-hover:text-darkText transition-colors duration-300">
+                            {study.description}
+                          </p>
+                        </div>
+
+                        {/* Technologies */}
+                        <div>
+                          <h4 className="text-sm font-bold text-darkText60 mb-3 uppercase tracking-wider flex items-center gap-2">
+                            <Target className="w-4 h-4" />
+                            Technologies Used
+                          </h4>
+                          <div className="flex flex-wrap gap-3">
+                            {study.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="bg-darkText20 border border-darkText20 text-darkText60 px-3 py-1 rounded-full text-sm hover:border-lightBg hover:text-darkText transition-all duration-300"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Results */}
+                        <div>
+                          <h4 className="text-sm font-bold text-darkText60 mb-4 uppercase tracking-wider flex items-center gap-2">
+                            <BarChart3 className="w-4 h-4" />
+                            Key Results
+                          </h4>
+                          <div className="grid gap-3">
+                            {study.results.map((result, resultIndex) => (
+                              <div
+                                key={resultIndex}
+                                className="bg-darkText20 border border-darkText20 p-4 rounded-xl group-hover:border-lightBg/50 transition-all duration-300"
+                              >
+                                <div className="flex items-start gap-3">
+                                  <CheckCircle className="w-5 h-5 text-lightBg mt-0.5 flex-shrink-0" />
+                                  <span className="text-darkText80 group-hover:text-darkText transition-colors duration-300 text-sm">
+                                    {result}
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Client Info & CTA */}
+                        <div className="flex items-center justify-between pt-6 border-t border-darkText20">
+                          <div className="flex items-center gap-6">
+                            <div className="flex items-center gap-2 text-sm text-darkText80">
+                              <Users className="w-4 h-4" />
+                              <span>{study.client}</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-darkText80">
+                              <Calendar className="w-4 h-4" />
+                              <span>{study.year}</span>
+                            </div>
+                          </div>
+
+                          <button className="group flex items-center gap-3 bg-lightBg text-brown-text px-6 py-3 rounded-full font-bold hover:bg-white transition-all duration-300">
+                            View Details
+                            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                          </button>
+                        </div>
+                      </div>
+                    </motion.article>
+                  ))}
+                </motion.div>
+              </div>
+            </section>
+          </>
+        )}
+
+        {!isFromHome && (
+          <>
+            <section className="process-section py-20 px-4 bg-darkBg">
+              <div className="max-w-6xl mx-auto">
+                <motion.div
+                  className="text-center mb-16"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    Our Proven <span className="text-lightBg">Methodology</span>
+                  </h2>
+                  <p className="text-xl text-darkText80 max-w-2xl mx-auto">
+                    Every successful project follows our proven framework for delivering exceptional results
+                  </p>
+                </motion.div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {[
+                    {
+                      number: "01",
+                      title: "Research & Analysis",
+                      description: "Deep dive into market research, user behavior, and competitive analysis to understand the landscape",
+                      icon: Target,
+                      gradient: "from-purple-500/20 to-pink-500/20"
+                    },
+                    {
+                      number: "02",
+                      title: "Strategy Development",
+                      description: "Crafting comprehensive strategies aligned with business objectives and user needs",
+                      icon: BarChart3,
+                      gradient: "from-blue-500/20 to-cyan-500/20"
+                    },
+                    {
+                      number: "03",
+                      title: "Implementation",
+                      description: "Executing the strategy with precision, using cutting-edge technologies and best practices",
+                      icon: Zap,
+                      gradient: "from-green-500/20 to-emerald-500/20"
+                    },
+                    {
+                      number: "04",
+                      title: "Optimization",
+                      description: "Continuous monitoring, testing, and improvement based on real data and user feedback",
+                      icon: TrendingUp,
+                      gradient: "from-orange-500/20 to-red-500/20"
+                    }
+                  ].map((step, index) => (
+                    <motion.div
+                      key={step.number}
+                      className={`process-card relative bg-gradient-to-br ${step.gradient} backdrop-blur-sm border border-darkText20 p-8 rounded-3xl group hover:border-lightBg/50 transition-all duration-500`}
+                      whileHover={{ scale: 1.05, y: -8 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="relative z-10 text-center">
+                        <div className="flex items-center justify-center gap-4 mb-6">
+                          <div className="w-14 h-14 bg-darkText20 rounded-2xl flex items-center justify-center group-hover:bg-lightBg group-hover:text-brown-text transition-all duration-300">
+                            <step.icon className="w-7 h-7" />
+                          </div>
+                          <span className="text-3xl font-bold text-lightBg group-hover:text-white transition-colors duration-300">
+                            {step.number}
+                          </span>
+                        </div>
+
+                        <h3 className="text-xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
+                          {step.title}
+                        </h3>
+                        <p className="text-darkText60 text-sm leading-relaxed group-hover:text-darkText80 transition-colors duration-300">
+                          {step.description}
+                        </p>
+                      </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
-
-              {/* Results Count */}
-              <div className="flex flex-col items-center gap-4">
-                <div className="text-sm text-darkText60">
-                  Showing {filteredStudies.length} case {filteredStudies.length === 1 ? 'study' : 'studies'}
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-lightBg" />
-                  <span className="text-sm text-lightBg font-medium">Award-Winning Results</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Case Studies Grid */}
-        <section className="py-20 px-4 bg-black">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="case-studies-grid space-y-32"
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-            >
-              {filteredStudies.map((study, index) => (
-                <motion.article
-                  key={study.id}
-                  className={`case-study-card ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                    } flex flex-col lg:flex gap-12 items-center relative group`}
-                  variants={itemVariants}
-                  whileHover={{ y: -8 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  {/* Background decoration */}
-                  <div className="absolute -inset-8 bg-gradient-to-br from-darkText20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  {/* Image Section */}
-                  <div className="lg:w-1/2 relative">
-                    <motion.div
-                      className="relative overflow-hidden rounded-3xl"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <img
-                        src={study.image}
-                        alt={study.title}
-                        className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                      />
-
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                      {/* Category Badge */}
-                      <div className="absolute top-6 left-6">
-                        <span className="inline-block px-3 py-1 bg-lightBg text-brown-text text-xs font-medium rounded-full">
-                          {study.category}
-                        </span>
-                      </div>
-
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                        <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                          <ExternalLink className="w-12 h-12 text-lightBg mx-auto mb-4" />
-                          <p className="text-lightBg font-medium">View Full Case Study</p>
-                        </div>
-                      </div>
-
-                      {/* Quick Info */}
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <div className="flex justify-between items-center text-white">
-                          <div>
-                            <div className="text-2xl font-bold">{study.year}</div>
-                            <div className="text-sm opacity-80">{study.client}</div>
-                          </div>
-                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <ArrowUpRight className="w-8 h-8" />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="lg:w-1/2 space-y-8 relative z-10">
-                    <div>
-                      <h2 className="text-3xl md:text-4xl font-bold mb-4 text-darkText group-hover:text-white transition-colors duration-300">
-                        {study.title}
-                      </h2>
-                      <p className="text-lg text-lightBg font-medium mb-4">
-                        {study.subtitle}
-                      </p>
-                      <p className="text-darkText80 leading-relaxed text-lg group-hover:text-darkText transition-colors duration-300">
-                        {study.description}
-                      </p>
-                    </div>
-
-                    {/* Technologies */}
-                    <div>
-                      <h4 className="text-sm font-bold text-darkText60 mb-3 uppercase tracking-wider flex items-center gap-2">
-                        <Target className="w-4 h-4" />
-                        Technologies Used
-                      </h4>
-                      <div className="flex flex-wrap gap-3">
-                        {study.technologies.map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="bg-darkText20 border border-darkText20 text-darkText60 px-3 py-1 rounded-full text-sm hover:border-lightBg hover:text-darkText transition-all duration-300"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Results */}
-                    <div>
-                      <h4 className="text-sm font-bold text-darkText60 mb-4 uppercase tracking-wider flex items-center gap-2">
-                        <BarChart3 className="w-4 h-4" />
-                        Key Results
-                      </h4>
-                      <div className="grid gap-3">
-                        {study.results.map((result, resultIndex) => (
-                          <div
-                            key={resultIndex}
-                            className="bg-darkText20 border border-darkText20 p-4 rounded-xl group-hover:border-lightBg/50 transition-all duration-300"
-                          >
-                            <div className="flex items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-lightBg mt-0.5 flex-shrink-0" />
-                              <span className="text-darkText80 group-hover:text-darkText transition-colors duration-300 text-sm">
-                                {result}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Client Info & CTA */}
-                    <div className="flex items-center justify-between pt-6 border-t border-darkText20">
-                      <div className="flex items-center gap-6">
-                        <div className="flex items-center gap-2 text-sm text-darkText80">
-                          <Users className="w-4 h-4" />
-                          <span>{study.client}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-darkText80">
-                          <Calendar className="w-4 h-4" />
-                          <span>{study.year}</span>
-                        </div>
-                      </div>
-
-                      <button className="group flex items-center gap-3 bg-lightBg text-brown-text px-6 py-3 rounded-full font-bold hover:bg-white transition-all duration-300">
-                        View Details
-                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
+            </section>
+          </>
+        )}
         {/* Process Overview Section */}
-        <section className="process-section py-20 px-4 bg-darkBg">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Our Proven <span className="text-lightBg">Methodology</span>
-              </h2>
-              <p className="text-xl text-darkText80 max-w-2xl mx-auto">
-                Every successful project follows our proven framework for delivering exceptional results
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  number: "01",
-                  title: "Research & Analysis",
-                  description: "Deep dive into market research, user behavior, and competitive analysis to understand the landscape",
-                  icon: Target,
-                  gradient: "from-purple-500/20 to-pink-500/20"
-                },
-                {
-                  number: "02",
-                  title: "Strategy Development",
-                  description: "Crafting comprehensive strategies aligned with business objectives and user needs",
-                  icon: BarChart3,
-                  gradient: "from-blue-500/20 to-cyan-500/20"
-                },
-                {
-                  number: "03",
-                  title: "Implementation",
-                  description: "Executing the strategy with precision, using cutting-edge technologies and best practices",
-                  icon: Zap,
-                  gradient: "from-green-500/20 to-emerald-500/20"
-                },
-                {
-                  number: "04",
-                  title: "Optimization",
-                  description: "Continuous monitoring, testing, and improvement based on real data and user feedback",
-                  icon: TrendingUp,
-                  gradient: "from-orange-500/20 to-red-500/20"
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  className={`process-card relative bg-gradient-to-br ${step.gradient} backdrop-blur-sm border border-darkText20 p-8 rounded-3xl group hover:border-lightBg/50 transition-all duration-500`}
-                  whileHover={{ scale: 1.05, y: -8 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="relative z-10 text-center">
-                    <div className="flex items-center justify-center gap-4 mb-6">
-                      <div className="w-14 h-14 bg-darkText20 rounded-2xl flex items-center justify-center group-hover:bg-lightBg group-hover:text-brown-text transition-all duration-300">
-                        <step.icon className="w-7 h-7" />
-                      </div>
-                      <span className="text-3xl font-bold text-lightBg group-hover:text-white transition-colors duration-300">
-                        {step.number}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
-                      {step.title}
-                    </h3>
-                    <p className="text-darkText60 text-sm leading-relaxed group-hover:text-darkText80 transition-colors duration-300">
-                      {step.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Testimonials Section */}
         <section className="py-20 px-4 bg-black">

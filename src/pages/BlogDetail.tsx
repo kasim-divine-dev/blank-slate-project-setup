@@ -1,4 +1,3 @@
-
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -15,11 +14,19 @@ const BlogDetail: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { setIsLoading: setGlobalLoading } = useLoading();
+<<<<<<< Updated upstream
+  const { setLoading: setGlobalLoading } = useLoading();
 
+  // Only initialize scroll if containerRef is available
+=======
+  const [isClient, setIsClient] = useState(false);
+  const { setLoading: setGlobalLoading } = useLoading();
+
+  // Only initialize scroll animations on client side
+>>>>>>> Stashed changes
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
@@ -29,8 +36,13 @@ const BlogDetail: React.FC = () => {
   const [blog, setBlog] = useState(null);
   const [relatedBlogs, setRelatedBlogs] = useState([]);
 
+  // Ensure we're on the client side
   useEffect(() => {
-    const loadBlog = async () => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    const loadBlog = () => {
       try {
         setGlobalLoading(true);
         setIsLoading(true);
@@ -47,12 +59,22 @@ const BlogDetail: React.FC = () => {
 
         setBlog(blogPost);
         setRelatedBlogs(getRelatedBlogs(slug, 3));
+<<<<<<< Updated upstream
         
+        // Add small delay for smooth transition
+        setTimeout(() => {
+          setIsLoading(false);
+          setGlobalLoading(false);
+        }, 300);
+        
+=======
+
         // Simulate loading for smooth transition
         await new Promise(resolve => setTimeout(resolve, 500));
-        
+
         setIsLoading(false);
         setGlobalLoading(false);
+>>>>>>> Stashed changes
       } catch (err) {
         setError(err.message || 'Failed to load blog post');
         setIsLoading(false);
@@ -64,35 +86,44 @@ const BlogDetail: React.FC = () => {
   }, [slug, setGlobalLoading]);
 
   useEffect(() => {
-    if (!isLoading && !error && blog) {
+<<<<<<< Updated upstream
+    if (!isLoading && !error && blog && containerRef.current) {
+=======
+    // Only run GSAP animations on client side and when content is loaded
+    if (!isLoading && !error && blog && isClient && containerRef.current) {
+>>>>>>> Stashed changes
       gsap.registerPlugin(ScrollTrigger);
 
-      // Content sections animation
-      gsap.utils.toArray('.content-section').forEach((section: any, index) => {
-        gsap.fromTo(section, {
-          y: 50,
-          opacity: 0
-        }, {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: index * 0.1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%"
-          }
+      // Small delay to ensure DOM is fully rendered
+      const timer = setTimeout(() => {
+        // Content sections animation
+        gsap.utils.toArray('.content-section').forEach((section: any, index) => {
+          gsap.fromTo(section, {
+            y: 50,
+            opacity: 0
+          }, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: index * 0.1,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%"
+            }
+          });
         });
-      });
+      }, 100);
 
       return () => {
+        clearTimeout(timer);
         ScrollTrigger.getAll().forEach(trigger => trigger.kill());
       };
     }
-  }, [isLoading, error, blog]);
+  }, [isLoading, error, blog, isClient]);
 
   // Loading state
-  if (isLoading) {
+  if (isLoading || !isClient) {
     return (
       <div className="min-h-screen bg-black text-darkText flex items-center justify-center">
         <div className="text-center">
@@ -107,8 +138,8 @@ const BlogDetail: React.FC = () => {
   if (error || !blog) {
     return (
       <>
-        <DynamicSEO 
-          pageName="blogDetail" 
+        <DynamicSEO
+          pageName="blogDetail"
           customData={{
             title: "Blog Post Not Found | MkRonix",
             description: "The requested blog post could not be found. Explore our other insightful articles and industry expertise.",
@@ -145,8 +176,8 @@ const BlogDetail: React.FC = () => {
 
   return (
     <>
-      <DynamicSEO 
-        pageName="blogDetail" 
+      <DynamicSEO
+        pageName="blogDetail"
         customData={{
           title: blog.seo.metaTitle,
           description: blog.seo.metaDescription,
@@ -175,12 +206,12 @@ const BlogDetail: React.FC = () => {
         {/* Hero Section */}
         <motion.section
           className="relative min-h-screen flex items-center justify-center px-4 pt-20"
-          style={{ y: textY }}
+          style={{ y: isClient ? textY : 0 }}
         >
           <motion.div
             className="absolute inset-0 pointer-events-none z-0"
             style={{
-              y: backgroundY,
+              y: isClient ? backgroundY : 0,
               background: `radial-gradient(circle at 30% 70%, rgba(245, 231, 211, 0.1), transparent 50%),
                          radial-gradient(circle at 70% 30%, rgba(245, 231, 211, 0.05), transparent 50%)`
             }}
@@ -262,7 +293,7 @@ const BlogDetail: React.FC = () => {
                 alt={blog.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.target.src = '/images/projects/p1.png';
+                  (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -290,7 +321,6 @@ const BlogDetail: React.FC = () => {
 
                   {/* Article Content */}
                   <div className="text-lg leading-relaxed text-darkText80 space-y-6">
-                    {/* This would be the full article content */}
                     <p>
                       {blog.content}
                     </p>
@@ -403,7 +433,7 @@ const BlogDetail: React.FC = () => {
                         alt={relatedBlog.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
-                          e.target.src = '/images/projects/p1.png';
+                          (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                         }}
                       />
                     </div>

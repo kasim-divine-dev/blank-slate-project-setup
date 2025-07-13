@@ -31,8 +31,8 @@ const Blog: React.FC = () => {
   const filteredPosts = blogPosts.filter(post => {
     const matchesCategory = selectedCategory === 'all' || post.category.toLowerCase() === selectedCategory;
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -77,8 +77,8 @@ const Blog: React.FC = () => {
 
   return (
     <>
-      <DynamicSEO pageName="blog" />
-      
+      <DynamicSEO pageName="blogs" />
+
       <div ref={containerRef} className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
         {/* Hidden SEO Content */}
         <div className="sr-only">
@@ -159,11 +159,10 @@ const Blog: React.FC = () => {
               >
                 <button
                   onClick={() => setSelectedCategory('all')}
-                  className={`px-6 py-3 rounded-full transition-all duration-300 ${
-                    selectedCategory === 'all'
+                  className={`px-6 py-3 rounded-full transition-all duration-300 ${selectedCategory === 'all'
                       ? 'bg-[#F5E7D3] text-black'
                       : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
-                  }`}
+                    }`}
                 >
                   All Posts
                 </button>
@@ -171,11 +170,10 @@ const Blog: React.FC = () => {
                   <button
                     key={category.slug}
                     onClick={() => setSelectedCategory(category.slug)}
-                    className={`px-6 py-3 rounded-full transition-all duration-300 ${
-                      selectedCategory === category.slug
+                    className={`px-6 py-3 rounded-full transition-all duration-300 ${selectedCategory === category.slug
                         ? 'bg-[#F5E7D3] text-black'
                         : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
-                    }`}
+                      }`}
                   >
                     {category.name}
                   </button>
@@ -225,7 +223,7 @@ const Blog: React.FC = () => {
                           </span>
                         </div>
                       </div>
-                      
+
                       <div className="space-y-4">
                         <div className="flex items-center gap-4 text-[#F5E7D3]/60 text-sm">
                           <span className="flex items-center gap-2">
@@ -240,21 +238,21 @@ const Blog: React.FC = () => {
                             {post.category}
                           </span>
                         </div>
-                        
+
                         <h3 className="text-2xl font-bold group-hover:text-white transition-colors duration-300">
                           {post.title}
                         </h3>
-                        
+
                         <p className="text-[#F5E7D3]/80 leading-relaxed">
                           {post.excerpt}
                         </p>
-                        
+
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2 text-[#F5E7D3]/60">
                             <User className="w-4 h-4" />
                             {post.author}
                           </div>
-                          
+
                           <div className="flex items-center gap-2 text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300">
                             Read More
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -313,7 +311,7 @@ const Blog: React.FC = () => {
                         </div>
                       )}
                     </div>
-                    
+
                     <div className="space-y-4">
                       <div className="flex items-center gap-4 text-[#F5E7D3]/60 text-sm">
                         <span className="flex items-center gap-1">
@@ -325,31 +323,31 @@ const Blog: React.FC = () => {
                           {post.readTime}
                         </span>
                       </div>
-                      
+
                       <div className="bg-[#484440]/30 px-3 py-1 rounded-full text-xs inline-block">
                         {post.category}
                       </div>
-                      
+
                       <h3 className="text-lg font-bold group-hover:text-white transition-colors duration-300 line-clamp-2">
                         {post.title}
                       </h3>
-                      
+
                       <p className="text-[#F5E7D3]/80 text-sm leading-relaxed line-clamp-3">
                         {post.excerpt}
                       </p>
-                      
+
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 text-[#F5E7D3]/60 text-sm">
                           <User className="w-3 h-3" />
                           {post.author}
                         </div>
-                        
+
                         <div className="flex items-center gap-1 text-[#484440] group-hover:text-[#F5E7D3] transition-colors duration-300 text-sm">
                           Read
                           <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
                       </div>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         {post.tags.slice(0, 3).map((tag) => (
                           <span

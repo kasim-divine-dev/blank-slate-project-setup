@@ -17,7 +17,7 @@ const CaseStudyDetail: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { setIsLoading: setGlobalLoading } = useLoading();
+  const { setLoading: setGlobalLoading } = useLoading();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -273,7 +273,7 @@ const CaseStudyDetail: React.FC = () => {
                 alt={caseStudy.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.target.src = '/images/projects/p1.png'; // Fallback image
+                  (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -443,7 +443,7 @@ const CaseStudyDetail: React.FC = () => {
                     alt={`${caseStudy.title} - Image ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {
-                      e.target.src = '/images/projects/p1.png'; // Fallback image
+                      (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                     }}
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
@@ -516,7 +516,7 @@ const CaseStudyDetail: React.FC = () => {
                         alt={study.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
-                          e.target.src = '/images/projects/p1.png';
+                          (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                         }}
                       />
                     </div>

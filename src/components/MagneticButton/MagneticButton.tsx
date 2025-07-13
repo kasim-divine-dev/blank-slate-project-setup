@@ -1,6 +1,6 @@
 
-import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
 
 interface MagneticButtonProps {
     children: React.ReactNode;
@@ -9,7 +9,7 @@ interface MagneticButtonProps {
 }
 
 export default function MagneticButton({ children, bgColor = 'bg-darkText80', textColor = 'text-black' }: MagneticButtonProps) {
-    const ref = useRef<HTMLButtonElement>(null);
+    const ref = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
     const handleMouse = (e: React.MouseEvent) => {
@@ -28,7 +28,7 @@ export default function MagneticButton({ children, bgColor = 'bg-darkText80', te
 
     const { x, y } = position;
     return (
-        <motion.button
+        <motion.div
             ref={ref}
             onMouseMove={handleMouse}
             onMouseLeave={reset}
@@ -37,6 +37,6 @@ export default function MagneticButton({ children, bgColor = 'bg-darkText80', te
             className={`${bgColor} font-medium ${textColor} transition-all duration-150 rounded-full active:scale-95`}
         >
             {children}
-        </motion.button>
+        </motion.div>
     );
 }

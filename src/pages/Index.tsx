@@ -20,7 +20,7 @@ const Index = () => {
         <HeroSection />
         <ServiceCard />
         <Carousel />
-        <CaseStudies />
+        <CaseStudies isFromHome={true} />
         <BlogSection />
         <HorizontalTextScroller />
         <GetInTouch />
