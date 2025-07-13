@@ -1,0 +1,39 @@
+
+{
+  "pages": {
+    "about": {
+      "title": "About MkRonix | Leading Creative Digital Agency India - Our Story & Team",
+      "description": "Learn about MkRonix - India's creative digital agency with 20+ successful projects. Meet our expert team specializing in web development, UI/UX design, mobile apps, and digital marketing. Based in Mumbai, serving clients across India.",
+      "keywords": "about mkronix, creative digital agency India, web development team Mumbai, UI UX design experts, mobile app developers India, digital marketing professionals, company story, team mkronix, agency portfolio India, creative professionals Mumbai",
+      "url": "https://mkronix.com/about",
+      "image": "https://mkronix.com/assets/about-team-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "About Us",
+          "url": "https://mkronix.com/about"
+        }
+      ]
+    }
+  },
+  "teamInfo": {
+    "foundedYear": "2020",
+    "teamSize": "10+ Professionals",
+    "projectsCompleted": "20+",
+    "clientsSatisfied": "15+",
+    "expertise": [
+      "Web Development",
+      "UI/UX Design", 
+      "Mobile App Development",
+      "Digital Marketing",
+      "Brand Identity",
+      "SEO Services"
+    ],
+    "mission": "To transform businesses through innovative digital solutions and exceptional user experiences.",
+    "vision": "To be India's most trusted creative digital agency, empowering businesses to thrive in the digital landscape."
+  }
+}

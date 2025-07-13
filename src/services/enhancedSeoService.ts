@@ -1,10 +1,10 @@
-
 import seoData from '../data/seoData.json';
 import teamData from '../data/teamData.json';
 import blogSeoData from '../data/blogSeoData.json';
 import caseStudiesSeoData from '../data/caseStudiesSeoData.json';
 import servicesSeoData from '../data/servicesSeoData.json';
 import contactSeoData from '../data/contactSeoData.json';
+import aboutSeoData from '../data/aboutSeoData.json';
 
 export interface SEOPageData {
   title: string;
@@ -68,6 +68,7 @@ class EnhancedSEOService {
   private caseStudiesData = caseStudiesSeoData;
   private servicesData = servicesSeoData;
   private contactData = contactSeoData;
+  private aboutData = aboutSeoData;
 
   getPageSEO(pageName: string, dynamicData?: any): SEOPageData {
     let pageData: SEOPageData | undefined;
@@ -75,6 +76,11 @@ class EnhancedSEOService {
     // Check main seo data
     if (this.seoData.pages[pageName as keyof typeof this.seoData.pages]) {
       pageData = this.seoData.pages[pageName as keyof typeof this.seoData.pages];
+    }
+
+    // Check about data
+    if (!pageData && this.aboutData.pages[pageName as keyof typeof this.aboutData.pages]) {
+      pageData = this.aboutData.pages[pageName as keyof typeof this.aboutData.pages];
     }
 
     // Check blog data
@@ -147,6 +153,10 @@ class EnhancedSEOService {
 
   getContactInfo() {
     return this.contactData.contactInfo;
+  }
+
+  getAboutInfo() {
+    return this.aboutData.teamInfo;
   }
 
   generateSchemas(pageName: string, dynamicData?: any): any[] {

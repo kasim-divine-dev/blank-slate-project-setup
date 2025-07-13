@@ -50,27 +50,54 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
       });
     }, 100);
 
-    // Check if page is fully loaded
-    const checkPageLoad = () => {
+    // Enhanced asset loading detection
+    const checkFullPageLoad = () => {
+      // Check if DOM is ready
+      if (document.readyState !== 'complete') {
+        setTimeout(checkFullPageLoad, 100);
+        return;
+      }
+
+      // Check all images
       const images = document.querySelectorAll('img');
-      const promises = Array.from(images).map(img => {
-        if (img.complete) return Promise.resolve();
+      const imagePromises = Array.from(images).map(img => {
+        if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
         return new Promise(resolve => {
           img.onload = resolve;
-          img.onerror = resolve;
+          img.onerror = resolve; // Resolve even on error to prevent hanging
+          // Timeout for images that take too long
+          setTimeout(resolve, 3000);
         });
       });
 
-      Promise.all(promises).then(() => {
-        setTimeout(() => {
-          setLoadingProgress(100);
-          setTimeout(() => setLoading(false), 500);
-        }, 300);
+      // Check stylesheets
+      const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+      const stylesheetPromises = Array.from(stylesheets).map(link => {
+        return new Promise(resolve => {
+          if ((link as HTMLLinkElement).sheet) {
+            resolve(null);
+          } else {
+            link.addEventListener('load', () => resolve(null));
+            link.addEventListener('error', () => resolve(null));
+            setTimeout(() => resolve(null), 2000);
+          }
+        });
+      });
+
+      // Wait for all assets with a maximum timeout
+      const allPromises = [...imagePromises, ...stylesheetPromises];
+      
+      Promise.race([
+        Promise.all(allPromises),
+        new Promise(resolve => setTimeout(resolve, 4000)) // Max 4 seconds
+      ]).then(() => {
+        setLoadingProgress(100);
+        setTimeout(() => setLoading(false), 500);
       });
     };
 
-    // Start checking after a short delay
-    const timer = setTimeout(checkPageLoad, 500);
+    // Start checking after a short delay to allow components to mount
+    const timer = setTimeout(checkFullPageLoad, 800);
 
     return () => {
       clearInterval(progressInterval);
