@@ -17,6 +17,7 @@ const BlogDetail: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const { setLoading: setGlobalLoading } = useLoading();
 
+  // Only initialize scroll if containerRef is available
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -30,7 +31,7 @@ const BlogDetail: React.FC = () => {
   const [relatedBlogs, setRelatedBlogs] = useState([]);
 
   useEffect(() => {
-    const loadBlog = async () => {
+    const loadBlog = () => {
       try {
         setGlobalLoading(true);
         setIsLoading(true);
@@ -48,11 +49,12 @@ const BlogDetail: React.FC = () => {
         setBlog(blogPost);
         setRelatedBlogs(getRelatedBlogs(slug, 3));
         
-        // Simulate loading for smooth transition
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Add small delay for smooth transition
+        setTimeout(() => {
+          setIsLoading(false);
+          setGlobalLoading(false);
+        }, 300);
         
-        setIsLoading(false);
-        setGlobalLoading(false);
       } catch (err) {
         setError(err.message || 'Failed to load blog post');
         setIsLoading(false);
@@ -64,7 +66,7 @@ const BlogDetail: React.FC = () => {
   }, [slug, setGlobalLoading]);
 
   useEffect(() => {
-    if (!isLoading && !error && blog) {
+    if (!isLoading && !error && blog && containerRef.current) {
       gsap.registerPlugin(ScrollTrigger);
 
       // Content sections animation
@@ -290,7 +292,6 @@ const BlogDetail: React.FC = () => {
 
                   {/* Article Content */}
                   <div className="text-lg leading-relaxed text-darkText80 space-y-6">
-                    {/* This would be the full article content */}
                     <p>
                       {blog.content}
                     </p>
