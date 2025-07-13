@@ -54,7 +54,7 @@ const BlogSection = () => {
             className="text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Stay ahead with our latest thoughts on technology, design, and digital transformation. 
+            Stay ahead with our latest thoughts on technology, design, and digital transformation.
             Expert insights to fuel your next big idea.
           </motion.p>
         </motion.div>
@@ -88,7 +88,7 @@ const BlogSection = () => {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
+
                   {/* Category Badge */}
                   <div className="absolute top-6 left-6">
                     <span className="inline-block px-4 py-2 bg-lightBg text-brown-text text-sm font-bold rounded-full">
@@ -106,7 +106,7 @@ const BlogSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-8">
+                <div className="p-6">
                   <div className="flex items-center gap-6 mb-4 text-sm text-darkText60">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
@@ -186,7 +186,7 @@ const BlogSection = () => {
               >
                 <div className="bg-gradient-to-br from-darkText20 to-darkText10 border border-darkText20 rounded-2xl overflow-hidden hover:border-lightBg/50 transition-all duration-500">
                   {/* Image */}
-                  <div className="relative overflow-hidden aspect-[4/3]">
+                  <div className="relative overflow-hidden aspect-[5/3]">
                     <img
                       src={blog.featuredImage}
                       alt={blog.title}
@@ -196,7 +196,7 @@ const BlogSection = () => {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    
+
                     {/* Category */}
                     <div className="absolute top-4 left-4">
                       <span className="inline-block px-3 py-1 bg-lightBg text-brown-text text-xs font-bold rounded-full">
@@ -224,10 +224,6 @@ const BlogSection = () => {
                     <h3 className="text-lg font-bold mb-3 text-darkText group-hover:text-white transition-colors duration-300 leading-tight">
                       {blog.title}
                     </h3>
-
-                    <p className="text-darkText80 text-sm leading-relaxed mb-4 group-hover:text-darkText transition-colors duration-300">
-                      {blog.excerpt}
-                    </p>
 
                     {/* Author & Arrow */}
                     <div className="flex items-center justify-between">

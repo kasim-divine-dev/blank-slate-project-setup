@@ -1,51 +1,24 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Calendar, Clock, User, Share2, Heart, Bookmark, ArrowUpRight, AlertCircle, Home, Tag } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { AlertCircle, ArrowLeft, ArrowUpRight, Bookmark, Calendar, Clock, Heart, Home, Share2, Tag, User } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import { getBlogBySlug, getRelatedBlogs } from '../data/blogData';
-import { useLoading } from '../contexts/LoadingContext';
 
 const BlogDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isClient, setIsClient] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const { setLoading: setGlobalLoading } = useLoading();
-
-  // Only initialize scroll animations on client side AND when component is mounted
-  const { scrollYProgress } = useScroll({
-    target: isMounted && isClient ? containerRef : undefined,
-    offset: ["start start", "end start"],
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   // Get blog data with error handling
   const [blog, setBlog] = useState(null);
   const [relatedBlogs, setRelatedBlogs] = useState([]);
 
-  // Ensure we're on the client side
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // Set mounted state after component mounts
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     const loadBlog = async () => {
       try {
-        setGlobalLoading(true);
-        setIsLoading(true);
         setError(null);
 
         if (!slug) {
@@ -63,62 +36,15 @@ const BlogDetail: React.FC = () => {
         // Simulate loading for smooth transition
         await new Promise(resolve => setTimeout(resolve, 500));
 
-        setIsLoading(false);
-        setGlobalLoading(false);
       } catch (err) {
         setError(err.message || 'Failed to load blog post');
-        setIsLoading(false);
-        setGlobalLoading(false);
+
       }
     };
 
     loadBlog();
-  }, [slug, setGlobalLoading]);
+  }, [slug]);
 
-  useEffect(() => {
-    // Only run GSAP animations on client side and when content is loaded
-    if (!isLoading && !error && blog && isClient && isMounted && containerRef.current) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Small delay to ensure DOM is fully rendered
-      const timer = setTimeout(() => {
-        // Content sections animation
-        gsap.utils.toArray('.content-section').forEach((section: any, index) => {
-          gsap.fromTo(section, {
-            y: 50,
-            opacity: 0
-          }, {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power3.out",
-            delay: index * 0.1,
-            scrollTrigger: {
-              trigger: section,
-              start: "top 80%"
-            }
-          });
-        });
-      }, 100);
-
-      return () => {
-        clearTimeout(timer);
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      };
-    }
-  }, [isLoading, error, blog, isClient, isMounted]);
-
-  // Loading state
-  if (isLoading || !isClient || !isMounted) {
-    return (
-      <div className="min-h-screen bg-black text-darkText flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-lightBg mx-auto mb-4"></div>
-          <p className="text-xl">Loading article...</p>
-        </div>
-      </div>
-    );
-  }
 
   // Error state with better UX
   if (error || !blog) {
@@ -191,22 +117,13 @@ const BlogDetail: React.FC = () => {
       <div ref={containerRef} className="bg-black text-darkText font-boska overflow-x-hidden">
         {/* Hero Section */}
         <motion.section
-          className="relative min-h-screen flex items-center justify-center px-4 pt-20"
-          style={{ y: isClient && isMounted ? textY : 0 }}
+          className="relative min-h-screen flex items-center justify-center"
         >
-          <motion.div
-            className="absolute inset-0 pointer-events-none z-0"
-            style={{
-              y: isClient && isMounted ? backgroundY : 0,
-              background: `radial-gradient(circle at 30% 70%, rgba(245, 231, 211, 0.1), transparent 50%),
-                         radial-gradient(circle at 70% 30%, rgba(245, 231, 211, 0.05), transparent 50%)`
-            }}
-          />
 
-          <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <div className="relative z-10 text-center max-w-6xl mx-auto">
             {/* Back Navigation */}
             <motion.div
-              className="flex justify-start mb-8"
+              className="flex justify-start mb-10"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
@@ -265,8 +182,8 @@ const BlogDetail: React.FC = () => {
         </motion.section>
 
         {/* Featured Image */}
-        <section className="px-4 py-20">
-          <div className="max-w-4xl mx-auto">
+        <section className="px-4 py-0">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               className="relative rounded-3xl overflow-hidden aspect-video"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -288,8 +205,8 @@ const BlogDetail: React.FC = () => {
         </section>
 
         {/* Article Content */}
-        <section className="px-4 py-20">
-          <div className="max-w-4xl mx-auto">
+        <section className="px-4 py-10">
+          <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-4 gap-12">
               {/* Main Content */}
               <div className="lg:col-span-3">
@@ -301,7 +218,7 @@ const BlogDetail: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   {/* Article Excerpt */}
-                  <div className="text-xl text-darkText80 leading-relaxed mb-12 p-8 bg-gradient-to-br from-darkText20 to-darkText10 border border-darkText20 rounded-2xl">
+                  <div className="text-xl text-darkText80 leading-relaxed mb-12">
                     {blog.excerpt}
                   </div>
 
@@ -449,50 +366,6 @@ const BlogDetail: React.FC = () => {
             </div>
           </section>
         )}
-
-        {/* CTA Section */}
-        <section className="px-4 py-32 bg-black">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-6xl font-black mb-8 text-darkText">
-                Ready to <span className="text-lightBg">Transform</span> Your Ideas?
-              </h2>
-              <p className="text-xl text-darkText80 mb-12">
-                Let's discuss how we can help bring your vision to life
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.button
-                  className="group relative bg-lightBg text-brown-text px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 overflow-hidden"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/contact')}
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Get Started Today
-                    <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  </span>
-                </motion.button>
-
-                <motion.button
-                  className="group border-2 border-darkText20 text-darkText px-8 py-4 rounded-full font-bold hover:border-lightBg hover:bg-lightBg hover:text-brown-text transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/blog')}
-                >
-                  <span className="flex items-center gap-2">
-                    More Articles
-                  </span>
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </div>
     </>
   );
