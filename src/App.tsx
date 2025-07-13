@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { LenisProvider } from './providers/LenisProvider';
 import './App.css';
@@ -20,27 +20,29 @@ import CaseStudyDetail from './pages/CaseStudyDetail';
 
 function App() {
   return (
-    <LenisProvider>
-      <HelmetProvider>
-        <LoadingProvider>
-          <Layout>
-            <CustomCursor />
-            <GlobalLoader />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/case-studies" element={<CaseStudies />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
-            </Routes>
-          </Layout>
-        </LoadingProvider>
-      </HelmetProvider>
-    </LenisProvider>
+    <BrowserRouter>
+      <LenisProvider>
+        <HelmetProvider>
+          <LoadingProvider>
+            <Layout>
+              <CustomCursor />
+              <GlobalLoader />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/case-studies" element={<CaseStudies />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+              </Routes>
+            </Layout>
+          </LoadingProvider>
+        </HelmetProvider>
+      </LenisProvider>
+    </BrowserRouter>
   );
 }
 
