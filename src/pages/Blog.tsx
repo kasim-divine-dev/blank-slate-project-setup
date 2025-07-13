@@ -2,13 +2,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar, Clock, Tag, User, ArrowRight, Search, Filter } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Search, Tag, User } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
 import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
-import { enhancedSeoService, BlogPost } from '../services/enhancedSeoService';
+import { enhancedSeoService } from '../services/enhancedSeoService';
 
 const Blog: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -160,8 +160,8 @@ const Blog: React.FC = () => {
                 <button
                   onClick={() => setSelectedCategory('all')}
                   className={`px-6 py-3 rounded-full transition-all duration-300 ${selectedCategory === 'all'
-                      ? 'bg-[#F5E7D3] text-black'
-                      : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
+                    ? 'bg-[#F5E7D3] text-black'
+                    : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
                     }`}
                 >
                   All Posts
@@ -171,8 +171,8 @@ const Blog: React.FC = () => {
                     key={category.slug}
                     onClick={() => setSelectedCategory(category.slug)}
                     className={`px-6 py-3 rounded-full transition-all duration-300 ${selectedCategory === category.slug
-                        ? 'bg-[#F5E7D3] text-black'
-                        : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
+                      ? 'bg-[#F5E7D3] text-black'
+                      : 'bg-[#484440]/30 text-[#F5E7D3] hover:bg-[#484440]/50'
                       }`}
                   >
                     {category.name}

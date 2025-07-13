@@ -37,8 +37,8 @@
       "title": "10 React Performance Optimization Techniques Every Developer Should Know",
       "slug": "react-performance-optimization-techniques",
       "excerpt": "Discover proven React performance optimization techniques that can significantly improve your app's speed and user experience. Learn from real-world examples and best practices.",
-      "content": "React applications can become slow and unresponsive if not optimized properly...",
-      "author": "kasim kadiwala",
+      "content": "React applications can become slow and unresponsive if not optimized properly. In this comprehensive guide, we'll explore 10 essential techniques to boost your React app's performance.",
+      "author": "Kasim Kadiwala",
       "publishedAt": "2025-01-10",
       "updatedAt": "2025-01-10",
       "readTime": "8 min read",
@@ -50,7 +50,7 @@
         "Web Development",
         "Optimization"
       ],
-      "image": "https://mkronix.com/assets/blog/react-performance.jpg",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop&crop=center",
       "featured": true
     },
     {
@@ -58,7 +58,7 @@
       "title": "UI/UX Design Trends 2025: What's Shaping the Future of Digital Design",
       "slug": "ui-ux-design-trends-2025",
       "excerpt": "Explore the latest UI/UX design trends for 2025 that are revolutionizing user experiences across web and mobile applications.",
-      "content": "The world of UI/UX design is constantly evolving...",
+      "content": "The world of UI/UX design is constantly evolving, with new trends emerging that reshape how users interact with digital products. This year brings exciting developments in micro-interactions, AI-driven personalization, and sustainable design practices.",
       "author": "Moinuddin Chudiwal",
       "publishedAt": "2025-01-08",
       "updatedAt": "2025-01-08",
@@ -71,7 +71,7 @@
         "User Experience",
         "2025"
       ],
-      "image": "https://mkronix.com/assets/blog/ui-ux-trends.jpg",
+      "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=450&fit=crop&crop=center",
       "featured": true
     },
     {
@@ -79,8 +79,8 @@
       "title": "Complete SEO Guide for 2025: Strategies That Actually Work",
       "slug": "complete-seo-guide-2025",
       "excerpt": "Master SEO in 2025 with our comprehensive guide covering technical SEO, content optimization, and the latest algorithm updates.",
-      "content": "Search Engine Optimization continues to be crucial...",
-      "author": "kasim kadiwala",
+      "content": "Search Engine Optimization continues to be crucial for digital success. With Google's evolving algorithms and new ranking factors, staying ahead requires understanding the latest SEO strategies and best practices.",
+      "author": "Kasim Kadiwala",
       "publishedAt": "2025-01-05",
       "updatedAt": "2025-01-05",
       "readTime": "12 min read",
@@ -92,7 +92,259 @@
         "Content Marketing",
         "2025"
       ],
-      "image": "https://mkronix.com/assets/blog/seo-guide.jpg",
+      "image": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "mobile-app-development-guide",
+      "title": "Mobile App Development in 2025: Native vs Cross-Platform",
+      "slug": "mobile-app-development-guide-2025",
+      "excerpt": "Compare native and cross-platform mobile app development approaches. Learn which technology stack is best for your project in 2025.",
+      "content": "Choosing the right mobile development approach is crucial for project success. This guide examines the pros and cons of native vs cross-platform development, helping you make an informed decision based on your specific requirements.",
+      "author": "Moinuddin Chudiwal",
+      "publishedAt": "2025-01-12",
+      "updatedAt": "2025-01-12",
+      "readTime": "10 min read",
+      "category": "Mobile Development",
+      "tags": [
+        "Mobile Development",
+        "React Native",
+        "Flutter",
+        "iOS",
+        "Android"
+      ],
+      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=450&fit=crop&crop=center",
+      "featured": true
+    },
+    {
+      "id": "javascript-es2025-features",
+      "title": "JavaScript ES2025: New Features That Will Change How You Code",
+      "slug": "javascript-es2025-new-features",
+      "excerpt": "Explore the latest JavaScript ES2025 features including new array methods, improved async patterns, and enhanced developer experience.",
+      "content": "JavaScript continues to evolve with exciting new features in ES2025. From improved array handling to better async/await patterns, these updates will streamline your development workflow and enhance code readability.",
+      "author": "Kasim Kadiwala",
+      "publishedAt": "2025-01-15",
+      "updatedAt": "2025-01-15",
+      "readTime": "7 min read",
+      "category": "Web Development",
+      "tags": [
+        "JavaScript",
+        "ES2025",
+        "Frontend",
+        "Programming",
+        "Web Development"
+      ],
+      "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "css-grid-flexbox-mastery",
+      "title": "CSS Grid vs Flexbox: Master Modern Layout Techniques",
+      "slug": "css-grid-flexbox-mastery-guide",
+      "excerpt": "Master CSS Grid and Flexbox with practical examples. Learn when to use each layout method for responsive, modern web design.",
+      "content": "CSS Grid and Flexbox are powerful layout tools that have revolutionized web design. Understanding when and how to use each effectively is essential for creating responsive, maintainable layouts.",
+      "author": "Moinuddin Chudiwal",
+      "publishedAt": "2025-01-03",
+      "updatedAt": "2025-01-03",
+      "readTime": "9 min read",
+      "category": "Web Development",
+      "tags": [
+        "CSS",
+        "Grid",
+        "Flexbox",
+        "Responsive Design",
+        "Frontend"
+      ],
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "ai-web-development-2025",
+      "title": "AI in Web Development: Tools and Trends Shaping 2025",
+      "slug": "ai-web-development-tools-2025",
+      "excerpt": "Discover how AI is transforming web development with automated coding, design assistance, and enhanced user experiences.",
+      "content": "Artificial Intelligence is reshaping web development, from automated code generation to intelligent design systems. Learn how to integrate AI tools into your development workflow for increased productivity and innovation.",
+      "author": "Kasim Kadiwala",
+      "publishedAt": "2025-01-18",
+      "updatedAt": "2025-01-18",
+      "readTime": "11 min read",
+      "category": "Technology",
+      "tags": [
+        "AI",
+        "Web Development",
+        "Automation",
+        "Machine Learning",
+        "Technology Trends"
+      ],
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&crop=center",
+      "featured": true
+    },
+    {
+      "id": "web-accessibility-guide",
+      "title": "Web Accessibility in 2025: Building Inclusive Digital Experiences",
+      "slug": "web-accessibility-guide-2025",
+      "excerpt": "Create accessible websites that work for everyone. Learn WCAG guidelines, testing tools, and implementation strategies for inclusive design.",
+      "content": "Web accessibility ensures that digital experiences are usable by everyone, regardless of ability. This comprehensive guide covers WCAG 2.1 guidelines, testing methodologies, and practical implementation strategies.",
+      "author": "Moinuddin Chudiwal",
+      "publishedAt": "2025-01-20",
+      "updatedAt": "2025-01-20",
+      "readTime": "8 min read",
+      "category": "Web Development",
+      "tags": [
+        "Accessibility",
+        "WCAG",
+        "Inclusive Design",
+        "UX",
+        "Web Standards"
+      ],
+      "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "nextjs-14-features",
+      "title": "Next.js 14: Revolutionary Features for Modern Web Development",
+      "slug": "nextjs-14-features-guide",
+      "excerpt": "Explore Next.js 14's game-changing features including Server Components, improved performance, and enhanced developer experience.",
+      "content": "Next.js 14 introduces groundbreaking features that redefine React development. From Server Components to improved build performance, discover how these updates can transform your development workflow.",
+      "author": "Kasim Kadiwala",
+      "publishedAt": "2025-01-22",
+      "updatedAt": "2025-01-22",
+      "readTime": "9 min read",
+      "category": "Web Development",
+      "tags": [
+        "Next.js",
+        "React",
+        "Server Components",
+        "Performance",
+        "Framework"
+      ],
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "social-media-marketing-2025",
+      "title": "Social Media Marketing Strategies That Drive Results in 2025",
+      "slug": "social-media-marketing-strategies-2025",
+      "excerpt": "Effective social media marketing strategies for 2025. Learn about platform-specific tactics, content creation, and engagement optimization.",
+      "content": "Social media marketing continues to evolve with new platforms, algorithms, and user behaviors. This guide covers proven strategies for building brand presence and driving engagement across major social platforms.",
+      "author": "Moinuddin Chudiwal",
+      "publishedAt": "2025-01-25",
+      "updatedAt": "2025-01-25",
+      "readTime": "10 min read",
+      "category": "Digital Marketing",
+      "tags": [
+        "Social Media",
+        "Marketing",
+        "Content Strategy",
+        "Brand Building",
+        "Engagement"
+      ],
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "typescript-advanced-patterns",
+      "title": "Advanced TypeScript Patterns for Enterprise Applications",
+      "slug": "advanced-typescript-patterns-enterprise",
+      "excerpt": "Master advanced TypeScript patterns including generics, conditional types, and design patterns for scalable enterprise applications.",
+      "content": "TypeScript's advanced features enable building robust, maintainable enterprise applications. Learn sophisticated patterns, type manipulation techniques, and architectural approaches for large-scale projects.",
+      "author": "Kasim Kadiwala",
+      "publishedAt": "2025-01-28",
+      "updatedAt": "2025-01-28",
+      "readTime": "13 min read",
+      "category": "Web Development",
+      "tags": [
+        "TypeScript",
+        "Advanced Patterns",
+        "Enterprise",
+        "Software Architecture",
+        "Type Safety"
+      ],
+      "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "web-security-best-practices",
+      "title": "Web Security Best Practices: Protecting Your Applications in 2025",
+      "slug": "web-security-best-practices-2025",
+      "excerpt": "Essential web security practices to protect your applications from common vulnerabilities and emerging threats in 2025.",
+      "content": "Web security is more critical than ever with evolving cyber threats. This comprehensive guide covers authentication, authorization, data protection, and security testing strategies for modern web applications.",
+      "author": "Moinuddin Chudiwal",
+      "publishedAt": "2025-01-30",
+      "updatedAt": "2025-01-30",
+      "readTime": "12 min read",
+      "category": "Security",
+      "tags": [
+        "Web Security",
+        "Cybersecurity",
+        "Authentication",
+        "Data Protection",
+        "Security Testing"
+      ],
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop&crop=center",
+      "featured": true
+    },
+    {
+      "id": "progressive-web-apps-guide",
+      "title": "Progressive Web Apps: Building App-Like Experiences for the Web",
+      "slug": "progressive-web-apps-guide-2025",
+      "excerpt": "Create engaging Progressive Web Apps with offline functionality, push notifications, and native app-like experiences.",
+      "content": "Progressive Web Apps bridge the gap between web and native applications. Learn how to implement PWA features including service workers, offline capabilities, and app-like user experiences.",
+      "author": "Kasim Kadiwala",
+      "publishedAt": "2025-02-02",
+      "updatedAt": "2025-02-02",
+      "readTime": "10 min read",
+      "category": "Web Development",
+      "tags": [
+        "PWA",
+        "Service Workers",
+        "Offline",
+        "Web Apps",
+        "Mobile Web"
+      ],
+      "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "content-marketing-strategy",
+      "title": "Content Marketing Strategy: Creating Valuable Content That Converts",
+      "slug": "content-marketing-strategy-2025",
+      "excerpt": "Build a successful content marketing strategy that attracts, engages, and converts your target audience into loyal customers.",
+      "content": "Effective content marketing goes beyond creating blog posts. Learn how to develop a comprehensive content strategy that aligns with business goals and drives meaningful engagement with your audience.",
+      "author": "Moinuddin Chudiwal",
+      "publishedAt": "2025-02-05",
+      "updatedAt": "2025-02-05",
+      "readTime": "11 min read",
+      "category": "Digital Marketing",
+      "tags": [
+        "Content Marketing",
+        "Content Strategy",
+        "Conversion",
+        "Audience Engagement",
+        "Marketing"
+      ],
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&crop=center",
+      "featured": false
+    },
+    {
+      "id": "microservices-architecture",
+      "title": "Microservices Architecture: Building Scalable Applications",
+      "slug": "microservices-architecture-guide",
+      "excerpt": "Learn microservices architecture principles, implementation strategies, and best practices for building scalable, maintainable applications.",
+      "content": "Microservices architecture enables building scalable, maintainable applications by breaking down monolithic systems into smaller, independent services. This guide covers design patterns, implementation strategies, and common pitfalls.",
+      "author": "Kasim Kadiwala",
+      "publishedAt": "2025-02-08",
+      "updatedAt": "2025-02-08",
+      "readTime": "14 min read",
+      "category": "Software Architecture",
+      "tags": [
+        "Microservices",
+        "Architecture",
+        "Scalability",
+        "Backend",
+        "System Design"
+      ],
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=450&fit=crop&crop=center",
       "featured": false
     }
   ],
@@ -100,17 +352,95 @@
     {
       "name": "Web Development",
       "slug": "web-development",
-      "description": "Latest insights and tutorials on web development technologies and best practices."
+      "description": "Latest insights and tutorials on web development technologies and best practices.",
+      "count": 8
     },
     {
       "name": "Design",
       "slug": "design",
-      "description": "UI/UX design trends, tips, and creative inspiration for modern digital experiences."
+      "description": "UI/UX design trends, tips, and creative inspiration for modern digital experiences.",
+      "count": 1
     },
     {
       "name": "Digital Marketing",
       "slug": "digital-marketing",
-      "description": "SEO, social media, and digital marketing strategies to grow your online presence."
+      "description": "SEO, social media, and digital marketing strategies to grow your online presence.",
+      "count": 3
+    },
+    {
+      "name": "Mobile Development",
+      "slug": "mobile-development",
+      "description": "Mobile app development guides, frameworks, and best practices for iOS and Android.",
+      "count": 1
+    },
+    {
+      "name": "Technology",
+      "slug": "technology",
+      "description": "Emerging technologies, AI, and innovation trends shaping the future of development.",
+      "count": 1
+    },
+    {
+      "name": "Security",
+      "slug": "security",
+      "description": "Web security best practices, cybersecurity trends, and protection strategies.",
+      "count": 1
+    },
+    {
+      "name": "Software Architecture",
+      "slug": "software-architecture",
+      "description": "System design patterns, architecture principles, and scalable application development.",
+      "count": 1
     }
+  ],
+  "authors": [
+    {
+      "name": "Kasim Kadiwala",
+      "slug": "kasim-kadiwala",
+      "bio": "Senior Full Stack Developer with 8+ years of experience in React, Node.js, and modern web technologies.",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      "social": {
+        "linkedin": "https://linkedin.com/in/kasim-kadiwala",
+        "github": "https://github.com/kasim-kadiwala",
+        "twitter": "https://twitter.com/kasim_kadiwala"
+      }
+    },
+    {
+      "name": "Moinuddin Chudiwal",
+      "slug": "moinuddin-chudiwal",
+      "bio": "Creative UI/UX Designer and Digital Marketing Specialist passionate about creating engaging user experiences.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      "social": {
+        "linkedin": "https://linkedin.com/in/moinuddin-chudiwal",
+        "dribbble": "https://dribbble.com/moinuddin-chudiwal",
+        "twitter": "https://twitter.com/moin_chudiwal"
+      }
+    }
+  ],
+  "tags": [
+    "React",
+    "JavaScript",
+    "TypeScript",
+    "Next.js",
+    "CSS",
+    "HTML",
+    "UI Design",
+    "UX Design",
+    "SEO",
+    "Digital Marketing",
+    "Performance",
+    "Security",
+    "Mobile Development",
+    "AI",
+    "Web Development",
+    "Frontend",
+    "Backend",
+    "Full Stack",
+    "Accessibility",
+    "PWA",
+    "Microservices",
+    "Architecture",
+    "Content Marketing",
+    "Social Media",
+    "Optimization"
   ]
 }
