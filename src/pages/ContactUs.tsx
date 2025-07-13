@@ -154,22 +154,6 @@ const ContactUs: React.FC = () => {
     }, 2000);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
-  };
-
   const contactMethods = [
     {
       icon: Phone,
@@ -190,7 +174,7 @@ const ContactUs: React.FC = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      subtitle: "Creative Studio",
+      subtitle: "Mkronix Creative Studio",
       value: "Mumbai, Gujarat 400102",
       href: "#location",
       gradient: "from-purple-500/20 to-pink-500/20"
@@ -227,66 +211,6 @@ const ContactUs: React.FC = () => {
           <span>Business Hours: Monday-Friday 9AM-6PM, Saturday 10AM-4PM IST</span>
           <span>Coverage: Mumbai, Delhi, Bangalore, Ahmedabad, Surat, Rajkot, Gujarat, India</span>
         </div>
-
-        {/* Hero Section */}
-        <motion.section
-          className="hero-section pt-32 pb-20 px-4 bg-gradient-to-b from-black to-darkBg"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-        >
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              variants={itemVariants}
-              transition={{ duration: 0.8, ease: [0.6, 0.01, -0.05, 0.95] }}
-            >
-              <motion.p
-                className="hero-element text-sm text-darkText60 mb-6 uppercase tracking-[0.2em] font-medium"
-                variants={itemVariants}
-                transition={{ duration: 0.6, ease: [0.6, 0.01, -0.05, 0.95] }}
-              >
-                Let's Work Together
-              </motion.p>
-              <motion.h1
-                className="hero-element text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]"
-                variants={itemVariants}
-                transition={{ duration: 0.8, ease: [0.6, 0.01, -0.05, 0.95] }}
-              >
-                Get In
-                <span className="block text-transparent bg-gradient-to-r from-darkText via-lightBg to-darkText bg-clip-text">
-                  Touch
-                </span>
-              </motion.h1>
-              <motion.p
-                className="hero-element text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed"
-                variants={itemVariants}
-                transition={{ duration: 1.0, ease: [0.6, 0.01, -0.05, 0.95] }}
-              >
-                Ready to transform your digital presence? Let's discuss your project and create something extraordinary together.
-              </motion.p>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-              variants={containerVariants}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center p-6 rounded-2xl bg-darkText20 backdrop-blur-sm border border-darkText20"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(245, 231, 211, 0.1)" }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="text-3xl md:text-4xl font-bold mb-2 text-lightBg">{stat.number}</div>
-                  <div className="text-sm text-darkText60 uppercase tracking-wider">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
 
         {/* Contact Methods */}
         <section className="contact-info py-20 px-4 bg-darkBg">

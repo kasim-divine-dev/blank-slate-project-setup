@@ -182,7 +182,7 @@ const Services: React.FC = () => {
                   icon: Users,
                   title: "Expert Team",
                   description: "Our skilled professionals bring years of experience and cutting-edge expertise to every project.",
-                  stat: "50+ Experts"
+                  stat: "5+ Experts"
                 },
                 {
                   icon: Award,
@@ -251,7 +251,8 @@ const Services: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                <motion.button
+                <motion.a
+                  href='/contact'
                   className="group relative bg-[#F5E7D3] text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -264,9 +265,10 @@ const Services: React.FC = () => {
                     Start Your Project
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </span>
-                </motion.button>
+                </motion.a>
 
-                <motion.button
+                <motion.a
+                  href='/projects'
                   className="group border-2 border-[#484440] text-[#F5E7D3] px-8 py-4 rounded-full font-bold hover:border-[#F5E7D3] hover:bg-[#F5E7D3] hover:text-black transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -275,41 +277,8 @@ const Services: React.FC = () => {
                     View Our Work
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </span>
-                </motion.button>
+                </motion.a>
               </div>
-
-              {/* Newsletter Signup */}
-              <motion.div
-                className="bg-black/30 backdrop-blur-sm border border-[#484440]/30 rounded-3xl p-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-                <p className="text-[#F5E7D3]/80 mb-6">
-                  Get insights, tips, and industry updates delivered to your inbox
-                </p>
-
-                <div className="flex gap-4 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 px-4 py-3 bg-black/50 border border-[#484440]/50 rounded-2xl text-[#F5E7D3] placeholder:text-[#F5E7D3]/50 focus:border-[#F5E7D3] focus:outline-none transition-all duration-300"
-                  />
-                  <motion.button
-                    className="bg-[#F5E7D3] text-black px-6 py-3 rounded-2xl font-bold hover:bg-white transition-colors duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Subscribe
-                  </motion.button>
-                </div>
-
-                <p className="text-xs text-[#F5E7D3]/60 mt-4">
-                  We respect your privacy. Unsubscribe at any time.
-                </p>
-              </motion.div>
             </motion.div>
           </div>
         </section>
