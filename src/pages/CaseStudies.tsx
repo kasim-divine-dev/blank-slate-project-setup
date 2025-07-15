@@ -168,7 +168,9 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
 
   return (
     <>
-      <DynamicSEO pageName="case-studies" />
+      {!isFromHome && (
+        <DynamicSEO pageName="case-studies" />
+      )}
 
       <div ref={containerRef} className="min-h-screen bg-black text-[#F5E7D3]">
         {/* Hidden SEO Content */}
@@ -177,75 +179,76 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
           <p>Explore MkRonix's detailed case studies showcasing measurable results from our web development, UI/UX design, and digital marketing projects. Real data, proven ROI, client success stories from India.</p>
         </div>
 
-        {/* Hero Section */}
-        <motion.section
-          className="hero-section pt-32 pb-20 px-4 bg-gradient-to-b from-black to-darkBg"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          style={{ y: textY }}
-        >
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              variants={itemVariants}
-            >
-              <motion.p
-                className="hero-element text-sm text-darkText60 mb-6 uppercase tracking-[0.2em] font-medium"
-                variants={itemVariants}
-              >
-                Real Projects, Real Impact
-              </motion.p>
-              <motion.h1
-                className="hero-element text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]"
-                variants={itemVariants}
-              >
-                Case
-                <span className="block text-transparent bg-gradient-to-r from-darkText via-lightBg to-darkText bg-clip-text">
-                  Studies
-                </span>
-              </motion.h1>
-              <motion.p
-                className="hero-element text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed"
-                variants={itemVariants}
-              >
-                Dive deep into our most impactful projects and discover how we transform challenges into extraordinary digital experiences that drive measurable business growth.
-              </motion.p>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-              variants={containerVariants}
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center p-6 rounded-2xl bg-darkText20 backdrop-blur-sm border border-darkText20"
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(245, 231, 211, 0.1)" }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="flex items-center justify-center">
-                    <div
-                      className="stat-number text-3xl md:text-4xl font-bold text-lightBg"
-                      data-target={stat.value}
-                    >
-                      0
-                    </div>
-                    <span className="text-3xl md:text-4xl font-bold text-lightBg">
-                      {stat.suffix}
-                    </span>
-                  </div>
-                  <div className="text-sm text-darkText60 uppercase tracking-wider mt-2">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </motion.section>
-
         {!isFromHome && (
           <>
+            {/* Hero Section */}
+            <motion.section
+              className="hero-section pt-32 pb-20 px-4 bg-gradient-to-b from-black to-darkBg"
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              style={{ y: textY }}
+            >
+              <div className="max-w-7xl mx-auto">
+                <motion.div
+                  className="text-center mb-16"
+                  variants={itemVariants}
+                >
+                  <motion.p
+                    className="hero-element text-sm text-darkText60 mb-6 uppercase tracking-[0.2em] font-medium"
+                    variants={itemVariants}
+                  >
+                    Real Projects, Real Impact
+                  </motion.p>
+                  <motion.h1
+                    className="hero-element text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]"
+                    variants={itemVariants}
+                  >
+                    Case
+                    <span className="block text-transparent bg-gradient-to-r from-darkText via-lightBg to-darkText bg-clip-text">
+                      Studies
+                    </span>
+                  </motion.h1>
+                  <motion.p
+                    className="hero-element text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed"
+                    variants={itemVariants}
+                  >
+                    Dive deep into our most impactful projects and discover how we transform challenges into extraordinary digital experiences that drive measurable business growth.
+                  </motion.p>
+                </motion.div>
+
+                {/* Stats */}
+                <motion.div
+                  className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+                  variants={containerVariants}
+                >
+                  {stats.map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      className="text-center p-6 rounded-2xl bg-darkText20 backdrop-blur-sm border border-darkText20"
+                      variants={itemVariants}
+                      whileHover={{ scale: 1.05, backgroundColor: "rgba(245, 231, 211, 0.1)" }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="flex items-center justify-center">
+                        <div
+                          className="stat-number text-3xl md:text-4xl font-bold text-lightBg"
+                          data-target={stat.value}
+                        >
+                          0
+                        </div>
+                        <span className="text-3xl md:text-4xl font-bold text-lightBg">
+                          {stat.suffix}
+                        </span>
+                      </div>
+                      <div className="text-sm text-darkText60 uppercase tracking-wider mt-2">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </motion.section>
+
+
             {/* Filter Section */}
             <section className="py-12 px-4 bg-darkBg border-y border-darkText20">
               <div className="max-w-7xl mx-auto">
@@ -433,11 +436,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                 </motion.div>
               </div>
             </section>
-          </>
-        )}
 
-        {!isFromHome && (
-          <>
             <section className="process-section py-20 px-4 bg-darkBg">
               <div className="max-w-6xl mx-auto">
                 <motion.div
@@ -514,9 +513,9 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                 </div>
               </div>
             </section>
+
           </>
         )}
-        {/* Process Overview Section */}
 
         {/* Testimonials Section */}
         <section className="py-20 px-4 bg-black">

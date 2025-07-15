@@ -9,7 +9,7 @@ interface FlipLinkProps {
 const FlipLink: React.FC<FlipLinkProps> = ({ children, href }) => {
     const DURATION = 0.25;
     const STAGGER = 0.025;
-    
+
     return (
         <motion.a
             initial="initial"

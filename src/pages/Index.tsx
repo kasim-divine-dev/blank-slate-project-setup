@@ -1,9 +1,9 @@
 
 import BlogSection from "@/components/BlogSection/BlogSection";
-import Carousel from "@/components/Carousel/Carousel";
 import GetInTouch from "@/components/GetInTouch/GetInTouch";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import HorizontalTextScroller from "@/components/HorizontalTextScroller/HorizontalTextScroller";
+import ProjectShowcase from "@/components/ProjectShowcase/ProjectShowcase";
 import ServiceCard from "@/components/ServiceCard/ServiceCard";
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import CaseStudies from "./CaseStudies";
@@ -19,7 +19,7 @@ const Index = () => {
 
         <HeroSection />
         <ServiceCard />
-        <Carousel />
+        <ProjectShowcase />
         <CaseStudies isFromHome={true} />
         <BlogSection />
         <HorizontalTextScroller />

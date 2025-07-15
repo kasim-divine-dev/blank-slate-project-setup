@@ -2,12 +2,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { Dispatch } from "react";
 import FlipLink from "../FlipLink/FlipLink";
+import { Link } from "react-router-dom";
+import MagneticButton from "../MagneticButton/MagneticButton";
 
 interface MenuProps {
     menuOpen: boolean;
     setMenuOpen: Dispatch<React.SetStateAction<boolean>>;
 }
-function Menu({ menuOpen, setMenuOpen }: MenuProps) {
+function Menu({ menuOpen, setMenuOpen }: Readonly<MenuProps>) {
     const primaryEasing = [0.83, 0, 0.17, 1] as const;
 
     console.log("menuOpen", menuOpen);
@@ -133,15 +135,15 @@ function Menu({ menuOpen, setMenuOpen }: MenuProps) {
                                     </nav>
                                 </div>
                                 <div className="font-spectral space-x-4 max-md:font-bold text-lg md:tracking-wider">
-                                    <span>
+                                    <a target="_blank" href={'https://www.linkedin.com/in/kasimkkn'} >
                                         LinkedIn
-                                    </span>
-                                    <span >
-                                        Instagram
-                                    </span>
-                                    <span>
-                                        Facebook
-                                    </span>
+                                    </a>
+                                    <a target="_blank" href={'https://www.github.com/kasimkkn'} >
+                                        github
+                                    </a>
+                                    <a target="_blank" href={'https://x.com/Kasim_kkn'} >
+                                        twitter
+                                    </a>
                                 </div>
                             </div>
                             <div className="bg-black md:bg-lightBg text-darkText md:text-black flex flex-col justify-around h-full md:justify-center md:p-8 p-3 relative">
@@ -150,11 +152,16 @@ function Menu({ menuOpen, setMenuOpen }: MenuProps) {
                                     <p className="text-darkText md:text-black font-spectral max-md:font-bold text-4xl md:text-5xl mb-4">
                                         Let's craft <br /> brilliant together!
                                     </p>
-                                    <button
-                                        className="border border-accent font-spectral md:border-white px-4 py-2 text-lg rounded-full transition w-max"
-                                    >
-                                        Get In touch
-                                    </button>
+                                    <div className="w-max">
+                                        <MagneticButton>
+                                            <Link
+                                                to={'/contact'}
+                                                className="border border-accent font-spectral md:border-white px-4 py-2 text-lg rounded-full transition w-max"
+                                            >
+                                                Get In touch
+                                            </Link>
+                                        </MagneticButton>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

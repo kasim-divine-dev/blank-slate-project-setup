@@ -7,13 +7,6 @@ export const carouselItems = [
     url: "https://nexus-gamma-three.vercel.app/"
   },
   {
-    id: "102",
-    title: "KkJewells",
-    bg: "/images/projects/p2.png",
-    main: "/images/projects/p2.png",
-    url: "https://kkjewels.vercel.app/s",
-  },
-  {
     id: "103",
     title: "KK Creative Agency Site",
     bg: "/images/projects/p3.png",

@@ -12,12 +12,13 @@ export const DynamicSEO: React.FC<DynamicSEOProps> = ({
   pageName,
   customData = {}
 }) => {
+  console.log("pageName", pageName);
   const pageData = seoService.getPageSEO(pageName);
   const schemas = seoService.generateSchemas(pageName);
-  
+
   // Merge default data with custom overrides
   const seoData = { ...pageData, ...customData };
-  
+
   const {
     title,
     description,

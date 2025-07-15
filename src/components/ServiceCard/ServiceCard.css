@@ -1,5 +1,10 @@
 .service-card {
     position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
 }
 
 .service-card-inner {
@@ -7,48 +12,29 @@
     will-change: transform;
     width: 100%;
     height: 100%;
-    padding: 2em;
     display: flex;
-    gap: 4em;
-}
-
-.service-card-content {
-    flex: 3;
-}
-
-.service-card-img {
-    flex: 1;
-    aspect-ratio: 16 / 9;
-    border-radius: 0.75em;
-    overflow: hidden;
+    align-items: center;
 }
 
 #service-card-1 .service-card-inner {
-    background-color: #323816;
-    color: rgba(245, 231, 211, 0.8);
+    z-index: 4;
 }
 
 #service-card-2 .service-card-inner {
-    background-color: #ffffff;
-    color: #323816;
+    z-index: 3;
 }
 
 #service-card-3 .service-card-inner {
-    background-color: #323816;
-    color: rgba(245, 231, 211, 0.8);
+    z-index: 2;
 }
 
 #service-card-4 .service-card-inner {
-    background-color: #ffffff;
-    color: #323816;
+    z-index: 1;
 }
 
 @media (max-width: 900px) {
     .service-card-inner {
         flex-direction: column;
-    }
-
-    .service-card-img {
-        display: none;
+        gap: 2rem;
     }
 }
