@@ -18,60 +18,76 @@
           "url": "https://mkronix.com/services"
         }
       ]
+    },
+    "serviceDetail": {
+      "title": "Service Details | MkRonix - Professional Digital Services",
+      "description": "Detailed information about our professional digital services including web development, UI/UX design, mobile app development, and branding solutions.",
+      "keywords": "service details, professional services, digital solutions, custom development",
+      "url": "https://mkronix.com/services/",
+      "image": "https://mkronix.com/assets/service-detail-og.jpg",
+      "type": "website"
     }
   },
   "services": [
     {
       "id": "web-development",
-      "title": "Web Development",
-      "description": "Custom web applications built with modern technologies",
+      "title": "Web Development Services Mumbai & Ahmedabad",
+      "description": "Professional web development services in Mumbai and Ahmedabad. Custom websites, e-commerce solutions, and web applications built with modern technologies.",
       "features": [
-        "Responsive Design",
-        "Performance Optimization",
-        "SEO Friendly",
-        "Security First"
+        "Custom Web Development",
+        "E-commerce Solutions", 
+        "CMS Development",
+        "Performance Optimization"
       ],
-      "technologies": ["React", "Node.js", "TypeScript", "MongoDB"],
-      "startingPrice": "₹50,000"
+      "technologies": ["React", "Node.js", "TypeScript", "MongoDB", "Next.js", "Tailwind CSS"],
+      "startingPrice": "₹25,000",
+      "localKeywords": ["web development Mumbai", "website design Ahmedabad", "custom web development India"],
+      "seoKeywords": "web development services Mumbai, custom website development Ahmedabad, React development India, e-commerce development, responsive web design"
     },
     {
       "id": "ui-ux-design",
-      "title": "UI/UX Design",
-      "description": "User-centered design that converts visitors into customers",
+      "title": "UI/UX Design Services Mumbai & Ahmedabad", 
+      "description": "Expert UI/UX design services in Mumbai and Ahmedabad. User-centered design solutions that enhance user experience and drive business results.",
       "features": [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
+        "User Experience Design",
+        "User Interface Design",
+        "Mobile App Design",
         "Usability Testing"
       ],
-      "technologies": ["Figma", "Adobe XD", "Sketch", "Principle"],
-      "startingPrice": "₹30,000"
+      "technologies": ["Figma", "Adobe XD", "Sketch", "Framer", "Principle", "InVision"],
+      "startingPrice": "₹20,000",
+      "localKeywords": ["UI UX design Mumbai", "user experience design Ahmedabad", "mobile app design India"],
+      "seoKeywords": "UI UX design services Mumbai, user experience design Ahmedabad, mobile app design India, wireframing prototyping, user research"
     },
     {
-      "id": "mobile-app-development",
-      "title": "Mobile App Development",
-      "description": "Native and cross-platform mobile applications",
+      "id": "mobile-development",
+      "title": "Mobile App Development Mumbai & Ahmedabad",
+      "description": "Professional mobile app development services in Mumbai and Ahmedabad. Native iOS, Android, and cross-platform mobile applications.",
       "features": [
-        "iOS & Android",
-        "Cross-platform",
-        "App Store Optimization",
-        "Maintenance & Support"
+        "Native iOS Development",
+        "Native Android Development", 
+        "Cross-Platform Development",
+        "App Store Optimization"
       ],
-      "technologies": ["React Native", "Flutter", "Swift", "Kotlin"],
-      "startingPrice": "₹80,000"
+      "technologies": ["React Native", "Flutter", "Swift", "Kotlin", "iOS", "Android"],
+      "startingPrice": "₹80,000",
+      "localKeywords": ["mobile app development Mumbai", "Android app development Ahmedabad", "iOS app development India"],
+      "seoKeywords": "mobile app development Mumbai, iOS Android app development Ahmedabad, React Native Flutter development India, app store optimization"
     },
     {
-      "id": "digital-marketing",
-      "title": "Digital Marketing",
-      "description": "Growth-driven marketing strategies that deliver results",
+      "id": "identity-branding",
+      "title": "Brand Identity & Logo Design Mumbai & Ahmedabad",
+      "description": "Professional branding and identity design services in Mumbai and Ahmedabad. Strategic brand identity, logo design, and visual branding solutions.",
       "features": [
-        "SEO Optimization",
-        "Social Media Marketing",
-        "Content Marketing",
-        "PPC Advertising"
+        "Logo Design & Identity",
+        "Brand Strategy & Positioning",
+        "Marketing Collateral Design", 
+        "Brand Guidelines"
       ],
-      "technologies": ["Google Ads", "Facebook Ads", "Analytics", "SEMrush"],
-      "startingPrice": "₹25,000/month"
+      "technologies": ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Figma", "Sketch", "Canva Pro"],
+      "startingPrice": "₹30,000",
+      "localKeywords": ["branding services Mumbai", "logo design Ahmedabad", "brand identity design India"],
+      "seoKeywords": "branding services Mumbai, logo design Ahmedabad, brand identity design India, graphic design services, brand strategy visual identity"
     }
   ]
 }

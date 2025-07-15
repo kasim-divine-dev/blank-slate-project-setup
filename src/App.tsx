@@ -8,6 +8,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Index';
 import About from './pages/AboutUs';
 import Services from './pages/Services';
+import ServiceDetail from './pages/ServiceDetail';
 import Projects from './pages/Projects';
 import CaseStudies from './pages/CaseStudies';
 import Blog from './pages/Blog';
@@ -31,6 +32,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/services/:slug" element={<ServiceDetail />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/case-studies" element={<CaseStudies />} />
                 <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />

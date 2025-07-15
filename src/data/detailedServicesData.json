@@ -1,0 +1,425 @@
+
+{
+  "services": [
+    {
+      "id": "web-development",
+      "slug": "web-development",
+      "title": "Web Development Services",
+      "subtitle": "Custom Web Applications & E-commerce Solutions",
+      "description": "Professional web development services in Mumbai and Ahmedabad. We create responsive, scalable, and SEO-optimized websites that drive business growth.",
+      "heroImage": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80",
+      "overview": {
+        "title": "Transform Your Digital Presence",
+        "content": "At MkRonix, we specialize in creating cutting-edge web applications that combine stunning design with powerful functionality. Our Mumbai and Ahmedabad-based team delivers custom solutions that help businesses establish a strong online presence and achieve measurable results.",
+        "highlights": [
+          "3+ years of proven experience in web development",
+          "50+ successful projects delivered across India",
+          "Expert team proficient in latest technologies",
+          "99% client satisfaction rate"
+        ]
+      },
+      "services": [
+        {
+          "name": "Custom Web Development",
+          "description": "Tailored web solutions built from scratch to meet your specific business needs",
+          "features": ["Custom Architecture", "Scalable Backend", "API Integration", "Performance Optimization"],
+          "image": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+          "name": "E-commerce Development",
+          "description": "Complete online store solutions with payment gateway integration and inventory management",
+          "features": ["Payment Integration", "Inventory Management", "Order Tracking", "Mobile Responsive"],
+          "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+        },
+        {
+          "name": "CMS Development",
+          "description": "User-friendly content management systems for easy website updates and maintenance",
+          "features": ["Easy Content Updates", "Multi-user Access", "SEO Tools", "Media Management"],
+          "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
+        }
+      ],
+      "technologies": [
+        {
+          "category": "Frontend",
+          "items": ["React", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5/CSS3"]
+        },
+        {
+          "category": "Backend",
+          "items": ["Node.js", "Express.js", "Python", "PHP", "MongoDB", "MySQL"]
+        },
+        {
+          "category": "Tools & Platforms",
+          "items": ["Git", "Docker", "AWS", "Vercel", "Netlify", "Firebase"]
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Discovery & Planning",
+          "description": "We understand your business goals and create a detailed project roadmap"
+        },
+        {
+          "step": 2,
+          "title": "Design & Prototyping",
+          "description": "Create wireframes and prototypes to visualize the final product"
+        },
+        {
+          "step": 3,
+          "title": "Development",
+          "description": "Build your application using best practices and modern technologies"
+        },
+        {
+          "step": 4,
+          "title": "Testing & Launch",
+          "description": "Thorough testing and smooth deployment to production"
+        }
+      ],
+      "pricing": {
+        "starting": "₹25,000",
+        "popular": "₹75,000",
+        "enterprise": "Custom Quote",
+        "note": "Pricing varies based on project complexity and requirements"
+      },
+      "faqs": [
+        {
+          "question": "How long does it take to develop a website?",
+          "answer": "Timeline varies based on complexity. Simple websites take 2-4 weeks, while complex applications can take 8-16 weeks."
+        },
+        {
+          "question": "Do you provide ongoing maintenance?",
+          "answer": "Yes, we offer comprehensive maintenance packages including updates, security monitoring, and technical support."
+        },
+        {
+          "question": "Can you integrate third-party services?",
+          "answer": "Absolutely! We integrate payment gateways, CRM systems, analytics tools, and other third-party services as needed."
+        }
+      ],
+      "cta": {
+        "title": "Ready to Build Your Dream Website?",
+        "description": "Get a free consultation and project quote from our Mumbai and Ahmedabad web development experts.",
+        "buttonText": "Get Free Quote"
+      },
+      "seo": {
+        "metaTitle": "Web Development Services Mumbai & Ahmedabad | Custom Websites | MkRonix",
+        "metaDescription": "Professional web development services in Mumbai & Ahmedabad. Custom websites, e-commerce solutions, and web applications. 50+ projects delivered. Get free quote!",
+        "keywords": "web development Mumbai, web development Ahmedabad, custom website development, e-commerce development India, React development services, responsive web design",
+        "localKeywords": ["web development company Mumbai", "website design Ahmedabad", "custom web application development India"]
+      }
+    },
+    {
+      "id": "ui-ux-design",
+      "slug": "ui-ux-design",
+      "title": "UI/UX Design Services",
+      "subtitle": "User-Centered Design That Converts",
+      "description": "Expert UI/UX design services in Mumbai and Ahmedabad. We create intuitive, beautiful interfaces that enhance user experience and drive business results.",
+      "heroImage": "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80",
+      "overview": {
+        "title": "Design Experiences That Matter",
+        "content": "Our UI/UX design team in Mumbai and Ahmedabad creates digital experiences that users love. We combine aesthetic appeal with functional design to deliver interfaces that not only look great but also drive conversions and user engagement.",
+        "highlights": [
+          "User research and testing expertise",
+          "80+ design projects completed",
+          "Average 40% improvement in user engagement",
+          "Award-winning design portfolio"
+        ]
+      },
+      "services": [
+        {
+          "name": "User Experience (UX) Design",
+          "description": "Research-driven UX design that focuses on user needs and business goals",
+          "features": ["User Research", "User Journey Mapping", "Wireframing", "Usability Testing"],
+          "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+          "name": "User Interface (UI) Design",
+          "description": "Beautiful, intuitive interfaces that enhance user interaction and satisfaction",
+          "features": ["Visual Design", "Interactive Prototypes", "Design Systems", "Responsive Design"],
+          "image": "https://images.unsplash.com/photo-1545665277-5937750782fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+          "name": "Mobile App Design",
+          "description": "Native and cross-platform mobile app designs optimized for touch interactions",
+          "features": ["iOS Guidelines", "Android Design", "Touch Optimization", "App Store Assets"],
+          "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "technologies": [
+        {
+          "category": "Design Tools",
+          "items": ["Figma", "Adobe XD", "Sketch", "Adobe Creative Suite", "Framer", "Principle"]
+        },
+        {
+          "category": "Prototyping",
+          "items": ["InVision", "Marvel", "Zeplin", "Abstract", "Figma Prototyping"]
+        },
+        {
+          "category": "Research Tools",
+          "items": ["Hotjar", "Google Analytics", "UserTesting", "Maze", "Optimal Workshop"]
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Research & Discovery",
+          "description": "Understanding users, competitors, and market requirements"
+        },
+        {
+          "step": 2,
+          "title": "Information Architecture",
+          "description": "Structuring content and defining user flows"
+        },
+        {
+          "step": 3,
+          "title": "Wireframing & Prototyping",
+          "description": "Creating low and high-fidelity prototypes"
+        },
+        {
+          "step": 4,
+          "title": "Visual Design & Testing",
+          "description": "Final design implementation and user testing"
+        }
+      ],
+      "pricing": {
+        "starting": "₹20,000",
+        "popular": "₹50,000",
+        "enterprise": "Custom Quote",
+        "note": "Pricing depends on project scope and number of screens"
+      },
+      "faqs": [
+        {
+          "question": "What's the difference between UI and UX design?",
+          "answer": "UX focuses on user experience and functionality, while UI focuses on visual design and interface elements. Both are essential for successful digital products."
+        },
+        {
+          "question": "Do you conduct user research?",
+          "answer": "Yes, we conduct comprehensive user research including surveys, interviews, and usability testing to inform our design decisions."
+        },
+        {
+          "question": "Can you redesign existing applications?",
+          "answer": "Absolutely! We specialize in redesigning existing applications to improve user experience and modernize visual appeal."
+        }
+      ],
+      "cta": {
+        "title": "Transform Your User Experience",
+        "description": "Let our Mumbai and Ahmedabad design experts create stunning interfaces that users love.",
+        "buttonText": "Start Design Project"
+      },
+      "seo": {
+        "metaTitle": "UI/UX Design Services Mumbai & Ahmedabad | User Experience Design | MkRonix",
+        "metaDescription": "Expert UI/UX design services in Mumbai & Ahmedabad. User research, wireframing, prototyping, and visual design. 80+ projects delivered. Get free consultation!",
+        "keywords": "UI UX design Mumbai, user experience design Ahmedabad, mobile app design India, website design services, user interface design, UX research",
+        "localKeywords": ["UI UX design company Mumbai", "user experience design Ahmedabad", "mobile app design services India"]
+      }
+    },
+    {
+      "id": "mobile-development",
+      "slug": "mobile-development",
+      "title": "Mobile App Development",
+      "subtitle": "Native & Cross-Platform Mobile Solutions",
+      "description": "Professional mobile app development services in Mumbai and Ahmedabad. We build iOS, Android, and cross-platform apps that engage users and drive business growth.",
+      "heroImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+      "overview": {
+        "title": "Mobile Apps That Make Impact",
+        "content": "Our mobile development team in Mumbai and Ahmedabad creates powerful, user-friendly mobile applications for iOS and Android platforms. From concept to app store, we deliver complete mobile solutions that engage users and drive business success.",
+        "highlights": [
+          "30+ mobile apps developed and launched",
+          "iOS and Android expertise",
+          "React Native and Flutter specialists",
+          "App Store optimization included"
+        ]
+      },
+      "services": [
+        {
+          "name": "Native iOS Development",
+          "description": "Native iOS apps built with Swift for optimal performance and user experience",
+          "features": ["Swift Programming", "iOS Guidelines", "App Store Optimization", "Performance Optimization"],
+          "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
+        },
+        {
+          "name": "Native Android Development",
+          "description": "Native Android apps built with Kotlin for seamless Android experience",
+          "features": ["Kotlin Programming", "Material Design", "Google Play Store", "Android Optimization"],
+          "image": "https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+          "name": "Cross-Platform Development",
+          "description": "Single codebase apps using React Native and Flutter for faster development",
+          "features": ["React Native", "Flutter Framework", "Code Reusability", "Faster Time to Market"],
+          "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80"
+        }
+      ],
+      "technologies": [
+        {
+          "category": "Native iOS",
+          "items": ["Swift", "Objective-C", "Xcode", "Core Data", "UIKit", "SwiftUI"]
+        },
+        {
+          "category": "Native Android",
+          "items": ["Kotlin", "Java", "Android Studio", "Jetpack Compose", "Room Database", "Material Design"]
+        },
+        {
+          "category": "Cross-Platform",
+          "items": ["React Native", "Flutter", "Dart", "Expo", "Ionic", "Xamarin"]
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Strategy & Planning",
+          "description": "Define app requirements, target audience, and platform strategy"
+        },
+        {
+          "step": 2,
+          "title": "Design & Prototyping",
+          "description": "Create user-friendly designs and interactive prototypes"
+        },
+        {
+          "step": 3,
+          "title": "Development & Testing",
+          "description": "Build the app with rigorous testing on multiple devices"
+        },
+        {
+          "step": 4,
+          "title": "Launch & Support",
+          "description": "App store submission and ongoing maintenance support"
+        }
+      ],
+      "pricing": {
+        "starting": "₹80,000",
+        "popular": "₹2,50,000",
+        "enterprise": "Custom Quote",
+        "note": "Pricing varies based on app complexity, features, and platform requirements"
+      },
+      "faqs": [
+        {
+          "question": "Should I choose native or cross-platform development?",
+          "answer": "Native offers best performance and platform-specific features, while cross-platform is cost-effective for simpler apps. We'll recommend based on your requirements."
+        },
+        {
+          "question": "How long does mobile app development take?",
+          "answer": "Simple apps take 2-3 months, while complex apps can take 6-12 months. Timeline depends on features and complexity."
+        },
+        {
+          "question": "Do you help with app store submission?",
+          "answer": "Yes, we handle complete app store submission process including compliance, assets, and optimization for both iOS and Android stores."
+        }
+      ],
+      "cta": {
+        "title": "Ready to Build Your Mobile App?",
+        "description": "Get expert mobile app development services from our Mumbai and Ahmedabad team.",
+        "buttonText": "Discuss Your App Idea"
+      },
+      "seo": {
+        "metaTitle": "Mobile App Development Mumbai & Ahmedabad | iOS Android Apps | MkRonix",
+        "metaDescription": "Professional mobile app development in Mumbai & Ahmedabad. iOS, Android, React Native, Flutter apps. 30+ apps launched. Expert team. Get free consultation!",
+        "keywords": "mobile app development Mumbai, Android app development Ahmedabad, iOS app development India, React Native development, Flutter app development",
+        "localKeywords": ["mobile app development company Mumbai", "Android app development Ahmedabad", "iOS app development services India"]
+      }
+    },
+    {
+      "id": "identity-branding",
+      "slug": "identity-branding",
+      "title": "Identity & Branding Services",
+      "subtitle": "Strategic Brand Identity & Visual Design",
+      "description": "Professional branding and identity design services in Mumbai and Ahmedabad. We create memorable brand identities that connect with your audience and drive business growth.",
+      "heroImage": "https://images.unsplash.com/photo-1542744094-24638eff58bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80",
+      "overview": {
+        "title": "Build Brands That Stand Out",
+        "content": "Our branding team in Mumbai and Ahmedabad creates compelling brand identities that resonate with your target audience. From logo design to complete brand guidelines, we help businesses establish a strong, memorable presence in the market.",
+        "highlights": [
+          "100+ brand identities created",
+          "Complete brand strategy development",
+          "Award-winning design portfolio",
+          "Brand guidelines and asset creation"
+        ]
+      },
+      "services": [
+        {
+          "name": "Logo Design & Identity",
+          "description": "Distinctive logos and visual identity systems that represent your brand essence",
+          "features": ["Logo Design", "Brand Mark", "Typography", "Color Palette"],
+          "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80"
+        },
+        {
+          "name": "Brand Strategy & Positioning",
+          "description": "Strategic brand positioning and messaging that differentiates you from competitors",
+          "features": ["Brand Strategy", "Market Research", "Positioning", "Brand Messaging"],
+          "image": "https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        },
+        {
+          "name": "Marketing Collateral Design",
+          "description": "Consistent brand application across all marketing materials and touchpoints",
+          "features": ["Business Cards", "Brochures", "Website Design", "Social Media Assets"],
+          "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+        }
+      ],
+      "technologies": [
+        {
+          "category": "Design Software",
+          "items": ["Adobe Illustrator", "Adobe Photoshop", "Adobe InDesign", "Figma", "Sketch", "Canva Pro"]
+        },
+        {
+          "category": "Brand Strategy",
+          "items": ["Market Research", "Competitor Analysis", "Brand Audits", "Customer Personas"]
+        },
+        {
+          "category": "Asset Management",
+          "items": ["Brand Guidelines", "Asset Libraries", "Style Guides", "Brand Books"]
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Brand Discovery",
+          "description": "Understanding your business, values, and target audience"
+        },
+        {
+          "step": 2,
+          "title": "Strategy Development",
+          "description": "Creating brand positioning and messaging strategy"
+        },
+        {
+          "step": 3,
+          "title": "Visual Identity Design",
+          "description": "Designing logo, colors, typography, and visual elements"
+        },
+        {
+          "step": 4,
+          "title": "Brand Guidelines",
+          "description": "Creating comprehensive brand guidelines and asset library"
+        }
+      ],
+      "pricing": {
+        "starting": "₹30,000",
+        "popular": "₹1,00,000",
+        "enterprise": "Custom Quote",
+        "note": "Pricing depends on brand complexity and deliverable requirements"
+      },
+      "faqs": [
+        {
+          "question": "What's included in a complete brand identity package?",
+          "answer": "Our complete package includes logo design, color palette, typography, brand guidelines, business cards, letterhead, and social media templates."
+        },
+        {
+          "question": "How long does the branding process take?",
+          "answer": "A complete brand identity typically takes 4-8 weeks, depending on the scope and number of revisions required."
+        },
+        {
+          "question": "Do you provide brand strategy consultation?",
+          "answer": "Yes, we offer comprehensive brand strategy services including market research, positioning, and messaging development."
+        }
+      ],
+      "cta": {
+        "title": "Ready to Transform Your Brand?",
+        "description": "Let our Mumbai and Ahmedabad branding experts create a memorable identity for your business.",
+        "buttonText": "Start Branding Project"
+      },
+      "seo": {
+        "metaTitle": "Brand Identity & Logo Design Mumbai & Ahmedabad | Branding Services | MkRonix",
+        "metaDescription": "Professional branding and logo design services in Mumbai & Ahmedabad. Brand strategy, visual identity, marketing collateral. 100+ brands created. Get quote!",
+        "keywords": "branding services Mumbai, logo design Ahmedabad, brand identity design India, graphic design services, brand strategy, visual identity design",
+        "localKeywords": ["branding agency Mumbai", "logo design company Ahmedabad", "brand identity services India"]
+      }
+    }
+  ]
+}
