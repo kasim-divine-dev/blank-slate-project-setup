@@ -175,7 +175,7 @@ const ContactUs: React.FC = () => {
       icon: MapPin,
       title: "Visit Us",
       subtitle: "Mkronix Creative Studio",
-      value: "Mumbai, Gujarat 400102",
+      value: "Mumbai, Maharashtra 400102",
       href: "#location",
       gradient: "from-purple-500/20 to-pink-500/20"
     },
@@ -206,7 +206,7 @@ const ContactUs: React.FC = () => {
           <h1>Contact MkRonix - Free Consultation for Web Development & Digital Marketing India</h1>
           <p>Get in touch with India's leading creative digital agency. Free consultation available for web development, UI/UX design, mobile apps, and digital marketing services.</p>
           <span>Phone: +91-84-59258801 | Email: mkronix.official@gmail.com</span>
-          <span>Address: Jogeshwari, Mumbai, Gujarat - 400102, India</span>
+          <span>Address: Jogeshwari, Mumbai, Maharashtra - 400102, India</span>
           <span>Services: Web Development, UI/UX Design, Mobile App Development, Digital Marketing, SEO</span>
           <span>Business Hours: Monday-Friday 9AM-6PM, Saturday 10AM-4PM IST</span>
           <span>Coverage: Mumbai, Delhi, Bangalore, Ahmedabad, Surat, Rajkot, Gujarat, India</span>
@@ -475,7 +475,7 @@ const ContactUs: React.FC = () => {
                     MkRonix Creative Studio
                   </h3>
                   <p className="text-darkText80 mb-6 leading-relaxed">
-                    Mumbai, Gujarat 400102<br />
+                    Mumbai, Maharashtra 400102<br />
                     India
                   </p>
                   <div className="space-y-4">

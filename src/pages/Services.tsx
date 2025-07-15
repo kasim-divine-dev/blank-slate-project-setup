@@ -79,7 +79,7 @@ const Services: React.FC = () => {
         <span>Industries: E-commerce, Healthcare, Education, Finance, Startups, Enterprise</span>
         <span>Technologies: React, Next.js, Node.js, TypeScript, Figma, React Native, Flutter, Google Analytics, Facebook Ads</span>
         <span>Process: Discovery & Strategy, Design & Prototype, Development & Testing, Launch & Optimize</span>
-        <span>Location: Gujarat, India | Serving: Mumbai, Delhi, Bangalore, Ahmedabad, Pan India</span>
+        <span>Location: Mumbai (Maharashtra), India | Serving: Mumbai, Delhi, Bangalore, Ahmedabad, Pan India</span>
       </div>
 
       <div className="text-[#F5E7D3] font-boska overflow-x-hidden">
