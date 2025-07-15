@@ -117,8 +117,8 @@ const Projects: React.FC = () => {
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: {
         duration: 0.8,
@@ -149,18 +149,15 @@ const Projects: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <motion.div
               className="text-center mb-16"
-              variants={itemVariants}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <motion.p
                 className="text-sm text-darkText60 mb-6 uppercase tracking-[0.2em] font-medium"
-                variants={itemVariants}
               >
                 Our Creative Work
               </motion.p>
               <motion.h1
                 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]"
-                variants={itemVariants}
               >
                 Featured
                 <span className="block text-transparent bg-gradient-to-r from-darkText via-lightBg to-darkText bg-clip-text">
@@ -169,7 +166,6 @@ const Projects: React.FC = () => {
               </motion.h1>
               <motion.p
                 className="text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed"
-                variants={itemVariants}
               >
                 Discover our portfolio of innovative digital solutions that have transformed
                 businesses and created exceptional user experiences across various industries.
@@ -190,7 +186,6 @@ const Projects: React.FC = () => {
                 <motion.div
                   key={index}
                   className="text-center p-6 rounded-2xl bg-darkText20 backdrop-blur-sm border border-darkText20"
-                  variants={itemVariants}
                   whileHover={{ scale: 1.05, backgroundColor: "rgba(245, 231, 211, 0.1)" }}
                   transition={{ duration: 0.3 }}
                 >
