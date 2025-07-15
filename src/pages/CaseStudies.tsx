@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -36,7 +37,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ isFromHome = false }) => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: [0.4, 0, 0.2, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -101,7 +102,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ isFromHome = false }) => {
                       </span>
                       <div className="flex items-center text-[#F5E7D3]/60 text-sm">
                         <Calendar className="w-4 h-4 mr-1" />
-                        {study.date}
+                        {study.year}
                       </div>
                     </div>
 
@@ -120,7 +121,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ isFromHome = false }) => {
                       </div>
                       
                       <Link
-                        to={`/case-studies/${study.slug}`}
+                        to={study.url}
                         className="inline-flex items-center text-[#F5E7D3] hover:text-[#F5E7D3]/80 transition-colors group"
                       >
                         <span className="mr-2">Read More</span>
@@ -182,3 +183,4 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ isFromHome = false }) => {
 };
 
 export default CaseStudies;
+
