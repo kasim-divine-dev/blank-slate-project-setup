@@ -12,7 +12,7 @@ export const caseStudiesData = detailedCaseStudies.caseStudies.map(study => ({
   year: study.year,
   client: study.client,
   technologies: study.technologies,
-  results: study.metrics.map(metric => 
+  results: study.metrics.map(metric =>
     `${metric.label}: ${metric.value}${metric.growth ? ` (${metric.growth})` : ''}`
   ),
   url: `/case-studies/${study.slug}`

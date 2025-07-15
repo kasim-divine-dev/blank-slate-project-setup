@@ -2,13 +2,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, ArrowUpRight, Calendar, Clock, ExternalLink, Star, Users, Award, Target, TrendingUp, CheckCircle, Zap, AlertCircle, Home, Eye, Share2 } from 'lucide-react';
+import { AlertCircle, ArrowLeft, ArrowUpRight, Award, Calendar, CheckCircle, Eye, Home, Share2, Target, Users, Zap } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
-import { getCaseStudyBySlug, getRelatedCaseStudies } from '../data/caseStudiesData';
 import { useLoading } from '../contexts/LoadingContext';
+import { getCaseStudyBySlug, getRelatedCaseStudies } from '../data/caseStudiesData';
 
 const CaseStudyDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -45,10 +45,10 @@ const CaseStudyDetail: React.FC = () => {
 
         setCaseStudy(study);
         setRelatedStudies(getRelatedCaseStudies(slug, 3));
-        
+
         // Simulate loading for smooth transition
         await new Promise(resolve => setTimeout(resolve, 500));
-        
+
         setIsLoading(false);
         setGlobalLoading(false);
       } catch (err: any) {
@@ -116,8 +116,8 @@ const CaseStudyDetail: React.FC = () => {
   if (error || !caseStudy) {
     return (
       <>
-        <DynamicSEO 
-          pageName="caseStudyDetail" 
+        <DynamicSEO
+          pageName="caseStudyDetail"
           customData={{
             title: "Case Study Not Found | MkRonix",
             description: "The requested case study could not be found. Explore our other successful projects and case studies.",
@@ -154,10 +154,12 @@ const CaseStudyDetail: React.FC = () => {
     );
   }
 
+  console.log("caseStudy:", caseStudy);
+
   return (
     <>
-      <DynamicSEO 
-        pageName="caseStudyDetail" 
+      <DynamicSEO
+        pageName="caseStudyDetail"
         customData={{
           title: `${caseStudy.title} - Case Study | MkRonix`,
           description: `${caseStudy.shortDescription || caseStudy.description} Learn how MkRonix helped ${caseStudy.client} achieve remarkable results in ${caseStudy.industry?.toLowerCase() || caseStudy.category.toLowerCase()}.`,
@@ -179,7 +181,6 @@ const CaseStudyDetail: React.FC = () => {
         <p>{caseStudy.description}</p>
         <span>Client: {caseStudy.client} | Category: {caseStudy.category} | Year: {caseStudy.year}</span>
         <span>Technologies: {caseStudy.technologies.join(', ')}</span>
-        <span>Results: {caseStudy.results.join(', ')}</span>
       </div>
 
       <div ref={containerRef} className="bg-black text-darkText font-boska overflow-x-hidden">
@@ -283,7 +284,7 @@ const CaseStudyDetail: React.FC = () => {
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              
+
               {/* Tech Stack Pills */}
               <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
                 {caseStudy.technologies.slice(0, 6).map((tech: string, index: number) => (
@@ -420,7 +421,6 @@ const CaseStudyDetail: React.FC = () => {
           </div>
         </section>
 
-        {/* Results Section */}
         <section className="px-4 py-20 bg-darkBg/30">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -438,7 +438,7 @@ const CaseStudyDetail: React.FC = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {caseStudy.results.map((result: string, index: number) => (
                 <motion.div
                   key={index}
@@ -461,7 +461,7 @@ const CaseStudyDetail: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
 

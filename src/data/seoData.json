@@ -138,6 +138,28 @@
         }
       ]
     },
+    "caseStudyDetail": {
+      "title": "Case Study | MkRonix - Digital Transformation Success Stories India",
+      "description": "Discover MkRonix's case study showcasing the digital transformation success story of a leading e-commerce company. Learn how we helped them achieve their business goals through innovative web development, UI/UX design, and digital marketing strategies.",
+      "keywords": "mkronix case study, digital transformation success story, web development case study, UI UX design case study, mobile app case study, digital marketing case study, SEO case study, e-commerce case study, business growth case study, ROI digital marketing case study India",
+      "url": "https://mkronix.com/case-studies/digital-transformation-success-story",
+      "image": "https://mkronix.com/assets/case-studies-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Case Studies",
+          "url": "https://mkronix.com/case-studies"
+        },
+        {
+          "name": "Digital Transformation Success Story",
+          "url": "https://mkronix.com/case-studies/digital-transformation-success-story"
+        }
+      ]
+    },
     "blogs": {
       "title": "Digital Marketing Blog | MkRonix - Web Development, UI/UX Design & Tech Insights India",
       "description": "Stay updated with latest digital marketing trends, web development tips, UI/UX design insights, and technology updates from MkRonix experts. Free resources for businesses in India and globally.",
