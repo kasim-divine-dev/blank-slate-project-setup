@@ -98,6 +98,28 @@
         }
       ]
     },
+    "serviceDetail": {
+      "title": "Web Development | UI/UX Design | Mobile Apps | Digital Marketing | MkRonix - India's Leading Creative Agency",
+      "description": "MkRonix offers comprehensive digital services - web development, UI/UX design, mobile app development, SEO, digital marketing, and brand identity. 99% client satisfaction. Call +91-84-59258801 or email us today.",
+      "keywords": "web development India, UI UX design services Mumbai, mobile app development company India, digital marketing agency Mumbai, SEO services India, brand identity design Mumbai, e-commerce development India, responsive web design services, custom software development Mumbai",
+      "url": "https://mkronix.com/services/web-development",
+      "image": "https://mkronix.com/assets/services-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Services",
+          "url": "https://mkronix.com/services"
+        },
+        {
+          "name": "Web Development",
+          "url": "https://mkronix.com/services/web-development"
+        }
+      ]
+    },
     "case-studies": {
       "title": "Case Studies | MkRonix Success Stories - Real Client Results & Digital Transformation Examples India",
       "description": "Explore MkRonix case studies showcasing real client success stories, digital transformation results, and measurable business impact. See how we've helped 15+ clients achieve their digital goals across India.",

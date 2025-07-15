@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Check, Star, Users, Award, Clock, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, Award, Check, ChevronDown, ChevronUp, Star } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import { useLoading } from '../contexts/LoadingContext';
 import servicesData from '../data/detailedServicesData.json';
@@ -68,7 +68,7 @@ const ServiceDetail: React.FC = () => {
 
   useEffect(() => {
     setGlobalLoading(true);
-    
+
     const loadService = () => {
       try {
         if (!slug) {
@@ -79,7 +79,7 @@ const ServiceDetail: React.FC = () => {
         }
 
         const foundService = servicesData.services.find(s => s.slug === slug);
-        
+
         if (!foundService) {
           setError('Service not found');
         } else {
@@ -129,8 +129,8 @@ const ServiceDetail: React.FC = () => {
           <p className="text-[#F5E7D3]/70 mb-8">
             {error || 'The service you\'re looking for doesn\'t exist or has been moved.'}
           </p>
-          <Link 
-            to="/services" 
+          <Link
+            to="/services"
             className="inline-flex items-center gap-2 bg-[#F5E7D3] text-black px-6 py-3 rounded-lg hover:bg-[#F5E7D3]/90 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -143,7 +143,7 @@ const ServiceDetail: React.FC = () => {
 
   return (
     <>
-      <DynamicSEO 
+      <DynamicSEO
         pageName="serviceDetail"
         customData={{
           title: service.seo.metaTitle,
@@ -176,8 +176,8 @@ const ServiceDetail: React.FC = () => {
           </div>
 
           <div className="relative container mx-auto px-4 py-20">
-            <Link 
-              to="/services" 
+            <Link
+              to="/services"
               className="inline-flex items-center gap-2 text-[#F5E7D3]/70 hover:text-[#F5E7D3] transition-colors mb-8 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

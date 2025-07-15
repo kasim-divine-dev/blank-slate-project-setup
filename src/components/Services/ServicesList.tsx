@@ -14,6 +14,7 @@ const services = [
     icon: Code,
     technologies: ["React", "Next.js", "Node.js", "TypeScript"],
     gradient: "from-purple-500/20 to-pink-500/20",
+    url: "https://mkronix.com/services/web-development",
     projects: "15+",
     startingPrice: "₹18,999"
   },
@@ -25,6 +26,7 @@ const services = [
     icon: Palette,
     technologies: ["Figma", "Adobe XD", "Sketch", "Framer"],
     gradient: "from-blue-500/20 to-cyan-500/20",
+    url: "https://mkronix.com/services/ui-ux-design",
     projects: "12+",
     startingPrice: "₹15,000"
   },
@@ -36,6 +38,7 @@ const services = [
     icon: Smartphone,
     technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
     gradient: "from-green-500/20 to-emerald-500/20",
+    url: "https://mkronix.com/services/mobile-development",
     projects: "5+",
     startingPrice: "₹40,000"
   },
@@ -47,6 +50,7 @@ const services = [
     icon: TrendingUp,
     technologies: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"],
     gradient: "from-orange-500/20 to-red-500/20",
+    url: "https://mkronix.com/services/branding",
     projects: "10+",
     startingPrice: "₹20,000/month"
   }
@@ -56,20 +60,8 @@ export const ServicesList = () => {
   return (
     <section className="px-4 py-20">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-6xl font-black mb-6">
-            Our <span className="text-white">Services</span>
-          </h2>
-          <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto">
-            Comprehensive digital solutions tailored to your business needs
-          </p>
-        </motion.div>
+
+        <h1 className="sr-only">Our Services</h1>
 
         <div className="space-y-6 md:space-y-8">
           {services.map((service, index) => (
