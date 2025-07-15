@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, User, ExternalLink } from 'lucide-react';
+import { ArrowRight, Calendar, User, ExternalLink, Clock, Target, Trophy } from 'lucide-react';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import CommonHeaderText from '../components/CommonHeaderText/CommonHeaderText';
 import { caseStudiesData } from '../data/caseStudiesData';
@@ -35,7 +36,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ isFromHome = false }) => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: [0.4, 0, 0.2, 1]
       }
     }
   };
