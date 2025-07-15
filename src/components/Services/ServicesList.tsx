@@ -1,10 +1,12 @@
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Code, Palette, Smartphone, TrendingUp } from 'lucide-react';
+import { ArrowUpRight, Code, Palette, Smartphone, TrendingUp, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Card1 from '@/assets/img/img1.jpg'
 import Card2 from '@/assets/img/img2.jpg'
 import Card3 from '@/assets/img/img3.jpg'
 import Card4 from '@/assets/img/img4.jpg'
+
 const services = [
   {
     number: "01",
@@ -14,7 +16,7 @@ const services = [
     icon: Code,
     technologies: ["React", "Next.js", "Node.js", "TypeScript"],
     gradient: "from-purple-500/20 to-pink-500/20",
-    url: "https://mkronix.com/services/web-development",
+    slug: "web-development",
     projects: "15+",
     startingPrice: "₹18,999"
   },
@@ -26,7 +28,7 @@ const services = [
     icon: Palette,
     technologies: ["Figma", "Adobe XD", "Sketch", "Framer"],
     gradient: "from-blue-500/20 to-cyan-500/20",
-    url: "https://mkronix.com/services/ui-ux-design",
+    slug: "ui-ux-design",
     projects: "12+",
     startingPrice: "₹15,000"
   },
@@ -38,7 +40,7 @@ const services = [
     icon: Smartphone,
     technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
     gradient: "from-green-500/20 to-emerald-500/20",
-    url: "https://mkronix.com/services/mobile-development",
+    slug: "mobile-development",
     projects: "5+",
     startingPrice: "₹40,000"
   },
@@ -50,7 +52,7 @@ const services = [
     icon: TrendingUp,
     technologies: ["Logo Design", "Brand Guidelines", "Visual Identity", "Brand Strategy"],
     gradient: "from-orange-500/20 to-red-500/20",
-    url: "https://mkronix.com/services/branding",
+    slug: "identity-branding",
     projects: "10+",
     startingPrice: "₹20,000/month"
   }
@@ -60,8 +62,50 @@ export const ServicesList = () => {
   return (
     <section className="px-4 py-20">
       <div className="max-w-6xl mx-auto">
-
         <h1 className="sr-only">Our Services</h1>
+
+        {/* Expert Team Section */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center w-16 h-16 bg-[#1D1C1C] rounded-2xl mb-6"
+          >
+            <Users className="w-8 h-8 text-[#F5E7D3]" />
+          </motion.div>
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+          >
+            Expert Team
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-[#F5E7D3]/70 text-lg max-w-2xl mx-auto mb-2"
+          >
+            Our skilled professionals bring years of experience and cutting-edge expertise to every project.
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-black text-[#F5E7D3]/30"
+          >
+            10+ Experts
+          </motion.div>
+        </div>
 
         <div className="space-y-6 md:space-y-8">
           {services.map((service, index) => (
@@ -69,8 +113,15 @@ export const ServicesList = () => {
               key={service.number}
               className={`service-card group relative bg-gradient-to-br ${service.gradient} backdrop-blur-sm border border-white/30 rounded-2xl md:rounded-3xl overflow-hidden hover:border-[#F5E7D3]/50 transition-all duration-500`}
               whileHover={{ scale: 1.02, y: -5 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
-              <div className="relative z-10 p-4 sm:p-6 md:p-8">
+              <Link 
+                to={`/services/${service.slug}`}
+                className="block relative z-10 p-4 sm:p-6 md:p-8"
+              >
                 {/* Mobile Layout */}
                 <div className="block md:hidden space-y-4">
                   {/* Header Row */}
@@ -199,7 +250,7 @@ export const ServicesList = () => {
                     </motion.div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>

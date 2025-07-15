@@ -7,14 +7,23 @@ const GlobalLoader: React.FC = () => {
   const { isLoading, loadingProgress } = useLoading();
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
           className="fixed inset-0 z-[200] bg-black flex items-center justify-center"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
+          style={{ 
+            // Ensure the loader covers everything immediately
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 200
+          }}
         >
           <div className="text-center">
             {/* MkRonix loader animation */}

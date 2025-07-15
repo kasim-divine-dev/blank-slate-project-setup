@@ -24,7 +24,7 @@ interface LoadingProviderProps {
 }
 
 export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Start with loading true
   const [loadingProgress, setLoadingProgress] = useState(0);
   const location = useLocation();
 
@@ -37,7 +37,10 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
 
   // Handle route changes
   useEffect(() => {
-    setLoading(true);
+    // Only show loader for route changes, not initial load
+    if (location.pathname !== '/') {
+      setLoading(true);
+    }
     
     // Simulate loading progress
     const progressInterval = setInterval(() => {
@@ -54,7 +57,7 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
     const checkFullPageLoad = () => {
       // Check if DOM is ready
       if (document.readyState !== 'complete') {
-        setTimeout(checkFullPageLoad, 100);
+        setTimeout(checkFullPageLoad, 50);
         return;
       }
 
@@ -64,9 +67,8 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
         if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
         return new Promise(resolve => {
           img.onload = resolve;
-          img.onerror = resolve; // Resolve even on error to prevent hanging
-          // Timeout for images that take too long
-          setTimeout(resolve, 3000);
+          img.onerror = resolve;
+          setTimeout(resolve, 2000); // Reduced timeout
         });
       });
 
@@ -79,7 +81,7 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
           } else {
             link.addEventListener('load', () => resolve(null));
             link.addEventListener('error', () => resolve(null));
-            setTimeout(() => resolve(null), 2000);
+            setTimeout(() => resolve(null), 1000);
           }
         });
       });
@@ -89,21 +91,36 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
       
       Promise.race([
         Promise.all(allPromises),
-        new Promise(resolve => setTimeout(resolve, 4000)) // Max 4 seconds
+        new Promise(resolve => setTimeout(resolve, 2000)) // Reduced max timeout
       ]).then(() => {
         setLoadingProgress(100);
-        setTimeout(() => setLoading(false), 500);
+        setTimeout(() => setLoading(false), 300); // Reduced delay
       });
     };
 
     // Start checking after a short delay to allow components to mount
-    const timer = setTimeout(checkFullPageLoad, 800);
+    const timer = setTimeout(checkFullPageLoad, 400);
 
     return () => {
       clearInterval(progressInterval);
       clearTimeout(timer);
     };
   }, [location.pathname]);
+
+  // Handle initial page load
+  useEffect(() => {
+    const handleInitialLoad = () => {
+      if (document.readyState === 'complete') {
+        setTimeout(() => setLoading(false), 500);
+      } else {
+        window.addEventListener('load', () => {
+          setTimeout(() => setLoading(false), 500);
+        });
+      }
+    };
+
+    handleInitialLoad();
+  }, []);
 
   return (
     <LoadingContext.Provider value={{ isLoading, setLoading, loadingProgress, setLoadingProgress }}>

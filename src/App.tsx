@@ -25,9 +25,10 @@ function App() {
       <LenisProvider>
         <HelmetProvider>
           <LoadingProvider>
+            {/* GlobalLoader should be rendered first to prevent flash */}
+            <GlobalLoader />
             <Layout>
               <CustomCursor />
-              <GlobalLoader />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />

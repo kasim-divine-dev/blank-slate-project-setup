@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import { useLoading } from '../contexts/LoadingContext';
+// Import the services data directly
 import servicesData from '../data/detailedServicesData.json';
 
 interface Service {
@@ -67,8 +68,6 @@ const ServiceDetail: React.FC = () => {
   const { setLoading: setGlobalLoading } = useLoading();
 
   useEffect(() => {
-    setGlobalLoading(true);
-
     const loadService = () => {
       try {
         if (!slug) {
@@ -78,25 +77,29 @@ const ServiceDetail: React.FC = () => {
           return;
         }
 
+        console.log('Looking for service with slug:', slug);
+        console.log('Available services:', servicesData.services.map(s => s.slug));
+
         const foundService = servicesData.services.find(s => s.slug === slug);
 
         if (!foundService) {
+          console.log('Service not found for slug:', slug);
           setError('Service not found');
         } else {
+          console.log('Found service:', foundService.title);
           setService(foundService);
         }
       } catch (err) {
-        setError('Failed to load service details');
         console.error('Error loading service:', err);
+        setError('Failed to load service details');
       } finally {
         setLoading(false);
-        setGlobalLoading(false);
+        // Don't set global loading to false here, let the context handle it
       }
     };
 
-    // Simulate loading delay for better UX
-    const timer = setTimeout(loadService, 500);
-    return () => clearTimeout(timer);
+    // Load service immediately without delay
+    loadService();
   }, [slug, setGlobalLoading]);
 
   const handleImageError = (imageSrc: string) => {
@@ -108,14 +111,7 @@ const ServiceDetail: React.FC = () => {
   };
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-[#F5E7D3] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-[#F5E7D3] text-lg">Loading service details...</p>
-        </div>
-      </div>
-    );
+    return null; // Let the global loader handle this
   }
 
   if (error || !service) {
