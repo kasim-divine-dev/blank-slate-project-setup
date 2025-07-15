@@ -34,63 +34,158 @@
   },
   "caseStudies": [
     {
-      "id": "ecommerce-redesign",
-      "title": "E-commerce Platform Redesign",
-      "slug": "ecommerce-redesign",
-      "projectType": "Web Development & UI/UX Design",
-      "client": "Fashion Retail Company",
-      "industry": "E-commerce",
-      "duration": "3 months",
-      "teamSize": "5 members",
-      "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
-      "challenge": "Outdated design leading to high bounce rates and low conversions",
-      "solution": "Complete redesign with modern UI/UX and performance optimization",
+      "id": "algora-ai-platform",
+      "title": "ALGORA: AI-Powered Art Platform",
+      "slug": "algora-ai-platform",
+      "projectType": "Web Development & AI Integration",
+      "client": "Creative Technology Startup",
+      "industry": "Technology",
+      "duration": "4 months",
+      "teamSize": "6 members",
+      "technologies": ["React", "Node.js", "AI/ML", "WebGL", "MongoDB"],
+      "challenge": "Creating an innovative platform that seamlessly integrates AI technology with artistic creativity while maintaining high performance and user engagement",
+      "solution": "Developed a cutting-edge web platform with AI-powered art generation, real-time collaboration features, and immersive user experience",
       "results": {
-        "conversionRate": "+150%",
-        "pageSpeed": "+85%",
-        "userEngagement": "+200%",
-        "revenue": "+180%"
+        "userEngagement": "+300%",
+        "artCreations": "50K+",
+        "userRetention": "+85%",
+        "performanceScore": "95/100"
       },
-      "image": "https://mkronix.com/assets/case-studies/ecommerce-redesign.jpg",
+      "image": "https://mkronix.com/images/carousel/algora.png",
       "gallery": [
-        "https://mkronix.com/assets/case-studies/ecommerce-1.jpg",
-        "https://mkronix.com/assets/case-studies/ecommerce-2.jpg",
-        "https://mkronix.com/assets/case-studies/ecommerce-3.jpg"
+        "https://mkronix.com/images/carousel/algora.png",
+        "https://images.unsplash.com/photo-1558655146-9f40138edfeb",
+        "https://images.unsplash.com/photo-1609743522653-52354461eb27"
       ],
       "testimonial": {
-        "quote": "MkRonix transformed our online presence completely. The new design not only looks amazing but has significantly increased our sales.",
-        "author": "Sarah Johnson",
-        "position": "CEO, Fashion Retail Company"
+        "quote": "MkRonix transformed our vision into reality. The AI integration is seamless and the user experience is exceptional.",
+        "author": "Alex Chen",
+        "position": "Founder, ALGORA",
+        "rating": 5
       }
     },
     {
-      "id": "mobile-app-development",
-      "title": "Healthcare Mobile App",
-      "slug": "healthcare-mobile-app",
-      "projectType": "Mobile App Development",
-      "client": "HealthTech Startup",
-      "industry": "Healthcare",
-      "duration": "4 months",
-      "teamSize": "6 members",
-      "technologies": ["React Native", "Firebase", "Node.js", "Express"],
-      "challenge": "Creating a secure, user-friendly healthcare app with telemedicine features",
-      "solution": "Cross-platform mobile app with video consultations and secure data handling",
+      "id": "architect-portfolio",
+      "title": "Visionary Architects Portfolio",
+      "slug": "architect-portfolio",
+      "projectType": "Portfolio Website & Brand Identity",
+      "client": "Architectural Firm",
+      "industry": "Architecture",
+      "duration": "3 months",
+      "teamSize": "4 members",
+      "technologies": ["React", "Three.js", "GSAP", "Strapi", "AWS"],
+      "challenge": "Creating a visually striking portfolio that showcases architectural projects with immersive 3D experiences and professional presentation",
+      "solution": "Built a sophisticated portfolio website with 3D model integration, smooth animations, and intuitive navigation for project showcasing",
       "results": {
-        "downloads": "50K+",
-        "userRating": "4.8/5",
-        "consultations": "10K+",
-        "doctorSatisfaction": "95%"
+        "clientInquiries": "+250%",
+        "timeOnSite": "+180%",
+        "portfolioViews": "25K+",
+        "conversionRate": "+120%"
       },
-      "image": "https://mkronix.com/assets/case-studies/healthcare-app.jpg",
+      "image": "https://mkronix.com/images/carousel/architect.png",
       "gallery": [
-        "https://mkronix.com/assets/case-studies/healthcare-1.jpg",
-        "https://mkronix.com/assets/case-studies/healthcare-2.jpg",
-        "https://mkronix.com/assets/case-studies/healthcare-3.jpg"
+        "https://mkronix.com/images/carousel/architect.png",
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+        "https://images.unsplash.com/photo-1511818966892-d7d671e672a2"
       ],
       "testimonial": {
-        "quote": "The app has revolutionized how we connect with patients. MkRonix understood our vision perfectly.",
-        "author": "Dr. Amit Patel",
-        "position": "Founder, HealthTech Startup"
+        "quote": "The portfolio perfectly captures our architectural vision. Client engagement has increased dramatically since launch.",
+        "author": "Maria Rodriguez",
+        "position": "Principal Architect",
+        "rating": 5
+      }
+    },
+    {
+      "id": "quickclock-dashboard",
+      "title": "QuickClock: Advanced Time Tracking Dashboard",
+      "slug": "quickclock-dashboard",
+      "projectType": "SaaS Dashboard & Analytics Platform",
+      "client": "HR Technology Company",
+      "industry": "Human Resources",
+      "duration": "5 months",
+      "teamSize": "7 members",
+      "technologies": ["React", "D3.js", "Node.js", "PostgreSQL", "Redis"],
+      "challenge": "Building a comprehensive time tracking system with real-time analytics, complex data visualization, and multi-tenant architecture",
+      "solution": "Developed a robust SaaS platform with advanced analytics, customizable dashboards, and seamless integrations",
+      "results": {
+        "userAdoption": "+400%",
+        "processingSpeed": "+90%",
+        "accuracyRate": "99.7%",
+        "customerSatisfaction": "4.9/5"
+      },
+      "image": "https://mkronix.com/images/carousel/attendance.png",
+      "gallery": [
+        "https://mkronix.com/images/carousel/attendance.png",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+      ],
+      "testimonial": {
+        "quote": "QuickClock has revolutionized how we manage employee time tracking. The analytics provide invaluable insights.",
+        "author": "David Kim",
+        "position": "CTO, HR Solutions Inc",
+        "rating": 5
+      }
+    },
+    {
+      "id": "binsina-pharma",
+      "title": "Binsina Pharma: Export Company Website",
+      "slug": "binsina-pharma",
+      "projectType": "Corporate Website & E-commerce Integration",
+      "client": "Pharmaceutical Export Company",
+      "industry": "Healthcare",
+      "duration": "3 months",
+      "teamSize": "5 members",
+      "technologies": ["Next.js", "Strapi", "PostgreSQL", "AWS", "Stripe"],
+      "challenge": "Creating a professional pharmaceutical export website with complex product catalogs, regulatory compliance, and international market focus",
+      "solution": "Built a comprehensive corporate website with advanced product management, compliance features, and international shipping integration",
+      "results": {
+        "internationalOrders": "+320%",
+        "websiteTraffic": "+280%",
+        "leadGeneration": "+450%",
+        "customerTrust": "+95%"
+      },
+      "image": "https://mkronix.com/images/carousel/binsina.png",
+      "gallery": [
+        "https://mkronix.com/images/carousel/binsina.png",
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56",
+        "https://images.unsplash.com/photo-1576671081837-49000212a370"
+      ],
+      "testimonial": {
+        "quote": "Our international business has grown exponentially since the new website launch. The professional presentation builds trust.",
+        "author": "Dr. Sarah Ahmed",
+        "position": "Managing Director, Binsina Pharma",
+        "rating": 5
+      }
+    },
+    {
+      "id": "maxwheels-platform",
+      "title": "Maxwheels: Auto Marketplace Platform",
+      "slug": "maxwheels-platform",
+      "projectType": "Marketplace Platform & Mobile App",
+      "client": "Automotive Marketplace",
+      "industry": "Automotive",
+      "duration": "6 months",
+      "teamSize": "8 members",
+      "technologies": ["React", "React Native", "Node.js", "MongoDB", "Socket.io"],
+      "challenge": "Building a comprehensive auto marketplace with advanced search, real-time messaging, secure payments, and mobile-first approach",
+      "solution": "Developed a full-featured marketplace with sophisticated filtering, real-time communication, and seamless mobile experience",
+      "results": {
+        "carListings": "15K+",
+        "userBase": "+500%",
+        "transactions": "+380%",
+        "mobileUsage": "78%"
+      },
+      "image": "https://mkronix.com/images/carousel/cars-web.png",
+      "gallery": [
+        "https://mkronix.com/images/carousel/cars-web.png",
+        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000",
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d"
+      ],
+      "testimonial": {
+        "quote": "Maxwheels has become the go-to platform for car buyers and sellers. The user experience is outstanding.",
+        "author": "Robert Johnson",
+        "position": "CEO, Maxwheels",
+        "rating": 5
       }
     }
   ]

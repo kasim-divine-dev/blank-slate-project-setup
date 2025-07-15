@@ -35,6 +35,11 @@
 <lastmod>2025-01-15T00:00:00+00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
+<image:image>
+<image:loc>https://images.unsplash.com/photo-1498050108023-c5249f4df085</image:loc>
+<image:title>Web Development Services</image:title>
+<image:caption>Professional web development services by MkRonix</image:caption>
+</image:image>
 </url>
 
 <url>
@@ -42,6 +47,11 @@
 <lastmod>2025-01-15T00:00:00+00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
+<image:image>
+<image:loc>https://images.unsplash.com/photo-1586717791821-3f44a563fa4c</image:loc>
+<image:title>UI/UX Design Services</image:title>
+<image:caption>Creative UI/UX design services by MkRonix</image:caption>
+</image:image>
 </url>
 
 <url>
@@ -49,6 +59,11 @@
 <lastmod>2025-01-15T00:00:00+00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
+<image:image>
+<image:loc>https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c</image:loc>
+<image:title>Mobile Development Services</image:title>
+<image:caption>Mobile app development services by MkRonix</image:caption>
+</image:image>
 </url>
 
 <url>
@@ -56,6 +71,11 @@
 <lastmod>2025-01-15T00:00:00+00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
+<image:image>
+<image:loc>https://images.unsplash.com/photo-1542744173-8e7e53415bb0</image:loc>
+<image:title>Identity & Branding Services</image:title>
+<image:caption>Brand identity and branding services by MkRonix</image:caption>
+</image:image>
 </url>
 
 <url>
@@ -72,20 +92,6 @@
 <priority>0.8</priority>
 </url>
 
-<url>
-<loc>https://mkronix.com/blog</loc>
-<lastmod>2025-01-15T00:00:00+00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.8</priority>
-</url>
-
-<url>
-<loc>https://mkronix.com/contact</loc>
-<lastmod>2025-01-15T00:00:00+00:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-
 <!-- Case Study Detail Pages -->
 <url>
 <loc>https://mkronix.com/case-studies/algora-ai-platform</loc>
@@ -94,7 +100,7 @@
 <priority>0.7</priority>
 <image:image>
 <image:loc>https://mkronix.com/images/carousel/algora.png</image:loc>
-<image:title>ALGORA AI Art Platform</image:title>
+<image:title>ALGORA AI Art Platform Case Study</image:title>
 <image:caption>Interactive digital experience showcasing AI-powered art creation</image:caption>
 </image:image>
 </url>
@@ -106,7 +112,7 @@
 <priority>0.7</priority>
 <image:image>
 <image:loc>https://mkronix.com/images/carousel/architect.png</image:loc>
-<image:title>Visionary Architects Portfolio</image:title>
+<image:title>Visionary Architects Portfolio Case Study</image:title>
 <image:caption>Modern architectural portfolio with dynamic layouts</image:caption>
 </image:image>
 </url>
@@ -118,7 +124,7 @@
 <priority>0.7</priority>
 <image:image>
 <image:loc>https://mkronix.com/images/carousel/attendance.png</image:loc>
-<image:title>QuickClock Dashboard</image:title>
+<image:title>QuickClock Dashboard Case Study</image:title>
 <image:caption>Advanced employee time tracking and analytics dashboard</image:caption>
 </image:image>
 </url>
@@ -130,7 +136,7 @@
 <priority>0.7</priority>
 <image:image>
 <image:loc>https://mkronix.com/images/carousel/binsina.png</image:loc>
-<image:title>Binsina Pharma Export</image:title>
+<image:title>Binsina Pharma Export Case Study</image:title>
 <image:caption>Professional pharmaceutical export company website</image:caption>
 </image:image>
 </url>
@@ -142,12 +148,19 @@
 <priority>0.7</priority>
 <image:image>
 <image:loc>https://mkronix.com/images/carousel/cars-web.png</image:loc>
-<image:title>Maxwheels Auto Platform</image:title>
+<image:title>Maxwheels Auto Platform Case Study</image:title>
 <image:caption>Car marketplace platform with advanced search functionality</image:caption>
 </image:image>
 </url>
 
-<!-- Blog Detail Pages (Only existing ones) -->
+<url>
+<loc>https://mkronix.com/blog</loc>
+<lastmod>2025-01-15T00:00:00+00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+
+<!-- Blog Detail Pages -->
 <url>
 <loc>https://mkronix.com/blog/future-of-web-development-2024</loc>
 <lastmod>2025-01-15T00:00:00+00:00</lastmod>
@@ -226,6 +239,13 @@
 <news:title>E-commerce Optimization: Converting Visitors into Customers</news:title>
 <news:keywords>ecommerce, conversion optimization, UX, sales, analytics</news:keywords>
 </news:news>
+</url>
+
+<url>
+<loc>https://mkronix.com/contact</loc>
+<lastmod>2025-01-15T00:00:00+00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>
 
 </urlset>

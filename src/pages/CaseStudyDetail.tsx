@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, ArrowUpRight, Calendar, Clock, ExternalLink, Star, Users, Award, Target, TrendingUp, CheckCircle, Zap, AlertCircle, Home } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Calendar, Clock, ExternalLink, Star, Users, Award, Target, TrendingUp, CheckCircle, Zap, AlertCircle, Home, Eye, Share2 } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
@@ -19,17 +19,13 @@ const CaseStudyDetail: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const { setLoading: setGlobalLoading } = useLoading();
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
+  const textY = useTransform(scrollY, [0, 300], [0, 50]);
 
   // Get case study data with error handling
-  const [caseStudy, setCaseStudy] = useState(null);
-  const [relatedStudies, setRelatedStudies] = useState([]);
+  const [caseStudy, setCaseStudy] = useState<any>(null);
+  const [relatedStudies, setRelatedStudies] = useState<any[]>([]);
 
   useEffect(() => {
     const loadCaseStudy = async () => {
@@ -55,7 +51,7 @@ const CaseStudyDetail: React.FC = () => {
         
         setIsLoading(false);
         setGlobalLoading(false);
-      } catch (err) {
+      } catch (err: any) {
         setError(err.message || 'Failed to load case study');
         setIsLoading(false);
         setGlobalLoading(false);
@@ -130,18 +126,20 @@ const CaseStudyDetail: React.FC = () => {
         <div className="min-h-screen bg-black text-darkText flex items-center justify-center px-4">
           <div className="text-center max-w-md mx-auto">
             <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-6" />
-            <h1 className="text-4xl font-bold mb-4">Case Study Not Found</h1>
+            <h1 className="text-4xl font-black mb-4">Case Study Not Found</h1>
             <p className="text-darkText80 mb-8">
               The case study you're looking for doesn't exist or may have been moved.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
+              <motion.button
                 onClick={() => navigate('/case-studies')}
-                className="bg-lightBg text-brown-text px-6 py-3 rounded-full font-bold hover:bg-white transition-colors duration-300 flex items-center gap-2"
+                className="bg-lightBg text-brown-text px-6 py-3 rounded-full font-bold hover:bg-white transition-colors duration-300 flex items-center gap-2 justify-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to Case Studies
-              </button>
+              </motion.button>
               <Link
                 to="/"
                 className="border border-darkText20 text-darkText px-6 py-3 rounded-full font-bold hover:border-lightBg hover:text-lightBg transition-colors duration-300 flex items-center gap-2 justify-center"
@@ -162,10 +160,10 @@ const CaseStudyDetail: React.FC = () => {
         pageName="caseStudyDetail" 
         customData={{
           title: `${caseStudy.title} - Case Study | MkRonix`,
-          description: `${caseStudy.shortDescription} Learn how MkRonix helped ${caseStudy.client} achieve remarkable results in ${caseStudy.industry.toLowerCase()}.`,
-          keywords: `${caseStudy.title.toLowerCase()}, ${caseStudy.industry.toLowerCase()} case study, ${caseStudy.technologies.join(', ').toLowerCase()}, ${caseStudy.tags.join(', ').toLowerCase()}`,
+          description: `${caseStudy.shortDescription || caseStudy.description} Learn how MkRonix helped ${caseStudy.client} achieve remarkable results in ${caseStudy.industry?.toLowerCase() || caseStudy.category.toLowerCase()}.`,
+          keywords: `${caseStudy.title.toLowerCase()}, ${(caseStudy.industry || caseStudy.category).toLowerCase()} case study, ${caseStudy.technologies.join(', ').toLowerCase()}`,
           url: `https://mkronix.com/case-studies/${slug}`,
-          image: `https://mkronix.com${caseStudy.mainImage}`,
+          image: `https://mkronix.com${caseStudy.image}`,
           articleData: {
             publishedTime: `${caseStudy.year}-01-01T08:00:00Z`,
             modifiedTime: new Date().toISOString(),
@@ -179,11 +177,9 @@ const CaseStudyDetail: React.FC = () => {
       <div className="sr-only">
         <h1>{caseStudy.title} - Detailed Case Study by MkRonix</h1>
         <p>{caseStudy.description}</p>
-        <span>Client: {caseStudy.client} | Industry: {caseStudy.industry} | Duration: {caseStudy.duration} | Team: {caseStudy.teamSize}</span>
+        <span>Client: {caseStudy.client} | Category: {caseStudy.category} | Year: {caseStudy.year}</span>
         <span>Technologies: {caseStudy.technologies.join(', ')}</span>
-        <span>Features: {caseStudy.features.join(', ')}</span>
-        <span>Awards: {caseStudy.awards.join(', ')}</span>
-        <span>Tags: {caseStudy.tags.join(', ')}</span>
+        <span>Results: {caseStudy.results.join(', ')}</span>
       </div>
 
       <div ref={containerRef} className="bg-black text-darkText font-boska overflow-x-hidden">
@@ -211,11 +207,11 @@ const CaseStudyDetail: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <motion.button
-                className="flex items-center gap-2 text-darkText80 hover:text-darkText transition-colors duration-300"
+                className="flex items-center gap-2 text-darkText80 hover:text-darkText transition-colors duration-300 group"
                 whileHover={{ x: -5 }}
                 onClick={() => navigate('/case-studies')}
               >
-                <ArrowLeft className="w-5 h-5" />
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />
                 Back to Case Studies
               </motion.button>
             </motion.div>
@@ -226,31 +222,41 @@ const CaseStudyDetail: React.FC = () => {
               transition={{ duration: 1, ease: "easeOut" }}
               className="mb-8"
             >
-              <h1 className="text-4xl md:text-7xl font-black mb-6 leading-tight text-darkText">
+              <motion.div
+                className="inline-block px-4 py-2 bg-lightBg/10 border border-lightBg/20 rounded-full mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <span className="text-lightBg text-sm font-medium">{caseStudy.category}</span>
+              </motion.div>
+
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight text-darkText">
                 {caseStudy.title}
               </h1>
-              <p className="text-2xl md:text-3xl text-lightBg mb-8">
-                [ {caseStudy.subtitle} ]
+              <p className="text-2xl md:text-3xl text-lightBg mb-8 font-medium">
+                {caseStudy.subtitle}
               </p>
 
               {/* Project Meta */}
               <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 {[
                   { icon: Users, label: "Client", value: caseStudy.client },
-                  { icon: Calendar, label: "Duration", value: caseStudy.duration },
-                  { icon: Clock, label: "Industry", value: caseStudy.industry },
-                  { icon: Star, label: "Team Size", value: caseStudy.teamSize }
+                  { icon: Calendar, label: "Year", value: caseStudy.year },
+                  { icon: Award, label: "Category", value: caseStudy.category },
+                  { icon: Target, label: "Technologies", value: `${caseStudy.technologies.length}+` }
                 ].map((meta, index) => (
                   <motion.div
                     key={meta.label}
-                    className="bg-darkText20 backdrop-blur-sm border border-darkText20 p-4 rounded-2xl hover:border-lightBg/50 transition-colors duration-300"
+                    className="bg-darkText20 backdrop-blur-sm border border-darkText20 p-4 rounded-2xl hover:border-lightBg/50 transition-colors duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
                   >
-                    <meta.icon className="w-6 h-6 text-lightBg mx-auto mb-2" />
+                    <meta.icon className="w-6 h-6 text-lightBg mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
                     <p className="text-darkText60 text-sm mb-1">{meta.label}</p>
-                    <p className="font-bold text-darkText">{meta.value}</p>
+                    <p className="font-bold text-darkText group-hover:text-white transition-colors duration-300">{meta.value}</p>
                   </motion.div>
                 ))}
               </div>
@@ -262,16 +268,16 @@ const CaseStudyDetail: React.FC = () => {
         <section className="px-4 py-20">
           <div className="max-w-6xl mx-auto">
             <motion.div
-              className="relative rounded-3xl overflow-hidden aspect-video"
+              className="relative rounded-3xl overflow-hidden aspect-video group"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
               <img
-                src={caseStudy.mainImage}
+                src={caseStudy.image}
                 alt={caseStudy.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = '/images/projects/p1.png';
                 }}
@@ -280,10 +286,10 @@ const CaseStudyDetail: React.FC = () => {
               
               {/* Tech Stack Pills */}
               <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
-                {caseStudy.technologies.slice(0, 6).map((tech, index) => (
+                {caseStudy.technologies.slice(0, 6).map((tech: string, index: number) => (
                   <motion.span
                     key={tech}
-                    className="px-4 py-2 bg-black/70 backdrop-blur-sm text-darkText rounded-full text-sm font-medium"
+                    className="px-4 py-2 bg-black/70 backdrop-blur-sm text-darkText rounded-full text-sm font-medium border border-darkText20"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
@@ -292,13 +298,48 @@ const CaseStudyDetail: React.FC = () => {
                   </motion.span>
                 ))}
               </div>
+
+              {/* Share Button */}
+              <div className="absolute top-6 right-6">
+                <motion.button
+                  className="w-12 h-12 bg-black/70 backdrop-blur-sm border border-darkText20 rounded-full flex items-center justify-center text-darkText hover:text-lightBg hover:border-lightBg/50 transition-all duration-300"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => {
+                    if (navigator.share) {
+                      navigator.share({
+                        title: caseStudy.title,
+                        text: caseStudy.description,
+                        url: window.location.href,
+                      });
+                    }
+                  }}
+                >
+                  <Share2 className="w-5 h-5" />
+                </motion.button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Challenge & Solution */}
+        {/* Overview Section */}
         <section className="px-4 py-20 bg-darkBg/30">
           <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="content-section text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-black mb-6 text-darkText">
+                Project <span className="text-lightBg">Overview</span>
+              </h2>
+              <p className="text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed">
+                {caseStudy.description}
+              </p>
+            </motion.div>
+
             <div className="grid md:grid-cols-2 gap-12">
               <motion.div
                 className="content-section"
@@ -307,12 +348,17 @@ const CaseStudyDetail: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl md:text-4xl font-black mb-6 text-lightBg">
-                  The Challenge
-                </h2>
-                <p className="text-lg leading-relaxed text-darkText80">
-                  {caseStudy.challenge}
-                </p>
+                <div className="bg-darkText20 border border-darkText20 p-8 rounded-3xl h-full hover:border-lightBg/50 transition-colors duration-300">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-red-500/20 rounded-2xl flex items-center justify-center">
+                      <AlertCircle className="w-6 h-6 text-red-400" />
+                    </div>
+                    <h3 className="text-2xl font-black text-lightBg">The Challenge</h3>
+                  </div>
+                  <p className="text-lg leading-relaxed text-darkText80">
+                    {caseStudy.challenge || "This project presented unique challenges that required innovative solutions and strategic thinking to overcome technical and business obstacles."}
+                  </p>
+                </div>
               </motion.div>
 
               <motion.div
@@ -322,19 +368,60 @@ const CaseStudyDetail: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl md:text-4xl font-black mb-6 text-lightBg">
-                  Our Solution
-                </h2>
-                <p className="text-lg leading-relaxed text-darkText80">
-                  {caseStudy.solution}
-                </p>
+                <div className="bg-darkText20 border border-darkText20 p-8 rounded-3xl h-full hover:border-lightBg/50 transition-colors duration-300">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-2xl flex items-center justify-center">
+                      <CheckCircle className="w-6 h-6 text-green-400" />
+                    </div>
+                    <h3 className="text-2xl font-black text-lightBg">Our Solution</h3>
+                  </div>
+                  <p className="text-lg leading-relaxed text-darkText80">
+                    {caseStudy.solution || "We developed a comprehensive solution that addressed all challenges through innovative design, cutting-edge technology, and user-centered approach."}
+                  </p>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Results Metrics */}
+        {/* Technologies Section */}
         <section className="px-4 py-20">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              className="text-4xl md:text-5xl font-black text-center mb-16 text-darkText"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Technologies <span className="text-lightBg">Used</span>
+            </motion.h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {caseStudy.technologies.map((tech: string, index: number) => (
+                <motion.div
+                  key={index}
+                  className="content-section bg-darkText20 border border-darkText20 p-6 rounded-2xl text-center hover:border-lightBg/50 transition-all duration-300 group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                >
+                  <div className="w-12 h-12 bg-lightBg/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-lightBg/20 transition-colors duration-300">
+                    <Zap className="w-6 h-6 text-lightBg" />
+                  </div>
+                  <span className="font-bold text-darkText group-hover:text-white transition-colors duration-300">
+                    {tech}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Results Section */}
+        <section className="px-4 py-20 bg-darkBg/30">
           <div className="max-w-6xl mx-auto">
             <motion.div
               className="text-center mb-16"
@@ -351,137 +438,30 @@ const CaseStudyDetail: React.FC = () => {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {caseStudy.metrics.map((metric, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {caseStudy.results.map((result: string, index: number) => (
                 <motion.div
                   key={index}
-                  className="content-section relative bg-gradient-to-br from-lightBg/10 to-lightBg/5 backdrop-blur-sm border border-darkText20 p-8 rounded-3xl text-center group hover:border-lightBg/50 transition-all duration-500"
+                  className="content-section bg-gradient-to-br from-lightBg/10 to-lightBg/5 backdrop-blur-sm border border-darkText20 p-8 rounded-3xl group hover:border-lightBg/50 transition-all duration-500"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <motion.div
-                    className="text-4xl md:text-5xl font-black text-lightBg mb-4 group-hover:scale-110 transition-transform duration-300"
-                  >
-                    {metric.value}
-                  </motion.div>
-                  <h3 className="text-lg font-bold text-darkText mb-2">
-                    {metric.label}
-                  </h3>
-                  <p className="text-sm text-darkText60">
-                    {metric.growth}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Features */}
-        <section className="px-4 py-20 bg-darkBg/30">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              className="text-4xl md:text-5xl font-black text-center mb-16 text-darkText"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Key <span className="text-lightBg">Features</span>
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {caseStudy.features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="content-section bg-darkText20 border border-darkText20 p-6 rounded-2xl hover:border-lightBg/50 transition-all duration-300 group"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-lightBg mt-1 flex-shrink-0" />
-                    <span className="text-darkText group-hover:text-white transition-colors duration-300">
-                      {feature}
-                    </span>
+                    <div className="w-8 h-8 bg-lightBg/20 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                      <TrendingUp className="w-4 h-4 text-lightBg" />
+                    </div>
+                    <div>
+                      <p className="text-darkText group-hover:text-white transition-colors duration-300 leading-relaxed">
+                        {result}
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Gallery */}
-        <section className="px-4 py-20">
-          <div className="max-w-6xl mx-auto">
-            <motion.h2
-              className="text-4xl md:text-5xl font-black text-center mb-16 text-darkText"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              Project <span className="text-lightBg">Gallery</span>
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudy.gallery.map((image, index) => (
-                <motion.div
-                  key={index}
-                  className="content-section relative rounded-2xl overflow-hidden aspect-video group cursor-pointer"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <img
-                    src={image}
-                    alt={`${caseStudy.title} - Image ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = '/images/projects/p1.png';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonial */}
-        <section className="px-4 py-20 bg-darkBg/30">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              className="content-section relative bg-gradient-to-br from-lightBg/10 to-lightBg/5 backdrop-blur-sm border border-darkText20 p-12 rounded-3xl text-center"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex justify-center mb-6">
-                {Array.from({ length: caseStudy.testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-8 h-8 text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-
-              <blockquote className="text-2xl md:text-3xl font-medium mb-8 italic text-darkText leading-relaxed">
-                "{caseStudy.testimonial.quote}"
-              </blockquote>
-
-              <div>
-                <p className="text-xl font-bold text-darkText mb-2">
-                  {caseStudy.testimonial.author}
-                </p>
-                <p className="text-darkText80">
-                  {caseStudy.testimonial.position}
-                </p>
-              </div>
-            </motion.div>
           </div>
         </section>
 
@@ -500,7 +480,7 @@ const CaseStudyDetail: React.FC = () => {
               </motion.h2>
 
               <div className="grid md:grid-cols-3 gap-8">
-                {relatedStudies.map((study, index) => (
+                {relatedStudies.map((study: any, index: number) => (
                   <motion.div
                     key={study.id}
                     className="content-section bg-darkText20 border border-darkText20 rounded-2xl overflow-hidden hover:border-lightBg/50 transition-all duration-300 group cursor-pointer"
@@ -508,11 +488,15 @@ const CaseStudyDetail: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    onClick={() => navigate(`/case-studies/${study.slug}`)}
+                    onClick={() => {
+                      setGlobalLoading(true);
+                      navigate(`/case-studies/${study.url?.split('/').pop() || study.id}`);
+                    }}
+                    whileHover={{ scale: 1.02, y: -5 }}
                   >
                     <div className="aspect-video overflow-hidden">
                       <img
-                        src={study.mainImage}
+                        src={study.image}
                         alt={study.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
@@ -521,15 +505,21 @@ const CaseStudyDetail: React.FC = () => {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-darkText mb-2 group-hover:text-white transition-colors duration-300">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="px-3 py-1 bg-lightBg/10 border border-lightBg/20 rounded-full text-lightBg text-xs font-medium">
+                          {study.category}
+                        </span>
+                        <span className="text-darkText60 text-sm">{study.year}</span>
+                      </div>
+                      <h3 className="text-xl font-black text-darkText mb-2 group-hover:text-white transition-colors duration-300">
                         {study.title}
                       </h3>
-                      <p className="text-darkText80 text-sm mb-4">
-                        {study.shortDescription}
+                      <p className="text-darkText80 text-sm mb-4 line-clamp-2">
+                        {study.description}
                       </p>
                       <div className="flex items-center justify-between">
-                        <span className="text-lightBg text-sm font-medium">
-                          {study.category}
+                        <span className="text-darkText60 text-sm">
+                          {study.client}
                         </span>
                         <ArrowUpRight className="w-4 h-4 text-darkText60 group-hover:text-lightBg transition-colors duration-300" />
                       </div>
@@ -559,12 +549,15 @@ const CaseStudyDetail: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <motion.button
-                  className="group relative bg-lightBg text-brown-text px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 overflow-hidden"
+                  className="group relative bg-lightBg text-brown-text px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/contact')}
+                  onClick={() => {
+                    setGlobalLoading(true);
+                    navigate('/contact');
+                  }}
                 >
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative z-10 flex items-center gap-2 justify-center">
                     Start Your Project
                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                   </span>
@@ -574,10 +567,13 @@ const CaseStudyDetail: React.FC = () => {
                   className="group border-2 border-darkText20 text-darkText px-8 py-4 rounded-full font-bold hover:border-lightBg hover:bg-lightBg hover:text-brown-text transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => navigate('/case-studies')}
+                  onClick={() => {
+                    setGlobalLoading(true);
+                    navigate('/case-studies');
+                  }}
                 >
-                  <span className="flex items-center gap-2">
-                    <ExternalLink className="w-5 h-5" />
+                  <span className="flex items-center gap-2 justify-center">
+                    <Eye className="w-5 h-5" />
                     View More Cases
                   </span>
                 </motion.button>
