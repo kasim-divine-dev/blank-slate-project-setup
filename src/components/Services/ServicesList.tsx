@@ -1,11 +1,11 @@
 
+import Card1 from '@/assets/img/img1.jpg';
+import Card2 from '@/assets/img/img2.jpg';
+import Card3 from '@/assets/img/img3.jpg';
+import Card4 from '@/assets/img/img4.jpg';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Code, Palette, Smartphone, TrendingUp, Users } from 'lucide-react';
+import { ArrowUpRight, Code, Palette, Smartphone, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Card1 from '@/assets/img/img1.jpg'
-import Card2 from '@/assets/img/img2.jpg'
-import Card3 from '@/assets/img/img3.jpg'
-import Card4 from '@/assets/img/img4.jpg'
 
 const services = [
   {
@@ -64,61 +64,18 @@ export const ServicesList = () => {
       <div className="max-w-6xl mx-auto">
         <h1 className="sr-only">Our Services</h1>
 
-        {/* Expert Team Section */}
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-[#1D1C1C] rounded-2xl mb-6"
-          >
-            <Users className="w-8 h-8 text-[#F5E7D3]" />
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
-          >
-            Expert Team
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-[#F5E7D3]/70 text-lg max-w-2xl mx-auto mb-2"
-          >
-            Our skilled professionals bring years of experience and cutting-edge expertise to every project.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black text-[#F5E7D3]/30"
-          >
-            10+ Experts
-          </motion.div>
-        </div>
-
-        <div className="space-y-6 md:space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.number}
-              className={`service-card group relative bg-gradient-to-br ${service.gradient} backdrop-blur-sm border border-white/30 rounded-2xl md:rounded-3xl overflow-hidden hover:border-[#F5E7D3]/50 transition-all duration-500`}
+              className={`group relative  bg-[#1D1C1C]/50 backdrop-blur-sm border border-[#484440]/30 rounded-2xl md:rounded-3xl overflow-hidden hover:border-[#F5E7D3]/50 transition-all duration-500`}
               whileHover={{ scale: 1.02, y: -5 }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Link 
+              <Link
                 to={`/services/${service.slug}`}
                 className="block relative z-10 p-4 sm:p-6 md:p-8"
               >
@@ -189,7 +146,7 @@ export const ServicesList = () => {
 
                 {/* Desktop Layout */}
                 <div className="hidden md:flex items-center justify-between">
-                  <div className="flex items-center gap-8 flex-1">
+                  <div className="flex flex-col gap-8 flex-1">
                     <motion.div
                       className="flex items-center gap-6"
                       whileHover={{ scale: 1.1 }}

@@ -1,7 +1,5 @@
 import { DynamicSEO } from '@/components/SEO/DynamicSEO';
 import { caseStudiesData } from '@/data/caseStudiesData';
-import { useGSAP } from '@gsap/react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -19,20 +17,12 @@ import {
   Users,
   Zap
 } from 'lucide-react';
-import React, { useRef, useState } from 'react';
+import { useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   // Get unique categories
   const categories = ['All', ...new Set(caseStudiesData.map(study => study.category))] as string[];
@@ -42,82 +32,6 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
     ? caseStudiesData
     : caseStudiesData.filter(study => study.category === selectedCategory);
 
-  useGSAP(() => {
-    // Hero section animation
-    gsap.fromTo(
-      '.hero-element',
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.hero-section',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Case study cards animation
-    gsap.fromTo(
-      '.case-study-card',
-      { y: 100, opacity: 0, scale: 0.9 },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.case-studies-grid',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Stats counter animation
-    gsap.utils.toArray('.stat-number').forEach((stat: any) => {
-      const target = stat.getAttribute('data-target');
-      gsap.fromTo(stat, {
-        innerText: 0
-      }, {
-        innerText: target,
-        duration: 2,
-        ease: "power2.out",
-        snap: { innerText: 1 },
-        scrollTrigger: {
-          trigger: stat,
-          start: "top 80%"
-        }
-      });
-    });
-
-    // Process cards animation
-    gsap.fromTo(
-      '.process-card',
-      { scale: 0.8, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: 'back.out(1.7)',
-        scrollTrigger: {
-          trigger: '.process-section',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-  }, [filteredStudies]);
 
   const stats = [
     { value: 20, label: "Projects Completed", suffix: "+" },
@@ -126,21 +40,6 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
     { value: 1, label: "Countries Served", suffix: "" }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
-  };
 
   const testimonials = [
     {
@@ -172,7 +71,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
         <DynamicSEO pageName="case-studies" />
       )}
 
-      <div ref={containerRef} className="min-h-screen bg-black text-[#F5E7D3]">
+      <div className="min-h-screen bg-black text-[#F5E7D3]">
         {/* Hidden SEO Content */}
         <div className="sr-only">
           <h1>Case Studies | MkRonix - Proven Results & Success Stories from 50+ Digital Projects India</h1>
@@ -182,53 +81,40 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
         {!isFromHome && (
           <>
             {/* Hero Section */}
-            <motion.section
+            <section
               className="hero-section pt-32 pb-20 px-4 bg-gradient-to-b from-black to-darkBg"
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-              style={{ y: textY }}
             >
               <div className="max-w-7xl mx-auto">
-                <motion.div
+                <div
                   className="text-center mb-16"
-                  variants={itemVariants}
                 >
-                  <motion.p
+                  <p
                     className="hero-element text-sm text-darkText60 mb-6 uppercase tracking-[0.2em] font-medium"
-                    variants={itemVariants}
                   >
                     Real Projects, Real Impact
-                  </motion.p>
-                  <motion.h1
+                  </p>
+                  <h1
                     className="hero-element text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]"
-                    variants={itemVariants}
                   >
                     Case
                     <span className="block text-transparent bg-gradient-to-r from-darkText via-lightBg to-darkText bg-clip-text">
                       Studies
                     </span>
-                  </motion.h1>
-                  <motion.p
+                  </h1>
+                  <p
                     className="hero-element text-xl text-darkText80 max-w-3xl mx-auto leading-relaxed"
-                    variants={itemVariants}
                   >
                     Dive deep into our most impactful projects and discover how we transform challenges into extraordinary digital experiences that drive measurable business growth.
-                  </motion.p>
-                </motion.div>
-
-                {/* Stats */}
-                <motion.div
+                  </p>
+                </div>
+                <div
                   className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
-                  variants={containerVariants}
                 >
                   {stats.map((stat, index) => (
-                    <motion.div
+                    <div
                       key={index}
                       className="text-center p-6 rounded-2xl bg-darkText20 backdrop-blur-sm border border-darkText20"
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.05, backgroundColor: "rgba(245, 231, 211, 0.1)" }}
-                      transition={{ duration: 0.3 }}
+
                     >
                       <div className="flex items-center justify-center">
                         <div
@@ -242,11 +128,11 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                         </span>
                       </div>
                       <div className="text-sm text-darkText60 uppercase tracking-wider mt-2">{stat.label}</div>
-                    </motion.div>
+                    </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
-            </motion.section>
+            </section>
 
 
             {/* Filter Section */}
@@ -292,30 +178,22 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
             {/* Case Studies Grid */}
             <section className="py-20 px-4 bg-black">
               <div className="max-w-7xl mx-auto">
-                <motion.div
+                <div
                   className="case-studies-grid space-y-32"
-                  initial="hidden"
-                  animate="visible"
-                  variants={containerVariants}
                 >
                   {filteredStudies.map((study, index) => (
-                    <motion.article
+                    <article
                       key={study.id}
                       className={`case-study-card ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                         } flex flex-col lg:flex gap-12 items-center relative group`}
-                      variants={itemVariants}
-                      whileHover={{ y: -8 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
                       {/* Background decoration */}
                       <div className="absolute -inset-8 bg-gradient-to-br from-darkText20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                       {/* Image Section */}
                       <div className="lg:w-1/2 relative">
-                        <motion.div
+                        <div
                           className="relative overflow-hidden rounded-3xl"
-                          whileHover={{ scale: 1.02 }}
-                          transition={{ duration: 0.5 }}
                         >
                           <img
                             src={study.image}
@@ -354,7 +232,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                               </div>
                             </div>
                           </div>
-                        </motion.div>
+                        </div>
                       </div>
 
                       {/* Content Section */}
@@ -431,20 +309,16 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                           </button>
                         </div>
                       </div>
-                    </motion.article>
+                    </article>
                   ))}
-                </motion.div>
+                </div>
               </div>
             </section>
 
             <section className="process-section py-20 px-4 bg-darkBg">
               <div className="max-w-6xl mx-auto">
-                <motion.div
+                <div
                   className="text-center mb-16"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
                 >
                   <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     Our Proven <span className="text-lightBg">Methodology</span>
@@ -452,7 +326,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                   <p className="text-xl text-darkText80 max-w-2xl mx-auto">
                     Every successful project follows our proven framework for delivering exceptional results
                   </p>
-                </motion.div>
+                </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[
@@ -485,11 +359,9 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                       gradient: "from-orange-500/20 to-red-500/20"
                     }
                   ].map((step, index) => (
-                    <motion.div
+                    <div
                       key={step.number}
                       className={`process-card relative bg-gradient-to-br ${step.gradient} backdrop-blur-sm border border-darkText20 p-8 rounded-3xl group hover:border-lightBg/50 transition-all duration-500`}
-                      whileHover={{ scale: 1.05, y: -8 }}
-                      transition={{ duration: 0.3 }}
                     >
                       <div className="relative z-10 text-center">
                         <div className="flex items-center justify-center gap-4 mb-6">
@@ -508,7 +380,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                           {step.description}
                         </p>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -520,12 +392,8 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
         {/* Testimonials Section */}
         <section className="py-20 px-4 bg-black">
           <div className="max-w-6xl mx-auto">
-            <motion.div
+            <div
               className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Client <span className="text-lightBg">Success Stories</span>
@@ -533,18 +401,13 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
               <p className="text-xl text-darkText80 max-w-2xl mx-auto">
                 Hear from the clients behind our most successful projects
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <motion.div
+                <div
                   key={index}
                   className="bg-darkBg backdrop-blur-sm border border-darkText20 p-8 rounded-3xl group hover:border-lightBg/50 transition-all duration-500"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="relative z-10">
                     <Quote className="w-8 h-8 text-lightBg mb-4" />
@@ -572,7 +435,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -581,11 +444,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
         {/* CTA Section */}
         <section className="py-20 px-4 bg-darkBg">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <div
             >
               <h2 className="text-4xl md:text-6xl font-bold mb-8">
                 Ready for Your <span className="text-lightBg">Success Story?</span>
@@ -595,25 +454,21 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.button
+                <button
                   className="group relative bg-lightBg text-brown-text px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 overflow-hidden inline-flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <Rocket className="w-5 h-5" />
                   Start Your Project
-                </motion.button>
+                </button>
 
-                <motion.button
+                <button
                   className="group border-2 border-darkText20 text-darkText px-8 py-4 rounded-full font-bold hover:border-lightBg hover:bg-lightBg hover:text-brown-text transition-all duration-300 inline-flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <Eye className="w-5 h-5" />
                   View More Studies
-                </motion.button>
+                </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

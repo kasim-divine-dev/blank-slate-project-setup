@@ -82,12 +82,12 @@ const Services: React.FC = () => {
         <span>Location: Gujarat, India | Serving: Mumbai, Delhi, Bangalore, Ahmedabad, Pan India</span>
       </div>
 
-      <div className="bg-black text-[#F5E7D3] font-boska overflow-x-hidden">
+      <div className="text-[#F5E7D3] font-boska overflow-x-hidden">
         <ServicesHero />
         <ServicesList />
 
         {/* Work Process Section */}
-        <section className="px-4 py-32 bg-[#1D1C1C]/30">
+        <section className="px-4 py-32 ">
           <div className="max-w-6xl mx-auto">
             <motion.div
               className="text-center mb-20"
@@ -187,7 +187,7 @@ const Services: React.FC = () => {
                 {
                   icon: Award,
                   title: "Proven Results",
-                  description: "We've helped hundreds of businesses achieve their digital goals with measurable success.",
+                  description: "We've helped hundreds of businesses & startups achieve their digital goals with measurable success.",
                   stat: "20+ Projects"
                 },
                 {
@@ -234,7 +234,7 @@ const Services: React.FC = () => {
         </section>
 
         {/* Newsletter/CTA Section */}
-        <section className="py-32 px-4 bg-[#1D1C1C]/50">
+        <section className="py-32 px-4">
           <div className="max-w-4xl mx-auto">
             <motion.div
               className="text-center"

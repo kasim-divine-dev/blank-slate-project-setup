@@ -1,38 +1,24 @@
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import BoxesLayer from '../BoxesLayer/BoxesLayer';
 import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
 
 export const ServicesHero = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <motion.section
-      ref={containerRef}
       className="relative min-h-screen flex items-center justify-center px-4"
-      style={{ y: textY }}
     >
       <BoxesLayer gridColor="#484440" />
       <motion.div
         className="absolute inset-0 pointer-events-none z-0"
         style={{
-          y: backgroundY,
           background: `radial-gradient(circle at 25% 75%, rgba(72, 68, 64, 0.4), transparent 50%),
                      radial-gradient(circle at 75% 25%, rgba(72, 68, 64, 0.3), transparent 50%)`
         }}
       />
 
-      <div ref={heroRef} className="relative z-10 text-center">
+      <div className="relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
