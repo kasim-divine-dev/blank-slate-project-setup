@@ -117,7 +117,14 @@ const Projects: React.FC = () => {
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
   };
 
   const projectVariants = {
@@ -125,6 +132,7 @@ const Projects: React.FC = () => {
     visible: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -20 }
   };
+
   return (
     <>
       <DynamicSEO pageName="projects" />
