@@ -1,3 +1,4 @@
+
 {
   "pages": {
     "home": {
@@ -20,24 +21,6 @@
         "ICBM": "19.0760, 72.8777"
       }
     },
-    "projects": {
-      "title": "Our Portfolio | MkRonix - 20+ Successful Web Development & Design Projects India",
-      "description": "Explore MkRonix's portfolio of 20+ successful projects. Stunning websites, mobile apps, UI/UX designs, and digital marketing campaigns across various industries in India and globally.",
-      "keywords": "mkronix portfolio, web development projects India, UI UX design portfolio, mobile app projects, digital marketing case studies, website design examples, creative agency work, project showcase India, successful digital projects, client work portfolio, design agency projects Mumbai, web development showcase",
-      "url": "https://mkronix.com/projects",
-      "image": "https://mkronix.com/assets/portfolio-showcase-og.jpg",
-      "type": "website",
-      "breadcrumb": [
-        {
-          "name": "Home",
-          "url": "https://mkronix.com"
-        },
-        {
-          "name": "Portfolio",
-          "url": "https://mkronix.com/projects"
-        }
-      ]
-    },
     "about": {
       "title": "About MkRonix | Leading Creative Digital Agency Team India - Our Story & Mission",
       "description": "Meet the MkRonix team - India's premier creative digital agency with 3+ years experience, 20+ successful projects, and 50+ expert professionals. Discover our story, values, and passion for digital innovation.",
@@ -55,30 +38,6 @@
           "url": "https://mkronix.com/about"
         }
       ]
-    },
-    "contact": {
-      "title": "Contact MkRonix | Get Free Quote - Best Digital Agency Mumbai India | Web Development Services",
-      "description": "Contact MkRonix for free consultation and quote. Leading digital agency in Mumbai offering web development, UI/UX design, mobile apps & digital marketing. Call +91-84-59258801 or email us today.",
-      "keywords": "contact mkronix, free consultation digital agency, web development quote Mumbai, UI UX design quote India, mobile app development cost, digital marketing consultation, contact creative agency Mumbai, get quote website design, free digital marketing consultation India, contact best agency Mumbai",
-      "url": "https://mkronix.com/contact",
-      "image": "https://mkronix.com/assets/contact-og.jpg",
-      "type": "website",
-      "breadcrumb": [
-        {
-          "name": "Home",
-          "url": "https://mkronix.com"
-        },
-        {
-          "name": "Contact Us",
-          "url": "https://mkronix.com/contact"
-        }
-      ],
-      "customMeta": {
-        "geo.region": "IN-MH",
-        "geo.placename": "Mumbai, Maharashtra, India",
-        "geo.position": "19.0760;72.8777",
-        "ICBM": "19.0760, 72.8777"
-      }
     },
     "services": {
       "title": "Digital Services | MkRonix - Web Development, UI/UX Design, Mobile Apps & Digital Marketing India",
@@ -120,12 +79,30 @@
         }
       ]
     },
-    "case-studies": {
-      "title": "Case Studies | MkRonix Success Stories - Real Client Results & Digital Transformation Examples India",
-      "description": "Explore MkRonix case studies showcasing real client success stories, digital transformation results, and measurable business impact. See how we've helped 15+ clients achieve their digital goals across India.",
-      "keywords": "mkronix case studies, client success stories India, digital transformation examples, web development case studies, UI UX design success stories, mobile app case studies, digital marketing results, client testimonials Mumbai, business growth case studies, ROI digital marketing case studies India",
+    "projects": {
+      "title": "Our Portfolio | MkRonix - 20+ Successful Web Development & Design Projects India",
+      "description": "Explore MkRonix's portfolio of 20+ successful projects. Stunning websites, mobile apps, UI/UX designs, and digital marketing campaigns across various industries in India and globally.",
+      "keywords": "mkronix portfolio, web development projects India, UI UX design portfolio, mobile app projects, digital marketing case studies, website design examples, creative agency work, project showcase India, successful digital projects, client work portfolio, design agency projects Mumbai, web development showcase",
+      "url": "https://mkronix.com/projects",
+      "image": "https://mkronix.com/assets/portfolio-showcase-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Portfolio",
+          "url": "https://mkronix.com/projects"
+        }
+      ]
+    },
+    "caseStudies": {
+      "title": "Case Studies | MkRonix - 20+ Successful Digital Projects & Client Success Stories India",
+      "description": "Explore MkRonix's detailed case studies showcasing 20+ successful digital transformations. Real results, proven strategies, and client testimonials from web development, UI/UX design, and digital marketing projects across India.",
+      "keywords": "mkronix case studies, digital transformation case studies India, web development success stories, UI UX design portfolio case studies, mobile app development results, digital marketing ROI case studies, client success stories India, before after web design, project results showcase, creative agency case studies Mumbai",
       "url": "https://mkronix.com/case-studies",
-      "image": "https://mkronix.com/assets/case-studies-og.jpg",
+      "image": "https://mkronix.com/assets/case-studies-showcase-og.jpg",
       "type": "website",
       "breadcrumb": [
         {
@@ -139,26 +116,16 @@
       ]
     },
     "caseStudyDetail": {
-      "title": "Case Study | MkRonix - Digital Transformation Success Stories India",
-      "description": "Discover MkRonix's case study showcasing the digital transformation success story of a leading e-commerce company. Learn how we helped them achieve their business goals through innovative web development, UI/UX design, and digital marketing strategies.",
-      "keywords": "mkronix case study, digital transformation success story, web development case study, UI UX design case study, mobile app case study, digital marketing case study, SEO case study, e-commerce case study, business growth case study, ROI digital marketing case study India",
-      "url": "https://mkronix.com/case-studies/digital-transformation-success-story",
-      "image": "https://mkronix.com/assets/case-studies-og.jpg",
-      "type": "website",
-      "breadcrumb": [
-        {
-          "name": "Home",
-          "url": "https://mkronix.com"
-        },
-        {
-          "name": "Case Studies",
-          "url": "https://mkronix.com/case-studies"
-        },
-        {
-          "name": "Digital Transformation Success Story",
-          "url": "https://mkronix.com/case-studies/digital-transformation-success-story"
-        }
-      ]
+      "title": "{projectName} Case Study | MkRonix - Detailed Project Analysis & Results",
+      "description": "Detailed case study of {projectName} project by MkRonix. Discover the challenges, solutions, design process, development approach, and measurable results achieved for this {projectType} project.",
+      "keywords": "{projectName} case study, {projectType} project analysis, web development case study details, UI UX design process, project methodology, client results, before after comparison, project timeline, development challenges solutions",
+      "url": "https://mkronix.com/case-studies/{slug}",
+      "image": "https://mkronix.com/assets/case-studies/{slug}-og.jpg",
+      "type": "article",
+      "articleData": {
+        "section": "Case Studies",
+        "author": "MkRonix Team"
+      }
     },
     "blogs": {
       "title": "Digital Marketing Blog | MkRonix - Web Development, UI/UX Design & Tech Insights India",
@@ -199,6 +166,30 @@
           "url": "https://mkronix.com/blog/{BLOG_SLUG}"
         }
       ]
+    },
+    "contact": {
+      "title": "Contact MkRonix | Get Free Quote - Best Digital Agency Mumbai India | Web Development Services",
+      "description": "Contact MkRonix for free consultation and quote. Leading digital agency in Mumbai offering web development, UI/UX design, mobile apps & digital marketing. Call +91-84-59258801 or email us today.",
+      "keywords": "contact mkronix, free consultation digital agency, web development quote Mumbai, UI UX design quote India, mobile app development cost, digital marketing consultation, contact creative agency Mumbai, get quote website design, free digital marketing consultation India, contact best agency Mumbai",
+      "url": "https://mkronix.com/contact",
+      "image": "https://mkronix.com/assets/contact-og.jpg",
+      "type": "website",
+      "breadcrumb": [
+        {
+          "name": "Home",
+          "url": "https://mkronix.com"
+        },
+        {
+          "name": "Contact Us",
+          "url": "https://mkronix.com/contact"
+        }
+      ],
+      "customMeta": {
+        "geo.region": "IN-MH",
+        "geo.placename": "Mumbai, Maharashtra, India",
+        "geo.position": "19.0760;72.8777",
+        "ICBM": "19.0760, 72.8777"
+      }
     }
   },
   "organization": {
@@ -260,20 +251,6 @@
         }
       ]
     },
-    "projects": {
-      "creativeWork": true,
-      "itemList": true,
-      "faq": [
-        {
-          "question": "How many projects has MkRonix completed?",
-          "answer": "MkRonix has successfully completed over 20+ projects across various industries including web development, UI/UX design, mobile applications, and digital marketing campaigns."
-        },
-        {
-          "question": "What types of projects does MkRonix specialize in?",
-          "answer": "We specialize in custom web development, responsive website design, mobile app development, e-commerce platforms, UI/UX design, digital marketing campaigns, and brand identity projects."
-        }
-      ]
-    },
     "about": {
       "organization": true,
       "aboutPage": true,
@@ -281,30 +258,11 @@
       "faq": [
         {
           "question": "How long has MkRonix been in business?",
-          "answer": "MkRonix has been delivering exceptional digital solutions for over 5 years, with 20+ successful projects and a growing team of 50+ professionals."
+          "answer": "MkRonix has been delivering exceptional digital solutions for over 3 years, with 20+ successful projects and a growing team of 50+ professionals."
         },
         {
           "question": "What makes MkRonix different from other agencies?",
           "answer": "MkRonix combines creativity with technology, offering comprehensive digital solutions with a proven track record of 99% client satisfaction and measurable business results."
-        }
-      ]
-    },
-    "contact": {
-      "contactPage": true,
-      "localBusiness": true,
-      "organization": true,
-      "faq": [
-        {
-          "question": "How can I contact MkRonix for a project quote?",
-          "answer": "You can contact MkRonix by calling +91-84-59258801, emailing us, or filling out our online contact form. We offer free consultations and provide detailed project quotes within 24 hours."
-        },
-        {
-          "question": "What information should I provide when requesting a quote?",
-          "answer": "Please provide details about your project requirements, timeline, budget range, and any specific features needed. The more information you share, the more accurate quote we can provide."
-        },
-        {
-          "question": "Does MkRonix offer free consultation?",
-          "answer": "Yes, MkRonix offers free initial consultations to understand your project requirements and provide expert advice on the best digital solutions for your business."
         }
       ]
     },
@@ -331,7 +289,21 @@
         }
       ]
     },
-    "case-studies": {
+    "projects": {
+      "creativeWork": true,
+      "itemList": true,
+      "faq": [
+        {
+          "question": "How many projects has MkRonix completed?",
+          "answer": "MkRonix has successfully completed over 20+ projects across various industries including web development, UI/UX design, mobile applications, and digital marketing campaigns."
+        },
+        {
+          "question": "What types of projects does MkRonix specialize in?",
+          "answer": "We specialize in custom web development, responsive website design, mobile app development, e-commerce platforms, UI/UX design, digital marketing campaigns, and brand identity projects."
+        }
+      ]
+    },
+    "caseStudies": {
       "article": true,
       "creativeWork": true,
       "itemList": true,
@@ -366,6 +338,25 @@
         {
           "question": "Do you accept guest blog posts?",
           "answer": "We occasionally accept high-quality guest posts from industry experts. Please contact us with your topic proposal and writing samples for consideration."
+        }
+      ]
+    },
+    "contact": {
+      "contactPage": true,
+      "localBusiness": true,
+      "organization": true,
+      "faq": [
+        {
+          "question": "How can I contact MkRonix for a project quote?",
+          "answer": "You can contact MkRonix by calling +91-84-59258801, emailing us, or filling out our online contact form. We offer free consultations and provide detailed project quotes within 24 hours."
+        },
+        {
+          "question": "What information should I provide when requesting a quote?",
+          "answer": "Please provide details about your project requirements, timeline, budget range, and any specific features needed. The more information you share, the more accurate quote we can provide."
+        },
+        {
+          "question": "Does MkRonix offer free consultation?",
+          "answer": "Yes, MkRonix offers free initial consultations to understand your project requirements and provide expert advice on the best digital solutions for your business."
         }
       ]
     }
