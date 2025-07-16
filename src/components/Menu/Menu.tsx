@@ -11,13 +11,10 @@ interface MenuProps {
 }
 function Menu({ menuOpen, setMenuOpen }: Readonly<MenuProps>) {
     const primaryEasing = [0.83, 0, 0.17, 1] as const;
-
-    console.log("menuOpen", menuOpen);
     return (
         <>
             <button
                 onClick={() => {
-                    console.log("clicked");
                     setMenuOpen(!menuOpen)
                 }}
                 className="md:text-darkText text-white cursor-pointer fixed top-0 right-0 z-[10000]"

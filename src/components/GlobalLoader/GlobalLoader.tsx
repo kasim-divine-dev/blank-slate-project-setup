@@ -15,7 +15,7 @@ const GlobalLoader: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          style={{ 
+          style={{
             // Ensure the loader covers everything immediately
             position: 'fixed',
             top: 0,
@@ -31,9 +31,8 @@ const GlobalLoader: React.FC = () => {
               {"Mkronix".split("").map((letter, i) => (
                 <motion.span
                   key={i}
-                  className={`font-spectral uppercase text-[8vw] md:text-[4vw] leading-[.85] tracking-tight ${
-                    letter === "M" || letter === "k" ? "text-[#F5E7D3]" : "text-[#F5E7D3]/60"
-                  }`}
+                  className={`font-spectral uppercase text-[8vw] md:text-[4vw] leading-[.85] tracking-tight ${letter === "M" || letter === "k" ? "text-[#F5E7D3]" : "text-[#F5E7D3]/60"
+                    }`}
                   initial={{ y: "100%", opacity: 0 }}
                   animate={{
                     y: 0,
@@ -59,14 +58,14 @@ const GlobalLoader: React.FC = () => {
                 transition={{ duration: 0.3 }}
               />
             </div>
-            
+
             <motion.p
               className="text-[#F5E7D3]/60 mt-4 text-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Loading... {Math.round(loadingProgress)}%
+              Loading...
             </motion.p>
           </div>
         </motion.div>

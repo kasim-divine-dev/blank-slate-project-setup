@@ -1,5 +1,4 @@
 
-import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowUpRight, Award, Check, ChevronDown, Star } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -37,20 +36,14 @@ const ServiceDetail: React.FC = () => {
           return;
         }
 
-        console.log('Looking for service with slug:', slug);
-        console.log('Available services:', servicesData.services.map(s => s.slug));
-
         const foundService = servicesData.services.find(s => s.slug === slug);
 
         if (!foundService) {
-          console.log('Service not found for slug:', slug);
           setError('Service not found');
         } else {
-          console.log('Found service:', foundService.title);
           setService(foundService);
         }
       } catch (err) {
-        console.error('Error loading service:', err);
         setError('Failed to load service details');
       } finally {
         setLoading(false);
@@ -400,35 +393,27 @@ const ServiceDetail: React.FC = () => {
                   key={index}
                   className="animate-card bg-[#1D1C1C]/50 backdrop-blur-sm rounded-2xl border border-[#484440]/30 overflow-hidden hover:border-[#F5E7D3]/50 transition-all duration-300"
                 >
-                  <motion.button
+                  <button
                     onClick={() => toggleFaq(index)}
                     className="w-full p-6 text-left flex items-center justify-between hover:bg-[#F5E7D3]/5 transition-colors duration-300"
-                    whileHover={{ x: 5 }}
                   >
                     <h3 className="font-bold text-lg pr-4">{faq.question}</h3>
-                    <motion.div
-                      animate={{ rotate: expandedFaq === index ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                    <div
+
                     >
                       <ChevronDown className="w-6 h-6 text-[#F5E7D3]/70 flex-shrink-0" />
-                    </motion.div>
-                  </motion.button>
+                    </div>
+                  </button>
 
-                  <AnimatePresence>
-                    {expandedFaq === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-6 pb-6">
-                          <p className="text-[#F5E7D3]/80 leading-relaxed">{faq.answer}</p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {expandedFaq === index && (
+                    <div
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6">
+                        <p className="text-[#F5E7D3]/80 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

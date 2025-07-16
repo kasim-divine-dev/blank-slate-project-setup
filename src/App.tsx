@@ -25,7 +25,6 @@ function App() {
       <LenisProvider>
         <HelmetProvider>
           <LoadingProvider>
-            {/* GlobalLoader should be rendered first to prevent flash */}
             <GlobalLoader />
             <Layout>
               <CustomCursor />

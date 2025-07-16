@@ -1,5 +1,4 @@
 
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft, Calendar, Clock, Copy, Facebook, Linkedin, Share2, Tag, Twitter, User } from 'lucide-react';
@@ -20,13 +19,6 @@ const BlogPost: React.FC = () => {
     (post.category === blogPost?.category ||
       post.tags.some(tag => blogPost?.tags.includes(tag)))
   ).slice(0, 3);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -112,28 +104,14 @@ const BlogPost: React.FC = () => {
         </div>
 
         {/* Hero Section */}
-        <motion.section
+        <section
           className="relative min-h-screen flex items-center justify-center px-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
         >
-          <motion.div
-            className="absolute inset-0 pointer-events-none z-0"
-            style={{
-              y: backgroundY,
-              background: `radial-gradient(circle at 30% 70%, rgba(72, 68, 64, 0.4), transparent 50%),
-                         radial-gradient(circle at 70% 30%, rgba(72, 68, 64, 0.3), transparent 50%)`
-            }}
-          />
 
           <div className="relative z-10 max-w-4xl mx-auto text-center">
             {/* Back Button */}
-            <motion.div
+            <div
               className="mb-8"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
             >
               <Link
                 to="/blog"
@@ -142,14 +120,11 @@ const BlogPost: React.FC = () => {
                 <ArrowLeft className="w-5 h-5" />
                 Back to Blog
               </Link>
-            </motion.div>
+            </div>
 
             {/* Article Meta */}
-            <motion.div
+            <div
               className="flex flex-wrap items-center justify-center gap-6 text-[#F5E7D3]/60 text-sm mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
@@ -166,34 +141,25 @@ const BlogPost: React.FC = () => {
               <span className="bg-[#484440]/30 px-3 py-1 rounded-full">
                 {blogPost.category}
               </span>
-            </motion.div>
+            </div>
 
             {/* Title */}
-            <motion.h1
+            <h1
               className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
             >
               {blogPost.title}
-            </motion.h1>
+            </h1>
 
             {/* Excerpt */}
-            <motion.p
+            <p
               className="text-xl md:text-2xl text-[#F5E7D3]/80 max-w-3xl mx-auto leading-relaxed mb-8"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
             >
               {blogPost.excerpt}
-            </motion.p>
+            </p>
 
             {/* Share Button */}
-            <motion.div
+            <div
               className="relative inline-block"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
             >
               <button
                 onClick={() => setShowShareMenu(!showShareMenu)}
@@ -204,11 +170,8 @@ const BlogPost: React.FC = () => {
               </button>
 
               {showShareMenu && (
-                <motion.div
+                <div
                   className="absolute top-full mt-4 left-1/2 transform -translate-x-1/2 bg-[#1D1C1C] border border-[#484440]/30 rounded-2xl p-4 min-w-[200px]"
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
                 >
                   <div className="space-y-2">
                     <button
@@ -240,21 +203,17 @@ const BlogPost: React.FC = () => {
                       {copySuccess ? 'Copied!' : 'Copy Link'}
                     </button>
                   </div>
-                </motion.div>
+                </div>
               )}
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* Featured Image */}
         <section className="py-16 px-4">
           <div className="max-w-6xl mx-auto">
-            <motion.div
+            <div
               className="relative overflow-hidden rounded-3xl"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <img
                 src={blogPost.image}
@@ -262,19 +221,15 @@ const BlogPost: React.FC = () => {
                 className="w-full h-96 md:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Article Content */}
         <section className="py-32 px-4">
           <div className="max-w-4xl mx-auto">
-            <motion.div
+            <div
               className="article-content prose prose-lg max-w-none"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <div className="text-[#F5E7D3]/90 leading-relaxed space-y-6">
                 {blogPost.content.split('\n\n').map((paragraph, index) => (
@@ -283,15 +238,11 @@ const BlogPost: React.FC = () => {
                   </p>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Tags */}
-            <motion.div
+            <div
               className="mt-16 pt-8 border-t border-[#484440]/30"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
             >
               <h3 className="text-xl font-bold mb-4">Tags</h3>
               <div className="flex flex-wrap gap-3">
@@ -305,7 +256,7 @@ const BlogPost: React.FC = () => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -313,28 +264,19 @@ const BlogPost: React.FC = () => {
         {relatedPosts.length > 0 && (
           <section className="py-32 px-4 bg-[#1D1C1C]/30">
             <div className="max-w-6xl mx-auto">
-              <motion.div
+              <div
                 className="text-center mb-20"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
               >
                 <h2 className="text-4xl md:text-6xl font-black mb-6">
                   Related <span className="text-[#484440]">Articles</span>
                 </h2>
-              </motion.div>
+              </div>
 
               <div className="grid md:grid-cols-3 gap-8">
                 {relatedPosts.map((post, index) => (
-                  <motion.article
+                  <article
                     key={post.id}
                     className="group cursor-pointer"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -10 }}
                   >
                     <Link to={`/blog/${post.slug}`} className="block">
                       <div className="relative overflow-hidden rounded-3xl mb-6">
@@ -364,7 +306,7 @@ const BlogPost: React.FC = () => {
                         </div>
                       </div>
                     </Link>
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             </div>

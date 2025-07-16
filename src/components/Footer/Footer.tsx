@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
             {/* Main Footer Content */}
             <div className="relative pt-7 max-md:px-4 mx-auto max-w-7xl">
                 {/* Top Section */}
-                <div className="text-center mb-16">
-                    <div className="flex justify-center items-center space-x-2 mb-6">
+                <div className="text-center mb-16 max-md:text-start">
+                    <div className="flex md:justify-center items-center space-x-2 mb-6">
                         <svg width="45" height="40" viewBox="0 0 45 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.3636 0L24.0714 10.0865C24.8 14.3902 28.4834 17.7666 33.1783 18.4346L44.1818 20L33.1783 21.5654C28.4834 22.2334 24.8 25.6098 24.0714 29.9135L22.3636 40L20.6558 29.9135C19.9272 25.6098 16.2438 22.2334 11.5489 21.5654L0.54541 20L11.5489 18.4346C16.2438 17.7666 19.9272 14.3902 20.6558 10.0865L22.3636 0Z" fill="currentColor" />
                         </svg>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                     </p>
 
                     {/* Email Input and Contact Button */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto mb-12">
+                    <div className="flex flex-wrap sm:flex-row md:gap-4 justify-center items-center max-w-md md:mx-auto mb-12">
                         <div className="relative flex-1 w-full">
                             <input
                                 type="email"
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex flex-wrap justify-center gap-6 text-sm font-mono uppercase tracking-wider">
+                    <div className="flex flex-wrap md:justify-center gap-6 text-sm font-mono uppercase tracking-wider">
                         <a href="mailto:mkronix.official@gmail.com" className="hover:text-white transition-colors duration-300 flex items-center gap-2">
                             <Mail className="w-4 h-4" />
                             [ EMAIL ]
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                         </a>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-mono uppercase tracking-wider">
+                    <div className="mt-8 flex flex-wrap md:justify-center gap-6 text-sm font-mono uppercase tracking-wider">
                         <span className="hover:text-white transition-colors duration-300">[ AWWWARDS ]</span>
                         <span className="hover:text-white transition-colors duration-300">[ BEHANCE ]</span>
                     </div>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
 
                 {/* Large MKRONIX Text */}
                 <div className="text-center mb-16">
-                    <h1 className="text-[12vw] md:text-[8vw] lg:text-[6vw] font-black leading-none tracking-tighter text-white/20 select-none pointer-events-none font-spectral">
+                    <h1 className="text-[19vw] md:text-[8vw] lg:text-[6vw] font-black leading-none tracking-tighter text-white/50 select-none pointer-events-none font-spectral">
                         MKRONIX
                     </h1>
                 </div>
@@ -87,9 +87,9 @@ const Footer: React.FC = () => {
             {/* Bottom Section */}
             <div className="border-t border-white/20 py-8">
                 <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-                            <nav className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-base">
+                    <div className="flex flex-col md:flex-row justify-between md:items-center space-y-4 md:space-y-0">
+                        <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-6">
+                            <nav className="flex flex-wrap md:justify-center gap-4 md:gap-6 text-lg">
                                 <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                                 <Link to="/about" className="hover:text-white transition-colors duration-300">About</Link>
                                 <Link to="/services" className="hover:text-white transition-colors duration-300">Services</Link>
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                             </nav>
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-white">
+                        <div className="flex flex-col-reverse md:flex-row md:items-center gap-3 md:space-x-6 text-lg text-white">
                             <span>©2024. All rights reserved</span>
                             <div className="flex space-x-4">
                                 <Link to="/terms" className="hover:text-white transition-colors duration-300">Terms of Service</Link>

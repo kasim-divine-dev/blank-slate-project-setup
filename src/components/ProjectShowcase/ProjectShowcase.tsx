@@ -2,10 +2,10 @@ import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, ExternalLink, Grid, List, Tag } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { carouselItems } from '../../data/carouselItems';
 import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
-import { Link } from 'react-router-dom';
 import MagneticButton from '../MagneticButton/MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -24,33 +24,6 @@ const ProjectShowcase: React.FC = () => {
 
     const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animate project cards on scroll
-        gsap.utils.toArray('.project-card').forEach((card: any, index) => {
-            gsap.fromTo(card, {
-                y: 60,
-                opacity: 0,
-                scale: 0.9
-            }, {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                ease: "power3.out",
-                delay: index * 0.1,
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%"
-                }
-            });
-        });
-
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
-    }, [selectedCategory, viewMode]);
 
     // Extract categories from projects
     const categories = ['All', ...Array.from(new Set(carouselItems.map(item =>
@@ -105,10 +78,10 @@ const ProjectShowcase: React.FC = () => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-6xl font-black mb-6">
-                            Featured <span className="text-[#484440]">Projects</span>
+                        <h2 className="text-4xl md:text-6xl font-black mb-6 max-md:text-start">
+                            Featured <span className="text-[#726c65]">Projects</span>
                         </h2>
-                        <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto">
+                        <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto max-md:text-start">
                             Explore our portfolio of successful digital projects that showcase our expertise and creativity
                         </p>
                     </motion.div>
@@ -122,7 +95,7 @@ const ProjectShowcase: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         {/* Category Filter */}
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex md:flex-wrap max-md:overflow-x-scroll max-md:whitespace-nowrap items-center gap-3 max-md:w-screen max-md:p-2">
                             {categories.map((category, index) => (
                                 <motion.button
                                     key={category}
@@ -143,7 +116,7 @@ const ProjectShowcase: React.FC = () => {
                         </div>
 
                         {/* View Mode Toggle */}
-                        <div className="flex items-center gap-2 bg-[#1D1C1C]/50 border border-[#484440]/30 rounded-2xl p-2">
+                        <div className="flex max-md:hidden items-center gap-2 bg-[#1D1C1C]/50 border border-[#484440]/30 rounded-2xl p-2">
                             <motion.button
                                 onClick={() => setViewMode('grid')}
                                 className={`p-3 rounded-xl transition-all duration-300 ${viewMode === 'grid' ? 'bg-[#F5E7D3] text-black' : 'text-[#F5E7D3] hover:bg-[#484440]/30'

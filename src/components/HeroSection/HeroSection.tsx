@@ -16,10 +16,10 @@ const HeroSection: React.FC = () => {
                         words={typeText}
                         className='font-boska-black text-darkText hover:text-darkText transition-all duration-500 text-4xl md:text-6xl lg:text-7xl '
                     />
-                    <div className="relative my-2 font-light flex gap-2 text-darkText hover:text-darkText transition-all duration-500 text-xl lg:text-4xl items-center">
+                    <div className="relative my-2 font-light flex gap-2 text-darkText hover:text-darkText transition-all duration-500 text-xl lg:text-4xl items-center max-md:w-full">
                         Your <FlipWords words={words} className={'text-darkText'} /> deserves better.
                     </div>
-                    <p className="relative text-center font-light flex text-darkText hover:text-darkText transition-all duration-500 text-2xl lg:text-3xl ">
+                    <p className="relative md:text-center font-light flex text-darkText hover:text-darkText transition-all duration-500 text-2xl lg:text-3xl max-md:w-full ">
                         Stand out with a digital presence they'll always remember
                     </p>
                 </div>

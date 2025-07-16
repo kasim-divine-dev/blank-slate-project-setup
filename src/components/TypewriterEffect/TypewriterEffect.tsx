@@ -27,7 +27,7 @@ export const TypewriterEffectSmooth: React.FC<TypewriterEffectSmoothProps> = ({
 
     const renderWords = () => {
         return (
-            <div className="flex gap-2 md:gap-4 items-center max-md:flex-wrap max-md:justify-center">
+            <div className="flex gap-2 md:gap-4 items-center max-md:flex-wrap md:justify-center">
                 {wordsArray.map((word, idx) => {
                     return (
                         <h2 key={`word-${idx}`} className="inline-block">

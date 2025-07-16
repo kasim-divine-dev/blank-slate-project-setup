@@ -57,7 +57,7 @@ const ServiceCard: React.FC = () => {
                     className="relative z-10"
                 >
                     <DrawCircleText
-                        normalText="creating standout brands for "
+                        normalText="Creating standout brands for "
                         normalText2="that bring joy and leave lasting impression."
                         circleText="startups"
                     />
@@ -142,8 +142,6 @@ const ServiceCard: React.FC = () => {
                     </div>
                 ))}
             </section>
-
-            <section className="end-service-section h-screen bg-black"></section>
         </div>
     );
 };

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { AlertCircle, ArrowLeft, ArrowUpRight, Bookmark, Calendar, Clock, Heart, Home, Share2, Tag, User } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
@@ -116,40 +115,33 @@ const BlogDetail: React.FC = () => {
 
       <div ref={containerRef} className="bg-black text-darkText font-boska overflow-x-hidden">
         {/* Hero Section */}
-        <motion.section
+        <section
           className="relative min-h-screen flex items-center justify-center"
         >
 
           <div className="relative z-10 text-center max-w-6xl mx-auto">
             {/* Back Navigation */}
-            <motion.div
+            <div
               className="flex justify-start mb-10"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
             >
-              <motion.button
+              <button
                 className="flex items-center gap-2 text-darkText80 hover:text-darkText transition-colors duration-300"
-                whileHover={{ x: -5 }}
                 onClick={() => navigate('/blog')}
               >
                 <ArrowLeft className="w-5 h-5" />
                 Back to Blog
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+            <div
               className="mb-8"
             >
               {/* Category Badge */}
-              <motion.div className="mb-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+              <div className="mb-6" >
                 <span className="inline-block px-4 py-2 bg-lightBg text-brown-text text-sm font-bold rounded-full">
                   {blog.category}
                 </span>
-              </motion.div>
+              </div>
 
               <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-darkText">
                 {blog.title}
@@ -177,19 +169,15 @@ const BlogDetail: React.FC = () => {
                   <span>{blog.author.name}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </motion.section>
+        </section>
 
         {/* Featured Image */}
         <section className="px-4 py-0">
           <div className="max-w-6xl mx-auto">
-            <motion.div
+            <div
               className="relative rounded-3xl overflow-hidden aspect-video"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <img
                 src={blog.featuredImage}
@@ -200,7 +188,7 @@ const BlogDetail: React.FC = () => {
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-            </motion.div>
+            </div>
           </div>
         </section>
 
@@ -210,12 +198,8 @@ const BlogDetail: React.FC = () => {
             <div className="grid lg:grid-cols-4 gap-12">
               {/* Main Content */}
               <div className="lg:col-span-3">
-                <motion.div
+                <div
                   className="content-section prose prose-lg prose-invert max-w-none"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
                 >
                   {/* Article Excerpt */}
                   <div className="text-xl text-darkText80 leading-relaxed mb-12">
@@ -250,19 +234,15 @@ const BlogDetail: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               {/* Sidebar */}
               <div className="lg:col-span-1">
                 <div className="sticky top-24 space-y-8">
                   {/* Author Info */}
-                  <motion.div
+                  <div
                     className="content-section bg-gradient-to-br from-darkText20 to-darkText10 border border-darkText20 p-6 rounded-2xl"
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
                   >
                     <h3 className="text-lg font-bold text-darkText mb-4">About the Author</h3>
                     <div className="flex items-center gap-3 mb-4">
@@ -276,15 +256,11 @@ const BlogDetail: React.FC = () => {
                         <div className="text-darkText60 text-sm">{blog.author.role}</div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
 
                   {/* Share Buttons */}
-                  <motion.div
+                  <div
                     className="content-section bg-gradient-to-br from-darkText20 to-darkText10 border border-darkText20 p-6 rounded-2xl"
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <h3 className="text-lg font-bold text-darkText mb-4">Share Article</h3>
                     <div className="flex gap-3">
@@ -298,7 +274,7 @@ const BlogDetail: React.FC = () => {
                         <Bookmark className="w-4 h-4 text-darkText60" />
                       </button>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -309,25 +285,17 @@ const BlogDetail: React.FC = () => {
         {relatedBlogs.length > 0 && (
           <section className="px-4 py-20 bg-darkBg/30">
             <div className="max-w-6xl mx-auto">
-              <motion.h2
+              <h2
                 className="text-4xl md:text-5xl font-black text-center mb-16 text-darkText"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
               >
                 Related <span className="text-lightBg">Articles</span>
-              </motion.h2>
+              </h2>
 
               <div className="grid md:grid-cols-3 gap-8">
                 {relatedBlogs.map((relatedBlog, index) => (
-                  <motion.article
+                  <article
                     key={relatedBlog.id}
                     className="content-section bg-darkText20 border border-darkText20 rounded-2xl overflow-hidden hover:border-lightBg/50 transition-all duration-300 group cursor-pointer"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     onClick={() => navigate(`/blog/${relatedBlog.slug}`)}
                   >
                     <div className="aspect-video overflow-hidden">
@@ -360,7 +328,7 @@ const BlogDetail: React.FC = () => {
                         <ArrowUpRight className="w-4 h-4 text-darkText60 group-hover:text-lightBg transition-colors duration-300" />
                       </div>
                     </div>
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             </div>

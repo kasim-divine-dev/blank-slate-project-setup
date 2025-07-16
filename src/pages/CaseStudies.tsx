@@ -1,6 +1,5 @@
 import { DynamicSEO } from '@/components/SEO/DynamicSEO';
 import { caseStudiesData } from '@/data/caseStudiesData';
-import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -54,31 +53,30 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
 
   const testimonials = [
     {
-      quote: "MkRonix transformed our digital presence completely. The results exceeded our expectations by 300%. Their strategic approach and attention to detail is unmatched.",
-      author: "Sarah Johnson",
-      role: "CEO, TechStart Inc",
-      project: "E-commerce Platform Redesign",
+      quote: "MkRonix revolutionized our entire digital infrastructure. Their expertise in modern web technologies helped us scale from 10,000 to 100,000 daily active users seamlessly. The team's dedication and innovative solutions are truly remarkable.",
+      author: "Rony Patel",
+      role: "CTO, FinTech Solutions Pvt Ltd",
+      project: "Digital Banking Platform Development",
       avatar: "/api/placeholder/60/60",
       rating: 5
     },
     {
-      quote: "Their strategic approach and attention to detail helped us achieve unprecedented user engagement. The ROI was immediate and substantial.",
-      author: "Michael Chen",
-      role: "Product Manager, InnovateCorp",
-      project: "Mobile App UX Optimization",
+      quote: "The transformation MkRonix brought to our e-commerce platform was extraordinary. Our conversion rates increased by 320% and customer retention improved significantly. Their understanding of the Indian market dynamics is exceptional.",
+      author: "Snigdha Agarwal",
+      role: "Founder & CEO, StyleCraft Online",
+      project: "E-commerce Website Redesign",
       avatar: "/api/placeholder/60/60",
       rating: 5
     },
     {
-      quote: "Working with MkRonix was a game-changer. They delivered beyond our expectations and the results speak for themselves - 250% increase in conversions.",
-      author: "Emma Rodriguez",
-      role: "Marketing Director, GrowthTech",
-      project: "Digital Marketing Campaign",
+      quote: "MkRonix delivered our healthcare management system ahead of schedule with zero bugs. Their agile methodology and continuous communication made the entire process smooth. The ROI was visible within the first month itself.",
+      author: "Dr. Bakar Saha",
+      role: "Medical Director, HealthTech Innovations",
+      project: "Healthcare Management System",
       avatar: "/api/placeholder/60/60",
       rating: 5
-    }
-  ];
-
+    },
+  ]
   // Animate stats on scroll
   useEffect(() => {
     if (!statsRef.current) return;
@@ -126,11 +124,9 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80"></div>
 
               <div className="max-w-7xl mx-auto px-4 relative z-10">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-center mb-16"
+                <div
+
+                  className="md:text-center mb-16"
                 >
                   <div className="inline-flex items-center gap-2 bg-[#F5E7D3]/10 backdrop-blur-sm border border-[#F5E7D3]/20 rounded-full px-6 py-3 mb-8">
                     <Award className="w-4 h-4 text-[#F5E7D3]" />
@@ -139,7 +135,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                     </span>
                   </div>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]">
+                  <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9] max-md:flex gap-3">
                     Case
                     <span className="block text-transparent bg-gradient-to-r from-[#F5E7D3] via-white to-[#F5E7D3] bg-clip-text">
                       Studies
@@ -149,14 +145,11 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                   <p className="text-xl text-[#F5E7D3]/80 max-w-3xl mx-auto leading-relaxed mb-12">
                     Dive deep into our most impactful projects and discover how we transform challenges into extraordinary digital experiences that drive measurable business growth.
                   </p>
-                </motion.div>
+                </div>
 
                 {/* Enhanced Stats Section */}
-                <motion.div
+                <div
                   ref={statsRef}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
                   className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
                 >
                   {stats.map((stat, index) => (
@@ -181,16 +174,16 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                       </div>
                     </div>
                   ))}
-                </motion.div>
+                </div>
               </div>
             </section>
 
             {/* Enhanced Filter Section */}
-            <section className="py-16 px-4 bg-gradient-to-b from-[#0a0a0a] to-black border-t border-[#F5E7D3]/10">
+            <section className="pt-6 md:py-16 px-4 bg-gradient-to-b from-[#0a0a0a] to-black border-t border-[#F5E7D3]/10">
               <div className="max-w-7xl mx-auto">
                 {/* Search and View Controls */}
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8">
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 max-md:w-full">
                     <div className="relative">
                       <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#F5E7D3]/60" />
                       <input
@@ -198,13 +191,13 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                         placeholder="Search case studies..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-12 pr-4 py-3 w-80 bg-[#1a1a1a] border border-[#F5E7D3]/20 rounded-xl text-[#F5E7D3] placeholder-[#F5E7D3]/50 focus:border-[#F5E7D3]/40 focus:outline-none transition-colors duration-300"
+                        className="pl-12 pr-4 py-3 w-full md:w-80 bg-[#1a1a1a] border border-[#F5E7D3]/20 rounded-xl text-[#F5E7D3] placeholder-[#F5E7D3]/50 focus:border-[#F5E7D3]/40 focus:outline-none transition-colors duration-300"
                       />
                     </div>
 
                     <button
                       onClick={() => setShowFilters(!showFilters)}
-                      className="flex items-center gap-2 px-4 py-3 bg-[#F5E7D3]/10 border border-[#F5E7D3]/20 rounded-xl text-[#F5E7D3] hover:bg-[#F5E7D3]/20 transition-all duration-300"
+                      className="max-md:hidden flex items-center gap-2 px-4 py-3 bg-[#F5E7D3]/10 border border-[#F5E7D3]/20 rounded-xl text-[#F5E7D3] hover:bg-[#F5E7D3]/20 transition-all duration-300"
                     >
                       <Filter className="w-4 h-4" />
                       Filters
@@ -212,8 +205,8 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                     </button>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="text-sm text-[#F5E7D3]/60">
+                  <div className="max-md:hidden flex items-end max-md:w-full md:items-center gap-4">
+                    <div className="text-base text-[#F5E7D3]/60">
                       Showing {filteredStudies.length} of {caseStudiesData.length} projects
                     </div>
 
@@ -241,11 +234,8 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                 </div>
 
                 {/* Category Filters */}
-                <motion.div
-                  initial={false}
-                  animate={{ height: showFilters ? 'auto' : 0, opacity: showFilters ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                <div
+                  className="overflow-hidden max-md:hidden"
                 >
                   <div className="flex flex-wrap items-center gap-3 p-6 bg-[#1a1a1a] border border-[#F5E7D3]/20 rounded-xl">
                     <div className="flex items-center gap-2 text-[#F5E7D3]/60 mr-4">
@@ -265,23 +255,20 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                       </button>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               </div>
             </section>
 
             {/* Enhanced Case Studies Grid */}
-            <section className="py-20 px-4 bg-black">
+            <section className="pb-6 md:py-20 px-4 bg-black">
               <div className="max-w-7xl mx-auto">
                 <div className={`grid gap-8 ${viewMode === 'grid'
                   ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
                   : 'grid-cols-1'
                   }`}>
                   {filteredStudies.map((study, index) => (
-                    <motion.div
+                    <div
                       key={study.id}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
                       className={`group relative bg-gradient-to-br from-[#1a1a1a] to-[#0f0f0f] rounded-2xl overflow-hidden border border-[#333] hover:border-[#F5E7D3]/30 transition-all duration-500 hover:transform hover:scale-105 ${viewMode === 'list' ? 'flex gap-6' : ''
                         }`}
                     >
@@ -295,7 +282,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                         />
                       </div>
 
-                      <div className="p-8 flex-1">
+                      <div className="p-4 md:p-8 flex-1">
                         <div className="flex items-center gap-4 mb-4">
                           <span className="px-3 py-1 bg-[#F5E7D3]/10 text-[#F5E7D3] rounded-full text-sm font-medium">
                             {study.category}
@@ -329,13 +316,13 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                           </Link>
                         </div>
                       </div>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
 
                 {/* No Results Message */}
                 {filteredStudies.length === 0 && (
-                  <div className="text-center py-16">
+                  <div className="md:text-center py-16">
                     <div className="w-16 h-16 mx-auto mb-6 bg-[#F5E7D3]/10 rounded-full flex items-center justify-center">
                       <Search className="w-8 h-8 text-[#F5E7D3]/60" />
                     </div>
@@ -359,7 +346,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
             <section className="py-20 px-4 bg-gradient-to-b from-[#0a0a0a] to-black">
               <div className="max-w-6xl mx-auto">
                 <div
-                  className="text-center mb-16"
+                  className="md:text-center mb-16"
                 >
                   <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     Our Proven <span className="text-[#F5E7D3]">Methodology</span>
@@ -402,7 +389,7 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                   ].map((step, index) => (
                     <div
                       key={step.number}
-                      className={`relative bg-gradient-to-br ${step.gradient} backdrop-blur-sm border border-[#F5E7D3]/20 p-8 rounded-3xl group hover:border-[#F5E7D3]/50 transition-all duration-500 hover:transform hover:scale-105`}
+                      className={`relative bg-gradient-to-br ${step.gradient} backdrop-blur-sm border border-[#F5E7D3]/20 p-4 md:p-8 rounded-3xl group hover:border-[#F5E7D3]/50 transition-all duration-500 hover:transform hover:scale-105`}
                     >
                       <div className="relative z-10 text-center">
                         <div className="flex items-center justify-center gap-4 mb-6">
@@ -414,10 +401,10 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
                           </span>
                         </div>
 
-                        <h3 className="text-xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
+                        <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
                           {step.title}
                         </h3>
-                        <p className="text-[#F5E7D3]/60 text-sm leading-relaxed group-hover:text-[#F5E7D3]/80 transition-colors duration-300">
+                        <p className="text-[#F5E7D3]/60 text-lg leading-relaxed group-hover:text-[#F5E7D3]/80 transition-colors duration-300">
                           {step.description}
                         </p>
                       </div>
@@ -433,12 +420,12 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
         <section className="py-20 px-4 bg-black">
           <div className="max-w-6xl mx-auto">
             <div
-              className="text-center mb-16"
+              className="md:text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 max-md:text-start">
                 Client <span className="text-[#F5E7D3]">Success Stories</span>
               </h2>
-              <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto">
+              <p className="text-xl text-[#F5E7D3]/80 max-w-2xl mx-auto max-md:text-start">
                 Hear from the clients behind our most successful projects
               </p>
             </div>
@@ -492,33 +479,29 @@ const CaseStudies = ({ isFromHome = false }: { isFromHome?: boolean }) => {
 
         {/* Enhanced CTA Section */}
         <section className="py-20 px-4 bg-gradient-to-b from-[#0a0a0a] to-black">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+          <div className="max-w-4xl mx-auto md:text-center">
+            <div
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+              <h2 className="text-4xl md:text-6xl font-bold mb-8 max-md:text-start">
                 Ready for Your <span className="text-[#F5E7D3]">Success Story?</span>
               </h2>
-              <p className="text-xl text-[#F5E7D3]/80 mb-12 max-w-2xl mx-auto">
+              <p className="text-xl text-[#F5E7D3]/80 mb-12 max-w-2xl mx-auto max-md:text-start">
                 Join our growing list of successful clients and transform your digital presence with proven strategies.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <button className="group relative bg-[#F5E7D3] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 overflow-hidden inline-flex items-center justify-center gap-2">
+                <Link to="/contact" className="group relative bg-[#F5E7D3] text-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 overflow-hidden inline-flex items-center justify-center gap-2">
                   <Rocket className="w-5 h-5" />
                   Start Your Project
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
 
-                <button className="group border-2 border-[#F5E7D3]/20 text-[#F5E7D3] px-8 py-4 rounded-full font-bold hover:border-[#F5E7D3] hover:bg-[#F5E7D3] hover:text-black transition-all duration-300 inline-flex items-center justify-center gap-2">
+                <Link to="/case-studies" className="group border-2 border-[#F5E7D3]/20 text-[#F5E7D3] px-8 py-4 rounded-full font-bold hover:border-[#F5E7D3] hover:bg-[#F5E7D3] hover:text-black transition-all duration-300 inline-flex items-center justify-center gap-2">
                   <Eye className="w-5 h-5" />
                   View More Studies
-                </button>
+                </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

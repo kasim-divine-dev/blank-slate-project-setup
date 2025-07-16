@@ -11,7 +11,7 @@ interface DrawCircleTextProps {
 export const DrawCircleText: React.FC<DrawCircleTextProps> = ({ normalText, circleText, normalText2 }) => {
     return (
         <div className="">
-            <h1 className="text-darkText text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug">
+            <h1 className="text-darkText text-start md:text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug">
                 {normalText}{" "}
                 <span className="relative">
                     {circleText}

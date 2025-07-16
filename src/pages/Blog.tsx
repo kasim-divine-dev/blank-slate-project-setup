@@ -1,9 +1,6 @@
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Calendar, Clock, Search, Tag, User } from 'lucide-react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
 import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
@@ -11,18 +8,10 @@ import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import { enhancedSeoService } from '../services/enhancedSeoService';
 
 const Blog: React.FC = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   const blogPosts = enhancedSeoService.getBlogPosts();
   const featuredPosts = enhancedSeoService.getFeaturedBlogPosts();
@@ -35,45 +24,6 @@ const Blog: React.FC = () => {
       post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Hero floating animation
-    if (heroRef.current) {
-      gsap.to(heroRef.current, {
-        y: -20,
-        duration: 3,
-        ease: "power2.inOut",
-        yoyo: true,
-        repeat: -1
-      });
-    }
-
-    // Blog cards animation
-    gsap.utils.toArray('.blog-card').forEach((card: any, index) => {
-      gsap.fromTo(card, {
-        y: 100,
-        opacity: 0,
-        scale: 0.8
-      }, {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        ease: "power3.out",
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%"
-        }
-      });
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, [filteredPosts]);
 
   return (
     <>
@@ -88,25 +38,13 @@ const Blog: React.FC = () => {
         </div>
 
         {/* Hero Section */}
-        <motion.section
+        <section
           className="relative min-h-screen flex items-center justify-center px-4"
-          style={{ y: textY }}
         >
           <BoxesLayer gridColor="#484440" />
-          <motion.div
-            className="absolute inset-0 pointer-events-none z-0"
-            style={{
-              y: backgroundY,
-              background: `radial-gradient(circle at 30% 70%, rgba(72, 68, 64, 0.4), transparent 50%),
-                         radial-gradient(circle at 70% 30%, rgba(72, 68, 64, 0.3), transparent 50%)`
-            }}
-          />
 
-          <div ref={heroRef} className="relative z-10 text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
+          <div className="relative z-10 text-center">
+            <div
               className="mb-8"
             >
               <DrawCircleText
@@ -114,30 +52,23 @@ const Blog: React.FC = () => {
                 normalText2="and expertise that transforms."
                 circleText="innovation"
               />
-            </motion.div>
+            </div>
 
-            <motion.p
+            <p
               className="text-xl md:text-2xl text-[#F5E7D3]/80 max-w-4xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
             >
               Discover the latest trends in web development, design, and digital marketing. Expert insights from India's leading creative digital agency.
-            </motion.p>
+            </p>
           </div>
-        </motion.section>
+        </section>
 
         {/* Search and Filter Section */}
         <section className="py-16 px-4 bg-[#1D1C1C]/30">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
               {/* Search */}
-              <motion.div
+              <div
                 className="relative w-full md:w-96"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
               >
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#F5E7D3]/60" />
                 <input
@@ -147,15 +78,11 @@ const Blog: React.FC = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 bg-black/50 border border-[#484440]/50 rounded-2xl text-[#F5E7D3] focus:border-[#F5E7D3] focus:outline-none transition-all duration-300 backdrop-blur-sm"
                 />
-              </motion.div>
+              </div>
 
               {/* Category Filter */}
-              <motion.div
+              <div
                 className="flex flex-wrap gap-3"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
               >
                 <button
                   onClick={() => setSelectedCategory('all')}
@@ -178,7 +105,7 @@ const Blog: React.FC = () => {
                     {category.name}
                   </button>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -187,28 +114,19 @@ const Blog: React.FC = () => {
         {featuredPosts.length > 0 && (
           <section className="py-32 px-4">
             <div className="max-w-6xl mx-auto">
-              <motion.div
+              <div
                 className="text-center mb-20"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
               >
                 <h2 className="text-4xl md:text-6xl font-black mb-6">
                   Featured <span className="text-[#484440]">Articles</span>
                 </h2>
-              </motion.div>
+              </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 {featuredPosts.slice(0, 2).map((post, index) => (
-                  <motion.article
+                  <article
                     key={post.id}
                     className="blog-card group cursor-pointer"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -10 }}
                   >
                     <Link to={`/blog/${post.slug}`} className="block">
                       <div className="relative overflow-hidden rounded-3xl mb-6">
@@ -260,7 +178,7 @@ const Blog: React.FC = () => {
                         </div>
                       </div>
                     </Link>
-                  </motion.article>
+                  </article>
                 ))}
               </div>
             </div>
@@ -270,12 +188,8 @@ const Blog: React.FC = () => {
         {/* All Posts */}
         <section className="py-32 px-4 bg-[#1D1C1C]/30">
           <div className="max-w-6xl mx-auto">
-            <motion.div
+            <div
               className="text-center mb-20"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Latest <span className="text-[#484440]">Insights</span>
@@ -283,18 +197,13 @@ const Blog: React.FC = () => {
               <p className="text-xl text-[#F5E7D3]/80">
                 {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''} found
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredPosts.map((post, index) => (
-                <motion.article
+                <article
                   key={post.id}
                   className="blog-card group cursor-pointer"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: (index % 6) * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
                 >
                   <Link to={`/blog/${post.slug}`} className="block">
                     <div className="relative overflow-hidden rounded-3xl mb-6">
@@ -361,21 +270,18 @@ const Blog: React.FC = () => {
                       </div>
                     </div>
                   </Link>
-                </motion.article>
+                </article>
               ))}
             </div>
 
             {filteredPosts.length === 0 && (
-              <motion.div
+              <div
                 className="text-center py-20"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
               >
                 <p className="text-xl text-[#F5E7D3]/60">
                   No articles found matching your criteria.
                 </p>
-              </motion.div>
+              </div>
             )}
           </div>
         </section>

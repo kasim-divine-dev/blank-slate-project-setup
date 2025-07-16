@@ -38,7 +38,6 @@ class SEOService {
     if (!pageData) {
       throw new Error(`SEO data not found for page: ${pageName}`);
     }
-    console.log("pageData", pageData);
     return pageData;
   }
 

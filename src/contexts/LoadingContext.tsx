@@ -96,7 +96,6 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
 
         const onAssetError = (type: string, src: string) => {
           assetProgress.failed++;
-          console.warn(`Failed to load ${type}: ${src}`);
 
           if (assetProgress.loaded + assetProgress.failed >= assetProgress.total) {
             updateProgress(100, 'Ready!');
@@ -219,7 +218,6 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
     try {
       await preloadAssets();
     } catch (error) {
-      console.error('Asset loading error:', error);
       updateProgress(100, 'Ready!');
     }
 
@@ -229,7 +227,7 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
     }, 300);
   };
 
-  // Handle route changes
+  // Handle route changes ONLY
   useEffect(() => {
     startLoading();
 
@@ -241,46 +239,12 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
         clearInterval(progressIntervalRef.current);
       }
     };
-  }, [location.pathname]);
+  }, [location.pathname]); // Only triggers on route changes
 
-  // Additional asset detection for dynamically loaded content
-  useEffect(() => {
-    const observer = new MutationObserver((mutations) => {
-      if (isLoading) return;
-
-      let hasNewAssets = false;
-
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'childList') {
-          mutation.addedNodes.forEach((node) => {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              const element = node as Element;
-              const newImages = element.querySelectorAll?.('img[src]') || [];
-              const newStyles = element.querySelectorAll?.('link[rel="stylesheet"]') || [];
-
-              if (newImages.length > 0 || newStyles.length > 0) {
-                hasNewAssets = true;
-              }
-            }
-          });
-        }
-      });
-
-      if (hasNewAssets) {
-        // Briefly show loading for new assets
-        startLoading();
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [isLoading]);
+  // REMOVED: MutationObserver that was causing the issue
+  // The MutationObserver was triggering loading on any DOM change,
+  // including button clicks. Since you only want loading on route changes,
+  // we've removed this entirely.
 
   return (
     <LoadingContext.Provider value={{

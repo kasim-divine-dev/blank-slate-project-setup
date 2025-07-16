@@ -1,6 +1,4 @@
 import { DynamicSEO } from '@/components/SEO/DynamicSEO';
-import { useGSAP } from '@gsap/react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -63,65 +61,6 @@ const ContactUs: React.FC = () => {
     '5L+',
     'Let\'s Discuss'
   ];
-
-  useGSAP(() => {
-    // Hero section animation
-    gsap.fromTo(
-      '.hero-element',
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.hero-section',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Form fields animation
-    gsap.fromTo(
-      '.form-field',
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: '.contact-form',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-
-    // Contact info cards animation
-    gsap.fromTo(
-      '.contact-card',
-      { scale: 0.8, opacity: 0 },
-      {
-        scale: 1,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: 'back.out(1.7)',
-        scrollTrigger: {
-          trigger: '.contact-info',
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    );
-  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -189,12 +128,6 @@ const ContactUs: React.FC = () => {
     }
   ];
 
-  const stats = [
-    { number: "20+", label: "Projects Delivered" },
-    { number: "15+", label: "Happy Clients" },
-    { number: "24/7", label: "Support Available" },
-    { number: "99%", label: "Client Satisfaction" }
-  ];
 
   return (
     <>
@@ -215,12 +148,8 @@ const ContactUs: React.FC = () => {
         {/* Contact Methods */}
         <section className="contact-info py-20 px-4 bg-darkBg">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <div
+              className="md:text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Multiple Ways to <span className="text-lightBg">Connect</span>
@@ -228,16 +157,14 @@ const ContactUs: React.FC = () => {
               <p className="text-darkText80 text-lg max-w-2xl mx-auto">
                 Choose the method that works best for you. We're here to help.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {contactMethods.map((method, index) => (
-                <motion.a
+                <a
                   key={index}
                   href={method.href}
-                  className={`contact-card group relative overflow-hidden rounded-3xl bg-gradient-to-br ${method.gradient} backdrop-blur-sm border border-darkText20 p-8 hover:border-lightBg/50 transition-all duration-500`}
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
+                  className={`contact-card group relative overflow-hidden rounded-3xl bg-gradient-to-br ${method.gradient} backdrop-blur-sm border border-darkText20 p-4 md:p-8 hover:border-lightBg/50 transition-all duration-500`}
                 >
                   <div className="relative z-10">
                     <div className="w-16 h-16 rounded-2xl bg-darkText20 flex items-center justify-center mb-6 group-hover:bg-lightBg group-hover:text-brown-text transition-all duration-300">
@@ -246,15 +173,15 @@ const ContactUs: React.FC = () => {
                     <h3 className="text-xl font-bold mb-2 group-hover:text-white transition-colors duration-300">
                       {method.title}
                     </h3>
-                    <p className="text-darkText60 text-sm mb-4 group-hover:text-darkText80 transition-colors duration-300">
+                    <p className="text-darkText60 text-lg mb-4 group-hover:text-darkText80 transition-colors duration-300">
                       {method.subtitle}
                     </p>
-                    <p className="text-lightBg font-medium group-hover:text-white transition-colors duration-300">
+                    <p className="text-lightBg font-medium text-xl group-hover:text-white transition-colors duration-300">
                       {method.value}
                     </p>
                     <ArrowUpRight className="w-6 h-6 absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-300 text-lightBg" />
                   </div>
-                </motion.a>
+                </a>
               ))}
             </div>
           </div>
@@ -263,12 +190,8 @@ const ContactUs: React.FC = () => {
         {/* Contact Form */}
         <section className="contact-form py-20 px-4 bg-black">
           <div className="max-w-4xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <div
+              className="md:text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Start Your <span className="text-lightBg">Project</span>
@@ -276,19 +199,15 @@ const ContactUs: React.FC = () => {
               <p className="text-darkText80 text-lg max-w-2xl mx-auto">
                 Tell us about your project and we'll get back to you within 24 hours.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="bg-darkBg rounded-3xl p-8 md:p-12 border border-darkText20"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <div
+              className="bg-darkBg rounded-3xl p-4 md:p-12 border border-darkText20"
             >
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="form-field">
-                    <label htmlFor='name' className="block text-darkText text-sm font-medium mb-3">
+                    <label htmlFor='name' className="block text-darkText text-lg font-medium mb-3">
                       Full Name *
                     </label>
                     <input
@@ -303,7 +222,7 @@ const ContactUs: React.FC = () => {
                   </div>
 
                   <div className="form-field">
-                    <label htmlFor='email' className="block text-darkText text-sm font-medium mb-3">
+                    <label htmlFor='email' className="block text-darkText text-lg font-medium mb-3">
                       Email Address *
                     </label>
                     <input
@@ -320,7 +239,7 @@ const ContactUs: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="form-field">
-                    <label htmlFor='phone' className="block text-darkText text-sm font-medium mb-3">
+                    <label htmlFor='phone' className="block text-darkText text-lg font-medium mb-3">
                       Phone Number
                     </label>
                     <input
@@ -334,7 +253,7 @@ const ContactUs: React.FC = () => {
                   </div>
 
                   <div className="form-field">
-                    <label htmlFor='service' className="block text-darkText text-sm font-medium mb-3">
+                    <label htmlFor='service' className="block text-darkText text-lg font-medium mb-3">
                       Service Needed
                     </label>
                     <select
@@ -354,7 +273,7 @@ const ContactUs: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="form-field">
-                    <label htmlFor='budget' className="block text-darkText text-sm font-medium mb-3">
+                    <label htmlFor='budget' className="block text-darkText text-lg font-medium mb-3">
                       Project Budget
                     </label>
                     <select
@@ -372,7 +291,7 @@ const ContactUs: React.FC = () => {
                   </div>
 
                   <div className="form-field">
-                    <label htmlFor='subject' className="block text-darkText text-sm font-medium mb-3">
+                    <label htmlFor='subject' className="block text-darkText text-lg font-medium mb-3">
                       Project Subject
                     </label>
                     <input
@@ -387,7 +306,7 @@ const ContactUs: React.FC = () => {
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor='message' className="block text-darkText text-sm font-medium mb-3">
+                  <label htmlFor='message' className="block text-darkText text-lg font-medium mb-3">
                     Project Details *
                   </label>
                   <textarea
@@ -401,12 +320,10 @@ const ContactUs: React.FC = () => {
                   />
                 </div>
 
-                <motion.button
+                <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-lightBg text-brown-text py-4 px-8 rounded-xl font-bold text-lg hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
                 >
                   {isSubmitting ? (
                     <>
@@ -419,53 +336,39 @@ const ContactUs: React.FC = () => {
                       Send Message
                     </>
                   )}
-                </motion.button>
+                </button>
 
-                {/* Success Message */}
-                <AnimatePresence>
-                  {submitStatus === 'success' && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      className="text-center py-4"
-                    >
-                      <div className="inline-flex items-center gap-2 text-green-400">
-                        <CheckCircle className="w-5 h-5" />
-                        <span className="font-medium">Message sent successfully! We'll get back to you soon.</span>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {submitStatus === 'success' && (
+                  <div
+                    className="text-center py-4"
+                  >
+                    <div className="inline-flex items-center gap-2 text-green-400">
+                      <CheckCircle className="w-5 h-5" />
+                      <span className="font-medium">Message sent successfully! We'll get back to you soon.</span>
+                    </div>
+                  </div>
+                )}
               </form>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Location Section */}
         <section className="py-20 px-4 bg-darkBg">
           <div className="max-w-6xl mx-auto">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+            <div
+              className="md:text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 Visit Our <span className="text-lightBg">Studio</span>
               </h2>
-              <p className="text-darkText80 text-lg max-w-2xl mx-auto">
+              <p className="text-darkText80 text-xl max-w-2xl mx-auto">
                 Located in the heart of Mumbai, our creative studio is where innovation meets execution.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+              <div
               >
                 <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-darkText20 p-8 rounded-3xl hover:border-lightBg/50 transition-all duration-500">
                   <div className="w-16 h-16 rounded-2xl bg-darkText20 flex items-center justify-center mb-6">
@@ -493,19 +396,15 @@ const ContactUs: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+              <div
                 className="space-y-6"
               >
-                <div className="bg-darkText20 p-6 rounded-2xl">
-                  <h4 className="font-bold mb-3 text-lightBg">Why Visit Us?</h4>
+                <div className="bg-darkText20 p-4 md:p-6 rounded-2xl">
+                  <h4 className="font-bold mb-3 text-lightBg text-xl">Why Visit Us?</h4>
                   <ul className="space-y-2 text-darkText80">
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-lg">
                       <Star className="w-4 h-4 text-lightBg mt-1 flex-shrink-0" />
                       <span>Face-to-face project discussions</span>
                     </li>
@@ -524,10 +423,10 @@ const ContactUs: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="bg-darkText20 p-6 rounded-2xl">
-                  <h4 className="font-bold mb-3 text-lightBg">What to Expect</h4>
+                <div className="bg-darkText20 p-4 md:p-6 rounded-2xl">
+                  <h4 className="font-bold mb-3 text-lightBg text-xl">What to Expect</h4>
                   <ul className="space-y-2 text-darkText80">
-                    <li className="flex items-start gap-2">
+                    <li className="flex items-start gap-2 text-lg">
                       <Users className="w-4 h-4 text-lightBg mt-1 flex-shrink-0" />
                       <span>Complimentary consultation</span>
                     </li>
@@ -545,19 +444,15 @@ const ContactUs: React.FC = () => {
                     </li>
                   </ul>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className="py-20 px-4 bg-black">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+          <div className="max-w-4xl mx-auto md:text-center">
+            <div
             >
               <h2 className="text-4xl md:text-6xl font-bold mb-8">
                 Ready to Create <span className="text-lightBg">Magic?</span>
@@ -567,27 +462,23 @@ const ContactUs: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <motion.a
+                <a
                   href="tel:+918459258801"
                   className="group relative bg-lightBg text-brown-text px-8 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 overflow-hidden inline-flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <Phone className="w-5 h-5" />
                   Schedule a Call
-                </motion.a>
+                </a>
 
-                <motion.a
+                <a
                   href="mailto:mkronix.official@gmail.com"
                   className="group border-2 border-darkText20 text-darkText px-8 py-4 rounded-full font-bold hover:border-lightBg hover:bg-lightBg hover:text-brown-text transition-all duration-300 inline-flex items-center justify-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <Mail className="w-5 h-5" />
                   Send Email
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

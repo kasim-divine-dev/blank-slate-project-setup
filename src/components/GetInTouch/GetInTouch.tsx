@@ -105,7 +105,7 @@ const GetInTouch: React.FC = () => {
             </div>
             <div className="text-center relative z-10">
                 <h1 ref={headingRef}
-                    className='flex uppercase items-center text-6xl sm:text-4xl md:text-5xl lg:text-[9rem] font-bold text-darkText80 mb-4'
+                    className='flex uppercase items-center text-4xl md:text-5xl lg:text-[9rem] font-bold text-darkText80 mb-4'
                 >Get in touch</h1>
             </div>
         </section>

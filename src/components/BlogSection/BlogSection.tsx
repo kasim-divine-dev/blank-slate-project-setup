@@ -29,7 +29,7 @@ const BlogSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center max-md:text-start mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -42,11 +42,11 @@ const BlogSection = () => {
             Insights & Expertise
           </motion.p>
           <motion.h2
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9]"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-[0.9] max-md:flex gap-2"
             variants={itemVariants}
           >
             Latest
-            <span className="block text-transparent bg-gradient-to-r from-darkText via-lightBg to-darkText bg-clip-text">
+            <span className="block">
               Insights
             </span>
           </motion.h2>
@@ -106,8 +106,8 @@ const BlogSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-6 mb-4 text-sm text-darkText60">
+                <div className="md:p-6 p-3">
+                  <div className="flex items-center max-md:flex-wrap md:gap-6 gap-3 mb-4 text-sm text-darkText60">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(featuredBlogs[0].publishedAt).toLocaleDateString('en-US', {
@@ -206,7 +206,7 @@ const BlogSection = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="md:p-6 p-3">
                     <div className="flex items-center gap-4 mb-3 text-xs text-darkText60">
                       <div className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
