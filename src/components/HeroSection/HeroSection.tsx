@@ -1,12 +1,13 @@
+
 import React from 'react';
 import { typeText, words } from '../../data/herosection';
 import BoxesLayer from '../BoxesLayer/BoxesLayer';
 import { FlipWords } from '../FlipWords/FlipWords';
 import ImageMarquee from '../ImageMarquee/ImageMarquee';
 import { TypewriterEffectSmooth } from '../TypewriterEffect/TypewriterEffect';
+import { SEOTextReveal } from '../TextRevealAnimation';
 
 const HeroSection: React.FC = () => {
-
     return (
         <>
             <section id='home' className="relative pt-56 md:pt-48 max-md:px-2 px-5 flex flex-col">
@@ -19,15 +20,21 @@ const HeroSection: React.FC = () => {
                     <div className="relative my-2 font-light flex gap-2 text-darkText hover:text-darkText transition-all duration-500 text-xl lg:text-4xl items-center max-md:w-full">
                         Your <FlipWords words={words} className={'text-darkText'} /> deserves better.
                     </div>
-                    <p className="relative md:text-center font-light flex text-darkText hover:text-darkText transition-all duration-500 text-2xl lg:text-3xl max-md:w-full ">
+                    
+                    {/* Using SEO-optimized text reveal for the main tagline */}
+                    <SEOTextReveal
+                        as="p"
+                        className="text-center font-light text-darkText hover:text-darkText transition-all duration-500 text-2xl lg:text-3xl max-md:w-full"
+                        animationType="word"
+                        aria-label="Stand out with a digital presence they'll always remember"
+                    >
                         Stand out with a digital presence they'll always remember
-                    </p>
+                    </SEOTextReveal>
                 </div>
             </section>
             <ImageMarquee />
         </>
     );
-
 };
 
 export default HeroSection;
