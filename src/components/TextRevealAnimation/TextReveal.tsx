@@ -17,7 +17,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
   startOffset = 'start 0.9',
   endOffset = 'start 0.25'
 }) => {
-  const container = useRef<HTMLElement>(null);
+  const container = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: [startOffset, endOffset] as any
