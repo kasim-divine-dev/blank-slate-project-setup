@@ -197,10 +197,6 @@ class EnhancedSEOService {
       schemas.push(this.getItemListSchema());
     }
 
-    if ((schemaConfig as any).faq && (schemaConfig as any).faq.length > 0) {
-      schemas.push(this.getFAQSchema((schemaConfig as any).faq));
-    }
-
     // Add article schema for blog posts
     if (pageName === 'blogPost' && dynamicData) {
       schemas.push(this.getArticleSchema(dynamicData));
@@ -456,21 +452,6 @@ class EnhancedSEOService {
       "keywords": caseStudy.technologies.join(", "),
       "client": caseStudy.client,
       "industry": caseStudy.industry
-    };
-  }
-
-  private getFAQSchema(faqs: Array<{ question: string; answer: string }>) {
-    return {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
     };
   }
 

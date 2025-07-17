@@ -1,5 +1,5 @@
 
-import { ArrowLeft, ArrowUpRight, Award, Check, ChevronDown, Star } from 'lucide-react';
+import { ArrowLeft, Award, Check, ChevronDown, Star } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
@@ -107,31 +107,7 @@ const ServiceDetail: React.FC = () => {
         >
           <BoxesLayer gridColor="#484440" />
 
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            {!imageLoadErrors.has(service.heroImage) ? (
-              <img
-                src={service.heroImage}
-                alt={service.title}
-                className="w-full h-full object-cover opacity-10"
-                onError={() => handleImageError(service.heroImage)}
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#484440]/20 to-[#1D1C1C]/20" />
-            )}
-            <div className="absolute inset-0 bg-black/80" />
-          </div>
-
-          {/* Background Animation */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: `radial-gradient(circle at 30% 70%, rgba(72, 68, 64, 0.3), transparent 50%),
-                       radial-gradient(circle at 70% 30%, rgba(72, 68, 64, 0.2), transparent 50%)`
-            }}
-          />
-
-          <div className="relative container mx-auto px-4 py-20 z-10">
+          <div className="relative mx-auto px-4 py-20 z-10">
             <div
             >
               <Link
@@ -144,7 +120,7 @@ const ServiceDetail: React.FC = () => {
             </div>
 
             <div
-              className="max-w-4xl"
+              className="max-w-5xl"
             >
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
                 {service.title}
@@ -160,8 +136,8 @@ const ServiceDetail: React.FC = () => {
         </section>
 
         {/* Overview Section */}
-        <section className="py-32 px-4 bg-[#1D1C1C]/30">
-          <div className="container mx-auto max-w-6xl">
+        <section className="py-16 md:py-32 px-4 bg-[#1D1C1C]/30">
+          <div className="md:mx-auto max-w-6xl">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div
                 className="animate-card"
@@ -192,10 +168,10 @@ const ServiceDetail: React.FC = () => {
         </section>
 
         {/* Services Section */}
-        <section className="py-32 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="py-16 md:py-32 px-4">
+          <div className="mx-auto max-w-6xl">
             <div
-              className="text-center mb-20"
+              className="md:text-center mb-20"
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Our <span className="text-[#484440]">Services</span>
@@ -209,7 +185,7 @@ const ServiceDetail: React.FC = () => {
               {service.services.map((serviceItem, index) => (
                 <div
                   key={index}
-                  className="animate-card group bg-[#1D1C1C]/50 backdrop-blur-sm rounded-3xl p-8 border border-[#484440]/30 hover:border-[#F5E7D3]/50 transition-all duration-500"
+                  className="animate-card group bg-[#1D1C1C]/50 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-[#484440]/30 hover:border-[#F5E7D3]/50 transition-all duration-500"
                 >
                   <div className="mb-6 aspect-video rounded-2xl overflow-hidden">
                     {!imageLoadErrors.has(serviceItem.image) ? (
@@ -248,10 +224,10 @@ const ServiceDetail: React.FC = () => {
         </section>
 
         {/* Technologies Section */}
-        <section className="py-32 px-4 bg-[#1D1C1C]/30">
-          <div className="container mx-auto max-w-6xl">
+        <section className="py-16 md:py-32 px-4 bg-[#1D1C1C]/30">
+          <div className="mx-auto max-w-6xl">
             <div
-              className="text-center mb-20"
+              className="md:text-center mb-20"
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Technologies <span className="text-[#484440]">We Use</span>
@@ -265,7 +241,7 @@ const ServiceDetail: React.FC = () => {
               {service.technologies.map((techCategory, index) => (
                 <div
                   key={index}
-                  className="animate-card bg-black/50 backdrop-blur-sm rounded-3xl p-8 border border-[#484440]/30 hover:border-[#F5E7D3]/50 transition-all duration-500"
+                  className="animate-card bg-black/50 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-[#484440]/30 hover:border-[#F5E7D3]/50 transition-all duration-500"
                 >
                   <h3 className="text-2xl font-bold mb-6">{techCategory.category}</h3>
                   <div className="flex flex-wrap gap-3">
@@ -285,10 +261,10 @@ const ServiceDetail: React.FC = () => {
         </section>
 
         {/* Process Section */}
-        <section className="py-32 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="py-16 md:py-32 px-4">
+          <div className="mx-auto max-w-6xl">
             <div
-              className="text-center mb-20"
+              className="md:text-center mb-20"
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Our <span className="text-[#484440]">Process</span>
@@ -302,17 +278,17 @@ const ServiceDetail: React.FC = () => {
               {service.process.map((step, index) => (
                 <div
                   key={index}
-                  className="animate-card text-center group"
+                  className="animate-card md:text-center group"
                 >
                   <div
-                    className="w-20 h-20 bg-[#F5E7D3] text-black rounded-2xl flex items-center justify-center text-2xl font-black mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    className="w-20 h-20 bg-[#F5E7D3] text-black rounded-2xl flex items-center justify-center text-2xl font-black md:mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
                   >
                     {step.step}
                   </div>
-                  <h3 className="text-xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-[#F5E7D3]/80 leading-relaxed">
+                  <p className="text-[#F5E7D3]/80 leading-relaxed text-lg">
                     {step.description}
                   </p>
                 </div>
@@ -322,10 +298,10 @@ const ServiceDetail: React.FC = () => {
         </section>
 
         {/* Pricing Section */}
-        <section className="py-32 px-4 bg-[#1D1C1C]/30">
-          <div className="container mx-auto max-w-5xl">
+        <section className="py-16 md:py-32 px-4 bg-[#1D1C1C]/30">
+          <div className="mx-auto max-w-5xl">
             <div
-              className="text-center mb-20"
+              className="md:text-center mb-20"
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Investment <span className="text-[#484440]">Options</span>
@@ -374,10 +350,10 @@ const ServiceDetail: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-32 px-4">
-          <div className="container mx-auto max-w-4xl">
+        <section className="py-16 md:py-32 px-4">
+          <div className="mx-auto max-w-4xl">
             <div
-              className="text-center mb-20"
+              className="md:text-center mb-20"
             >
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Frequently Asked <span className="text-[#484440]">Questions</span>
@@ -420,35 +396,6 @@ const ServiceDetail: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-32 px-4 bg-[#1D1C1C]/50">
-          <div className="container mx-auto max-w-4xl text-center">
-            <div
-              className="relative bg-gradient-to-br from-[#484440]/20 to-[#1D1C1C]/20 backdrop-blur-sm rounded-3xl p-12 border border-[#484440]/30 overflow-hidden"
-            >
-
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-black mb-6">
-                  {service.cta.title}
-                </h2>
-                <p className="text-xl text-[#F5E7D3]/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-                  {service.cta.description}
-                </p>
-
-                <div
-                >
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-3 bg-[#F5E7D3] text-black px-12 py-6 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-2xl"
-                  >
-                    {service.cta.buttonText}
-                    <ArrowUpRight className="w-5 h-5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );

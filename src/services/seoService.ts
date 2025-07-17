@@ -83,11 +83,6 @@ class SEOService {
       schemas.push(this.getItemListSchema());
     }
 
-    // FAQ Schema
-    if (schemaConfig.faq && schemaConfig.faq.length > 0) {
-      schemas.push(this.getFAQSchema(schemaConfig.faq));
-    }
-
     // Breadcrumb Schema
     const pageData = this.getPageSEO(pageName);
     if (pageData.breadcrumb && pageData.breadcrumb.length > 1) {
@@ -287,21 +282,6 @@ class SEOService {
           }
         }
       ]
-    };
-  }
-
-  private getFAQSchema(faqs: Array<{ question: string; answer: string }>) {
-    return {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
-        "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
     };
   }
 
