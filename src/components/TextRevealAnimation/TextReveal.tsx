@@ -23,7 +23,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
     offset: [startOffset, endOffset] as any
   });
 
-  const baseClasses = "flex flex-wrap text-4xl md:text-5xl lg:text-6xl leading-none p-6 md:p-10 max-w-7xl text-darkText";
+  const baseClasses = "flex flex-wrap text-ellipsis whitespace-wrap";
   const combinedClasses = `${baseClasses} ${className}`;
 
   switch (animationType) {
@@ -104,9 +104,9 @@ const Word: React.FC<{
   range: [number, number];
 }> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
-  
+
   return (
-    <span className="relative mr-3 mt-3">
+    <span className="relative mr-3 mt-3 text-ellipsis whitespace-nowrap">
       <span className="absolute opacity-20">{children}</span>
       <motion.span style={{ opacity }}>{children}</motion.span>
     </span>
@@ -120,7 +120,7 @@ const CharacterWord: React.FC<{
 }> = ({ children, progress, range }) => {
   const amount = range[1] - range[0];
   const step = amount / children.length;
-  
+
   return (
     <span className="relative mr-3 mt-3">
       {children.split("").map((char, i) => {
@@ -142,7 +142,7 @@ const Character: React.FC<{
   range: [number, number];
 }> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1]);
-  
+
   return (
     <span className="relative">
       <span className="absolute opacity-20">{children}</span>
