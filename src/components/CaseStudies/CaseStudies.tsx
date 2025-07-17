@@ -1,11 +1,10 @@
-
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MdArrowOutward } from 'react-icons/md';
 import { caseStudiesData } from '../../data/caseStudiesData';
 import { DynamicSEO } from '../SEO/DynamicSEO';
-import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
+import { SEOTextReveal } from '../TextRevealAnimation';
 import './CaseStudies.css';
 
 const CaseStudies = () => {
@@ -63,11 +62,15 @@ const CaseStudies = () => {
             </div>
 
             <section className="h-screen flex justify-center items-center px-4">
-                <DrawCircleText
-                    normalText={"Exploring groundbreaking that redefine "}
-                    normalText2={"the digital landscape through creativity and innovation."}
-                    circleText={"Projects"}
-                />
+                <SEOTextReveal
+                    as="h1"
+                    animationType="character"
+                    id="case-studies-title"
+                    aria-label="Exploring groundbreaking Projects that redefine the digital landscape through creativity and innovation"
+                    className="text-darkText text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug"
+                >
+                    Exploring groundbreaking Projects that redefine the digital landscape through creativity and innovation.
+                </SEOTextReveal>
             </section>
 
             <section className="case-studies-items relative w-full h-full flex -mt-2">

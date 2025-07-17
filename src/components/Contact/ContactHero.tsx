@@ -2,7 +2,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import BoxesLayer from '../BoxesLayer/BoxesLayer';
-import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
 import { SEOTextReveal } from '../TextRevealAnimation';
 
 export const ContactHero = () => {
@@ -40,11 +39,15 @@ export const ContactHero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
-          <DrawCircleText
-            normalText="Let's bring your vision to "
-            normalText2="together and create something extraordinary."
-            circleText="life"
-          />
+          <SEOTextReveal
+            as="h1"
+            animationType="character"
+            id="contact-hero-title"
+            aria-label="Let's bring your vision to life together and create something extraordinary"
+            className="text-darkText text-start md:text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug"
+          >
+            Let's bring your vision to life together and create something extraordinary.
+          </SEOTextReveal>
         </motion.div>
 
         {/* Using text reveal animation for the description */}

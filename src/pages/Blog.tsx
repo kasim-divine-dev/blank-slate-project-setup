@@ -3,7 +3,7 @@ import { ArrowRight, Calendar, Clock, Search, Tag, User } from 'lucide-react';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BoxesLayer from '../components/BoxesLayer/BoxesLayer';
-import { DrawCircleText } from '../components/DrawCircleText/DrawCircleText';
+import { SEOTextReveal } from '../components/TextRevealAnimation';
 import { DynamicSEO } from '../components/SEO/DynamicSEO';
 import { enhancedSeoService } from '../services/enhancedSeoService';
 
@@ -11,7 +11,6 @@ const Blog: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState<string>('');
-
 
   const blogPosts = enhancedSeoService.getBlogPosts();
   const featuredPosts = enhancedSeoService.getFeaturedBlogPosts();
@@ -47,11 +46,15 @@ const Blog: React.FC = () => {
             <div
               className="mb-8"
             >
-              <DrawCircleText
-                normalText="Insights that inspire "
-                normalText2="and expertise that transforms."
-                circleText="innovation"
-              />
+              <SEOTextReveal
+                as="h1"
+                animationType="character"
+                id="blog-hero-title"
+                aria-label="Insights that inspire innovation and expertise that transforms"
+                className="text-darkText text-start md:text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug"
+              >
+                Insights that inspire innovation and expertise that transforms.
+              </SEOTextReveal>
             </div>
 
             <p

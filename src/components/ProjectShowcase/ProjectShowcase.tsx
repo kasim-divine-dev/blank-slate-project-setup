@@ -1,3 +1,4 @@
+
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -5,7 +6,7 @@ import { ArrowUpRight, ExternalLink, Grid, List, Tag } from 'lucide-react';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { carouselItems } from '../../data/carouselItems';
-import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
+import { SEOTextReveal } from '../TextRevealAnimation';
 import MagneticButton from '../MagneticButton/MagneticButton';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -23,7 +24,6 @@ const ProjectShowcase: React.FC = () => {
     });
 
     const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-
 
     // Extract categories from projects
     const categories = ['All', ...Array.from(new Set(carouselItems.map(item =>
@@ -59,11 +59,15 @@ const ProjectShowcase: React.FC = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="relative z-10"
                 >
-                    <DrawCircleText
-                        normalText="Crafting innovative digital experiences for "
-                        normalText2="that inspire, engage, and drive impact."
-                        circleText="businesses"
-                    />
+                    <SEOTextReveal
+                        as="h1"
+                        animationType="character"
+                        id="project-showcase-title"
+                        aria-label="Crafting innovative digital experiences for businesses that inspire, engage, and drive impact"
+                        className="text-darkText text-start md:text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug"
+                    >
+                        Crafting innovative digital experiences for businesses that inspire, engage, and drive impact.
+                    </SEOTextReveal>
                 </motion.div>
             </motion.section>
 

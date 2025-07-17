@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import BoxesLayer from '../BoxesLayer/BoxesLayer';
-import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
+import { SEOTextReveal } from '../TextRevealAnimation';
 
 export const ServicesHero = () => {
 
@@ -25,11 +25,15 @@ export const ServicesHero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
-          <DrawCircleText
-            normalText="We craft digital "
-            normalText2="that drive results and inspire growth."
-            circleText="solutions"
-          />
+          <SEOTextReveal
+            as="h1"
+            animationType="character"
+            id="services-hero-title"
+            aria-label="We craft digital solutions that drive results and inspire growth"
+            className="text-darkText text-start md:text-center text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-snug"
+          >
+            We craft digital solutions that drive results and inspire growth.
+          </SEOTextReveal>
         </motion.div>
 
         <motion.p
