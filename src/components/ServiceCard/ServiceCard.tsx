@@ -7,6 +7,7 @@ import Card3 from '../../assets/img/img3.jpg';
 import Card4 from '../../assets/img/img4.jpg';
 import { DrawCircleText } from '../DrawCircleText/DrawCircleText';
 import './ServiceCard.css';
+import { SEOTextReveal } from '../TextRevealAnimation';
 const ServiceCard: React.FC = () => {
 
     const services = [
@@ -56,11 +57,16 @@ const ServiceCard: React.FC = () => {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="relative z-10"
                 >
-                    <DrawCircleText
-                        normalText="Creating standout brands for "
-                        normalText2="that bring joy and leave lasting impression."
-                        circleText="startups"
-                    />
+                    <SEOTextReveal
+                        as="h1"
+                        animationType='character'
+                        id='intro-title'
+                        key={'intro-title'}
+                        aria-label='Our Services'
+                        className='font-boska-black text-4xl md:text-6xl lg:text-7xl text-darkText hover:text-darkText80 transition-all duration-500'
+                    >
+                        Creating standout brands for Startups that bring joy and leave a lasting impression.
+                    </SEOTextReveal>
                 </motion.div>
             </motion.section>
 

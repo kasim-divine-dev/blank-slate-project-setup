@@ -35,7 +35,7 @@ export const SEOTextReveal: React.FC<SEOTextRevealProps> = ({
       >
         {children}
       </Component>
-      
+
       {/* Animated text for visual users */}
       <TextReveal
         className={className}
